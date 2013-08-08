@@ -1,0 +1,37 @@
+!!!5
+html
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet",type="text/css",href="vendor/css/bootstrap-glyphicons.css")
+    link(rel="stylesheet",type="text/css",href="vendor/css/bootstrap.min.css")
+    link(rel="stylesheet",type="text/css",href="index.css")
+    script(type="text/javascript",src="vendor/js/jquery-1.10.2.min.js")
+    script(type="text/javascript",src="vendor/js/bootstrap.min.js")
+  body
+    .navbar
+      a.navbar-brand(href="#") 動民主
+      .mini-panel.pull-right: .text
+        i.donicon.glyphicon.glyphicon-book
+          #book.ntf-count 2
+        i.donicon.glyphicon.glyphicon-star
+          #star.ntf-count 9
+        .avatar
+      ul.nav.navbar-nav
+        li.active: a(href="#") 全民踹共
+        li: a(href="#") 議案
+        li: a(href="#") 提案
+        li: a(href="#") 專案
+        li: a(href="#") 問答
+        li: a(href="#") 標籤
+        li: a(href="#") 公民列表
+    #content
+      .question.well
+        .desc
+          核融合技術如果發展成熟，核四廠有可能改採核融合嗎？
+        .info
+          span.about 關於
+          span.category 第四核能發電廠 &#xab; 國家能源自主
+      .answer
+        a.btn.btn-link &#xab; 上一題
+        a.btn.btn-info 回答此問題
+        a.btn &#xbb; 下一題
