@@ -1,4 +1,5 @@
 all:
 	jade -O . src/index.jade
-	livescript -o . -cb src/index.ls
-	sass src/index.sass index.css
+	jade -O . src/motion.jade
+	livescript -o js -cb src/index.ls
+	sass src/index.sass css/index.css

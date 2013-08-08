@@ -3,8 +3,14 @@ html,body
   padding: 0
   width: 100%
 
+body
+  background: #f9f9f9
+
 .navbar
   min-height: 43px
+  margin-bottom: 0
+  position: relative
+  z-index: 1
 .navbar-brand
   padding: 10px 15px
 .navbar-nav
@@ -74,5 +80,47 @@ html,body
 .answer
   padding: 20px
   margin: 20px 50px
-  font-size: 1.4em
   text-align: center
+
+#infopanel
+  padding: 20px
+  background: #fff
+  box-shadow: 0 0 10px rgba(0,0,0,0.3)
+  position: relative
+  height: 80px
+  z-index: 10
+  .switch
+    float: right
+    margin-right: 50px
+  .title
+    font-size: 32px
+    margin-left: 60px
+  .submenu
+    position: relative
+    background: #fff
+    border-radius: 200px
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1)
+    width: 500px
+    margin: 10px 0 0 50px
+    li
+      display: inline-block
+      min-width: 100px
+      padding: 10px
+      text-align: center
+      cursor: pointer
+    li.active
+      border-bottom: 3px solid #8cc63f
+  .button
+    display: inline-block
+    position: absolute
+    margin: 15px 0 0 70px
+    font-size: 18px
+    color: #333
+    .glyphicon
+      margin: 5px 10px
+      cursor: pointer
+      text-shadow: 0 0 3px rgba(0,0,0,0.2)
+      &:hover
+        text-shadow: 0 0 6px rgba(255,255,128,0.8)
