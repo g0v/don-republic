@@ -114,15 +114,72 @@ body {
       cursor: pointer; }
     #infopanel .submenu li.active {
       border-bottom: 3px solid #8cc63f; }
-  #infopanel .button {
+  #infopanel .button, #infopanel .tags {
     display: inline-block;
     position: absolute;
     margin: 15px 0 0 70px;
     font-size: 18px;
     color: #333333; }
-    #infopanel .button .glyphicon {
+    #infopanel .button .glyphicon, #infopanel .tags .glyphicon {
       margin: 5px 10px;
       cursor: pointer;
       text-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
-      #infopanel .button .glyphicon:hover {
+      #infopanel .button .glyphicon:hover, #infopanel .tags .glyphicon:hover {
         text-shadow: 0 0 6px rgba(255, 255, 128, 0.8); }
+
+/* analyze.jade */
+.alz .row {
+  margin-bottom: 30px; }
+.alz .tag-func {
+  width: 90%;
+  color: #999999;
+  font-size: 24px;
+  margin: -30px 0 0; }
+  .alz .tag-func i {
+    vertical-align: middle;
+    margin-right: 10px; }
+  .alz .tag-func .dropdown {
+    text-align: center;
+    font-size: 18px;
+    display: inline-block; }
+.alz .icons {
+  color: #999999;
+  position: absolute;
+  right: -60px;
+  color: #999999; }
+  .alz .icons i.glyphicon {
+    margin: 2px; }
+.alz .info {
+  font-size: 24px;
+  color: #999999;
+  width: 48px;
+  text-align: center;
+  margin: 18px 0 0 30px; }
+  .alz .info .glyphicon-star-empty {
+    font-size: 28px; }
+.alz .qs {
+  margin: 10px;
+  border-left: 3px solid #999999;
+  padding: 0 10px; }
+  .alz .qs .desc, .alz .qs .count {
+    display: inline-block;
+    margin: 0 10px 0 0; }
+  .alz .qs .count {
+    color: #999999; }
+.alz .tags {
+  position: relative; }
+  .alz .tags .label {
+    margin: 2px; }
+  .alz .tags .glyphicon-tag {
+    position: absolute;
+    right: -40px;
+    color: #999999; }
+.alz .state {
+  margin: 10px 0;
+  color: #777777; }
+  .alz .state .like, .alz .state .link {
+    margin-right: 20px; }
+  .alz .state .link i {
+    margin-right: 5px; }
+  .alz .state .elapsed {
+    margin-right: 20px; }

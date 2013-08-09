@@ -112,7 +112,7 @@ body
       cursor: pointer
     li.active
       border-bottom: 3px solid #8cc63f
-  .button
+  .button, .tags
     display: inline-block
     position: absolute
     margin: 15px 0 0 70px
@@ -124,3 +124,61 @@ body
       text-shadow: 0 0 3px rgba(0,0,0,0.2)
       &:hover
         text-shadow: 0 0 6px rgba(255,255,128,0.8)
+
+/* analyze.jade */
+.alz
+  .row
+    margin-bottom: 30px
+  .tag-func
+    width: 90%
+    color: #999
+    font-size: 24px
+    margin: -30px 0 0
+    i
+      vertical-align: middle
+      margin-right: 10px
+    .dropdown
+      text-align: center
+      font-size: 18px
+      display: inline-block
+  .icons
+    color: #999
+    position: absolute
+    right: -60px
+    color: #999
+    i.glyphicon
+      margin: 2px
+  .info
+    font-size: 24px
+    color: #999
+    width: 48px
+    text-align: center
+    margin: 18px 0 0 30px
+    .glyphicon-star-empty
+      font-size: 28px
+  .qs
+    margin: 10px
+    border-left: 3px solid #999
+    padding: 0 10px
+    .desc, .count
+      display: inline-block
+      margin: 0 10px 0 0
+    .count
+      color: #999
+  .tags
+    position: relative
+    .label
+      margin: 2px
+    .glyphicon-tag
+      position: absolute
+      right: -40px
+      color: #999
+  .state
+    margin: 10px 0
+    color: #777
+    .like, .link
+      margin-right: 20px
+    .link i
+      margin-right: 5px
+    .elapsed
+      margin-right: 20px
