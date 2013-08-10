@@ -110,42 +110,49 @@ body {
   margin: 18px 0 0 30px; }
   .alz .info .glyphicon-star-empty {
     font-size: 28px; }
-.alz .qs {
-  margin: 10px;
-  border-left: 3px solid #999999;
-  padding: 0 10px; }
-  .alz .qs .desc, .alz .qs .count {
-    display: inline-block;
-    margin: 0 10px 0 0; }
-  .alz .qs .count {
-    color: #999999; }
 .alz .tags {
   position: relative; }
   .alz .tags .label {
     margin: 2px; }
-.alz .row-motion .col-lg-1 {
-  text-align: right; }
-.alz .row-motion .col-lg-1, .alz .row-motion .col-lg-2 {
-  color: #999999; }
-.alz .row-motion .row-content .col-lg-1 {
-  font-size: 24px; }
 .alz .row-motion .row-title .col-lg-1 .glyphicon {
   font-size: 23px;
   margin-top: 19px;
   display: inline-block; }
 .alz .row-motion .row-content .col-lg-2 .glyphicon {
   margin: 0 20px 0 0; }
-.alz .state {
+
+.alz .row .col-lg-1, .alz .row .col-lg-2, .mtn-propose .row .col-lg-1, .mtn-propose .row .col-lg-2, .mtn-prj .row .col-lg-1, .mtn-prj .row .col-lg-2 {
+  color: #999999; }
+.alz .row .col-lg-1, .mtn-propose .row .col-lg-1, .mtn-prj .row .col-lg-1 {
+  text-align: right; }
+.alz .row .col-lg-1, .mtn-propose .row .col-lg-1, .mtn-prj .row .col-lg-1 {
+  font-size: 24px; }
+  .alz .row .col-lg-1 .count, .mtn-propose .row .col-lg-1 .count, .mtn-prj .row .col-lg-1 .count {
+    margin-bottom: 20px; }
+.alz .qs, .mtn-propose .qs, .mtn-prj .qs {
+  margin: 10px;
+  border-left: 3px solid #999999;
+  padding: 0 10px; }
+  .alz .qs .desc, .alz .qs .count, .mtn-propose .qs .desc, .mtn-propose .qs .count, .mtn-prj .qs .desc, .mtn-prj .qs .count {
+    display: inline-block;
+    margin: 0 10px 0 0; }
+  .alz .qs .count, .mtn-propose .qs .count, .mtn-prj .qs .count {
+    color: #999999; }
+.alz .state, .mtn-propose .state, .mtn-prj .state {
   margin: 10px 0;
   color: #777777; }
-  .alz .state .like, .alz .state .link {
+  .alz .state .like, .alz .state .link, .mtn-propose .state .like, .mtn-propose .state .link, .mtn-prj .state .like, .mtn-prj .state .link {
     margin-right: 20px; }
-  .alz .state .link i {
+  .alz .state .link i, .mtn-propose .state .link i, .mtn-prj .state .link i {
     margin-right: 5px; }
-  .alz .state .elapsed {
+  .alz .state .elapsed, .mtn-propose .state .elapsed, .mtn-prj .state .elapsed {
     margin-right: 20px; }
 
 .mtn-summary {
   margin: 20px 0 50px; }
   .mtn-summary h3 {
     margin: 0 0 20px; }
+
+.col-lg-2 > a.deep {
+  display: block;
+  padding-left: 10px; }

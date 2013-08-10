@@ -59,6 +59,7 @@
       #infopanel .button .glyphicon:hover, #infopanel .tags .glyphicon:hover {
         text-shadow: 0 0 6px rgba(255, 255, 128, 0.8); }
     #infopanel .button .dropdown, #infopanel .tags .dropdown {
+      margin: 0 26px 0 0;
       display: inline-block;
       text-align: center;
       font-size: 18px; }
