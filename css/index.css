@@ -84,49 +84,6 @@ body {
   margin: 20px 50px;
   text-align: center; }
 
-#infopanel {
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  height: 80px;
-  z-index: 10; }
-  #infopanel .switch {
-    float: right;
-    margin-right: 50px; }
-  #infopanel .title {
-    font-size: 32px;
-    margin-left: 60px; }
-  #infopanel .submenu {
-    position: relative;
-    background: white;
-    border-radius: 200px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    margin: 10px 0 0 50px; }
-    #infopanel .submenu li {
-      display: inline-block;
-      min-width: 100px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer; }
-    #infopanel .submenu li.active {
-      border-bottom: 3px solid #8cc63f; }
-  #infopanel .button, #infopanel .tags {
-    display: inline-block;
-    position: absolute;
-    margin: 15px 0 0 70px;
-    font-size: 18px;
-    color: #333333; }
-    #infopanel .button .glyphicon, #infopanel .tags .glyphicon {
-      margin: 5px 10px;
-      cursor: pointer;
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
-      #infopanel .button .glyphicon:hover, #infopanel .tags .glyphicon:hover {
-        text-shadow: 0 0 6px rgba(255, 255, 128, 0.8); }
-
 /* analyze.jade */
 .alz .row {
   margin-bottom: 30px; }
@@ -138,10 +95,6 @@ body {
   .alz .tag-func i {
     vertical-align: middle;
     margin-right: 10px; }
-  .alz .tag-func .dropdown {
-    text-align: center;
-    font-size: 18px;
-    display: inline-block; }
 .alz .icons {
   color: #999999;
   position: absolute;
@@ -170,10 +123,18 @@ body {
   position: relative; }
   .alz .tags .label {
     margin: 2px; }
-  .alz .tags .glyphicon-tag {
-    position: absolute;
-    right: -40px;
-    color: #999999; }
+.alz .row-motion .col-lg-1 {
+  text-align: right; }
+.alz .row-motion .col-lg-1, .alz .row-motion .col-lg-2 {
+  color: #999999; }
+.alz .row-motion .row-content .col-lg-1 {
+  font-size: 24px; }
+.alz .row-motion .row-title .col-lg-1 .glyphicon {
+  font-size: 23px;
+  margin-top: 19px;
+  display: inline-block; }
+.alz .row-motion .row-content .col-lg-2 .glyphicon {
+  margin: 0 20px 0 0; }
 .alz .state {
   margin: 10px 0;
   color: #777777; }
@@ -183,3 +144,8 @@ body {
     margin-right: 5px; }
   .alz .state .elapsed {
     margin-right: 20px; }
+
+.mtn-summary {
+  margin: 20px 0 50px; }
+  .mtn-summary h3 {
+    margin: 0 0 20px; }

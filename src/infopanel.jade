@@ -1,20 +1,33 @@
 #infopanel
-  .btn-group.switch(data-toggle="buttons")
-     label.btn.btn-primary
-       input(type="radio",name="options")
-       | 會議室
-     label.btn.btn-primary
-       input(type="radio",name="options")
-       | 眺望台
-  .title 兩岸服務貿易協定
-  ul.submenu
-    li.active 議案摘要
-    li 議案分析 
-      b (24)
-    li 相關提案 
-      b (4)
-    li 相關專案 
-      b (1)
-    .button
-      i.glyphicon.glyphicon-link
-      i.glyphicon.glyphicon-list-alt
+  .info
+    .btn-group.switch(data-toggle="buttons")
+       label.btn.btn-primary
+         input(type="radio",name="options")
+         | 會議室
+       label.btn.btn-primary
+         input(type="radio",name="options")
+         | 眺望台
+    .title 兩岸服務貿易協定
+  .menu
+    .col-lg-9
+      ul.submenu
+        li.active 議案摘要
+        li 議案分析 
+          b (24)
+        li 相關提案 
+          b (4)
+        li 相關專案 
+          b (1)
+      .button
+        i.glyphicon.glyphicon-link
+        i.glyphicon.glyphicon-list-alt
+    .col-lg-2
+      .button
+        i.glyphicon.glyphicon-tag
+        .dropdown
+          a(data-toggle="dropdown",href="#") 最新 
+            i.glyphicon.glyphicon-chevron-down
+          ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+            li 最舊
+            li 最新
+            li 最熱
