@@ -5,8 +5,10 @@
   height: 80px;
   z-index: 10; }
   #infopanel .info {
-    padding: 20px;
+    padding: 10px 20px 0;
     background: white; }
+  #infopanel .btn-group .btn {
+    margin-top: 5px; }
   #infopanel .switch {
     float: right;
     margin-right: 50px; }
