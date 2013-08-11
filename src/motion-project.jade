@@ -1,9 +1,7 @@
-!!!5
-html
-  include head.jade
-  body
-    include navbar.jade
-    include infopanel.jade
+extend layout-lv2
+block submenu
+  include motion-menu.jade
+block content
     #content.mtn-prj
       .row-prj
 
