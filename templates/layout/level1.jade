@@ -1,0 +1,16 @@
+| {% load compressed %}
+!!!5
+html
+  head
+    meta(charset="utf-8")
+    | {% compressed_css 'vendor' %}
+    | {% compressed_css 'main' %}
+    | {% compressed_js 'vendor' %}
+    | {% compressed_js 'main' %} 
+  body
+    | {% include 'navbar.jade' %}
+    | {% block content %}
+    | (empty)
+    | {% endblock %}
+    script.
+      setMenu(1,1);

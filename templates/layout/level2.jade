@@ -1,3 +1,6 @@
+| {% extends 'layout/level1.jade' %}
+| {% load compressed %}
+| {% block content %}
 #infopanel
   .info
     .btn-group.switch(data-toggle="buttons")
@@ -11,8 +14,6 @@
   .menu
     .col-lg-9
       | {% block submenu %}
-      | yo nan
-      | {% include 'motion-menu.jade' %}
       | {% endblock %}
     .col-lg-2
       .button
@@ -25,3 +26,6 @@
             li 最新
             li 最熱
         i.glyphicon.glyphicon-search
+| {% block icontent %}
+| {% endblock %}
+| {% endblock %}

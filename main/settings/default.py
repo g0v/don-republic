@@ -1,4 +1,5 @@
 # Django settings for main project.
+import glob, os.path, re
 from variables import ProjectDir
 
 DEBUG = True
@@ -62,7 +63,7 @@ MEDIA_URL = '/m/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = '/Users/kirby/testcol/skeleton-jsblad/www-root/'
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -235,6 +236,9 @@ PIPELINE_CSS = {
   },
 }
 
+order_js = ['static/v/js/jquery-1.10.2.min.js']
+vendor_js = (glob.glob('static/v/js/*.js'))
+
 PIPELINE_JS = {
   'main': {
     'source_filenames': (
@@ -243,9 +247,8 @@ PIPELINE_JS = {
     'output_filename': 'js/main.js'
   },
   'vendor': {
-    'source_filenames': (
-      'v/js/*.js',
-    ),
+    'source_filenames': 
+      map(lambda x:re.sub(r"^static/", "", x), order_js + filter(lambda x: not x in order_js, vendor_js)),
     'output_filename': 'js/vendor.js'
   },
 }
