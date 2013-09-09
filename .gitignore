@@ -1,1 +1,6 @@
+*.pyc
+env/
 .sass-cache/
+.*.swp
+db.sqlite3
+.DS_Store

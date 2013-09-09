@@ -1,12 +1,33 @@
+VENV = env
+PACKAGES = packages.txt
+ACTIVATE = $(VENV)/bin/activate
+
 all:
-	jade -O . src/index.jade
-	jade -O . src/motion-index.jade
-	jade -O . src/motion-analyze.jade
-	jade -O . src/motion-propose.jade
-	jade -O . src/motion-project.jade
-	jade -O . src/propose-index.jade
-	jade -O . src/project-index.jade
-	livescript -o js -cb src/index.ls
-	sass src/index.sass css/index.css
-	sass src/infopanel.sass css/infopanel.css
-	sass src/motion-propose.sass css/motion-propose.css
+	compass compile src/sass/index.sass -c compass.config.rb -s compressed
+	livescript -o static/js/ -cb src/ls/index.ls
+
+run:
+	python manage.py runserver
+
+migrate:
+	-python manage.py schemamigration userena --auto
+	-python manage.py schemamigration accounts --auto
+	-python manage.py schemamigration guardian --auto
+	-python manage.py migrate
+
+init:
+	-rm db.sqlite3
+	rm -rf userena/migrations
+	rm -rf accounts/migrations
+	rm -rf guardian/migrations
+	python manage.py syncdb
+	python manage.py convert_to_south userena
+	python manage.py convert_to_south accounts
+	python manage.py convert_to_south guardian
+	python manage.py migrate
+
+env: $(ACTIVATE)
+$(ACTIVATE): $(PACKAGES)
+	test -d $(VENV) || virtualenv $(VENV) --no-site-packages
+	. $(ACTIVATE) && pip install -Ur $(PACKAGES)
+	touch $(ACTIVATE)
