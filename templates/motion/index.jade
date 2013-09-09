@@ -1,8 +1,10 @@
 | {% extends "layout/level2.jade" %}
+include motion/defs.jade
 | {% block submenu %}
-| {% include 'project-menu.jade' %}
+| {% include 'motion/menu.jade' %}
 | {% endblock %}
 | {% block icontent %}
+.none
 #content.row
   .col-lg-9
     .mtn-summary
@@ -22,5 +24,5 @@
       li http://getbootstrap.com/css/#grid
       li http://www.xd-crossdesign.com/2013/08/xd-2013-no1-innovative-citizen.html
 script.
-  setMenu(4,1);
+  setMenu(2,1);
 | {% endblock %}

@@ -1,10 +1,8 @@
 | {% extends "layout/level2.jade" %}
-include motion-defs.jade
 | {% block submenu %}
-include motion-menu.jade
+| {% include 'propose/menu.jade' %}
 | {% endblock %}
 | {% block icontent %}
-.none
 #content.row
   .col-lg-9
     .mtn-summary
@@ -24,5 +22,5 @@ include motion-menu.jade
       li http://getbootstrap.com/css/#grid
       li http://www.xd-crossdesign.com/2013/08/xd-2013-no1-innovative-citizen.html
 script.
-  setMenu(2,1);
+  setMenu(3,1);
 | {% endblock %}
