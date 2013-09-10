@@ -1,11 +1,19 @@
 .navbar
   a.navbar-brand(href="/") 動民主
-  .mini-panel.pull-right: .text
-    i.donicon.glyphicon.glyphicon-book
-      #book.ntf-count 2
-    i.donicon.glyphicon.glyphicon-star
-      #star.ntf-count 9
-    .avatar
+  //-
+    .mini-panel.pull-right: .text
+      i.donicon.glyphicon.glyphicon-book
+        #book.ntf-count 2
+      i.donicon.glyphicon.glyphicon-star
+        #star.ntf-count 9
+      .avatar
+  ul.nav.navbar-nav.navbar-right
+    li: input.form-control.input-sm(type="text",placeholder="搜尋...")
+    li: a(href="#"): i.icon.icon-book
+    li: a(href="#"): i.icon.icon-star
+    li.avatar: a(href="#"): img(src="http://graph.facebook.com/zbryikt/picture")
+    li.username: a(href="#") zbryikt
+    li: a &nbsp;
   ul#menu.nav.navbar-nav
     li: a(href="/qa/") 問答
     li: a(href="/motion/") 議案

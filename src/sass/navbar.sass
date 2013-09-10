@@ -1,0 +1,39 @@
+@import base
+
+.navbar
+  min-height: 35px
+  margin: 0
+  z-index: 1
+  background: $bkg-banner
+  box-sizing: border-box
+  ul
+    height: 100%
+  ul.navbar-nav li a, a
+    color: $txt-menu
+    padding: 5px 15px
+  ul.navbar-right li a
+    padding: 6px 8px
+  li
+    box-sizing: border-box
+    &:hover
+      border-bottom: 4px solid $bdr-menu-hover
+
+  input
+    margin-top: 4px
+    padding: 3px
+    width: 92%
+    height: 100%
+
+  .navbar-nav .active
+    border-bottom: 4px solid $bdr-menu-active
+  .navbar-right .icon
+    color: $txt-menu-lite
+    font-size: 21px
+    line-height: 6px
+  .navbar-right .avatar
+    a
+      padding: 2px 4px
+    img
+      width: 30px
+      height: 30px
+
