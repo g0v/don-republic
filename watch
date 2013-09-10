@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+compass watch -c main/settings/compass.config.rb &
+find src/ls -type f | grep '\.ls$' | xargs livescript -cbw -o static/js &
+./manage.py runserver $1
