@@ -10,19 +10,18 @@
     height: 100%
   ul.navbar-nav li a, a
     color: $txt-menu
-    padding: 5px 15px
+    padding: 5px 12px
   ul.navbar-right li a
     padding: 6px 8px
-  li
-    box-sizing: border-box
-    &:hover
-      border-bottom: 4px solid $bdr-menu-hover
+  ul.navbar-left li:hover
+    border-bottom: 4px solid $bdr-menu-hover
 
   input
     margin-top: 4px
     padding: 3px
     width: 92%
     height: 100%
+    background: url(/s/img/magnify.png) no-repeat right center #fff
 
   .navbar-nav .active
     border-bottom: 4px solid $bdr-menu-active
@@ -36,4 +35,5 @@
     img
       width: 30px
       height: 30px
-
+  .navbar-right .username
+    background: url(/s/img/more.png) no-repeat right bottom 

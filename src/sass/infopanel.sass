@@ -1,6 +1,6 @@
 #infopanel
   #background: #fff
-  #box-shadow: 0 0 10px rgba(0,0,0,0.3)
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1)
   position: relative
   height: 80px
   z-index: 10
@@ -25,7 +25,7 @@
     height: 60px
     margin: 0 0 0 50px
     padding: 0
-    background: url(../img/infpnl-bk1.png) #f9f9f9 no-repeat 0px -62px
+    background: url(../img/infpnl-bk1.png) #fff no-repeat 0px -62px
     #position: relative
     #background: #fff
     #border-radius: 200px
@@ -56,6 +56,17 @@
       color: #999
       font-weight: 200
       font-size: 12px
+  .btn-primary
+    background: #ccc
+    color: #999
+    border: 1px solid #aaa
+  .btn-primary.active
+    background: #c00
+    color: #fff
+    box-shadow: inset 0 0 20px rgba(255,255,0,0.8)
+    text-shadow: 0 0 5px rgba(255,255,255,0.8)
+    border: 1px solid #b00
+    
   .button, .tags
     display: inline-block
     position: absolute
