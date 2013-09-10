@@ -21,5 +21,6 @@ urlpatterns = patterns('',
     url(r'^motion/analyze/$', TemplateView.as_view(template_name = "motion/analyze.jade")),
     url(r'^motion/project/$', TemplateView.as_view(template_name = "motion/project.jade")),
     url(r'^project/$', TemplateView.as_view(template_name = "project/index.jade")),
-    url(r'^propose/$', TemplateView.as_view(template_name = "propose/index.jade"))
+    url(r'^propose/$', TemplateView.as_view(template_name = "propose/index.jade")),
+    url(r'^accounts/', include('allauth.urls')),
 )
