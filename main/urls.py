@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', TemplateView.as_view(template_name = "index.jade")),
+    url(r'^qa/$', TemplateView.as_view(template_name = "qa/index.jade")),
     url(r'^motion/$', TemplateView.as_view(template_name = "motion/index.jade")),
     url(r'^motion/propose/$', TemplateView.as_view(template_name = "motion/propose.jade")),
     url(r'^motion/analyze/$', TemplateView.as_view(template_name = "motion/analyze.jade")),
