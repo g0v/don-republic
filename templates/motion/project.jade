@@ -1,27 +1,49 @@
 | {% extends "layout/level2.jade" %}
-| {% block submenu %}
+| {% block menu %}
 | {% include 'motion/menu.jade' %}
 | {% endblock %}
+| {% block roomname %}
+| 會議室
+| {% endblock %}
+| {% block menu-icon-left %}
+ul.menu.icons
+  li: a: i.icon-link
+  li: a: i.icon-plus
+| {% endblock %}
+| {% block menu-icon-right %}
+ul.menu.icons
+  li: a: i.icon-search
+| {% endblock %}
 | {% block icontent %}
-#content.mtn-prj
-  .row-prj
-
-    .row
-      .col-lg-1
-        i.glyphicon.glyphicon-star-empty
-        .count 167
-        i.glyphicon.glyphicon-link
-        .count 67
-      .col-lg-8
+#content
+  .row
+    .col-sm-1.col-icon-left
+      i.icon-star-empty
+      .count 167
+      i.icon-link
+      .count 67
+    .col-sm-8
         h3 鄉民關心你
-        .pps-desc 
-          .item 負責單位: g0v
-          .item 聯絡窗口: hychen
-          .item 專案年齡: 10 天
-          .item 目前進度: 吃蛋糕、喝咖啡、比薩
-          .item 下個里程碑: UI mockup 還有 30 天
-          .item 徵求: Designer
-        .qs
+        .detail
+          .item 
+            .head 負責單位：
+            .field g0v
+          .item 
+            .head 聯絡窗口：
+            .field hychen
+          .item 
+            .head 專案年齡：
+            .field 10 天
+          .item 
+            .head 目前進度：
+            .field 吃蛋糕、喝咖啡、比薩
+          .item 
+            .head 下個里程碑：
+            .field UI mockup 還有 30 天
+          .item
+            .head 徵求：
+            .field Designer
+        .qst
            .item 
              .desc 和「世界奇觀」專案用什麼方式串接？
              .count ( 31 )
@@ -31,73 +53,31 @@
            .item 
              .count 所有問題 &#xbb;
         .state: span.follow clkao, ipa, audreyt, jedi 及其他 103 人正在關注此分析
-      .col-lg-2
-        .desc 此專案的構想源自於
-        a
-          i.glyphicon.glyphicon-star
-          | 兩岸服務貿易協議
-        |  中的
-        a.deep
-          i.glyphicon.glyphicon-star
-          | 辦理公民論壇後依民意逐條審查協議內容
-        br
-        .desc 相關的專案有
-        i.glyphicon.glyphicon-star
-        a 動民主公民社交系統
-        |  by
-        a g0v
-        br
-        i.glyphicon.glyphicon-star-empty
-        a 世界奇觀
-        |  by
-        a g0v
-
-
-    .row
-      .col-lg-1
-        i.glyphicon.glyphicon-star-empty
-        .count 167
-        i.glyphicon.glyphicon-link
-        .count 67
-      .col-lg-8
-        h3 鄉民關心你
-        .pps-desc 
-          .item 負責單位: g0v
-          .item 聯絡窗口: hychen
-          .item 專案年齡: 10 天
-          .item 目前進度: 吃蛋糕、喝咖啡、比薩
-          .item 下個里程碑: UI mockup 還有 30 天
-          .item 徵求: Designer
-        .qs
-           .item 
-             .desc 和「世界奇觀」專案用什麼方式串接？
-             .count ( 31 )
-           .item 
-             .desc 鄉民關心你在做什麼？
-             .count ( 2 )
-           .item 
-             .count 所有問題 &#xbb;
-        .state: span.follow clkao, ipa, audreyt, jedi 及其他 103 人正在關注此分析
-      .col-lg-2
-        .desc 此專案的構想源自於
-        a
-          i.glyphicon.glyphicon-star
-          | 兩岸服務貿易協議
-        |  中的
-        a.deep
+    .col-sm-3
+      .rel-list
+        .item.head 此專案的構想源自於
+        .item
+          a
+            i.glyphicon.glyphicon-star
+            | 兩岸服務貿易協議
+          |  中的
+        .item: a
           i.glyphicon.glyphicon-star
           | 辦理公民論壇後依民意逐條審查協議內容
         br
-        .desc 相關的專案有
-        i.glyphicon.glyphicon-star
-        a 動民主公民社交系統
-        |  by
-        a g0v
-        br
-        i.glyphicon.glyphicon-star-empty
-        a 世界奇觀
-        |  by
-        a g0v
+        .item.head 相關的專案有
+        .item
+          a(href="don.g0v.tw")
+            i.glyphicon.glyphicon-star
+            | 動民主公民社交系統
+          |  by
+          a(href="#") g0v
+        .item
+          a(href="ww.g0v.tw")
+            i.glyphicon.glyphicon-star-empty
+            | 世界奇觀
+          |  by
+          a(href="#") g0v
 script.
   setMenu(2,4);
 | {% endblock %}

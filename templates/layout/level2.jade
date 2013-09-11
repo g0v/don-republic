@@ -3,19 +3,37 @@
 | {% block content %}
 #infopanel
   .info
-    .btn-group.switch(data-toggle="buttons")
-       label.btn.btn-primary
-         input(type="radio",name="options")
-         | 會議室
-         block room
-       label.btn.btn-primary
-         input(type="radio",name="options")
-         | 眺望台
-    .title 兩岸服務貿易協定
-  .menu
+    .row
+      .col-sm-1
+      .col-sm-8
+        .title 兩岸服務貿易協定
+      .col-sm-3
+        .btn-group.switch(data-toggle="buttons")
+           label.btn.btn-primary
+             input(type="radio",name="options")
+             | {% block roomname %}
+             | 會議室
+             | {% endblock %}
+             block room
+           label.btn.btn-primary
+             input(type="radio",name="options")
+             | 眺望台
+  .menu-row
+    .ib
+      .row
+        .col-sm-1 &nbsp;
+        .col-sm-8
+          .ib(style="float:left")
+            | {% block menu %}
+            | {% endblock %}
+          .ib(style="float:left")
+            | {% block menu-icon-left %}
+            | {% endblock %}
+        .col-sm-3
+          | {% block menu-icon-right %}
+          | {% endblock %}
+  .x(style="display:none")
     .col-lg-9
-      | {% block submenu %}
-      | {% endblock %}
     .col-lg-2
       .button
         i.glyphicon.glyphicon-tag
