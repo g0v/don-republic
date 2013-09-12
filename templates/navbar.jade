@@ -4,7 +4,29 @@
   ul.nav.navbar-nav.navbar-right
     li: input.form-control.input-sm(type="text",placeholder="搜尋...")
     li: a(href="#"): i.icon.icon-book
-    li: a(href="#"): i.icon.icon-star
+    li.dropdown
+      a.dropdown-toggle(href="#",data-toggle="dropdown"): i.icon.icon-star
+      ul.dropdown-menu
+
+        li.notify: a(href="#")
+          .ib.pull-right
+            i.icon-microphone-off
+          .head 1 新回答 
+          | 來自
+          strong 黃國昌
+          | 於
+          strong 政府官員利用上班時間處理黨務是合法的嗎？
+
+        li.notify: a(href="#")
+          i.icon-microphone-off.pull-right
+          .head 2 新回答 
+          | 與
+          .head 1 共筆更新 
+          | 來自
+          strong 黃國昌、郝明義
+          | 於
+          strong 憲政危機是什麼？為什麼總統公審立法院院長會造成憲政危機？
+
     | {% if request.user.is_authenticated %}
     li.avatar: a(href="#"): img(src="http://graph.facebook.com/{{user.username}}/picture")
     li.username.dropdown
