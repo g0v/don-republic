@@ -9,10 +9,11 @@
   &:hover
     background-color: #fbfbfb
 .form-label
-  width: 120px
+  width: 110px
   display: table-cell
   vertical-align: text-top
-  text-align: center
+  text-align: left
+  padding-left: 20px
 .form-input
   padding: 12px 0 12px 0
   display: table-cell
@@ -21,6 +22,10 @@
     font-size: 13px
 
 .form
+  line-height: 34px
+  .head
+    color: $txt-light
+    font-weight: 900
   width: 100%
   .form-label
     color: $txt-light
@@ -43,3 +48,6 @@
 
 .form button
   width: 120px
+.form .btn-sm
+  padding: 5px
+

@@ -26,44 +26,76 @@
           .form-label
             | 敘述
             i.required
-          .form-input: textarea.form-control(placeholder="500 字以內")
+          .form-input: textarea.form-control(placeholder="500 字以內",style="height: 80px")
+        .form-row.bdr-h
+          .form-label
+            | 型態
+            i.required
+          .form-input
+            .span-group.clickable.selected
+              i.icon-check
+              |  開放性：從各種角度發想
+            .span-group.clickable
+              i.icon-check-empty
+              |  辯論：收集正反意見
+            .span-group.clickable
+              i.icon-check-empty
+              |  文章：討論及引用
         .form-row.bdr-h
           .form-label
             | 標籤
             i.required
-          .form-input: input.form-control.borderless(type="text",placeholder="所屬的領域、主題、相關的特定對象")
+          .form-input: input.form-control.borderless(type="text",placeholder="所屬的領域、主題、國家/地區、組織/單位、行業/職位、公眾人物、族群...等等")
         .form-row.bdr-h
           .form-label
-            | 議案
-          .form-input: input.form-control.borderless(type="text",placeholder="所屬的議案問題群組")
+            | 關於
+          .form-input: input.form-control.borderless(type="text",placeholder="議案、提案、專案討論群組")
         .form-row.bdr-h
           .form-label
-            | 提案
-          .form-input: input.form-control.borderless(type="text",placeholder="所屬的提案問題群組")
+            | 邀請作答
+          .form-input: input.form-control.borderless(type="text",placeholder="對此問題學有專精的公民")
         .form-row.bdr-h
           .form-label
-            | 專案
-          .form-input: input.form-control.borderless(type="text",placeholder="所屬的專案問題群組")
+            | 同步發表
+          .form-input
+            button.btn.btn-default.btn-social.btn-fb
+              i.icon-facebook-sign
+              |  Facebook
+            button.btn.btn-default.btn-social.btn-twitter
+              i.icon-twitter-sign
+              |  Twitter
+            button.btn.btn-default.btn-social.btn-gplus
+              i.icon-google-plus-sign
+              |  Google Plus
+            button.btn.btn-default.btn-social.btn-tumblr
+              i.icon-tumblr-sign
+              |  Tumblr
+            |  
+            a.action(href="#")
+              | 設定 
+              i.icon-arrow-right
       br
-      | 以儲存的草稿
-      table
-        tr
-          th 日期
-          th 標題
-        tr
-          td 2013/9/16
-          td
+      .form
+        .head 已儲存的草稿
+        .form-row
+          .form-label 日期
+          .form-input 標題
+        .form-row.bdr-h
+          .form-label 2013/9/16
+          .form-input
             | 當政府違法監聽，是否有任何制衡的機制？
-            button.btn.btn-default
-              | 匯入
-              i.icon-upload-alt
-            button.btn.btn-default
-              | 刪除
-              i.icon-trash
+            span.ib.pull-right
+              button.btn.btn-default.btn-sm
+                | 匯入
+                i.icon-upload-alt
+              button.btn.btn-default.btn-sm
+                | 刪除
+                i.icon-trash
+
     .col-sm-3
-      | 與您的問題相似：
-      | 目前沒有人問過類似的問題 :D
+      div(style="color:#888;font-weight:900;border-bottom: 1px solid #ddd;padding-bottom:10px") 與您的問題相似：
+      div(style="color:#aaa;padding: 5px") 目前沒有人問過類似的問題 :D
 
 script.
-  setMenu(1,2);
+  setMenu(1,1);
 | {% endblock %}

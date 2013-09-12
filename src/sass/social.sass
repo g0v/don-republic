@@ -1,0 +1,40 @@
+@import "compass/css3/images"
+@import base
+
+i.icon-facebook-sign
+  color: $clr-fb-2
+i.icon-google-plus-sign
+  color: $clr-gplus-2
+i.icon-twitter-sign
+  color: $clr-twitter-2
+i.icon-tumblr-sign
+  color: $clr-tumblr-2
+
+.btn-social
+  color: #fff
+  text-shadow: none
+  &:hover
+    color: #fff
+    text-shadow: 0 0 5px rgba(255,255,255,0.5)
+  i
+    color: #fff
+
+.btn-fb
+  @include background(linear-gradient(top, $clr-fb-1, $clr-fb-2))
+  &:active
+    @include background(linear-gradient(top, $clr-fb-2, $clr-fb-1))
+
+.btn-gplus
+  @include background(linear-gradient(top, $clr-gplus-1, $clr-gplus-2))
+  &:active
+    @include background(linear-gradient(top, $clr-gplus-2, $clr-gplus-1))
+
+.btn-twitter
+  @include background(linear-gradient(top, $clr-twitter-1, $clr-twitter-2))
+  &:active
+    @include background(linear-gradient(top, $clr-twitter-2, $clr-twitter-1))
+
+.btn-tumblr
+  @include background(linear-gradient(top, $clr-tumblr-1, $clr-tumblr-2))
+  &:active
+    @include background(linear-gradient(top, $clr-tumblr-2, $clr-tumblr-1))
