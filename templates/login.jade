@@ -1,0 +1,25 @@
+form#logout(method="post",action="/accounts/logout/")
+  | {% csrf_token %}
+#login.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button",data-dismiss="modal",aria-hidden="true") &times;
+        h4.modal-title
+          | 動民主2.0 - 登入
+      .modal-body
+        .title 請選擇以下登入方式：
+        br
+        a.btn.btn-default.btn-social.btn-fb(href="/accounts/facebook/login/?process=login")
+          i.icon-facebook-sign
+          |  以臉書帳號登入
+        |   
+        a.btn.btn-default.btn-social.btn-gplus.disabled(href="#")
+          i.icon-gplus-sign
+          |  以 Google+ 帳號登入
+        |   
+        a.btn.btn-default.btn-social.btn-twitter.disabled(href="#")
+          i.icon-twitter-sign
+          |  以推特帳號登入
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") 取消

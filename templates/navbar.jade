@@ -1,18 +1,17 @@
 .navbar
   a.navbar-brand(href="/") 動民主
-  //-
-    .mini-panel.pull-right: .text
-      i.donicon.glyphicon.glyphicon-book
-        #book.ntf-count 2
-      i.donicon.glyphicon.glyphicon-star
-        #star.ntf-count 9
-      .avatar
+
   ul.nav.navbar-nav.navbar-right
     li: input.form-control.input-sm(type="text",placeholder="搜尋...")
     li: a(href="#"): i.icon.icon-book
     li: a(href="#"): i.icon.icon-star
-    li.avatar: a(href="#"): img(src="http://graph.facebook.com/zbryikt/picture")
-    li.username: a(href="#") zbryikt
+    | {% if request.user.is_authenticated %}
+    li.avatar: a(href="#"): img(src="http://graph.facebook.com/{{user.username}}/picture")
+    li.username: a(href="#") {{ user.username }}
+    | {% else %}
+    li.avatar: a(href="#"): img(src="/s/img/no-avatar@30.png")
+    li: a.action(href="#", data-toggle="modal", href="#login") 登入
+    | {% endif %}
     li: a &nbsp;
   ul#navbar.nav.navbar-nav.navbar-left
     li: a(href="/qa/") 問答
