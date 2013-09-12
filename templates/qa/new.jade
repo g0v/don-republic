@@ -1,0 +1,69 @@
+| {% extends "layout/level2-qa.jade" %}
+| {% block menu %}
+| {% include 'qa/menu.jade' %}
+| {% endblock %}
+| {% block icontent %}
+.none
+#content.qa
+  .row
+    .col-sm-9
+      .form
+        button.btn.btn-primary
+          | 張貼問題
+          i.icon-ok
+        button.btn.btn-success
+          | 儲存草稿
+          i.icon-save
+        button.btn.btn-danger.pull-right
+          | 清除
+          i.icon-remove
+        .form-row
+          .form-label
+            | 標題
+            i.required
+          .form-input: input.form-control(type="text",placeholder="140 字以內")
+        .form-row
+          .form-label
+            | 敘述
+            i.required
+          .form-input: textarea.form-control(placeholder="500 字以內")
+        .form-row.bdr-h
+          .form-label
+            | 標籤
+            i.required
+          .form-input: input.form-control.borderless(type="text",placeholder="所屬的領域、主題、相關的特定對象")
+        .form-row.bdr-h
+          .form-label
+            | 議案
+          .form-input: input.form-control.borderless(type="text",placeholder="所屬的議案問題群組")
+        .form-row.bdr-h
+          .form-label
+            | 提案
+          .form-input: input.form-control.borderless(type="text",placeholder="所屬的提案問題群組")
+        .form-row.bdr-h
+          .form-label
+            | 專案
+          .form-input: input.form-control.borderless(type="text",placeholder="所屬的專案問題群組")
+      br
+      | 以儲存的草稿
+      table
+        tr
+          th 日期
+          th 標題
+        tr
+          td 2013/9/16
+          td
+            | 當政府違法監聽，是否有任何制衡的機制？
+            button.btn.btn-default
+              | 匯入
+              i.icon-upload-alt
+            button.btn.btn-default
+              | 刪除
+              i.icon-trash
+    .col-sm-3
+      | 與您的問題相似：
+      | 目前沒有人問過類似的問題 :D
+
+script.
+  setMenu(1,2);
+| {% endblock %}
