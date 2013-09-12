@@ -7,7 +7,20 @@
     li: a(href="#"): i.icon.icon-star
     | {% if request.user.is_authenticated %}
     li.avatar: a(href="#"): img(src="http://graph.facebook.com/{{user.username}}/picture")
-    li.username: a(href="#") {{ user.username }}
+    li.username.dropdown
+      a.dropdown-toggle(href="#",data-toggle="dropdown") {{ user.username }}
+      ul.dropdown-menu
+        li: a(href="#"): strong 選擇角色
+        li: a(href="#") 
+          img(src="http://graph.facebook.com/{{user.username}}/picture")
+          |  {{user.username}}
+        li: a.disabled(href="#")
+          img(src="/s/img/no-avatar@30.png")
+          |  其他..
+        li: a(href="#") 個人頁面
+        li: a(href="#") 設定
+        li: a(href="#", onclick="$('#logout').submit();") 登出
+        li: a(href="#") 系統說明
     | {% else %}
     li.avatar: a(href="#"): img(src="/s/img/no-avatar@30.png")
     li: a.action(href="#", data-toggle="modal", href="#login") 登入
@@ -18,5 +31,5 @@
     li: a(href="/motion/") 議案
     li: a(href="/propose/") 提案
     li: a(href="/project/") 專案
-    li: a(href="#") 標籤
-    li: a(href="#") 公民列表
+    li: a(href="#"): del 標籤
+    li: a(href="#"): del 公民列表

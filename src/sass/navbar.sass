@@ -3,8 +3,8 @@
 .navbar
   min-height: 35px
   margin: 0
-  z-index: 1
-  background: $bkg-banner
+  z-index: 2
+  background: url(/s/img/bk-navbar.png) $bkg-banner left bottom repeat-x
   box-sizing: border-box
   ul
     height: 100%
@@ -37,3 +37,12 @@
       height: 30px
   .navbar-right .username
     background: url(/s/img/more.png) no-repeat right bottom 
+    img
+      width: 30px
+      height: 30px
+
+.username
+  li
+    border-bottom: 1px solid $bdr-light
+    &:last-of-type
+      border-bottom: none
