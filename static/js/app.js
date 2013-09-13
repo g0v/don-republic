@@ -1,5 +1,14 @@
 var mockup;
 mockup = function($scope){
+  $scope.isOptionOpen = false;
+  $scope.toggleOption = function(){
+    $scope.isOptionOpen = !$scope.isOptionOpen;
+    if ($scope.isOptionOpen) {
+      return $('#qa-option').show();
+    } else {
+      return $('#qa-option').hide();
+    }
+  };
   $scope.motionList = [
     {
       name: "苗栗大埔土地徵收",

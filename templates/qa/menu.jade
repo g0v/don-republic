@@ -25,7 +25,8 @@ ul#menu.menu.menu-long
       li: a(href="#") 收藏數
       li: a(href="#") 最高評分
   li: a(href="#"): i.icon-arrow-up
-  li: a(href="#",data-toggle="button")
+  li.btn.btn-menu(data-toggle="button",ng-click="toggleOption(this)"): a(href="#")
     i.icon-gears
     |  
     i.icon-chevron-down
+    i.icon-chevron-up

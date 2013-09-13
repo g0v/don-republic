@@ -1,4 +1,9 @@
 mockup = ($scope) ->
+  $scope.is-option-open = false
+  $scope.toggle-option = ->
+    $scope.is-option-open = !$scope.is-option-open
+    if $scope.is-option-open => $ \#qa-option .show!
+    else $ \#qa-option .hide!
   $scope.motion-list = [
     {name: "苗栗大埔土地徵收", count: 451}
     {name: "美麗灣飯店開發",   count: 390}
