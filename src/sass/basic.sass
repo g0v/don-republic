@@ -17,7 +17,7 @@ i.count
   font-style: normal
   font-weight: 200
   font-size: 12px
-  color: $txt-light
+  color: $txt-count
 
 .span-group
   display: inline-block
@@ -59,3 +59,50 @@ ul.dropdown-menu li.notify
     display: inline-block
     color: $txt-notify
     font-weight: 900
+
+.dropdown-menu
+  min-width: 50px
+  li
+    border-bottom: 1px solid $bdr-light
+    padding: 0
+    clear: both
+    display: block
+    width: 100%
+    a
+      display: block
+    margin: 0
+    &:last-of-type
+      border-bottom: none
+
+.btn i.icon-remove
+  color: $clr-danger
+
+.btn-group
+  margin-right: 10px
+
+.more-tag
+  @extend .clickable 
+  display: block
+  float: right
+  padding: 0 10px
+  border: 1px solid $bdr-light
+  height: 100%
+  background: $bkg-site
+  color: $txt-site
+
+.btn i.icon-plus
+  color: $clr-success
+
+.btn-default
+  background: $btn-default-bk
+  font-weight: 900
+
+.btn-cat
+  background: $btn-category-bk
+  color: $btn-category-txt
+  text-shadow: 0 0 2px rgba(0,0,0,0.0)
+
+.btn-citizen
+  background: $btn-citizen-bk
+  color: $btn-citizen-txt
+  text-shadow: 0 0 2px rgba(0,0,0,0.0)

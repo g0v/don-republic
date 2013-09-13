@@ -14,7 +14,16 @@ ul#menu.menu.menu-long
     i.count (5)
   li: a(href="/qa/project/"): del 我的回答 
     i.count (18)
-  li: a(href="/qa/project/"): del 更新時間 
+  li.dropdown
+    a.dropdown-toggle(href="#",data-toggle="dropdown") 更新時間
+    ul.dropdown-menu
+      li: a(href="#") 更新時間
+      li: a(href="#") 瀏覽人次
+      li: a(href="#") 回答數
+      li: a(href="#") 分享數
+      li: a(href="#") 訂閱數
+      li: a(href="#") 收藏數
+      li: a(href="#") 最高評分
   li: a(href="#"): i.icon-arrow-up
   li: a(href="#"): del
     i.icon-gears

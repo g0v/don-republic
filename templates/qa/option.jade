@@ -1,0 +1,60 @@
+| {% verbatim %}
+#qa-option
+  .form
+    .form-row
+      .form-label 時間範圍
+      .form-input
+        | 由
+        input(type="date")
+        | 至
+        input(type="date")
+    .form-row
+      .form-label 議案
+      .form-input
+        .more-tag: i.icon-chevron-down
+        .btn-group(ng-repeat="item in [['苗栗大埔土地徵收',451],['美麗灣飯店開發','390'],['兩岸服務貿易協議','2.9k']]")
+          .btn.btn-default
+            | {{item[0]}}
+            i.count ( {{item[1]}} )
+          .btn.btn-default: i.icon-remove
+    .form-row
+      .form-label 提案
+      .form-input
+        .btn-group(ng-repeat="item in [['集會遊行法修法',37],['土地徵收條例修法','60'],['電力民營化','22']]")
+          .btn.btn-default
+            | {{item[0]}}
+            i.count ( {{item[1]}} )
+          .btn.btn-default: i.icon-remove
+        .btn.btn-default: i.icon-plus
+    .form-row
+      .form-label 專案
+      .form-input
+        .btn-group(ng-repeat="item in [['公民1985行動串連',12],['憲法113行動串連','8'],['服貿協議行動串連','144']]")
+          .btn.btn-default
+            | {{item[0]}}
+            i.count (  {{item[1]}} )
+          .btn.btn-default: i.icon-remove
+        .btn.btn-default: i.icon-plus
+    .form-row
+      .form-label 標籤
+      .form-input
+        a(href="#") 展開分類
+        |   
+        .btn-group(ng-repeat="item in [['醫療','1k'],['經濟','19k'],['開放政府資料','98'],['民主制度','44'],['房市泡沫','188']]")
+          .btn.btn-default.btn-cat
+            | {{item[0]}}
+            i.count ( {{item[1]}} )
+          .btn.btn-default.btn-cat: i.icon-remove
+        .btn.btn-default: i.icon-plus
+
+    .form-row
+      .form-label 公民
+      .form-input
+        a(href="#") 展開分類
+        |   
+        .btn-group(ng-repeat="item in [['李茂生','0'],['黃國昌','0'],['酥餅','0'],['郝明義','0'],['clkao','0']]")
+          .btn.btn-default.btn-citizen
+            | {{item[0]}}
+          .btn.btn-default.btn-citizen: i.icon-remove
+        .btn.btn-default: i.icon-plus
+| {% endverbatim %}
