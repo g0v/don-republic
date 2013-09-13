@@ -7,7 +7,7 @@ html
     | {% compressed_css 'main' %}
     | {% compressed_js 'vendor' %}
     | {% compressed_js 'main' %} 
-  body(ng-app)
+  body(ng-app,ng-controller="mockup")
     | {% include 'navbar.jade' %}
     | {% include 'login.jade' %}
     | {% block content %}
