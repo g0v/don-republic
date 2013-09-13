@@ -10,7 +10,6 @@
   .icon-comments
     color: $clr-3
 
-
 #qa-option
   border: 1px solid $bdr-light
   box-shadow: inset 0 0 10px rgba(0,0,0,0.1)
@@ -26,3 +25,42 @@
   .form-label, .form-input
     padding-top: 4px
     padding-bottom: 4px
+
+.qa-func-panel
+  display: table
+  .btn-icon
+    border-bottom:
+      left-radius: 0
+      right-radius: 0
+.qa-func-panel > .ib
+  display: table-row
+  &:nth-of-type(1)
+    height: 24px
+  &:nth-of-type(2)
+    height: 100%
+    > .ib
+      width: 100%
+      height: 100%
+      border: 1px solid $bdr-light
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1)
+      border-bottom:
+        left-radius: 10px
+        right-radius: 10px
+
+      .title, .desc
+        padding: 10px
+      .title
+        border-bottom: 1px solid $bdr-light
+        background: #ffffcc
+        font-weight: 900
+      .desc
+        padding-bottom: 50px
+      .ib
+        position: absolute
+        bottom: 2px
+        .icon-repeat
+          color: $clr-1 
+        .icon-ok
+          color: $clr-2 
+        .icon-arrow-right
+          color: $clr-3 
