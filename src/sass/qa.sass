@@ -35,15 +35,16 @@
 #qa-func-panel > .ib > .ib
   width: 100%
   height: 100%
+  position: relative
   border: 1px solid $bdr-light
   box-shadow: inset 0 0 10px rgba(0,0,0,0.1)
   border-bottom:
     left-radius: 4px
     right-radius: 4px
-  .btn-group
+  & > .btn-group
     position: absolute
     width: 100%
-    bottom: 3px
+    bottom: 0
     .btn-default
       border-top:
         left-radius: 0
@@ -63,14 +64,16 @@
     font-weight: 900
   .desc
     padding-bottom: 50px
-  .btn-group
+  & > .btn-group
+    background: $btn-default-bk
     .btn-default
       width: 33%
     .btn-default:last-of-type
+      margin-left: 1px 
       width: 34%
 
 #qa-func-comment > .ib
-  .comments
+  & > .ib
     padding: 10px 10px 50px
   .comment
     padding-left: 20px
@@ -82,8 +85,24 @@
       width: 15px
       height: 15px
       margin: 0 5px 0 -20px
-   
-  .btn-group
+  & > .btn-group
+    width: 100%
+    .btn-default
+      width: 100%
+
+#qa-func-tags
+  overflow: scroll
+  height: 100%
+#qa-func-tags > .ib
+  & > .ib
+    overflow: scroll
+    height: 100%
+    padding: 10px 10px 50px
+    .btn-group
+      margin: 1px
+      .btn
+        font-weight: 100
+  & > .btn-group
     width: 100%
     .btn-default
       width: 100%

@@ -3,7 +3,8 @@ set-menu = (v,u) ->
   $ "\#menu > li:nth-child(#{u})" .addClass \active
 
 qa-func-resize = ->
-  $(".qa-func-panel")height -> $(this)prev!height!
+  $(\#qa-func-panel)height -> $(this)prev!height!
+
 window.onresize = ->
   qa-func-resize!
 

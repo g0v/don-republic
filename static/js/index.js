@@ -4,7 +4,7 @@ setMenu = function(v, u){
   return $("#menu > li:nth-child(" + u + ")").addClass('active');
 };
 qaFuncResize = function(){
-  return $(".qa-func-panel").height(function(){
+  return $('#qa-func-panel').height(function(){
     return $(this).prev().height();
   });
 };

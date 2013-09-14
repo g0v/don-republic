@@ -1,0 +1,105 @@
+.ib.btn-group.menu(data-toggle="buttons")
+  label.btn.btn-icon(ng-click="tgl('qa-func','editor')")
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-edit
+  label.btn.btn-icon(ng-click="tgl('qa-func','comment')")
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-warning-sign
+  label.btn.btn-icon(ng-click="tgl('qa-func','tags')")
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-tag
+  label.btn.btn-icon
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-chevron-up
+  label.btn.btn-icon
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-code-fork
+  label.btn.btn-icon
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-sitemap
+  label.btn.btn-icon
+    input(type="radio",name="qa-func",id="qa-func1")
+    i.icon-time
+#qa-func-editor.ib.content
+  .ib
+    .title 不止是苦，一起安眠。
+    .desc
+      | 擔任縣長時對這就很清楚，其他都沒有這個問題，我們要信任中央銀行，如果出現了，今年就算經濟景氣有復甦，他們怎麼可能會自己去選，你不要……等一下我會再說明。娶新娘，8位老師完成創舉，南投鹿神祭，勸進不斷，從《小學堂》畢業，日職／林威助敲2安，兩會來臨，中和某國中，北捷招考筆試，歐巴馬Google+，爆冷！說你聽著了音樂便異常的快活，稍稍疏洩我的積愫，像你倒真是聰明：你來時是一團活潑，過來坐在我的身邊，軟弱時有督責，你才知道靈魂的愉快是怎樣的，我們始終不曾明白，不是在你獨身漫步的時候。
+    .btn-group
+      button.btn.btn-default
+        | 重來
+        i.icon-repeat
+      button.btn.btn-default
+        | 確定
+        i.icon-ok
+      button.btn.btn-default
+        | 完整編輯器
+        i.icon-arrow-right
+#qa-func-comment.ib.content
+  .ib
+    .ib
+      .comment
+        img(src="/s/img/no-avatar@30.png")
+        | 這個問題有人問過了，而且另一邊的問題描述表較詳細，是否可以鎖定本題，並且設為另一題的 alias？
+        .ctrl
+          | 五分鐘前
+          a(href="#") 回應
+          a(href="#") 檢舉
+        .comment
+          img(src="/s/img/no-avatar@30.png")
+          | 你說的另一題在哪裡？
+          .ctrl
+            | 三分鐘前
+            a(href="#") 回應
+            a(href="#") 檢舉
+    .btn-group
+      button.btn.btn-default
+        | 完整討論串
+        i.icon-arrow-right
+
+| {% verbatim %}
+#qa-func-tags.ib.content
+  .ib
+    .ib.form
+
+      .form-row
+        .form-label 議案
+        .form-input
+          .btn-group(ng-repeat="item in motionList")
+            .btn.btn-default
+              | {{item.name}}
+            .btn.btn-default: i.icon-remove
+          .btn.btn-default: i.icon-plus
+
+      .form-row
+        .form-label 提案
+        .form-input
+          .btn-group(ng-repeat="item in proposeList")
+            .btn.btn-default
+              | {{item.name}}
+            .btn.btn-default: i.icon-remove
+          .btn.btn-default: i.icon-plus
+
+      .form-row
+        .form-label 專案
+        .form-input
+          .btn-group(ng-repeat="item in projectList")
+            .btn.btn-default
+              | {{item.name}}
+            .btn.btn-default: i.icon-remove
+          .btn.btn-default: i.icon-plus
+
+      .form-row
+        .form-label 標籤 
+        .form-input
+          .btn-group(ng-repeat="item in tagList")
+            .btn.btn-default
+              | {{item.name}}
+            .btn.btn-default: i.icon-remove
+          .btn.btn-default: i.icon-plus
+
+    .btn-group
+      button.btn.btn-default
+        | 完整關連設定
+        i.icon-arrow-right
+| {% endverbatim %}
