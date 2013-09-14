@@ -1,3 +1,4 @@
+//- TODO: remove redundent .ib (use div instead?)
 .ib.btn-group.menu(data-toggle="buttons")
   label.btn.btn-icon(ng-click="tgl('qa-func','editor')")
     input(type="radio",name="qa-func",id="qa-func1")
@@ -8,10 +9,10 @@
   label.btn.btn-icon(ng-click="tgl('qa-func','tags')")
     input(type="radio",name="qa-func",id="qa-func1")
     i.icon-tag
-  label.btn.btn-icon
+  label.btn.btn-icon(ng-click="tgl('qa-func','synonym')")
     input(type="radio",name="qa-func",id="qa-func1")
     i.icon-chevron-up
-  label.btn.btn-icon
+  label.btn.btn-icon(ng-click="tgl('qa-func','similar')")
     input(type="radio",name="qa-func",id="qa-func1")
     i.icon-code-fork
   label.btn.btn-icon
@@ -35,6 +36,7 @@
       button.btn.btn-default
         | 完整編輯器
         i.icon-arrow-right
+
 #qa-func-comment.ib.content
   .ib
     .ib
@@ -61,7 +63,6 @@
 #qa-func-tags.ib.content
   .ib
     .ib.form
-
       .form-row
         .form-label 議案
         .form-input
@@ -102,4 +103,47 @@
       button.btn.btn-default
         | 完整關連設定
         i.icon-arrow-right
+
+#qa-func-synonym.ib.content.generic
+  .ib
+    .ib(style="padding:0 0 50px")
+      .ib(ng-repeat="item in synonymList",style="padding:0")
+        .title {{item.title}}
+        .ib(style="padding: 10px")
+          .desc {{item.desc}}
+          .ctrl
+            button.btn.btn-default.btn-synonym
+              | 同義
+              i.icon-chevron-up
+            i.count + {{item.synonym}}
+            button.btn.btn-default
+              | 近似
+              i.icon-chevron-fork
+            i.count {{item.similar}}
+    .btn-group
+      button.btn.btn-default
+        | 完整同義題管理
+        i.icon-arrow-right
+
+#qa-func-similar.ib.content.generic
+  .ib
+    .ib(style="padding:0 0 50px")
+      .ib(ng-repeat="item in synonymList",style="padding:0")
+        .title {{item.title}}
+        .ib(style="padding: 10px")
+          .desc {{item.desc}}
+          .ctrl
+            button.btn.btn-default.btn-synonym
+              | 同義
+              i.icon-chevron-up
+            i.count + {{item.synonym}}
+            button.btn.btn-default
+              | 近似
+              i.icon-chevron-fork
+            i.count {{item.similar}}
+    .btn-group
+      button.btn.btn-default
+        | 完整近似題管理
+        i.icon-arrow-right
+
 | {% endverbatim %}

@@ -4,6 +4,19 @@
     .form-row
       .form-label 時間範圍
       .form-input
+        .btn-group
+          button.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+            | 自訂區間
+            i.caret
+          ul.dropdown-menu(role="menu")
+            li: a(href="#")  全部
+            li: a(href="#")  一週內
+            li: a(href="#")  一個月內
+            li: a(href="#")  三個月內
+            li: a(href="#")  一年內
+            li: a(href="#")  自訂區間
+
+        |  
         | 由
         input(type="date")
         | 至
@@ -38,15 +51,24 @@
     .form-row
       .form-label 標籤
       .form-input
-        a(href="#") 展開分類
+        .more-tag: i.icon-chevron-down
+        a(href="#",ng-click="tglcls('tag','detail','brief')") 
+          span.tag-brief 展開
+          span.tag-detail 收合
+          | 分類
         |   
-        .btn-group(ng-repeat="item in tagList")
-          .btn.btn-default.btn-cat
-            | {{item.name}}
-            i.count ( {{item.count}} )
-          .btn.btn-default.btn-cat: i.icon-remove
-        .btn.btn-default: i.icon-plus
+        span.tag-brief
+          .btn-group(ng-repeat="item in tagList")
+            .btn.btn-default.btn-cat
+              | {{item.name}}
+              i.count ( {{item.count}} )
+            .btn.btn-default.btn-cat: i.icon-remove
+          .btn.btn-default: i.icon-plus
 
+    | {% endverbatim %}
+    .tag-detail.sub
+      | {% include 'qa/tag-detail.jade' %}
+    | {% verbatim %}
     .form-row
       .form-label 公民
       .form-input

@@ -1,5 +1,15 @@
 var mockup;
 mockup = function($scope){
+  $scope.tglclsNodes = {};
+  $scope.tglcls = function(g, p, n){
+    var v;
+    v = $scope.tglclsNodes[g]
+      ? [n, p]
+      : [p, n];
+    $("." + g + "-" + v[0]).show();
+    $("." + g + "-" + v[1]).hide();
+    return $scope.tglclsNodes[g] = !$scope.tglclsNodes[g];
+  };
   $scope.tglNodes = {};
   $scope.tgl = function(g, n){
     var ref$;
@@ -72,7 +82,7 @@ mockup = function($scope){
       count: 188
     }
   ];
-  return $scope.citizenList = [
+  $scope.citizenList = [
     {
       name: "李茂生",
       count: 0
@@ -88,6 +98,78 @@ mockup = function($scope){
     }, {
       name: "clkao",
       count: 0
+    }
+  ];
+  $scope.synonymList = [
+    {
+      title: "中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      desc: "台灣出版產業鏈目前在中國的發展狀況為何？中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      synonym: 6,
+      similar: 1
+    }, {
+      title: "中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      desc: "台灣出版產業鏈目前在中國的發展狀況為何？中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      synonym: 6,
+      similar: 1
+    }, {
+      title: "中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      desc: "台灣出版產業鏈目前在中國的發展狀況為何？中國與台灣，出版、印刷、發行與零售產業，目前的交流現況為何？",
+      synonym: 6,
+      similar: 1
+    }
+  ];
+  return $scope.tagDetail = [
+    {
+      name: "領域",
+      list: [
+        {
+          name: "醫療",
+          count: 1000
+        }, {
+          name: "經濟",
+          count: 19000
+        }
+      ]
+    }, {
+      name: "主題",
+      list: [
+        {
+          name: "開放政府資料",
+          count: 98
+        }, {
+          name: "民主制度",
+          count: 44
+        }, {
+          name: "房市泡沫",
+          count: 188
+        }
+      ]
+    }, {
+      name: "國家/地區",
+      list: []
+    }, {
+      name: "組織/單位",
+      list: [
+        {
+          name: "醫勞盟",
+          count: 77
+        }, {
+          name: "公督盟",
+          count: 140
+        }
+      ]
+    }, {
+      name: "行業/職位",
+      list: []
+    }, {
+      name: "公眾人物",
+      list: []
+    }, {
+      name: "族群",
+      list: []
+    }, {
+      name: "自訂標籤",
+      list: []
     }
   ];
 };

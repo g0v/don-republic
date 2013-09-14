@@ -1,0 +1,11 @@
+| {% verbatim %}
+.form-row(ng-repeat="tag in tagDetail")
+  .form-label {{tag.name}}
+  .form-input
+    .btn-group(ng-repeat="n in tag.list")
+      .btn.btn-default
+        | {{n.name}}
+        i.count ( {{n.count}} )
+      .btn.btn-default: i.icon-remove
+    .btn.btn-default: i.icon-plus
+| {% endverbatim %}
