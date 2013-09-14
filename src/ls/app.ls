@@ -1,4 +1,9 @@
 mockup = ($scope) ->
+  $scope.tgl-nodes = {}
+  $scope.tgl = (g, n) ->
+    $scope.tgl-nodes[g]?hide!
+    $scope.tgl-nodes[g] = $ "\##{g}-#{n}"
+    $scope.tgl-nodes[g]?show!
   $scope.is-option-open = false
   $scope.toggle-option = ->
     $scope.is-option-open = !$scope.is-option-open

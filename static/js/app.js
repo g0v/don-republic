@@ -1,5 +1,14 @@
 var mockup;
 mockup = function($scope){
+  $scope.tglNodes = {};
+  $scope.tgl = function(g, n){
+    var ref$;
+    if ((ref$ = $scope.tglNodes[g]) != null) {
+      ref$.hide();
+    }
+    $scope.tglNodes[g] = $("#" + g + "-" + n);
+    return (ref$ = $scope.tglNodes[g]) != null ? ref$.show() : void 8;
+  };
   $scope.isOptionOpen = false;
   $scope.toggleOption = function(){
     $scope.isOptionOpen = !$scope.isOptionOpen;
