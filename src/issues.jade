@@ -39,12 +39,37 @@ block body
             | 新議題
 
     #content
+
+      .pages
+        .ui.pagination.menu
+          a.icon.item.disabled
+            i.icon.left
+          a.item.active 1
+          a.item 2
+          a.item 3
+          a.item 4
+          a.item 5
+          a.icon.item.disabled
+            i.icon.right
+
       include issue-in-list
       include issue-in-list
       include issue-in-list
       include issue-in-list
       include issue-in-list
       include issue-in-list
+
+      .pages
+        .ui.pagination.menu
+          a.icon.item.disabled
+            i.icon.left
+          a.item.active 1
+          a.item 2
+          a.item 3
+          a.item 4
+          a.item 5
+          a.icon.item.disabled
+            i.icon.right
 
 block script
   script.
