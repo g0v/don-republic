@@ -2,12 +2,12 @@ extends issue
 
 block menu
   .ui.menu.borderless
-    a.item.summary 簡介
-    a.item.qa 問與答
-    a.item.argument 優缺點
-    a.item.article 文章
-    a.item.report 匯出報告
-    a.item.related 相關議題
+    a(href="issue-content-intro.html").item.intro 簡介
+    a(href="issue-content-qa.html").item.qa 問與答
+    a(href="issue-content-argument.html").item.argument 優缺點
+    a(href="issue-content-article.html").item.article 文章
+    a(href="issue-content-report.html").item.report 匯出報告
+    a(href="issue-content-related.html").item.related 相關議題
     .right.menu
       block menu-right
 
