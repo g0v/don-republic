@@ -2,6 +2,7 @@
 
 html
   font-size: 18px
+  color: #333
 
 a
   text-decoration: none
@@ -11,6 +12,11 @@ h1,h2,h3,h4
   margin: 0
   padding: 0
   line-height: 1em
+
+p
+  line-height: 1.5em
+  letter-spacing: 0.07em
+  opacity: 0.8
 
 body
   margin: 0
@@ -27,21 +33,91 @@ body
     background-color: rgba(#29abe2,0.05)
     +box-shadow(0 0 1px rgba(#29abe2,0.5))
 
+.ui.label.light.gray
+  background-color: rgba(0,0,0,0.05)
+  color: rgba(0,0,0,0.7)
+
+.ui.label.white
+  background-color: #fff
+
+.ui.menu
+  .ui.label.light.gray
+    padding-right: 0.5em
+    padding-left: 0.5em
+
+.auxiliary.text,
+  font-weight: normal
+  font-size: 0.9em
+  opacity: 0.6
+
+.ui.menu,
+.ui.secondary.pointing.menu,
+.ui.secondary.pointing.menu>.menu
+  .auxiliary.text
+    padding-right: 0
+    font-size: 0.9rem
+
+.ui.secondary.pointing.menu
+  .active.item:after
+    opacity: 0
+
+#navbar
+  .ui.secondary.pointing.menu
+    font-weight: bold
+    .item.active
+      border-color: #00a99d
+
 #index
   text-align: center
   margin: 5rem auto 2rem
   width: 100%
   max-width: 1024px
-  .entry
-    padding-bottom: 2rem
+  a.entry    
+    display: block
     margin: 0
+    &:hover
+      +box-shadow(0 0 0.5rem rgba(0,0,0,0.2))
     h2
       padding: 1em
-    .ui.label.white
-      background-color: #fff
-    a.tag
+    //
+      a.tag
       font-size: 1.2em
       font-weight: bold
+
+
+#issues
+  #menu
+    background-color: #fff
+    .item.active
+      border-color: #8cc63f
+  #content
+    margin: 2rem
+    .issue
+      .action
+        float: left
+        .icon
+          opacity: 0.3
+      .entry
+        margin: 0 2rem 1rem 4rem
+        .title
+          color: inherit
+          padding: 0
+          h2 a
+            display: block
+            padding: 1rem
+            &:hover
+              background-color: rgba(0,0,0,0.05)
+            .auxiliary.text
+              margin: 0 0.5rem
+        .summary
+          margin: 2.5rem 0
+        .meta
+          font-size: 0.9rem
+          a
+            padding: 0 0.5em
+            color: #29abe2
+            &:hover
+              color: #0071bc
 
 #issue
 
@@ -53,22 +129,25 @@ body
         display: inline-block
         font-size: 2rem
       .action
+        margin-left: 1rem
         font-size: 1.5rem
         position: relative
-        top: -0.1em
-        .icon
-          display: inline
-          margin-left: 1em
-          padding: 0.2em
-          color: #ddd
+        top: -0.2rem
+        .button
+          padding: 0.2rem 0.5rem
           cursor: pointer
+          opacity: 0.5
+          +border-radius(0.3rem)
           &:hover
-            color: #999
-        .count
-          font-size: 1rem
-          font-weight: normal
-          color: #999
-      .switch
+            background-color: rgba(0,0,0,0.05)
+            opacity: 0.8
+          i.icon
+            padding: 0.2em
+            opacity: 0.4
+          .count
+            font-size: 1rem
+            font-weight: normal
+      .switch 
         float: right
         font-size: 1rem
         font-weight: normal
@@ -84,9 +163,10 @@ body
     .menu
       margin: 0
       background-color: #eee
-      .text.label
-        padding-right: 0
-        font-size: 0.9rem
 
   #content
-    margin: 2rem
+    margin: 1rem 2rem
+    .category
+      .item.active
+        border-color: #8cc63f
+

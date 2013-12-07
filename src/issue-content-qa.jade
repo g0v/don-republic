@@ -1,7 +1,7 @@
 extends issue-content
 
 block menu-right
-  .item.text.label 分類
+  .item.auxiliary.text 分類
   .ui.simple.dropdown.item
     | 相關性
     i.dropdown.icon
@@ -10,7 +10,7 @@ block menu-right
       .item 標籤
       .item 看板
       .item 不分類
-  .item.text.label 排序
+  .item.auxiliary.text 排序
   .ui.simple.dropdown.item
     | 更新時間
     i.dropdown.icon
@@ -26,28 +26,19 @@ block menu-right
 block content
   .category
     .ui.secondary.pointing.menu.relation
-      a.item.active 追蹤中 (4)
+      a.item.active 推薦的
+        .ui.label.light.gray (22)
+      a.item 追蹤中
+        .ui.label.light.gray (4)
         //-.menu
           .item 全部
           .item 我的訂閱
           .item 我的發問
           .item 我的回答
-      a.item 已分享 (3)
-      a.item 已收藏 (10)
-      a.item ...
-      a.item ...
-    .ui.secondary.pointing.menu.tag
-      a.item.active ...
-      a.item ...
-      a.item ...
-      a.item ...
-      a.item ...
-    .ui.secondary.pointing.menu.board
-      a.item.active ...
-      a.item ...
-      a.item ...
-      a.item ...
-      a.item ...
+      a.item 已收藏
+        .ui.label.light.gray (10)
+      a.item 邀稿
+        .ui.label.light.gray (3)
 
 block script
   script.

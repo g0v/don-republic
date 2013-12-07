@@ -1,0 +1,51 @@
+extends template
+
+block title
+  block subtitle
+  | 議題
+
+block body
+
+  #issues
+
+    #menu
+
+      .ui.secondary.pointing.menu
+        a.item.active 全部
+          .ui.label.light.gray (2048)
+        a.item 推薦的
+          .ui.label.light.gray (188)
+        a.item 追蹤中
+          .ui.label.light.gray (19)
+        a.item 已收藏
+          .ui.label.light.gray (111)
+        a.item 邀稿
+          .ui.label.light.gray (3)
+        .right.menu
+          .item.auxiliary.text 排序依
+          .ui.simple.dropdown.item
+            | 更新時間
+            i.dropdown.icon
+            .menu
+              .item.active 更新時間
+              .item 瀏覽人次
+              .item 分享人次
+              .item 追蹤數
+              .item 收藏數
+              .item 內容數量
+              .item 內容評價
+          .ui.icon.right.labeled.button.small
+            i.icon.plus
+            | 新議題
+
+    #content
+      include issue-in-list
+      include issue-in-list
+      include issue-in-list
+      include issue-in-list
+      include issue-in-list
+      include issue-in-list
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");

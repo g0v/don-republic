@@ -1,5 +1,6 @@
 html {
   font-size: 18px;
+  color: #333333;
 }
 
 a {
@@ -11,6 +12,12 @@ h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
   line-height: 1em;
+}
+
+p {
+  line-height: 1.5em;
+  letter-spacing: 0.07em;
+  opacity: 0.8;
 }
 
 body {
@@ -39,25 +46,107 @@ body {
   box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
 }
 
+.ui.label.light.gray {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.ui.label.white {
+  background-color: white;
+}
+
+.ui.menu .ui.label.light.gray {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.auxiliary.text {
+  font-weight: normal;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
+.ui.menu .auxiliary.text,
+.ui.secondary.pointing.menu .auxiliary.text,
+.ui.secondary.pointing.menu > .menu .auxiliary.text {
+  padding-right: 0;
+  font-size: 0.9rem;
+}
+
+.ui.secondary.pointing.menu .active.item:after {
+  opacity: 0;
+}
+
+#navbar .ui.secondary.pointing.menu {
+  font-weight: bold;
+}
+#navbar .ui.secondary.pointing.menu .item.active {
+  border-color: #00a99d;
+}
+
 #index {
   text-align: center;
   margin: 5rem auto 2rem;
   width: 100%;
   max-width: 1024px;
 }
-#index .entry {
-  padding-bottom: 2rem;
+#index a.entry {
+  display: block;
   margin: 0;
 }
-#index .entry h2 {
+#index a.entry:hover {
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+#index a.entry h2 {
   padding: 1em;
 }
-#index .entry .ui.label.white {
+
+#issues #menu {
   background-color: white;
 }
-#index .entry a.tag {
-  font-size: 1.2em;
-  font-weight: bold;
+#issues #menu .item.active {
+  border-color: #8cc63f;
+}
+#issues #content {
+  margin: 2rem;
+}
+#issues #content .issue .action {
+  float: left;
+}
+#issues #content .issue .action .icon {
+  opacity: 0.3;
+}
+#issues #content .issue .entry {
+  margin: 0 2rem 1rem 4rem;
+}
+#issues #content .issue .entry .title {
+  color: inherit;
+  padding: 0;
+}
+#issues #content .issue .entry .title h2 a {
+  display: block;
+  padding: 1rem;
+}
+#issues #content .issue .entry .title h2 a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#issues #content .issue .entry .title h2 a .auxiliary.text {
+  margin: 0 0.5rem;
+}
+#issues #content .issue .entry .summary {
+  margin: 2.5rem 0;
+}
+#issues #content .issue .entry .meta {
+  font-size: 0.9rem;
+}
+#issues #content .issue .entry .meta a {
+  padding: 0 0.5em;
+  color: #29abe2;
+}
+#issues #content .issue .entry .meta a:hover {
+  color: #0071bc;
 }
 
 #issue #header .title {
@@ -69,24 +158,32 @@ body {
   font-size: 2rem;
 }
 #issue #header .title .action {
+  margin-left: 1rem;
   font-size: 1.5rem;
   position: relative;
-  top: -0.1em;
+  top: -0.2rem;
 }
-#issue #header .title .action .icon {
-  display: inline;
-  margin-left: 1em;
-  padding: 0.2em;
-  color: #dddddd;
+#issue #header .title .action .button {
+  padding: 0.2rem 0.5rem;
   cursor: pointer;
+  opacity: 0.5;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
 }
-#issue #header .title .action .icon:hover {
-  color: #999999;
+#issue #header .title .action .button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
 }
-#issue #header .title .action .count {
+#issue #header .title .action .button i.icon {
+  padding: 0.2em;
+  opacity: 0.4;
+}
+#issue #header .title .action .button .count {
   font-size: 1rem;
   font-weight: normal;
-  color: #999999;
 }
 #issue #header .title .switch {
   float: right;
@@ -114,10 +211,9 @@ body {
   margin: 0;
   background-color: #eeeeee;
 }
-#issue #header .menu .text.label {
-  padding-right: 0;
-  font-size: 0.9rem;
-}
 #issue #content {
-  margin: 2rem;
+  margin: 1rem 2rem;
+}
+#issue #content .category .item.active {
+  border-color: #8cc63f;
 }
