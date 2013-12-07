@@ -1,4 +1,4 @@
-extends issue-content
+extends qa
 
 block menu-right
   .item.auxiliary.text 分類
@@ -40,28 +40,8 @@ block content
       a.item 邀稿
         .ui.label.light.gray (3)
 
-  include qa-in-list
-  include qa-in-list
-  include qa-in-list
-  include qa-in-list
-  include qa-in-list
-  include qa-in-list
-  include qa-in-list
-
-  .navigation
-    .ui.pagination.menu
-      a.icon.item.disabled
-        i.icon.left
-      a.item.active 1
-      a.item 2
-      a.item 3
-      a.item 4
-      a.item 5
-      a.icon.item.disabled
-        i.icon.right
-
 block script
   script.
-    $("#navbar .issue").addClass("active");
+    $("#navbar .entry").addClass("active");
     $("#header .switch .content").addClass("active");
     $("#header .menu .qa").addClass("active");

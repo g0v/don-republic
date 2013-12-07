@@ -27,9 +27,10 @@ body {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-.a.tag.item {
-  margin: 0 0 0 0.3em;
-  padding: 0.3em 0.8rem;
+.a.tag.item,
+.a.board.item {
+  margin: 0;
+  padding: 0.3em 0.7rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -38,13 +39,26 @@ body {
   -ms-border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
   border-radius: 0.3rem;
+}
+.a.tag.item:hover,
+.a.board.item:hover {
+  -webkit-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+  -moz-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+  box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+}
+
+.a.tag.item {
   color: #29abe2;
 }
 .a.tag.item:hover {
   background-color: rgba(41, 171, 226, 0.05);
-  -webkit-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
-  -moz-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
-  box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+}
+
+.a.board.item {
+  color: #00a99d;
+}
+.a.board.item:hover {
+  background-color: rgba(0, 169, 157, 0.05);
 }
 
 .ui.label.light.gray {
@@ -76,6 +90,60 @@ body {
 
 .ui.secondary.pointing.menu .active.item:after {
   opacity: 0;
+}
+
+.section.in.list {
+  margin: 0 0 1rem 0;
+}
+.section.in.list .action {
+  float: left;
+  margin: 0;
+}
+.section.in.list .action .icon {
+  opacity: 0.3;
+}
+.section.in.list .entry {
+  margin: 0 2rem 0 4rem;
+  padding: 2rem 1rem 2.5rem 1rem;
+}
+.section.in.list .entry .title {
+  color: inherit;
+  padding: 0;
+}
+.section.in.list .entry .title h2 a {
+  display: block;
+  padding: 1rem;
+}
+.section.in.list .entry .title h2 a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.section.in.list .entry .title h2 a .auxiliary.text {
+  margin: 0 0.5rem;
+}
+.section.in.list .entry .info {
+  font-size: 0.9em;
+}
+.section.in.list .entry .info p {
+  opacity: 1;
+}
+.section.in.list .entry .info p .ui.label {
+  font-size: inherit;
+  padding: 0;
+}
+.section.in.list .entry .meta {
+  font-size: 0.9em;
+}
+.section.in.list .entry .meta a {
+  padding: 0 0.5em;
+  color: #29abe2;
+}
+.section.in.list .entry .meta a:hover {
+  color: #0071bc;
+}
+
+.navigation {
+  text-align: center;
+  margin: 0 auto 1rem auto;
 }
 
 #navbar .ui.secondary.pointing.menu {
@@ -112,46 +180,6 @@ body {
 }
 #issues #content {
   margin: 1rem 2rem;
-}
-#issues #content .pages {
-  text-align: center;
-  margin: 0 auto 1rem auto;
-}
-#issues #content .issue .action {
-  float: left;
-}
-#issues #content .issue .action .icon {
-  opacity: 0.3;
-}
-#issues #content .issue .entry {
-  margin: 0 2rem 1rem 4rem;
-}
-#issues #content .issue .entry .title {
-  color: inherit;
-  padding: 0;
-}
-#issues #content .issue .entry .title h2 a {
-  display: block;
-  padding: 1rem;
-}
-#issues #content .issue .entry .title h2 a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-#issues #content .issue .entry .title h2 a .auxiliary.text {
-  margin: 0 0.5rem;
-}
-#issues #content .issue .entry .summary {
-  margin: 2.5rem 0;
-}
-#issues #content .issue .entry .meta {
-  font-size: 0.9rem;
-}
-#issues #content .issue .entry .meta a {
-  padding: 0 0.5em;
-  color: #29abe2;
-}
-#issues #content .issue .entry .meta a:hover {
-  color: #0071bc;
 }
 
 #issue #header .title {
@@ -218,6 +246,9 @@ body {
 }
 #issue #content {
   margin: 1rem 2rem;
+}
+#issue #content .category {
+  margin-bottom: 1rem;
 }
 #issue #content .category .item.active {
   border-color: #8cc63f;

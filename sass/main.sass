@@ -24,15 +24,24 @@ body
   padding: 0
   background-color: rgba(0,0,0,0.03)
 
-.a.tag.item
-  margin: 0 0 0 0.3em
-  padding: 0.3em 0.8rem
+.a.tag.item,
+.a.board.item
+  margin: 0
+  padding: 0.3em 0.7rem
   +box-sizing(border-box)
   +border-radius(0.3rem)
+  &:hover
+    +box-shadow(0 0 1px rgba(#29abe2,0.5))
+
+.a.tag.item
   color: rgba(#29abe2,1)
   &:hover
     background-color: rgba(#29abe2,0.05)
-    +box-shadow(0 0 1px rgba(#29abe2,0.5))
+
+.a.board.item
+  color: rgba(#00a99d,1)
+  &:hover
+    background-color: rgba(#00a99d,0.05)
 
 .ui.label.light.gray
   background-color: rgba(0,0,0,0.05)
@@ -46,7 +55,7 @@ body
     padding-right: 0.5em
     padding-left: 0.5em
 
-.auxiliary.text,
+.auxiliary.text
   font-weight: normal
   font-size: 0.9em
   opacity: 0.6
@@ -61,6 +70,46 @@ body
 .ui.secondary.pointing.menu
   .active.item:after
     opacity: 0
+
+.section.in.list
+  margin: 0 0 1rem 0
+  .action
+    float: left
+    margin: 0
+    .icon
+      opacity: 0.3
+  .entry
+    margin: 0 2rem 0 4rem
+    padding: 2rem 1rem 2.5rem 1rem
+    .title
+      color: inherit
+      padding: 0
+      h2 a
+        display: block
+        padding: 1rem
+        &:hover
+          background-color: rgba(0,0,0,0.05)
+        .auxiliary.text
+          margin: 0 0.5rem
+    .summary
+    .info
+      font-size: 0.9em
+      p
+        opacity: 1
+        .ui.label
+          font-size: inherit
+          padding: 0
+    .meta
+      font-size: 0.9em
+      a
+        padding: 0 0.5em
+        color: #29abe2
+        &:hover
+          color: #0071bc
+
+.navigation
+  text-align: center
+  margin: 0 auto 1rem auto
 
 #navbar
   .ui.secondary.pointing.menu
@@ -85,7 +134,6 @@ body
       font-size: 1.2em
       font-weight: bold
 
-
 #issues
   #menu
     background-color: #fff
@@ -93,38 +141,8 @@ body
       border-color: #8cc63f
   #content
     margin: 1rem 2rem
-    .pages
-      text-align: center
-      margin: 0 auto 1rem auto
-    .issue
-      .action
-        float: left
-        .icon
-          opacity: 0.3
-      .entry
-        margin: 0 2rem 1rem 4rem
-        .title
-          color: inherit
-          padding: 0
-          h2 a
-            display: block
-            padding: 1rem
-            &:hover
-              background-color: rgba(0,0,0,0.05)
-            .auxiliary.text
-              margin: 0 0.5rem
-        .summary
-          margin: 2.5rem 0
-        .meta
-          font-size: 0.9rem
-          a
-            padding: 0 0.5em
-            color: #29abe2
-            &:hover
-              color: #0071bc
 
 #issue
-
   #header
     .title
       padding: 1rem
@@ -171,6 +189,7 @@ body
   #content
     margin: 1rem 2rem
     .category
+      margin-bottom: 1rem
       .item.active
         border-color: #8cc63f
 

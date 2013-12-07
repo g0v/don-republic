@@ -1,0 +1,33 @@
+extends entries
+
+block subtitle
+  | 目前交流現況──台灣業者去大陸在做些什麼／大陸業者來台灣在做些什麼? | 
+
+block body
+
+  #qa
+
+    header#header
+      .ui.segment.title
+        h2 目前交流現況──台灣業者去大陸在做些什麼／大陸業者來台灣在做些什麼?
+        span.action
+          a.button
+            i.icon.star
+            span.count 123
+          a.button
+            i.icon.rss
+            span.count 123
+          a.button
+            i.icon.share.sign
+            span.count 123
+        span.switch
+          a(href="issue-content-summary.html").content 內容
+          a(href="issue-meta-tag.html").meta 資訊
+      block menu
+
+    section#content
+      block content
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
