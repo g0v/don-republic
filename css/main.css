@@ -1,0 +1,123 @@
+html {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.a.tag.item {
+  margin: 0 0 0 0.3em;
+  padding: 0.3em 0.8rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  color: #29abe2;
+}
+.a.tag.item:hover {
+  background-color: rgba(41, 171, 226, 0.05);
+  -webkit-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+  -moz-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+  box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
+}
+
+#index {
+  text-align: center;
+  margin: 5rem auto 2rem;
+  width: 100%;
+  max-width: 1024px;
+}
+#index .entry {
+  padding-bottom: 2rem;
+  margin: 0;
+}
+#index .entry h2 {
+  padding: 1em;
+}
+#index .entry .ui.label.white {
+  background-color: white;
+}
+#index .entry a.tag {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#issue #header .title {
+  padding: 1rem;
+  margin: 0;
+}
+#issue #header .title h2 {
+  display: inline-block;
+  font-size: 2rem;
+}
+#issue #header .title .action {
+  font-size: 1.5rem;
+  position: relative;
+  top: -0.1em;
+}
+#issue #header .title .action .icon {
+  display: inline;
+  margin-left: 1em;
+  padding: 0.2em;
+  color: #dddddd;
+  cursor: pointer;
+}
+#issue #header .title .action .icon:hover {
+  color: #999999;
+}
+#issue #header .title .action .count {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #999999;
+}
+#issue #header .title .switch {
+  float: right;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 2rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+#issue #header .title .switch a {
+  padding: 1rem;
+}
+#issue #header .title .switch .active {
+  background-color: #d9e021;
+}
+#issue #header .menu {
+  margin: 0;
+  background-color: #eeeeee;
+}
+#issue #header .menu .text.label {
+  padding-right: 0;
+  font-size: 0.9rem;
+}
+#issue #content {
+  margin: 2rem;
+}

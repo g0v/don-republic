@@ -1,0 +1,56 @@
+extends issue-content
+
+block menu-right
+  .item.text.label 分類
+  .ui.simple.dropdown.item
+    | 相關性
+    i.dropdown.icon
+    .menu
+      .item.active 相關性
+      .item 標籤
+      .item 看板
+      .item 不分類
+  .item.text.label 排序
+  .ui.simple.dropdown.item
+    | 更新時間
+    i.dropdown.icon
+    .menu
+      .item.active 更新時間
+      .item 瀏覽人次
+      .item 回答數
+      .item 分享數
+      .item 訂閱數
+      .item 收藏數
+      .item 最佳回答評價
+
+block content
+  .category
+    .ui.secondary.pointing.menu.relation
+      a.item.active 追蹤中 (4)
+        //-.menu
+          .item 全部
+          .item 我的訂閱
+          .item 我的發問
+          .item 我的回答
+      a.item 已分享 (3)
+      a.item 已收藏 (10)
+      a.item ...
+      a.item ...
+    .ui.secondary.pointing.menu.tag
+      a.item.active ...
+      a.item ...
+      a.item ...
+      a.item ...
+      a.item ...
+    .ui.secondary.pointing.menu.board
+      a.item.active ...
+      a.item ...
+      a.item ...
+      a.item ...
+      a.item ...
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .qa").addClass("active");

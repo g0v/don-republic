@@ -1,0 +1,31 @@
+extends template
+
+block title
+  | 議題
+
+block body
+
+  #issue
+
+    header#header
+      .ui.segment.title
+        h2
+          a(href="") 兩岸服務貿易協議
+        span.action
+          i.icon.star
+          span.count 123
+          i.icon.rss
+          span.count 123
+          i.icon.share.sign
+          span.count 123
+        span.switch
+          a(href="issue-content-summary.html").content 內容
+          a(href="issue-meta-tag.html").meta 資訊
+      block menu
+
+    section#content
+      block content
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");

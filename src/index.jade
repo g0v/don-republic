@@ -1,19 +1,26 @@
-!!!5
-html
-  include head.jade
-  body
-    include navbar.jade
-    #content
+extends template
 
-      .question.well
-        .desc
-          核融合技術如果發展成熟，核四廠有可能改採核融合嗎？
-        .info
-          span.about 關於
-          span.category 第四核能發電廠 &#xab; 國家能源自主
-      .answer
-        a.btn.btn-link &#xab; 上一題
-        a.btn.btn-info 回答此問題
-        a.btn &#xbb; 下一題
-    script.
-      setMenu(1,1);
+block title
+  | 首頁
+
+block body
+
+  #index
+    .ui.segment.entry
+      .title
+        h2: a(href="") 核融合技術如果發展成熟，核四廠有可能改採核融合嗎？
+      .ui.attached.label.bottom.right.white
+        | 關於
+        a(href="").a.tag.item 第四核能發電廠
+        a(href="").a.tag.item 國家能源自主
+    .ui.buttons.answer
+      a.ui.labeled.icon.button.left
+        i.icon.left
+        | 上一題
+      a.ui.button.green 回答此問題
+      a.ui.labeled.icon.button.right 
+        i.icon.right
+        | 下一題
+
+  script.
+    $("#navbar .home").addClass("active");
