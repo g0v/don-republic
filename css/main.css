@@ -95,6 +95,10 @@ body {
   opacity: 0;
 }
 
+.ui.menu a.ui.button.item:hover {
+  background-color: #a4a4a4;
+}
+
 .section.in.list {
   margin: 0 0 1rem 0;
 }
@@ -152,11 +156,16 @@ body {
 .etherpad {
   margin-bottom: 2rem;
 }
-.etherpad .referral {
+.etherpad .article {
+  margin-left: 5rem;
+  padding-left: 1rem;
+  border-left: 1px #cccccc solid;
+}
+.etherpad .article .referral {
   position: relative;
   padding-right: 1.2em;
 }
-.etherpad .referral .ui.floating.label {
+.etherpad .article .referral .ui.floating.label {
   text-align: center;
   padding: 0;
   line-height: 1.2em;
@@ -164,9 +173,22 @@ body {
   top: 0;
   background: none;
 }
+.etherpad .article p {
+  position: relative;
+}
+.etherpad .article p .contributor {
+  font-size: 0.8em;
+  opacity: 0.8;
+  position: absolute;
+  left: -6rem;
+  width: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .reference {
   margin-left: 2rem;
+  margin-bottom: 2rem;
 }
 .reference .item {
   position: relative;
@@ -178,6 +200,40 @@ body {
 }
 .reference .item .text {
   line-height: 1.5em;
+}
+
+.response {
+  margin-bottom: 2rem;
+}
+.response .ui.comments .comment {
+  margin: 0;
+  padding: 0;
+}
+.response .ui.comments .comment .avatar {
+  width: 2em;
+  height: 2em;
+}
+.response .ui.comments .comment .avatar img {
+  max-width: 2em;
+  max-height: 2em;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+}
+.response .ui.comments .comment .avatar ~ .content {
+  margin-left: 2em;
+}
+.response .ui.comments .comment .avatar ~ .content .ui.form {
+  margin: 0;
+  max-width: 100%;
+}
+.response .ui.comments .comment .avatar ~ .content .ui.form .field {
+  clear: none;
+}
+.response .ui.comments .comment .avatar ~ .content .ui.form .account {
+  margin-left: 1em;
 }
 
 #content .etherpad a:hover,
@@ -223,7 +279,7 @@ body {
   border-color: #8cc63f;
 }
 #issues #content {
-  margin: 1rem 2rem;
+  margin: 1rem;
 }
 
 #issue #header .title {
@@ -292,7 +348,7 @@ body {
   margin-top: 1px;
 }
 #issue #content {
-  margin: 1rem 2rem;
+  margin: 1rem;
 }
 #issue #content .category {
   margin-bottom: 1rem;

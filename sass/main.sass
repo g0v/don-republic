@@ -73,6 +73,10 @@ body
   .active.item:after
     opacity: 0
 
+.ui.menu
+  a.ui.button.item:hover
+    background-color: #a4a4a4
+
 .section.in.list
   margin: 0 0 1rem 0
   .action
@@ -115,19 +119,34 @@ body
 
 .etherpad
   margin-bottom: 2rem
-  .referral
-    position: relative
-    padding-right: 1.2em
-    .ui.floating.label
-      text-align: center
-      padding: 0
-      line-height: 1.2em
-      right: 0
-      top: 0
-      background: none
+  .article
+    margin-left: 5rem
+    padding-left: 1rem
+    border-left: 1px #ccc solid
+    .referral
+      position: relative
+      padding-right: 1.2em
+      .ui.floating.label
+        text-align: center
+        padding: 0
+        line-height: 1.2em
+        right: 0
+        top: 0
+        background: none
+    p
+      position: relative
+      .contributor
+        font-size: 0.8em
+        opacity: 0.8
+        position: absolute
+        left: -6rem
+        width: 5rem
+        overflow: hidden
+        text-overflow: ellipsis
 
 .reference
   margin-left: 2rem
+  margin-bottom: 2rem
   .item
     position: relative
     padding: 0.2em 0
@@ -136,6 +155,28 @@ body
       left: -2rem
     .text
       line-height: 1.5em
+
+.response
+  margin-bottom: 2rem
+  .ui.comments .comment
+    margin: 0
+    padding: 0
+    .avatar
+      width: 2em
+      height: 2em
+      img
+        max-width: 2em
+        max-height: 2em
+        +border-radius(0.3rem)
+      &~.content
+        margin-left: 2em
+        .ui.form
+          margin: 0
+          max-width: 100%
+          .field
+            clear: none
+          .account
+            margin-left: 1em
 
 #content
   .etherpad,
@@ -177,7 +218,7 @@ body
     .item.active
       border-color: #8cc63f
   #content
-    margin: 1rem 2rem
+    margin: 1rem
 
 #issue
   #header
@@ -226,7 +267,7 @@ body
         margin-top: 1px
 
   #content
-    margin: 1rem 2rem
+    margin: 1rem
     .category
       margin-bottom: 1rem
       .item.active
