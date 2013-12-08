@@ -1,14 +1,5 @@
 .section.in.list
-  .ui.vertical.labeled.icon.menu.secondary.action
-    a.item
-      i.icon.star
-      | 100
-    a.item
-      i.icon.rss
-      | 100
-    a.item
-      i.icon.share.sign
-      | 100
+  include action-button-in-list
   .ui.segment.entry
     .ui.attached.label.top.white.title
       h2: a(href="issue-content-intro.html")
@@ -24,9 +15,12 @@
     .ui.attached.label.bottom.light.gray.meta
       | 共 
       a(href="") 13 問答
+      | 、
       a(href="") 22 優缺點
+      | 、
       a(href="") 5 文章
-      | ，
+      br
+      | 由
       a(href="") clkao
       | 、
       a(href="") ipa

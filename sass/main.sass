@@ -49,7 +49,7 @@ body
   color: rgba(0,0,0,0.7)
 
 .ui.label.white
-  background-color: #fff
+  background: none
 
 .ui.menu
   .ui.label.light.gray
@@ -85,7 +85,7 @@ body
       opacity: 0.3
   .entry
     margin: 0 2rem 0 4rem
-    padding: 2rem 1rem 2.5rem 1rem
+    padding: 2rem 1rem 3.5rem 1rem
     .title
       color: inherit
       padding: 0
@@ -105,6 +105,11 @@ body
           font-size: inherit
           padding: 0
     .meta
+      height: 4em
+      line-height: 1.5em
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
       font-size: 0.9em
       a
         padding: 0 0.5em
@@ -199,7 +204,9 @@ body
         .text
           opacity: 1
         .metadata
+          display: inline-block
           float: right
+          font-size: 0.9rem
           a
             color: rgba(0,0,0,0.4)
             padding: 0.3em 0.7em
@@ -295,7 +302,7 @@ body
             opacity: 0.8
           i.icon
             padding: 0.2em
-            opacity: 0.4
+            opacity: 0.3
           .count
             font-size: 1rem
             font-weight: normal

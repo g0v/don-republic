@@ -69,7 +69,7 @@ body {
 }
 
 .ui.label.white {
-  background-color: white;
+  background: none;
 }
 
 .ui.menu .ui.label.light.gray {
@@ -110,7 +110,7 @@ body {
 }
 .section.in.list .entry {
   margin: 0 2rem 0 4rem;
-  padding: 2rem 1rem 2.5rem 1rem;
+  padding: 2rem 1rem 3.5rem 1rem;
 }
 .section.in.list .entry .title {
   color: inherit;
@@ -137,6 +137,11 @@ body {
   padding: 0;
 }
 .section.in.list .entry .meta {
+  height: 4em;
+  line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.9em;
 }
 .section.in.list .entry .meta a {
@@ -258,7 +263,9 @@ body {
   opacity: 1;
 }
 .response .ui.comments .comment .content .metadata {
+  display: inline-block;
   float: right;
+  font-size: 0.9rem;
 }
 .response .ui.comments .comment .content .metadata a {
   color: rgba(0, 0, 0, 0.4);
@@ -379,7 +386,7 @@ body {
 }
 #issue #header .title .action .button i.icon {
   padding: 0.2em;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 #issue #header .title .action .button .count {
   font-size: 1rem;
