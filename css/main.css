@@ -24,7 +24,10 @@ p {
 body {
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.hidden {
+  display: none;
 }
 
 .a.tag.item,
@@ -146,7 +149,45 @@ body {
   margin: 0 auto 1rem auto;
 }
 
+.etherpad {
+  margin-bottom: 2rem;
+}
+.etherpad .referral {
+  position: relative;
+  padding-right: 1.2em;
+}
+.etherpad .referral .ui.floating.label {
+  text-align: center;
+  padding: 0;
+  line-height: 1.2em;
+  right: 0;
+  top: 0;
+  background: none;
+}
+
+.reference {
+  margin-left: 2rem;
+}
+.reference .item {
+  position: relative;
+  padding: 0.2em 0;
+}
+.reference .item a.ui.small.label {
+  position: absolute;
+  left: -2rem;
+}
+.reference .item .text {
+  line-height: 1.5em;
+}
+
+#content .etherpad a:hover,
+#content .reference a:hover,
+#content .response a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 #navbar .ui.secondary.pointing.menu {
+  background-color: rgba(0, 0, 0, 0.03);
   font-weight: bold;
 }
 #navbar .ui.secondary.pointing.menu .item.active {
@@ -154,21 +195,24 @@ body {
 }
 
 #index {
+  padding: 5rem 0 2rem 0;
+}
+#index .index {
   text-align: center;
-  margin: 5rem auto 2rem;
+  margin: 0 auto;
   width: 100%;
   max-width: 1024px;
 }
-#index a.entry {
+#index .index a.entry {
   display: block;
   margin: 0;
 }
-#index a.entry:hover {
+#index .index a.entry:hover {
   -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
-#index a.entry h2 {
+#index .index a.entry h2 {
   padding: 1em;
 }
 
@@ -242,7 +286,10 @@ body {
 }
 #issue #header .menu {
   margin: 0;
-  background-color: #eeeeee;
+  background-color: #efefef;
+}
+#issue #header .menu .ui.button {
+  margin-top: 1px;
 }
 #issue #content {
   margin: 1rem 2rem;

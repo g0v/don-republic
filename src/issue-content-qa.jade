@@ -3,13 +3,13 @@ extends issue-content
 block menu-right
   .item.auxiliary.text 分類
   .ui.simple.dropdown.item
-    | 相關性
+    | 不分類
     i.dropdown.icon
     .menu
-      .item.active 相關性
+      .item.active 不分類
+      .item 相關性
       .item 標籤
       .item 看板
-      .item 不分類
   .item.auxiliary.text 排序
   .ui.simple.dropdown.item
     | 更新時間
@@ -24,7 +24,7 @@ block menu-right
       .item 最高評價
 
 block content
-  .category
+  .category.hidden
     .ui.secondary.pointing.menu.relation
       a.item.active 推薦
         .ui.label.light.gray (22)

@@ -22,7 +22,9 @@ p
 body
   margin: 0
   padding: 0
-  background-color: rgba(0,0,0,0.03)
+
+.hidden
+  display: none
 
 .a.tag.item,
 .a.board.item
@@ -111,28 +113,63 @@ body
   text-align: center
   margin: 0 auto 1rem auto
 
+.etherpad
+  margin-bottom: 2rem
+  .referral
+    position: relative
+    padding-right: 1.2em
+    .ui.floating.label
+      text-align: center
+      padding: 0
+      line-height: 1.2em
+      right: 0
+      top: 0
+      background: none
+
+.reference
+  margin-left: 2rem
+  .item
+    position: relative
+    padding: 0.2em 0
+    a.ui.small.label
+      position: absolute
+      left: -2rem
+    .text
+      line-height: 1.5em
+
+#content
+  .etherpad,
+  .reference,
+  .response
+    a
+      &:hover
+        background-color: rgba(0,0,0,0.05)
+
 #navbar
   .ui.secondary.pointing.menu
+    background-color: rgba(0,0,0,0.03)
     font-weight: bold
     .item.active
       border-color: #00a99d
 
 #index
-  text-align: center
-  margin: 5rem auto 2rem
-  width: 100%
-  max-width: 1024px
-  a.entry    
-    display: block
-    margin: 0
-    &:hover
-      +box-shadow(0 0 0.5rem rgba(0,0,0,0.2))
-    h2
-      padding: 1em
-    //
-      a.tag
-      font-size: 1.2em
-      font-weight: bold
+  padding: 5rem 0 2rem 0
+  .index
+    text-align: center
+    margin: 0 auto
+    width: 100%
+    max-width: 1024px
+    a.entry    
+      display: block
+      margin: 0
+      &:hover
+        +box-shadow(0 0 0.5rem rgba(0,0,0,0.2))
+      h2
+        padding: 1em
+      //
+        a.tag
+        font-size: 1.2em
+        font-weight: bold
 
 #issues
   #menu
@@ -184,7 +221,9 @@ body
           background-color: #d9e021
     .menu
       margin: 0
-      background-color: #eee
+      background-color: #efefef
+      .ui.button
+        margin-top: 1px
 
   #content
     margin: 1rem 2rem
