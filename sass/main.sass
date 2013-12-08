@@ -17,7 +17,6 @@ h1,h2,h3,h4
 p
   line-height: 1.5em
   letter-spacing: 0.07em
-  opacity: 0.8
 
 body
   margin: 0
@@ -136,8 +135,9 @@ body
     p
       position: relative
       .contributor
+        letter-spacing: 0
         font-size: 0.8em
-        opacity: 0.8
+        opacity: 0.7
         position: absolute
         left: -6rem
         width: 5rem
@@ -145,7 +145,9 @@ body
         text-overflow: ellipsis
 
 .reference
-  margin-left: 2rem
+  margin-left: 5rem
+  padding-left: 3rem
+  border-left: 1px #ccc solid
   margin-bottom: 2rem
   .item
     position: relative
@@ -155,21 +157,69 @@ body
       left: -2rem
     .text
       line-height: 1.5em
+    .contributor
+      letter-spacing: 0
+      font-size: 0.8em
+      opacity: 0.7
+      position: absolute
+      left: -8rem
+      width: 5rem
+      overflow: hidden
+      text-overflow: ellipsis
 
 .response
   margin-bottom: 2rem
-  .ui.comments .comment
-    margin: 0
-    padding: 0
-    .avatar
-      width: 2em
-      height: 2em
-      img
-        max-width: 2em
-        max-height: 2em
-        +border-radius(0.3rem)
-      &~.content
-        margin-left: 2em
+  .ui.tabular.menu
+    .description.item
+      padding-left: 0.1em
+  .ui.comments
+    margin-left: 3rem
+    .comment
+      min-height: 3rem
+      margin: 0
+      padding: 0.5rem 0 0 0
+      clear: both
+      .avatar
+        img
+          +border-radius(0.3rem)
+      .comments
+        margin-top: 0
+        padding-top: 0
+      .status
+        position: absolute
+        left: -3rem
+        .ui.menu
+          .item
+            font-size: 0.8rem
+            padding: .5em .8em
+            i.icon
+              opacity: 0.3
+      .content
+        padding-top: 0
+        .text
+          opacity: 1
+        .metadata
+          float: right
+          a
+            color: rgba(0,0,0,0.4)
+            padding: 0.3em 0.7em
+            +border-radius(0.3rem)
+            i.icon
+              opacity: 0.3
+            &:hover
+              color: rgba(0,0,0,0.8)
+          .avatar
+            margin-left: 0.5em
+            opacity: 0.5
+            width: 1em
+            height: 1em
+            float: none
+            display: inline-block
+            position: relative
+            top: 0.1em
+            img
+              max-width: 1em
+              max-height: 1em
         .ui.form
           margin: 0
           max-width: 100%
@@ -177,6 +227,8 @@ body
             clear: none
           .account
             margin-left: 1em
+    .post.comment
+      margin-left: -3rem
 
 #content
   .etherpad,

@@ -12,15 +12,15 @@ block body
 
       .ui.secondary.pointing.menu
         a.item.active 全部
-          .ui.label.light.gray (1k)
+          .ui.label.light.gray 1k
         a.item 推薦
-          .ui.label.light.gray (188)
+          .ui.label.light.gray 188
         a.item 追蹤中
-          .ui.label.light.gray (19)
+          .ui.label.light.gray 19
         a.item 已收藏
-          .ui.label.light.gray (111)
+          .ui.label.light.gray 111
         a.item 邀稿
-          .ui.label.light.gray (3)
+          .ui.label.light.gray 3
         .right.menu
           .item.auxiliary.text 排序
           a.ui.dropdown.item
@@ -40,17 +40,7 @@ block body
 
     #content
 
-      .navigation
-        .ui.pagination.menu
-          a.icon.item.disabled
-            i.icon.left
-          a.item.active 1
-          a.item 2
-          a.item 3
-          a.item 4
-          a.item 5
-          a.icon.item.disabled
-            i.icon.right
+      include navigation
 
       include issue-in-list
       include issue-in-list
@@ -58,17 +48,7 @@ block body
       include issue-in-list
       include issue-in-list
 
-      .navigation
-        .ui.pagination.menu
-          a.icon.item.disabled
-            i.icon.left
-          a.item.active 1
-          a.item 2
-          a.item 3
-          a.item 4
-          a.item 5
-          a.icon.item.disabled
-            i.icon.right
+      include navigation
 
 block script
   script.

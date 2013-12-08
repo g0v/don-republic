@@ -1,7 +1,9 @@
 extends issue-content
 
 block menu-right
-  a(href="#response").ui.right.icon.labeled.button.item 回應
+  a.ui.right.icon.labeled.button.item 引用
+    i.quote.right.icon
+  a(href="#response").ui.right.icon.labeled.button.item 討論
     i.comment.icon
   a.ui.right.icon.labeled.button.item 編輯
     i.edit.sign.icon
@@ -57,6 +59,7 @@ block content
   .reference
     a(name="reference")
     .item
+      span.contributor K.C.Huangggggg
       a(href="#1").ui.small.label 1
       span.text 引自
         a(href="")  ipa 
@@ -65,6 +68,7 @@ block content
         | 」，2013/11/11 發表於
         a(href="")  g0v facebook 粉絲專頁
     .item
+      span.contributor K.C.Huangggggg
       a(href="#2").ui.small.label 2
       span.text 引自
         a(href="")  au 
@@ -73,6 +77,7 @@ block content
         | 」，2013/11/11 發表於
         a(href="") 個人部落格
     .item
+      span.contributor K.C.Huangggggg
       a(href="#3").ui.small.label 3
       span.text 引自
         a(href="")  clkao 
@@ -81,6 +86,7 @@ block content
         | 」，2013/11/11 發表於
         a(href="")  g0v google groups
     .item
+      span.contributor K.C.Huangggggg
       a(href="#4").ui.small.label 4
       span.text 引自
         a(href="")  jedi 
@@ -89,6 +95,7 @@ block content
         | 」，2013/11/11 發表於
         a(href="")  〔問題〕福利請聽查詢範圍包括哪些領域？
     .item
+      span.contributor K.C.Huangggggg
       a(href="#5").ui.small.label 5
       span.text 引自
         a(href="")  tkirby 
@@ -101,6 +108,7 @@ block content
         | 、
         a(href="") 〔專案〕零時傳教士：以 g0v 為主題的文藝創作
     .item
+      span.contributor K.C.Huangggggg
       a(href="#5").ui.small.label 6
       span.text 引自
         a(href="")  kcwu 
@@ -111,44 +119,145 @@ block content
 
   .response
     a(name="response")
-    .ui.minimal.comments
-      .comment
-        a(href="").avatar
-          img(src="https://pbs.twimg.com/profile_images/378800000764656007/257ec7e97d932fb7f082b03d65d2a9ef.jpeg")
-        .content
-          a(href="").author hychen
-          .metadata
-            span.date 2 天前
-          span.actions
-            a.reply 回應
-            a.delete 刪除
-            a.resolved 標註為已解決
-          .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
-        .comments
-          .comment
-            a(href="").avatar
-              img(src="https://lh4.googleusercontent.com/-MEd4WCnxsvM/AAAAAAAAAAI/AAAAAAAAAAA/ug7fUKuanmE/photo.jpg")
-            .content
-              a(href="").author tuiry
-              .metadata
-                span.date 2 天前
-              span.actions
+    .ui.tabular.menu.small
+      .description.item 關與此共筆
+      a.active.item 討論中
+        .ui.label.light.gray 4
+      a.item 已解決
+        .ui.label.light.gray 11
+      a.item 追蹤對象
+        .ui.label.light.gray 7
+      a.item 我的
+        .ui.label.light.gray 1
+      a.item +1
+        .ui.label.light.gray 3
+      a.item 引用
+        .ui.label.light.gray 0
+    .discussing
+      .ui.comments
+        .comment
+          .status
+            .ui.vertical.icon.menu
+              a.item
+                i.arrow.up.icon
+              span.item
+                | 10
+              //-a.item
+                i.arrow.down.icon
+          .content
+            .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
+            .metadata
+              a(href="").author hychen
+                .avatar
+                  img(src="https://pbs.twimg.com/profile_images/378800000764656007/257ec7e97d932fb7f082b03d65d2a9ef.jpeg")
+              .date 2 天前
+              .actions
                 a.reply 回應
-                a.delete 刪除
-                a.resolved 標註為已解決
-              .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
-      .post.comment
-        a(href="").avatar
-          img(src="https://pbs.twimg.com/profile_images/93787198/etb2006.jpg")
-        .content
-          form.ui.reply.form
-            .field
-              textarea
-            .ui.teal.button.submit.labeled.icon
-              i.edit.icon
-              | 發表回應
-            span.account 以 ETBlue 的身份發表。
-            a.ui.small.button 切換身份…
+                  i.reply.mail.icon
+                a.quote 引用
+                  i.quote.right.icon
+                a.resolved 標註解決
+                  i.checkmark.icon
+                a.quote 檢舉
+                  i.flag.icon
+                //-a.delete 刪除
+                  i.remove.icon
+          .comments
+            .comment
+              .status
+                .ui.vertical.icon.menu
+                  a.item
+                    i.arrow.up.icon
+                  span.item
+                    | 10
+                  //-a.item
+                    i.arrow.down.icon
+              .content
+                .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
+                .metadata
+                  a(href="").author tuiry
+                    .avatar
+                      img(src="https://lh4.googleusercontent.com/-MEd4WCnxsvM/AAAAAAAAAAI/AAAAAAAAAAA/ug7fUKuanmE/photo.jpg")
+                  .date 2 天前
+                  .actions
+                    a.reply 回應
+                      i.reply.mail.icon
+                    a.quote 引用
+                      i.quote.right.icon
+                    a.resolved 標註解決
+                      i.checkmark.icon
+                    a.flag 檢舉
+                      i.flag.icon
+            .comment
+              .status
+                .ui.vertical.icon.menu
+                  a.item
+                    i.arrow.up.icon
+                  span.item
+                    | 10
+                  //-a.item
+                    i.arrow.down.icon
+              .content
+                .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
+                .metadata
+                  a(href="").author jimyhuang
+                    .avatar
+                      img(src="https://2.gravatar.com/avatar/525ca58b0699ee05f4c876c7b45b60ae?d=https%3A%2F%2Fidenticons.github.com%2F8a1e41747e8d6b652e0d46c8b862460c.png")
+                  .date 2 天前
+                  .actions
+                    a.reply 回應
+                      i.reply.mail.icon
+                    a.quote 引用
+                      i.quote.right.icon
+                    a.resolved 標註解決
+                      i.checkmark.icon
+                    a.flag 檢舉
+                      i.flag.icon
+        .comment
+          .status
+            .ui.vertical.icon.menu
+              a.item
+                i.arrow.up.icon
+              span.item
+                | 10
+              //-a.item
+                i.arrow.down.icon
+          .content
+            .text 鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。鄉民做伙來關啊關心您，真正怨嘆你無義，放阮孤單寫程式，半暝未爽心稀微啊心稀微。
+            .metadata
+              a(href="").author caasi
+                .avatar
+                  img(src="https://pbs.twimg.com/profile_images/378800000796520070/e2e9019c7473f04e97c605edb674bfae.png")
+              .date 2 天前
+              .actions
+                a.reply 回應
+                  i.reply.mail.icon
+                a.quote 引用
+                  i.quote.right.icon
+                a.resolved 標註解決
+                  i.checkmark.icon
+                a.flag 檢舉
+                  i.flag.icon
+    .resolved
+    .following
+    .my
+    .upvotes
+    .downvotes
+    .quotes
+    .new
+      .ui.comments
+        .post.comment
+          a(href="").avatar
+            img(src="https://2.gravatar.com/avatar/c9dbd97e2e3a7b00639bab0e111c2be6?d=https%3A%2F%2Fidenticons.github.com%2F07cc0bfcdfb6597e7fde5b2c1778a2a9.png")
+          .content
+            form.ui.reply.form
+              .field
+                textarea
+              .ui.teal.button.submit.right.labeled.icon
+                i.add.icon
+                | 發起討論
+              span.account 以 ETBlue 的身份發表。
+              a.ui.small.button 切換身份…
     
 block script
   script.
