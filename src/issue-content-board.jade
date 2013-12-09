@@ -1,0 +1,32 @@
+extends issue-content
+
+block menu-right
+  include -sort-menu
+
+block content
+
+  .category
+    .ui.secondary.pointing.menu
+      a(href="issue-content-board-parent.html").item.parent 父議題
+        .ui.label.light.gray 1
+      a(href="issue-content-board-child.html").item.child 子議題
+        .ui.label.light.gray 9
+      a(href="issue-content-board-similiar.html").item.similiar 相近議題
+        .ui.label.light.gray 3
+      a(href="issue-content-board-proposal.html").item.proposal 相關的提案
+        .ui.label.light.gray 2
+      a(href="issue-content-board-project.html").item.project 相關的專案
+        .ui.label.light.gray 10
+      .right.menu
+        .ui.icon.right.labeled.button.small 新增
+          i.icon.add
+
+  block list
+
+  include -navigation
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header>.menu>.board").addClass("active");

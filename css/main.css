@@ -78,6 +78,12 @@ p {
   padding-left: 0.5em;
 }
 
+.auxiliary.text {
+  font-weight: normal;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
 .section.in.list {
   margin: 0 1rem 1rem 0;
 }
@@ -425,4 +431,73 @@ p {
 }
 #issue #content .category .item.active {
   border-color: #8cc63f;
+}
+#issue #content .report {
+  margin: 0 0.5rem;
+}
+#issue #content .report .column {
+  margin: 0;
+  padding: 0;
+}
+#issue #content .report .column .ui.segment {
+  display: block;
+  margin: 0 0.5rem;
+  height: 18rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+#issue #content .report .column .ui.segment.active, #issue #content .report .column .ui.segment:hover {
+  opacity: 1;
+  background-color: white;
+}
+#issue #content .report .column .ui.segment:hover {
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+#issue #content .report .column .ui.segment.active {
+  -webkit-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+}
+#issue #content .report .column .ui.segment.active:hover {
+  -webkit-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+}
+#issue #content .report .column .ui.segment .title {
+  color: white;
+}
+#issue #content .report .column .ui.segment .title.yellow {
+  background-color: #ff931e;
+}
+#issue #content .report .column .ui.segment .title.emergency {
+  background-color: #ff7bac;
+}
+#issue #content .report .column .ui.segment .text {
+  text-align: left;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#issue #content .report .column .ui.segment .text .item {
+  padding: 0.25rem 0;
+}
+#issue #content .report .column .ui.segment .buttons {
+  padding: 0;
+}
+#issue #content .report .column .ui.segment .buttons .ui.button {
+  width: 50%;
+}
+#issue #content .report .option.button {
+  max-width: 20rem;
+  margin: 1rem auto;
+}
+#issue #content .report .ui.horizontal.divider {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+#issue #content .report .ui.horizontal.divider:before, #issue #content .report .ui.horizontal.divider:after {
+  width: 48%;
 }

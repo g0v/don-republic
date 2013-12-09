@@ -1,0 +1,19 @@
+extends issue-content-board
+
+block list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+  include -issue-in-list
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header>.menu>.board").addClass("active");
+    $("#content>.category .child").addClass("active");

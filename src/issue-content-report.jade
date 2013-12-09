@@ -1,0 +1,144 @@
+extends issue-content
+
+block menu-right
+
+block content
+  .report
+
+    .ui.two.column.stackable.grid
+      .column
+        .ui.two.column.grid
+          .column
+            a(href="").ui.segment
+              .ui.top.attached.label.orange.title
+                h2 十分鐘急救包
+              .text
+                .item
+                  i.icon.checked.checkmark.green
+                  | 簡介
+                .item
+                  i.icon.checked.checkmark.green
+                  | 3 問與答
+                .item
+                  i.icon.checked.checkmark.green
+                  | 3 正與反
+                .item
+                  i.icon.checked.checkmark.green
+                  | 3 文章
+              .ui.bottom.attached.label.buttons
+                .ui.icon.labeled.button.right 預覽
+                  i.icon.unhide
+                .ui.icon.right.labeled.button 下載
+                  i.icon.download.disk
+          .column
+            a(href="").ui.segment
+              .ui.top.attached.label.yellow.title
+                h2 一小時咖啡包
+              .text
+                .item
+                  i.icon.checked.checkmark.green
+                  | 簡介
+                .item
+                  i.icon.checked.checkmark.green
+                  | 10 問與答
+                .item
+                  i.icon.checked.checkmark.green
+                  | 10 正與反
+                .item
+                  i.icon.checked.checkmark.green
+                  | 10 文章
+                .item
+                  i.icon.checked.checkmark.green
+                  | 5 標籤
+              .ui.bottom.attached.label.buttons
+                .ui.icon.labeled.button.right 預覽
+                  i.icon.unhide
+                .ui.icon.right.labeled.button 下載
+                  i.icon.download.disk
+      .column
+        .ui.two.column.grid
+          .column
+            a(href="").ui.segment
+              .ui.top.attached.label.green.title
+                h2 一日遠足包
+              .text
+                .item
+                  i.icon.checked.checkmark.green
+                  | 簡介
+                .item
+                  i.icon.checked.checkmark.green
+                  | 50 問與答
+                .item
+                  i.icon.checked.checkmark.green
+                  | 50 正與反
+                .item
+                  i.icon.checked.checkmark.green
+                  | 50 文章
+                .item
+                  i.icon.checked.checkmark.green
+                  | 25 標籤
+                .item
+                  i.icon.checked.checkmark.green
+                  | 10 看板
+              .ui.bottom.attached.label.buttons
+                .ui.icon.labeled.button.right 預覽
+                  i.icon.unhide
+                .ui.icon.right.labeled.button 下載
+                  i.icon.download.disk
+          .column
+            a(href="").ui.segment
+              .ui.top.attached.label.teal.title
+                h2 一週度假包
+              .text
+                .item
+                  i.icon.checked.checkmark.green
+                  | 簡介
+                .item
+                  i.icon.checked.checkmark.green
+                  | 100 問與答
+                .item
+                  i.icon.checked.checkmark.green
+                  | 100 正與反
+                .item
+                  i.icon.checked.checkmark.green
+                  | 100 文章
+                .item
+                  i.icon.checked.checkmark.green
+                  | 50 標籤
+                .item
+                  i.icon.checked.checkmark.green
+                  | 25 看板
+              .ui.bottom.attached.label.buttons
+                .ui.icon.labeled.button.right 預覽
+                  i.icon.unhide
+                .ui.icon.right.labeled.button 下載
+                  i.icon.download.disk
+
+
+    .option.button
+      .more.hidden
+        .ui.small.fluid.labeled.right.icon.button 更多選項
+          i.icon.arrow.down
+      .less.hidden
+        .ui.small.fluid.labeled.right.icon.button 較少選項
+          i.icon.arrow.up
+    .options.hidden
+      .ui.horizontal.divider 選擇排序
+
+.note.hidden
+  p WIP 筆記
+  p 自訂：
+  p 採用別人的匯出設定
+  p 採用不同的分類方式決定entry範圍（全部、推薦的、訂閱的、收藏的、…）
+  p 採用不同的排序方式決定entry排名（最多瀏覽、最多訂閱、最多收藏、最佳評價…）
+  p 手動指定entry、調整大綱
+  p 設定每則entry內容的顯示層級（僅wiki或包括前幾名最佳回答）
+    
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .report").addClass("active");
+    $("#content .report .option.button .ui.button").on('click tap',function(){
+      $("#content .report .option.button .more, #content .report .option.button .less, #content .report .options").toggle();
+    })

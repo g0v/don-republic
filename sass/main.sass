@@ -61,12 +61,13 @@ p
     padding-right: 0.5em
     padding-left: 0.5em
 
-// customize text description item in menus, not using
-  .auxiliary.text
-    font-weight: normal
-    font-size: 0.9em
-    opacity: 0.6
+// customize text description globally
+.auxiliary.text
+  font-weight: normal
+  font-size: 0.9em
+  opacity: 0.6
 
+// customize text description item in menus, not in use
   .ui.menu,
   .ui.secondary.pointing.menu,
   .ui.secondary.pointing.menu>.menu
@@ -354,4 +355,53 @@ p
       margin-bottom: 1rem
       .item.active
         border-color: #8cc63f
+    .report
+      margin: 0 0.5rem
+      .column
+        margin: 0
+        padding: 0
+        .ui.segment
+          display: block
+          margin: 0 0.5rem
+          height: 18rem
+          text-align: center
+          background-color: rgba(0,0,0,0.03)
+          &.active,
+          &:hover
+            opacity: 1
+            background-color: #fff
+          &:hover
+            +box-shadow(0 0 0.5rem rgba(0,0,0,0.3))
+          &.active
+            +box-shadow(0 0 1px rgba(0,0,0,1))
+            &:hover
+              +box-shadow(0 0 1px rgba(0,0,0,1))
+          .title
+            color: white
+            &.yellow
+              background-color: #ff931e
+            &.emergency
+              background-color: #ff7bac
+          .text
+            text-align: left
+            display: inline-block
+            margin-left: auto
+            margin-right: auto
+            .item
+              padding: 0.25rem 0
+          .buttons
+            padding: 0
+            .ui.button
+              width: 50%
+      .option.button
+        max-width: 20rem
+        margin: 1rem auto
+      .ui.horizontal.divider
+        font-size: 1rem
+        font-weight: bold
+        color: rgba(0,0,0,0.5)
+        &:before,
+        &:after
+          width: 48%
+
 

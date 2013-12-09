@@ -1,0 +1,12 @@
+extends issue-content-board
+
+block list
+  include -proposal-in-list
+  include -proposal-in-list
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header>.menu>.board").addClass("active");
+    $("#content>.category .proposal").addClass("active");
