@@ -82,9 +82,11 @@ p {
   background: none;
 }
 
-.ui.menu .ui.label.light.gray {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
+.ui.menu .ui.label {
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  position: relative;
+  top: -0.1em;
 }
 
 .auxiliary.text {
