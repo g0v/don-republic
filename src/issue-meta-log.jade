@@ -1,0 +1,13 @@
+extends issue-meta
+
+block menu-right
+
+block content
+
+  include -navigation
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .meta").addClass("active");
+    $("#header>.menu>.log").addClass("active");

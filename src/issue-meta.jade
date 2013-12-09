@@ -1,0 +1,16 @@
+extends issue
+
+block menu
+  .ui.menu.borderless
+    a(href="issue-meta-log.html").item.log 紀錄
+    a(href="issue-meta-statistic.html").item.statistic 統計
+    a(href="issue-meta-follower.html").item.follower 訂閱者
+    a(href="issue-meta-coordinator.html").item.coordinator 協調人
+    a(href="issue-meta-discussion.html").item.discussion 管理
+    .right.menu
+      block menu-right
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .meta").addClass("active");
