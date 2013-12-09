@@ -487,6 +487,8 @@ p {
   padding: 0;
 }
 #issue #content .report .column .ui.segment .buttons .ui.button {
+  padding-left: 0 !important;
+  padding-right: 2.6em !important;
   width: 50%;
 }
 #issue #content .report .option.button {
