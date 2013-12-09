@@ -2,11 +2,11 @@ extends _template
 
 block title
   block subtitle
-  | 內容 
+  | 專案 
 
 block body
 
-  #entries
+  #projects
 
     #menu
 
@@ -17,42 +17,34 @@ block body
           .ui.label.light.gray 188
         a.item 訂閱中
           .ui.label.light.gray 19
-        a.item 發表
+        a.item 執行
           .ui.label.light.gray 1
-        a.item 回應
+        a.item 參與討論
           .ui.label.light.gray 3
         a.item 引用
           .ui.label.light.gray 2
         a.item 收藏
           .ui.label.light.gray 10
-        a.item 邀稿
+        a.item 邀請
           .ui.label.light.gray 3
         .right.menu
           include -sort-menu
           .ui.icon.right.labeled.button.small
             i.icon.plus
-            | 發表
+            | 新專案
 
     #content
 
-      .ui.tabular.menu
-        a.item.active 所有類型
-          .ui.label.light.gray 30
-        a.item 問與答
-          .ui.label.light.gray 10
-        a.item 正與反
-          .ui.label.light.gray 10
-        a.item 文章
-          .ui.label.light.gray 10
+      include -navigation
 
-      include -qa-in-list
-      include -qa-in-list
-      include -qa-in-list
-      include -qa-in-list
-      include -qa-in-list
+      include -project-in-list
+      include -project-in-list
+      include -project-in-list
+      include -project-in-list
+      include -project-in-list
 
       include -navigation
 
 block script
   script.
-    $("#navbar .entry").addClass("active");
+    $("#navbar .project").addClass("active");

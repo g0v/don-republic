@@ -1,0 +1,37 @@
+extends _template
+
+block title
+  block subtitle
+  | 公民列表 
+
+block body
+
+  #users
+
+    #menu
+
+      .ui.secondary.pointing.menu
+        a.item 全部
+          .ui.label.light.gray 1k
+        a.item.active 推薦
+          .ui.label.light.gray 188
+        a.item 跟隨中
+          .ui.label.light.gray 6
+        a.item 跟隨我的
+          .ui.label.light.gray 2
+        a.item 已收藏
+          .ui.label.light.gray 10
+        a.item 已封鎖
+          .ui.label.light.gray 3
+        a.item 已檢舉
+          .ui.label.light.gray 3
+        .right.menu
+
+    #content
+
+
+      include -navigation
+
+block script
+  script.
+    $("#navbar .user").addClass("active");

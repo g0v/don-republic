@@ -345,13 +345,28 @@ p {
   padding: 1em;
 }
 
-#issues #menu {
+#issues #menu,
+#proposals #menu,
+#projects #menu,
+#entries #menu,
+#tags #menu,
+#users #menu {
   background-color: white;
 }
-#issues #menu .item.active {
+#issues #menu .item.active,
+#proposals #menu .item.active,
+#projects #menu .item.active,
+#entries #menu .item.active,
+#tags #menu .item.active,
+#users #menu .item.active {
   border-color: #8cc63f;
 }
-#issues #content {
+#issues #content,
+#proposals #content,
+#projects #content,
+#entries #content,
+#tags #content,
+#users #content {
   margin: 1rem;
 }
 
