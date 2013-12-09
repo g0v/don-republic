@@ -1,4 +1,4 @@
-extends template
+extends _template
 
 block title
   block subtitle
@@ -40,35 +40,15 @@ block body
 
     #content
 
-      .navigation
-        .ui.pagination.menu
-          a.icon.item.disabled
-            i.icon.left
-          a.item.active 1
-          a.item 2
-          a.item 3
-          a.item 4
-          a.item 5
-          a.icon.item.disabled
-            i.icon.right
+      include -navigation
 
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
 
-      .navigation
-        .ui.pagination.menu
-          a.icon.item.disabled
-            i.icon.left
-          a.item.active 1
-          a.item 2
-          a.item 3
-          a.item 4
-          a.item 5
-          a.icon.item.disabled
-            i.icon.right
+      include -navigation
 
 block script
   script.

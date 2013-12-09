@@ -1,37 +1,23 @@
 extends issue-content
 
 block menu-right
-  include entry-list-menu-right
+  include -entry-list-menu-right
 
 block content
-  .category.hidden
-    .ui.secondary.pointing.menu.relation
-      a.item.active 推薦
-        .ui.label.light.gray 22
-      a.item 追蹤中
-        .ui.label.light.gray 4
-        //-.menu
-          .item 全部
-          .item 我的訂閱
-          .item 我的發問
-          .item 我的回答
-      a.item 已收藏
-        .ui.label.light.gray 10
-      a.item 邀稿
-        .ui.label.light.gray 3
+  include -content-category-menu
 
-  include article-in-list
-  include article-in-list
-  include article-in-list
-  include article-in-list
-  include article-in-list
-  include article-in-list
-  include article-in-list
+  include -article-in-list
+  include -article-in-list
+  include -article-in-list
+  include -article-in-list
+  include -article-in-list
+  include -article-in-list
+  include -article-in-list
 
-  include navigation
+  include -navigation
 
 block script
   script.
     $("#navbar .issue").addClass("active");
     $("#header .switch .content").addClass("active");
-    $("#header .menu .article").addClass("active");
+    $("#header>.menu>.article").addClass("active");

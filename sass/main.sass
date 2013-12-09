@@ -14,10 +14,6 @@ h1,h2,h3,h4
   padding: 0
   line-height: 1em
 
-p
-  line-height: 1.5em
-  letter-spacing: 0.07em
-
 body
   margin: 0
   padding: 0
@@ -25,8 +21,15 @@ body
 .hidden
   display: none
 
+// make paragraphs easy to read
+p
+  line-height: 1.5em
+  letter-spacing: 0.07em
+
+// global settings for this system
 .a.tag.item,
 .a.board.item
+  display: inline-block
   margin: 0
   padding: 0.3em 0.7rem
   +box-sizing(border-box)
@@ -44,6 +47,7 @@ body
   &:hover
     background-color: rgba(#00a99d,0.05)
 
+// add customized semantic ui label colors
 .ui.label.light.gray
   background-color: rgba(0,0,0,0.05)
   color: rgba(0,0,0,0.7)
@@ -51,77 +55,86 @@ body
 .ui.label.white
   background: none
 
+// customize number count label in menus
 .ui.menu
   .ui.label.light.gray
     padding-right: 0.5em
     padding-left: 0.5em
 
-.auxiliary.text
-  font-weight: normal
-  font-size: 0.9em
-  opacity: 0.6
-
-.ui.menu,
-.ui.secondary.pointing.menu,
-.ui.secondary.pointing.menu>.menu
+// customize text description item in menus, not using
   .auxiliary.text
-    padding-right: 0
-    font-size: 0.9rem
+    font-weight: normal
+    font-size: 0.9em
+    opacity: 0.6
 
-.ui.secondary.pointing.menu
-  .active.item:after
-    opacity: 0
+  .ui.menu,
+  .ui.secondary.pointing.menu,
+  .ui.secondary.pointing.menu>.menu
+    .auxiliary.text
+      padding-right: 0
+      font-size: 0.9rem
 
-.ui.menu
-  a.ui.button.item:hover
-    background-color: #a4a4a4
-
+// the repeatable items in a list view
 .section.in.list
-  margin: 0 0 1rem 0
-  .action
+  margin: 0 1rem 1rem 0
+  &>.entry,
+  &>.tag
+    margin: 0 1rem 0 4rem
+    padding: 2rem 1rem 3.5rem 1rem
+  &>.action
     float: left
     margin: 0
     .icon
       opacity: 0.3
-  .entry
-    margin: 0 2rem 0 4rem
-    padding: 2rem 1rem 3.5rem 1rem
-    .title
-      color: inherit
-      padding: 0
-      h2 a
-        display: block
-        padding: 1rem
-        &:hover
-          background-color: rgba(0,0,0,0.05)
-        .auxiliary.text
-          margin: 0 0.5rem
-    .summary
-    .info
-      font-size: 0.9em
-      p
-        opacity: 1
-        .ui.label
-          font-size: inherit
-          padding: 0
-    .meta
-      height: 3.5em
-      padding: 0.25em 1em
-      line-height: 1.5em
-      white-space: nowrap
-      overflow: hidden
-      text-overflow: ellipsis
-      font-size: 0.9em
-      a
-        padding: 0 0.5em
-        color: #29abe2
-        &:hover
-          color: #0071bc
+  .title
+    color: inherit
+    padding: 0
+    h2 a
+      display: block
+      padding: 1rem
+      &:hover
+        background-color: rgba(0,0,0,0.05)
+      .auxiliary.text
+        margin: 0 0.5rem
+  .summary
+  .info
+    font-size: 0.9em
+    p
+      position: relative
+      margin-left: 3em
+      opacity: 1
+      .ui.label
+        position: absolute
+        left: -3em
+        font-size: inherit
+        padding-left: 0
+  .meta
+    height: 3.5em
+    padding: 0.25em 1em
+    line-height: 1.5em
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 0.9em
+    a
+      padding: 0 0.5em
+      color: #29abe2
+      &:hover
+        color: #0071bc
 
+// customize semantic ui stackable grids for tag list view
+.ui.two.column.stackable.grid.tag
+  margin: 0
+  .column
+    margin: 0
+    padding: 0
+
+// set position for pagination menus
 .navigation
   text-align: center
   margin: 0 auto 1rem auto
 
+// wiki
 .etherpad
   margin-bottom: 2rem
   .article
@@ -150,6 +163,7 @@ body
         overflow: hidden
         text-overflow: ellipsis
 
+// reference for wiki
 .reference
   margin-left: 5rem
   padding-left: 3rem
@@ -173,6 +187,7 @@ body
       overflow: hidden
       text-overflow: ellipsis
 
+//response for wiki
 .response
   margin-bottom: 2rem
   .ui.tabular.menu
@@ -238,6 +253,7 @@ body
     .post.comment
       margin-left: -3rem
 
+// links in a wiki
 #content
   .etherpad,
   .reference,
@@ -246,6 +262,7 @@ body
       &:hover
         background-color: rgba(0,0,0,0.05)
 
+// the grand global navbar
 #navbar
   .ui.secondary.pointing.menu
     background-color: rgba(0,0,0,0.03)
@@ -253,6 +270,7 @@ body
     .item.active
       border-color: #00a99d
 
+// the lovely homepage
 #index
   padding: 5rem 0 2rem 0
   .index
@@ -272,6 +290,7 @@ body
         font-size: 1.2em
         font-weight: bold
 
+// issue list page
 #issues
   #menu
     background-color: #fff
@@ -280,6 +299,7 @@ body
   #content
     margin: 1rem
 
+// single issue page
 #issue
   #header
     .title
@@ -318,8 +338,10 @@ body
         overflow: hidden
         a
           padding: 1rem
-        .active
-          background-color: #d9e021
+          &:hover
+            background-color: rgba(#d9e021,0.2)
+          &.active
+            background-color: #d9e021
     .menu
       margin: 0
       background-color: #efefef

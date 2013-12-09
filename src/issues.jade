@@ -1,4 +1,4 @@
-extends template
+extends _template
 
 block title
   block subtitle
@@ -15,7 +15,7 @@ block body
           .ui.label.light.gray 1k
         a.item 推薦
           .ui.label.light.gray 188
-        a.item 追蹤中
+        a.item 訂閱中
           .ui.label.light.gray 19
         a.item 已收藏
           .ui.label.light.gray 111
@@ -23,32 +23,22 @@ block body
           .ui.label.light.gray 3
         .right.menu
           //-.item.auxiliary.text 排序
-          a.ui.dropdown.item
-            | 最近更新
-            i.dropdown.icon
-            .menu
-              .item.active 最近更新
-              .item 最多內容
-              .item 最多次瀏覽
-              .item 最多人收藏
-              .item 最多人追蹤
-              .item 最多人分享
-              .item 最高內容評價
+          include -sort-menu
           .ui.icon.right.labeled.button.small
             i.icon.plus
             | 新議題
 
     #content
 
-      include navigation
+      include -navigation
 
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
-      include issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
+      include -issue-in-list
 
-      include navigation
+      include -navigation
 
 block script
   script.

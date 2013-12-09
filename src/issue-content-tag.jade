@@ -1,0 +1,36 @@
+extends issue-content
+
+block menu-right
+  include -sort-menu
+
+block content
+
+  .ui.two.column.stackable.grid.tag
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+    .column
+      include -tag-in-list
+
+  include -navigation
+
+block script
+  script.
+    $("#navbar .issue").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header>.menu>.tag").addClass("active");

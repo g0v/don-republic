@@ -15,11 +15,6 @@ h1, h2, h3, h4 {
   line-height: 1em;
 }
 
-p {
-  line-height: 1.5em;
-  letter-spacing: 0.07em;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -29,8 +24,14 @@ body {
   display: none;
 }
 
+p {
+  line-height: 1.5em;
+  letter-spacing: 0.07em;
+}
+
 .a.tag.item,
 .a.board.item {
+  display: inline-block;
   margin: 0;
   padding: 0.3em 0.7rem;
   -webkit-box-sizing: border-box;
@@ -77,66 +78,49 @@ body {
   padding-left: 0.5em;
 }
 
-.auxiliary.text {
-  font-weight: normal;
-  font-size: 0.9em;
-  opacity: 0.6;
-}
-
-.ui.menu .auxiliary.text,
-.ui.secondary.pointing.menu .auxiliary.text,
-.ui.secondary.pointing.menu > .menu .auxiliary.text {
-  padding-right: 0;
-  font-size: 0.9rem;
-}
-
-.ui.secondary.pointing.menu .active.item:after {
-  opacity: 0;
-}
-
-.ui.menu a.ui.button.item:hover {
-  background-color: #a4a4a4;
-}
-
 .section.in.list {
-  margin: 0 0 1rem 0;
+  margin: 0 1rem 1rem 0;
 }
-.section.in.list .action {
+.section.in.list > .entry, .section.in.list > .tag {
+  margin: 0 1rem 0 4rem;
+  padding: 2rem 1rem 3.5rem 1rem;
+}
+.section.in.list > .action {
   float: left;
   margin: 0;
 }
-.section.in.list .action .icon {
+.section.in.list > .action .icon {
   opacity: 0.3;
 }
-.section.in.list .entry {
-  margin: 0 2rem 0 4rem;
-  padding: 2rem 1rem 3.5rem 1rem;
-}
-.section.in.list .entry .title {
+.section.in.list .title {
   color: inherit;
   padding: 0;
 }
-.section.in.list .entry .title h2 a {
+.section.in.list .title h2 a {
   display: block;
   padding: 1rem;
 }
-.section.in.list .entry .title h2 a:hover {
+.section.in.list .title h2 a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.section.in.list .entry .title h2 a .auxiliary.text {
+.section.in.list .title h2 a .auxiliary.text {
   margin: 0 0.5rem;
 }
-.section.in.list .entry .info {
+.section.in.list .info {
   font-size: 0.9em;
 }
-.section.in.list .entry .info p {
+.section.in.list .info p {
+  position: relative;
+  margin-left: 3em;
   opacity: 1;
 }
-.section.in.list .entry .info p .ui.label {
+.section.in.list .info p .ui.label {
+  position: absolute;
+  left: -3em;
   font-size: inherit;
-  padding: 0;
+  padding-left: 0;
 }
-.section.in.list .entry .meta {
+.section.in.list .meta {
   height: 3.5em;
   padding: 0.25em 1em;
   line-height: 1.5em;
@@ -145,12 +129,20 @@ body {
   text-overflow: ellipsis;
   font-size: 0.9em;
 }
-.section.in.list .entry .meta a {
+.section.in.list .meta a {
   padding: 0 0.5em;
   color: #29abe2;
 }
-.section.in.list .entry .meta a:hover {
+.section.in.list .meta a:hover {
   color: #0071bc;
+}
+
+.ui.two.column.stackable.grid.tag {
+  margin: 0;
+}
+.ui.two.column.stackable.grid.tag .column {
+  margin: 0;
+  padding: 0;
 }
 
 .navigation {
@@ -412,7 +404,10 @@ body {
 #issue #header .title .switch a {
   padding: 1rem;
 }
-#issue #header .title .switch .active {
+#issue #header .title .switch a:hover {
+  background-color: rgba(217, 224, 33, 0.2);
+}
+#issue #header .title .switch a.active {
   background-color: #d9e021;
 }
 #issue #header .menu {
