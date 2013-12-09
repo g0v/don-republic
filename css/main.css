@@ -137,7 +137,8 @@ body {
   padding: 0;
 }
 .section.in.list .entry .meta {
-  height: 4em;
+  height: 3.5em;
+  padding: 0.25em 1em;
   line-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
