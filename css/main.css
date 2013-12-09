@@ -30,10 +30,11 @@ p {
 }
 
 .a.tag.item,
-.a.board.item {
+.a.board.item,
+.a.user.item {
   display: inline-block;
   margin: 0;
-  padding: 0.3em 0.7rem;
+  padding: 0.25em 0.5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -44,7 +45,8 @@ p {
   border-radius: 0.3rem;
 }
 .a.tag.item:hover,
-.a.board.item:hover {
+.a.board.item:hover,
+.a.user.item:hover {
   -webkit-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
   -moz-box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
   box-shadow: 0 0 1px rgba(41, 171, 226, 0.5);
@@ -62,6 +64,13 @@ p {
 }
 .a.board.item:hover {
   background-color: rgba(0, 169, 157, 0.05);
+}
+
+.a.user.item {
+  color: #ff7bac;
+}
+.a.user.item:hover {
+  background-color: rgba(255, 123, 172, 0.05);
 }
 
 .ui.label.light.gray {
@@ -87,9 +96,43 @@ p {
 .section.in.list {
   margin: 0 1rem 1rem 0;
 }
-.section.in.list > .entry, .section.in.list > .tag {
+.section.in.list > .entry, .section.in.list > .tag, .section.in.list > .user {
   margin: 0 1rem 0 4rem;
+}
+.section.in.list > .entry, .section.in.list > .tag {
   padding: 2rem 1rem 3.5rem 1rem;
+}
+.section.in.list > .user {
+  padding: 1rem 1rem 3.5rem 1rem;
+}
+.section.in.list > .user .name {
+  float: left;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.section.in.list > .user .name .reputation {
+  padding: 1em 0;
+  color: #a67c52;
+}
+.section.in.list > .user .name .reputation i.icon {
+  color: #f7931e;
+}
+.section.in.list > .user .description {
+  margin-left: 6rem;
+}
+.section.in.list > .user .description h2 a {
+  display: block;
+  font-size: 1rem;
+  margin: -0.5em 0 0.5rem -0.5em;
+  padding: 0.5em;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+}
+.section.in.list > .user .description h2 a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .section.in.list > .action {
   float: left;
@@ -117,14 +160,15 @@ p {
 }
 .section.in.list .info p {
   position: relative;
-  margin-left: 3em;
-  opacity: 1;
+  margin: 0 0 0.5em 3em;
+  line-height: 1.5em;
 }
 .section.in.list .info p .ui.label {
+  margin: 0;
+  padding: 0.25em 0.5em 0.25em 0;
   position: absolute;
   left: -3em;
   font-size: inherit;
-  padding-left: 0;
 }
 .section.in.list .meta {
   height: 3.5em;

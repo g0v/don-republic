@@ -28,10 +28,11 @@ p
 
 // global settings for this system
 .a.tag.item,
-.a.board.item
+.a.board.item,
+.a.user.item
   display: inline-block
   margin: 0
-  padding: 0.3em 0.7rem
+  padding: 0.25em 0.5em
   +box-sizing(border-box)
   +border-radius(0.3rem)
   &:hover
@@ -46,6 +47,11 @@ p
   color: rgba(#00a99d,1)
   &:hover
     background-color: rgba(#00a99d,0.05)
+
+.a.user.item
+  color: rgba(#ff7bac,1)
+  &:hover
+    background-color: rgba(#ff7bac,0.05)
 
 // add customized semantic ui label colors
 .ui.label.light.gray
@@ -79,9 +85,33 @@ p
 .section.in.list
   margin: 0 1rem 1rem 0
   &>.entry,
-  &>.tag
+  &>.tag,
+  &>.user
     margin: 0 1rem 0 4rem
+  &>.entry,
+  &>.tag
     padding: 2rem 1rem 3.5rem 1rem
+  &>.user
+    padding: 1rem 1rem 3.5rem 1rem
+    .name
+      float: left
+      text-align: center
+      font-size: 0.9rem
+      .reputation
+        padding: 1em 0
+        color: #a67c52
+        i.icon
+          color: #f7931e
+    .description
+      margin-left: 6rem
+      h2 a
+        display: block
+        font-size: 1rem
+        margin: -0.5em 0 0.5rem -0.5em
+        padding: 0.5em
+        +border-radius(0.3rem)
+        &:hover
+          background-color: rgba(0,0,0,0.05)
   &>.action
     float: left
     margin: 0
@@ -102,13 +132,14 @@ p
     font-size: 0.9em
     p
       position: relative
-      margin-left: 3em
-      opacity: 1
+      margin: 0 0 0.5em 3em
+      line-height: 1.5em
       .ui.label
+        margin: 0
+        padding: 0.25em 0.5em 0.25em 0 
         position: absolute
         left: -3em
         font-size: inherit
-        padding-left: 0
   .meta
     height: 3.5em
     padding: 0.25em 1em

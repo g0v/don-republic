@@ -26,9 +26,25 @@ block body
         a.item 已檢舉
           .ui.label.light.gray 3
         .right.menu
+          a.ui.dropdown.item
+            | 名稱
+            i.dropdown.icon
+            .menu
+              .item.name.active 名稱
+              .item.reputation 最高聲望
+              .item.experience 內容被最多引用
+              .item.experience 內容獲最多正評
+              .item.follower 最多人跟隨
 
     #content
 
+      include -navigation
+
+      include -user-in-list
+      include -user-in-list
+      include -user-in-list
+      include -user-in-list
+      include -user-in-list
 
       include -navigation
 
