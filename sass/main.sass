@@ -201,17 +201,35 @@ p
           right: 0
           top: 0
           background: none
-      p
+      p,
+      .ui.items .row
         position: relative
         .contributor
+          text-align: right
+          display: block
           letter-spacing: 0
           font-size: 0.8em
           opacity: 0.7
           position: absolute
           left: -6rem
-          width: 5rem
+          width: 4.5rem
           overflow: hidden
           text-overflow: ellipsis
+      .compare
+        .row
+          margin: 0
+          width: 100%
+          .item:nth-of-type(n+1):hover
+            border-bottom-color: black!important
+          .item:nth-of-type(n+2):hover
+            border-bottom-color: #ed1c24!important
+          .item:nth-of-type(n+3):hover
+            border-bottom-color: #39b54a!important
+          &.head .item
+            font-size: 0.9em
+            background-color: rgba(0,0,0,0.03)
+            &:hover
+              border-bottom-color: #aaa!important
   // reference for wiki
   .reference
     margin-left: 5rem
