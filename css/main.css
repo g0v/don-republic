@@ -20,7 +20,8 @@ body {
   padding: 0;
 }
 
-.hidden {
+.hidden,
+.ui.menu .item.hidden {
   display: none;
 }
 
