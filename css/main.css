@@ -20,7 +20,6 @@ input::-webkit-input-placeholder {
 }
 
 body {
-  background-color: #ffffd8;
   margin: 0;
   padding: 0;
 }
@@ -467,6 +466,14 @@ p {
   margin: 1rem;
 }
 
+#issue,
+#proposal,
+#project,
+#qa,
+#argument,
+#article {
+  background-color: white;
+}
 #issue #header .title,
 #proposal #header .title,
 #project #header .title,
@@ -610,7 +617,7 @@ p {
 #argument #header .level.two.menu,
 #article #header .level.two.menu {
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 #issue #header .level.two.menu .item,
 #proposal #header .level.two.menu .item,
