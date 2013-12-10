@@ -83,218 +83,220 @@ p
       padding-right: 0
       font-size: 0.9rem
 
-// the repeatable items in a list view
-.section.in.list
-  margin: 0 1rem 1rem 0
-  &>.entry,
-  &>.tag,
-  &>.user
-    margin: 0 1rem 0 4rem
-  &>.entry,
-  &>.tag
-    padding: 2rem 1rem 3.5rem 1rem
-  &>.user
-    padding: 1rem 1rem 3.5rem 1rem
-    .name
+#content
+  // the repeatable items in a list view
+  .section.in.list
+    margin: 0 1rem 1rem 0
+    &>.entry,
+    &>.tag,
+    &>.user
+      margin: 0 1rem 0 4rem
+    &>.entry,
+    &>.tag
+      padding: 2rem 1rem 3.5rem 1rem
+    &>.user
+      padding: 1rem 1rem 3.5rem 1rem
+      .name
+        float: left
+        text-align: center
+        font-size: 0.9rem
+        .reputation
+          padding: 1em 0
+          color: #a67c52
+          i.icon
+            color: #f7931e
+      .description
+        margin-left: 6rem
+        h2 a
+          display: block
+          font-size: 1rem
+          margin: -0.5em 0 0.5rem -0.5em
+          padding: 0.5em
+          +border-radius(0.3rem)
+          &:hover
+            background-color: rgba(0,0,0,0.05)
+    &>.action
       float: left
-      text-align: center
-      font-size: 0.9rem
-      .reputation
-        padding: 1em 0
-        color: #a67c52
-        i.icon
-          color: #f7931e
-    .description
-      margin-left: 6rem
+      margin: 0
+      .icon
+        opacity: 0.3
+    .title
+      color: inherit
+      padding: 0
       h2 a
         display: block
-        font-size: 1rem
-        margin: -0.5em 0 0.5rem -0.5em
-        padding: 0.5em
-        +border-radius(0.3rem)
+        padding: 1rem
         &:hover
           background-color: rgba(0,0,0,0.05)
-  &>.action
-    float: left
-    margin: 0
-    .icon
-      opacity: 0.3
-  .title
-    color: inherit
-    padding: 0
-    h2 a
-      display: block
-      padding: 1rem
-      &:hover
-        background-color: rgba(0,0,0,0.05)
-      .auxiliary.text
-        margin: 0 0.5rem
-  .summary
-  .info
-    font-size: 0.9em
-    p
-      position: relative
-      margin: 0 0 0.5em 3em
+        .auxiliary.text
+          margin: 0 0.5rem
+        .text
+          margin-right: 0.5em
+        .status
+          margin-left: 1em
+          line-height: 1em
+    .summary
+    .info
+      font-size: 0.9em
+      p
+        position: relative
+        margin: 0 0 0.5em 3em
+        line-height: 1.5em
+        .ui.label
+          margin: 0
+          padding: 0.25em 0.5em 0.25em 0 
+          position: absolute
+          left: -3em
+          font-size: inherit
+    .meta
+      height: 3.5em
+      padding: 0.25em 1em
       line-height: 1.5em
-      .ui.label
-        margin: 0
-        padding: 0.25em 0.5em 0.25em 0 
-        position: absolute
-        left: -3em
-        font-size: inherit
-  .meta
-    height: 3.5em
-    padding: 0.25em 1em
-    line-height: 1.5em
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    font-size: 0.9em
-    a
-      padding: 0 0.5em
-      color: #29abe2
-      &:hover
-        color: #0071bc
-
-// customize semantic ui stackable grids for tag list view
-.ui.two.column.stackable.grid.tag
-  margin: 0
-  .column
-    margin: 0
-    padding: 0
-
-// set position for pagination menus
-.navigation
-  text-align: center
-  margin: 0 auto 1rem auto
-
-// wiki
-.etherpad
-  margin-bottom: 2rem
-  .article
-    margin-left: 5rem
-    padding-left: 1rem
-    border-left: 1px #ccc solid
-    .referral
-      position: relative
-      padding-right: 1.2em
-      .ui.floating.label
-        text-align: center
-        padding: 0
-        line-height: 1.2em
-        right: 0
-        top: 0
-        background: none
-    p
-      position: relative
-      .contributor
-        letter-spacing: 0
-        font-size: 0.8em
-        opacity: 0.7
-        position: absolute
-        left: -6rem
-        width: 5rem
-        overflow: hidden
-        text-overflow: ellipsis
-
-// reference for wiki
-.reference
-  margin-left: 5rem
-  padding-left: 3rem
-  border-left: 1px #ccc solid
-  margin-bottom: 2rem
-  .item
-    position: relative
-    padding: 0.2em 0
-    a.ui.small.label
-      position: absolute
-      left: -2rem
-    .text
-      line-height: 1.5em
-    .contributor
-      letter-spacing: 0
-      font-size: 0.8em
-      opacity: 0.7
-      position: absolute
-      left: -8rem
-      width: 5rem
+      white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
+      font-size: 0.9em
+      a
+        padding: 0 0.5em
+        color: #29abe2
+        &:hover
+          color: #0071bc
 
-//response for wiki
-.response
-  margin-bottom: 2rem
-  .ui.tabular.menu
-    .description.item
-      padding-left: 0.1em
-  .ui.comments
-    margin-left: 3rem
-    .comment
-      min-height: 3rem
+  // customize semantic ui stackable grids for tag list view
+  .ui.two.column.stackable.grid.tag
+    margin: 0
+    .column
       margin: 0
-      padding: 0.5rem 0 0 0
-      clear: both
-      .avatar
-        img
-          +border-radius(0.3rem)
-      .comments
-        margin-top: 0
-        padding-top: 0
-      .status
-        position: absolute
-        left: -3rem
-        .ui.menu
-          .item
-            font-size: 0.8rem
-            padding: .5em .8em
-            i.icon
-              opacity: 0.3
-      .content
-        padding-top: 0
-        .text
-          opacity: 1
-        .metadata
-          display: inline-block
-          float: right
-          font-size: 0.9rem
-          a
-            color: rgba(0,0,0,0.4)
-            padding: 0.3em 0.7em
-            +border-radius(0.3rem)
-            i.icon
-              opacity: 0.3
-            &:hover
-              color: rgba(0,0,0,0.8)
-          .avatar
-            margin-left: 0.5em
-            opacity: 0.5
-            width: 1em
-            height: 1em
-            float: none
-            display: inline-block
-            position: relative
-            top: 0.1em
-            img
-              max-width: 1em
-              max-height: 1em
-        .ui.form
-          margin: 0
-          max-width: 100%
-          .field
-            clear: none
-          .account
-            margin-left: 1em
-    .post.comment
-      margin-left: -3rem
+      padding: 0
 
-// links in a wiki
-#content
+  // set position for pagination menus
+  .navigation
+    text-align: center
+    margin: 0 auto 1rem auto
+
+  // links in a wiki
   .etherpad,
   .reference,
   .response
     a
       &:hover
         background-color: rgba(0,0,0,0.05)
+  // wiki
+  .etherpad
+    margin-bottom: 2rem
+    .article
+      margin-left: 5rem
+      padding-left: 1rem
+      border-left: 1px #ccc solid
+      .referral
+        position: relative
+        padding-right: 1.2em
+        .ui.floating.label
+          text-align: center
+          padding: 0
+          line-height: 1.2em
+          right: 0
+          top: 0
+          background: none
+      p
+        position: relative
+        .contributor
+          letter-spacing: 0
+          font-size: 0.8em
+          opacity: 0.7
+          position: absolute
+          left: -6rem
+          width: 5rem
+          overflow: hidden
+          text-overflow: ellipsis
+  // reference for wiki
+  .reference
+    margin-left: 5rem
+    padding-left: 3rem
+    border-left: 1px #ccc solid
+    margin-bottom: 2rem
+    .item
+      position: relative
+      padding: 0.2em 0
+      a.ui.small.label
+        position: absolute
+        left: -2rem
+      .text
+        line-height: 1.5em
+      .contributor
+        letter-spacing: 0
+        font-size: 0.8em
+        opacity: 0.7
+        position: absolute
+        left: -8rem
+        width: 5rem
+        overflow: hidden
+        text-overflow: ellipsis
+  //response for wiki
+  .response
+    margin-bottom: 2rem
+    .ui.tabular.menu
+      .description.item
+        padding-left: 0.1em
+    .ui.comments
+      margin-left: 3rem
+      .comment
+        min-height: 3rem
+        margin: 0
+        padding: 0.5rem 0 0 0
+        clear: both
+        .avatar
+          img
+            +border-radius(0.3rem)
+        .comments
+          margin-top: 0
+          padding-top: 0
+        .status
+          position: absolute
+          left: -3rem
+          .ui.menu
+            .item
+              font-size: 0.8rem
+              padding: .5em .8em
+              i.icon
+                opacity: 0.3
+        .content
+          padding-top: 0
+          .text
+            opacity: 1
+          .metadata
+            display: inline-block
+            float: right
+            font-size: 0.9rem
+            a
+              color: rgba(0,0,0,0.4)
+              padding: 0.3em 0.7em
+              +border-radius(0.3rem)
+              i.icon
+                opacity: 0.3
+              &:hover
+                color: rgba(0,0,0,0.8)
+            .avatar
+              margin-left: 0.5em
+              opacity: 0.5
+              width: 1em
+              height: 1em
+              float: none
+              display: inline-block
+              position: relative
+              top: 0.1em
+              img
+                max-width: 1em
+                max-height: 1em
+          .ui.form
+            margin: 0
+            max-width: 100%
+            .field
+              clear: none
+            .account
+              margin-left: 1em
+      .post.comment
+        margin-left: -3rem
 
 // the grand global navbar
 #navbar
@@ -337,56 +339,93 @@ p
       border-color: #8cc63f
   #content
     margin: 1rem
+// customized horizontal action icon menu... not in use
+  #header
+    .action
+      font-size: 1.5rem
+      position: relative
+      top: -0.15em
+      .button
+        padding: 0.2rem 0.5rem
+        cursor: pointer
+        opacity: 0.5
+        +border-radius(0.3rem)
+        &:hover
+          background-color: rgba(0,0,0,0.05)
+          opacity: 0.8
+        i.icon
+          padding: 0.2em
+          opacity: 0.3
+        .count
+          font-size: 1rem
+          margin-top: -0.2em
 
-// single issue page
-#issue
+// customized horizontal action icon menu
+
+#issue,
+#proposal,
+#project,
+#qa,
+#argument,
+#article
   #header
     .title
       padding: 1rem
       margin: 0
       h2
-        display: inline-block
+        display: inline
         font-size: 2rem
-      .action
-        margin-left: 1rem
-        font-size: 1.5rem
+        margin-right: 0.5rem
+    .status
+      display: inline-block
+      font-size: 1rem
+      line-height: 1em
+      margin: 0 1em 0 0
+      .label
         position: relative
-        top: -0.2rem
-        .button
-          padding: 0.2rem 0.5rem
-          cursor: pointer
-          opacity: 0.5
-          +border-radius(0.3rem)
-          &:hover
-            background-color: rgba(0,0,0,0.05)
-            opacity: 0.8
-          i.icon
-            padding: 0.2em
-            opacity: 0.3
-          .count
-            font-size: 1rem
-            font-weight: normal
-      .switch 
-        float: right
-        font-size: 1rem
-        font-weight: normal
-        line-height: 2rem
-        background-color: rgba(0,0,0,0.05)
-        +border-radius(0.3rem)
-        +box-shadow(inset 0 0 0.5rem rgba(0,0,0,0.2))
-        overflow: hidden
-        a
-          padding: 1rem
-          &:hover
-            background-color: rgba(#d9e021,0.2)
-          &.active
-            background-color: #d9e021
-    .menu
+        top: -0.2em
+        vertical-align: bottom
+        margin: 0 0 0 1em
+        padding: 0.3em 0.5em
+    .action
+      font-size: 1rem
+      margin-top: 0
+      margin-bottom: 0
+      line-height: 1em
+      .item
+        vertical-align: bottom
+        margin: 0
+        padding: 0.25em 0.5em
+        i.icon
+          display: inline-block
+          opacity: 0.3
+          margin-bottom: 0!important
+        .text
+          margin-left: 0.5em
+          position: relative
+          top: -0.1em
+      &:after
+        display: none
+    .switch 
+      float: right
+      font-size: 1rem
+      font-weight: normal
+      line-height: 2rem
+      background-color: rgba(0,0,0,0.05)
+      +border-radius(0.3rem)
+      +box-shadow(inset 0 0 0.5rem rgba(0,0,0,0.2))
+      overflow: hidden
+      a
+        padding: 1rem
+        &:hover
+          background-color: rgba(#d9e021,0.2)
+        &.active
+          background-color: #d9e021
+    .level.two.menu
       margin: 0
       background-color: #efefef
       .ui.button
         margin-top: 1px
-
   #content
     margin: 1rem
     .category

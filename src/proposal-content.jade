@@ -1,0 +1,20 @@
+extends proposal
+
+block menu
+  .ui.level.two.menu.borderless
+    a(href="proposal-content-intro.html").item.intro 問題描述
+    a(href="proposal-content-draft.html").item.draft 起草
+    a(href="proposal-content-accepted.html").item.accepted 成案
+    a(href="proposal-content-frozen.html").item.frozen 定案
+    a(href="proposal-content-vote.html").item.vote 表決
+    a(href="proposal-content-followup.html").item.followup 追蹤
+    a(href="proposal-content-archive.html").item.archive 封存
+    a(href="proposal-content-reference.html").item.reference 參考資料
+    a(href="proposal-content-report.html").item.report 匯出報告
+    .right.menu
+      block menu-right
+
+block script
+  script.
+    $("#navbar .proposal").addClass("active");
+    $("#header .switch .content").addClass("active");

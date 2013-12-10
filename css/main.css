@@ -95,34 +95,34 @@ p {
   opacity: 0.6;
 }
 
-.section.in.list {
+#content .section.in.list {
   margin: 0 1rem 1rem 0;
 }
-.section.in.list > .entry, .section.in.list > .tag, .section.in.list > .user {
+#content .section.in.list > .entry, #content .section.in.list > .tag, #content .section.in.list > .user {
   margin: 0 1rem 0 4rem;
 }
-.section.in.list > .entry, .section.in.list > .tag {
+#content .section.in.list > .entry, #content .section.in.list > .tag {
   padding: 2rem 1rem 3.5rem 1rem;
 }
-.section.in.list > .user {
+#content .section.in.list > .user {
   padding: 1rem 1rem 3.5rem 1rem;
 }
-.section.in.list > .user .name {
+#content .section.in.list > .user .name {
   float: left;
   text-align: center;
   font-size: 0.9rem;
 }
-.section.in.list > .user .name .reputation {
+#content .section.in.list > .user .name .reputation {
   padding: 1em 0;
   color: #a67c52;
 }
-.section.in.list > .user .name .reputation i.icon {
+#content .section.in.list > .user .name .reputation i.icon {
   color: #f7931e;
 }
-.section.in.list > .user .description {
+#content .section.in.list > .user .description {
   margin-left: 6rem;
 }
-.section.in.list > .user .description h2 a {
+#content .section.in.list > .user .description h2 a {
   display: block;
   font-size: 1rem;
   margin: -0.5em 0 0.5rem -0.5em;
@@ -133,46 +133,53 @@ p {
   -o-border-radius: 0.3rem;
   border-radius: 0.3rem;
 }
-.section.in.list > .user .description h2 a:hover {
+#content .section.in.list > .user .description h2 a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.section.in.list > .action {
+#content .section.in.list > .action {
   float: left;
   margin: 0;
 }
-.section.in.list > .action .icon {
+#content .section.in.list > .action .icon {
   opacity: 0.3;
 }
-.section.in.list .title {
+#content .section.in.list .title {
   color: inherit;
   padding: 0;
 }
-.section.in.list .title h2 a {
+#content .section.in.list .title h2 a {
   display: block;
   padding: 1rem;
 }
-.section.in.list .title h2 a:hover {
+#content .section.in.list .title h2 a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.section.in.list .title h2 a .auxiliary.text {
+#content .section.in.list .title h2 a .auxiliary.text {
   margin: 0 0.5rem;
 }
-.section.in.list .info {
+#content .section.in.list .title h2 a .text {
+  margin-right: 0.5em;
+}
+#content .section.in.list .title h2 a .status {
+  margin-left: 1em;
+  line-height: 1em;
+}
+#content .section.in.list .info {
   font-size: 0.9em;
 }
-.section.in.list .info p {
+#content .section.in.list .info p {
   position: relative;
   margin: 0 0 0.5em 3em;
   line-height: 1.5em;
 }
-.section.in.list .info p .ui.label {
+#content .section.in.list .info p .ui.label {
   margin: 0;
   padding: 0.25em 0.5em 0.25em 0;
   position: absolute;
   left: -3em;
   font-size: inherit;
 }
-.section.in.list .meta {
+#content .section.in.list .meta {
   height: 3.5em;
   padding: 0.25em 1em;
   line-height: 1.5em;
@@ -181,40 +188,42 @@ p {
   text-overflow: ellipsis;
   font-size: 0.9em;
 }
-.section.in.list .meta a {
+#content .section.in.list .meta a {
   padding: 0 0.5em;
   color: #29abe2;
 }
-.section.in.list .meta a:hover {
+#content .section.in.list .meta a:hover {
   color: #0071bc;
 }
-
-.ui.two.column.stackable.grid.tag {
+#content .ui.two.column.stackable.grid.tag {
   margin: 0;
 }
-.ui.two.column.stackable.grid.tag .column {
+#content .ui.two.column.stackable.grid.tag .column {
   margin: 0;
   padding: 0;
 }
-
-.navigation {
+#content .navigation {
   text-align: center;
   margin: 0 auto 1rem auto;
 }
-
-.etherpad {
+#content .etherpad a:hover,
+#content .reference a:hover,
+#content .response a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#content .etherpad {
   margin-bottom: 2rem;
 }
-.etherpad .article {
+#content .etherpad .article {
   margin-left: 5rem;
   padding-left: 1rem;
   border-left: 1px #cccccc solid;
 }
-.etherpad .article .referral {
+#content .etherpad .article .referral {
   position: relative;
   padding-right: 1.2em;
 }
-.etherpad .article .referral .ui.floating.label {
+#content .etherpad .article .referral .ui.floating.label {
   text-align: center;
   padding: 0;
   line-height: 1.2em;
@@ -222,10 +231,10 @@ p {
   top: 0;
   background: none;
 }
-.etherpad .article p {
+#content .etherpad .article p {
   position: relative;
 }
-.etherpad .article p .contributor {
+#content .etherpad .article p .contributor {
   letter-spacing: 0;
   font-size: 0.8em;
   opacity: 0.7;
@@ -235,25 +244,24 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.reference {
+#content .reference {
   margin-left: 5rem;
   padding-left: 3rem;
   border-left: 1px #cccccc solid;
   margin-bottom: 2rem;
 }
-.reference .item {
+#content .reference .item {
   position: relative;
   padding: 0.2em 0;
 }
-.reference .item a.ui.small.label {
+#content .reference .item a.ui.small.label {
   position: absolute;
   left: -2rem;
 }
-.reference .item .text {
+#content .reference .item .text {
   line-height: 1.5em;
 }
-.reference .item .contributor {
+#content .reference .item .contributor {
   letter-spacing: 0;
   font-size: 0.8em;
   opacity: 0.7;
@@ -263,56 +271,55 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.response {
+#content .response {
   margin-bottom: 2rem;
 }
-.response .ui.tabular.menu .description.item {
+#content .response .ui.tabular.menu .description.item {
   padding-left: 0.1em;
 }
-.response .ui.comments {
+#content .response .ui.comments {
   margin-left: 3rem;
 }
-.response .ui.comments .comment {
+#content .response .ui.comments .comment {
   min-height: 3rem;
   margin: 0;
   padding: 0.5rem 0 0 0;
   clear: both;
 }
-.response .ui.comments .comment .avatar img {
+#content .response .ui.comments .comment .avatar img {
   -webkit-border-radius: 0.3rem;
   -moz-border-radius: 0.3rem;
   -ms-border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
   border-radius: 0.3rem;
 }
-.response .ui.comments .comment .comments {
+#content .response .ui.comments .comment .comments {
   margin-top: 0;
   padding-top: 0;
 }
-.response .ui.comments .comment .status {
+#content .response .ui.comments .comment .status {
   position: absolute;
   left: -3rem;
 }
-.response .ui.comments .comment .status .ui.menu .item {
+#content .response .ui.comments .comment .status .ui.menu .item {
   font-size: 0.8rem;
   padding: 0.5em 0.8em;
 }
-.response .ui.comments .comment .status .ui.menu .item i.icon {
+#content .response .ui.comments .comment .status .ui.menu .item i.icon {
   opacity: 0.3;
 }
-.response .ui.comments .comment .content {
+#content .response .ui.comments .comment .content {
   padding-top: 0;
 }
-.response .ui.comments .comment .content .text {
+#content .response .ui.comments .comment .content .text {
   opacity: 1;
 }
-.response .ui.comments .comment .content .metadata {
+#content .response .ui.comments .comment .content .metadata {
   display: inline-block;
   float: right;
   font-size: 0.9rem;
 }
-.response .ui.comments .comment .content .metadata a {
+#content .response .ui.comments .comment .content .metadata a {
   color: rgba(0, 0, 0, 0.4);
   padding: 0.3em 0.7em;
   -webkit-border-radius: 0.3rem;
@@ -321,13 +328,13 @@ p {
   -o-border-radius: 0.3rem;
   border-radius: 0.3rem;
 }
-.response .ui.comments .comment .content .metadata a i.icon {
+#content .response .ui.comments .comment .content .metadata a i.icon {
   opacity: 0.3;
 }
-.response .ui.comments .comment .content .metadata a:hover {
+#content .response .ui.comments .comment .content .metadata a:hover {
   color: rgba(0, 0, 0, 0.8);
 }
-.response .ui.comments .comment .content .metadata .avatar {
+#content .response .ui.comments .comment .content .metadata .avatar {
   margin-left: 0.5em;
   opacity: 0.5;
   width: 1em;
@@ -337,28 +344,22 @@ p {
   position: relative;
   top: 0.1em;
 }
-.response .ui.comments .comment .content .metadata .avatar img {
+#content .response .ui.comments .comment .content .metadata .avatar img {
   max-width: 1em;
   max-height: 1em;
 }
-.response .ui.comments .comment .content .ui.form {
+#content .response .ui.comments .comment .content .ui.form {
   margin: 0;
   max-width: 100%;
 }
-.response .ui.comments .comment .content .ui.form .field {
+#content .response .ui.comments .comment .content .ui.form .field {
   clear: none;
 }
-.response .ui.comments .comment .content .ui.form .account {
+#content .response .ui.comments .comment .content .ui.form .account {
   margin-left: 1em;
 }
-.response .ui.comments .post.comment {
+#content .response .ui.comments .post.comment {
   margin-left: -3rem;
-}
-
-#content .etherpad a:hover,
-#content .reference a:hover,
-#content .response a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
 }
 
 #navbar .ui.secondary.pointing.menu {
@@ -416,43 +417,103 @@ p {
   margin: 1rem;
 }
 
-#issue #header .title {
+#issue #header .title,
+#proposal #header .title,
+#project #header .title,
+#qa #header .title,
+#argument #header .title,
+#article #header .title {
   padding: 1rem;
   margin: 0;
 }
-#issue #header .title h2 {
-  display: inline-block;
+#issue #header .title h2,
+#proposal #header .title h2,
+#project #header .title h2,
+#qa #header .title h2,
+#argument #header .title h2,
+#article #header .title h2 {
+  display: inline;
   font-size: 2rem;
+  margin-right: 0.5rem;
 }
-#issue #header .title .action {
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  position: relative;
-  top: -0.2rem;
-}
-#issue #header .title .action .button {
-  padding: 0.2rem 0.5rem;
-  cursor: pointer;
-  opacity: 0.5;
-  -webkit-border-radius: 0.3rem;
-  -moz-border-radius: 0.3rem;
-  -ms-border-radius: 0.3rem;
-  -o-border-radius: 0.3rem;
-  border-radius: 0.3rem;
-}
-#issue #header .title .action .button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  opacity: 0.8;
-}
-#issue #header .title .action .button i.icon {
-  padding: 0.2em;
-  opacity: 0.3;
-}
-#issue #header .title .action .button .count {
+#issue #header .status,
+#proposal #header .status,
+#project #header .status,
+#qa #header .status,
+#argument #header .status,
+#article #header .status {
+  display: inline-block;
   font-size: 1rem;
-  font-weight: normal;
+  line-height: 1em;
+  margin: 0 1em 0 0;
 }
-#issue #header .title .switch {
+#issue #header .status .label,
+#proposal #header .status .label,
+#project #header .status .label,
+#qa #header .status .label,
+#argument #header .status .label,
+#article #header .status .label {
+  position: relative;
+  top: -0.2em;
+  vertical-align: bottom;
+  margin: 0 0 0 1em;
+  padding: 0.3em 0.5em;
+}
+#issue #header .action,
+#proposal #header .action,
+#project #header .action,
+#qa #header .action,
+#argument #header .action,
+#article #header .action {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+#issue #header .action .item,
+#proposal #header .action .item,
+#project #header .action .item,
+#qa #header .action .item,
+#argument #header .action .item,
+#article #header .action .item {
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0.25em 0.5em;
+}
+#issue #header .action .item i.icon,
+#proposal #header .action .item i.icon,
+#project #header .action .item i.icon,
+#qa #header .action .item i.icon,
+#argument #header .action .item i.icon,
+#article #header .action .item i.icon {
+  display: inline-block;
+  opacity: 0.3;
+  margin-bottom: 0 !important;
+}
+#issue #header .action .item .text,
+#proposal #header .action .item .text,
+#project #header .action .item .text,
+#qa #header .action .item .text,
+#argument #header .action .item .text,
+#article #header .action .item .text {
+  margin-left: 0.5em;
+  position: relative;
+  top: -0.1em;
+}
+#issue #header .action:after,
+#proposal #header .action:after,
+#project #header .action:after,
+#qa #header .action:after,
+#argument #header .action:after,
+#article #header .action:after {
+  display: none;
+}
+#issue #header .switch,
+#proposal #header .switch,
+#project #header .switch,
+#qa #header .switch,
+#argument #header .switch,
+#article #header .switch {
   float: right;
   font-size: 1rem;
   font-weight: normal;
@@ -468,99 +529,234 @@ p {
   box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
-#issue #header .title .switch a {
+#issue #header .switch a,
+#proposal #header .switch a,
+#project #header .switch a,
+#qa #header .switch a,
+#argument #header .switch a,
+#article #header .switch a {
   padding: 1rem;
 }
-#issue #header .title .switch a:hover {
+#issue #header .switch a:hover,
+#proposal #header .switch a:hover,
+#project #header .switch a:hover,
+#qa #header .switch a:hover,
+#argument #header .switch a:hover,
+#article #header .switch a:hover {
   background-color: rgba(217, 224, 33, 0.2);
 }
-#issue #header .title .switch a.active {
+#issue #header .switch a.active,
+#proposal #header .switch a.active,
+#project #header .switch a.active,
+#qa #header .switch a.active,
+#argument #header .switch a.active,
+#article #header .switch a.active {
   background-color: #d9e021;
 }
-#issue #header .menu {
+#issue #header .level.two.menu,
+#proposal #header .level.two.menu,
+#project #header .level.two.menu,
+#qa #header .level.two.menu,
+#argument #header .level.two.menu,
+#article #header .level.two.menu {
   margin: 0;
   background-color: #efefef;
 }
-#issue #header .menu .ui.button {
+#issue #header .level.two.menu .ui.button,
+#proposal #header .level.two.menu .ui.button,
+#project #header .level.two.menu .ui.button,
+#qa #header .level.two.menu .ui.button,
+#argument #header .level.two.menu .ui.button,
+#article #header .level.two.menu .ui.button {
   margin-top: 1px;
 }
-#issue #content {
+#issue #content,
+#proposal #content,
+#project #content,
+#qa #content,
+#argument #content,
+#article #content {
   margin: 1rem;
 }
-#issue #content .category {
+#issue #content .category,
+#proposal #content .category,
+#project #content .category,
+#qa #content .category,
+#argument #content .category,
+#article #content .category {
   margin-bottom: 1rem;
 }
-#issue #content .category .item.active {
+#issue #content .category .item.active,
+#proposal #content .category .item.active,
+#project #content .category .item.active,
+#qa #content .category .item.active,
+#argument #content .category .item.active,
+#article #content .category .item.active {
   border-color: #8cc63f;
 }
-#issue #content .report {
+#issue #content .report,
+#proposal #content .report,
+#project #content .report,
+#qa #content .report,
+#argument #content .report,
+#article #content .report {
   margin: 0 0.5rem;
 }
-#issue #content .report .column {
+#issue #content .report .column,
+#proposal #content .report .column,
+#project #content .report .column,
+#qa #content .report .column,
+#argument #content .report .column,
+#article #content .report .column {
   margin: 0;
   padding: 0;
 }
-#issue #content .report .column .ui.segment {
+#issue #content .report .column .ui.segment,
+#proposal #content .report .column .ui.segment,
+#project #content .report .column .ui.segment,
+#qa #content .report .column .ui.segment,
+#argument #content .report .column .ui.segment,
+#article #content .report .column .ui.segment {
   display: block;
   margin: 0 0.5rem;
   height: 18rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.03);
 }
-#issue #content .report .column .ui.segment.active, #issue #content .report .column .ui.segment:hover {
+#issue #content .report .column .ui.segment.active, #issue #content .report .column .ui.segment:hover,
+#proposal #content .report .column .ui.segment.active,
+#proposal #content .report .column .ui.segment:hover,
+#project #content .report .column .ui.segment.active,
+#project #content .report .column .ui.segment:hover,
+#qa #content .report .column .ui.segment.active,
+#qa #content .report .column .ui.segment:hover,
+#argument #content .report .column .ui.segment.active,
+#argument #content .report .column .ui.segment:hover,
+#article #content .report .column .ui.segment.active,
+#article #content .report .column .ui.segment:hover {
   opacity: 1;
   background-color: white;
 }
-#issue #content .report .column .ui.segment:hover {
+#issue #content .report .column .ui.segment:hover,
+#proposal #content .report .column .ui.segment:hover,
+#project #content .report .column .ui.segment:hover,
+#qa #content .report .column .ui.segment:hover,
+#argument #content .report .column .ui.segment:hover,
+#article #content .report .column .ui.segment:hover {
   -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
-#issue #content .report .column .ui.segment.active {
+#issue #content .report .column .ui.segment.active,
+#proposal #content .report .column .ui.segment.active,
+#project #content .report .column .ui.segment.active,
+#qa #content .report .column .ui.segment.active,
+#argument #content .report .column .ui.segment.active,
+#article #content .report .column .ui.segment.active {
   -webkit-box-shadow: 0 0 1px black;
   -moz-box-shadow: 0 0 1px black;
   box-shadow: 0 0 1px black;
 }
-#issue #content .report .column .ui.segment.active:hover {
+#issue #content .report .column .ui.segment.active:hover,
+#proposal #content .report .column .ui.segment.active:hover,
+#project #content .report .column .ui.segment.active:hover,
+#qa #content .report .column .ui.segment.active:hover,
+#argument #content .report .column .ui.segment.active:hover,
+#article #content .report .column .ui.segment.active:hover {
   -webkit-box-shadow: 0 0 1px black;
   -moz-box-shadow: 0 0 1px black;
   box-shadow: 0 0 1px black;
 }
-#issue #content .report .column .ui.segment .title {
+#issue #content .report .column .ui.segment .title,
+#proposal #content .report .column .ui.segment .title,
+#project #content .report .column .ui.segment .title,
+#qa #content .report .column .ui.segment .title,
+#argument #content .report .column .ui.segment .title,
+#article #content .report .column .ui.segment .title {
   color: white;
 }
-#issue #content .report .column .ui.segment .title.yellow {
+#issue #content .report .column .ui.segment .title.yellow,
+#proposal #content .report .column .ui.segment .title.yellow,
+#project #content .report .column .ui.segment .title.yellow,
+#qa #content .report .column .ui.segment .title.yellow,
+#argument #content .report .column .ui.segment .title.yellow,
+#article #content .report .column .ui.segment .title.yellow {
   background-color: #ff931e;
 }
-#issue #content .report .column .ui.segment .title.emergency {
+#issue #content .report .column .ui.segment .title.emergency,
+#proposal #content .report .column .ui.segment .title.emergency,
+#project #content .report .column .ui.segment .title.emergency,
+#qa #content .report .column .ui.segment .title.emergency,
+#argument #content .report .column .ui.segment .title.emergency,
+#article #content .report .column .ui.segment .title.emergency {
   background-color: #ff7bac;
 }
-#issue #content .report .column .ui.segment .text {
+#issue #content .report .column .ui.segment .text,
+#proposal #content .report .column .ui.segment .text,
+#project #content .report .column .ui.segment .text,
+#qa #content .report .column .ui.segment .text,
+#argument #content .report .column .ui.segment .text,
+#article #content .report .column .ui.segment .text {
   text-align: left;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
-#issue #content .report .column .ui.segment .text .item {
+#issue #content .report .column .ui.segment .text .item,
+#proposal #content .report .column .ui.segment .text .item,
+#project #content .report .column .ui.segment .text .item,
+#qa #content .report .column .ui.segment .text .item,
+#argument #content .report .column .ui.segment .text .item,
+#article #content .report .column .ui.segment .text .item {
   padding: 0.25rem 0;
 }
-#issue #content .report .column .ui.segment .buttons {
+#issue #content .report .column .ui.segment .buttons,
+#proposal #content .report .column .ui.segment .buttons,
+#project #content .report .column .ui.segment .buttons,
+#qa #content .report .column .ui.segment .buttons,
+#argument #content .report .column .ui.segment .buttons,
+#article #content .report .column .ui.segment .buttons {
   padding: 0;
 }
-#issue #content .report .column .ui.segment .buttons .ui.button {
+#issue #content .report .column .ui.segment .buttons .ui.button,
+#proposal #content .report .column .ui.segment .buttons .ui.button,
+#project #content .report .column .ui.segment .buttons .ui.button,
+#qa #content .report .column .ui.segment .buttons .ui.button,
+#argument #content .report .column .ui.segment .buttons .ui.button,
+#article #content .report .column .ui.segment .buttons .ui.button {
   padding-left: 0 !important;
   padding-right: 2.6em !important;
   width: 50%;
 }
-#issue #content .report .option.button {
+#issue #content .report .option.button,
+#proposal #content .report .option.button,
+#project #content .report .option.button,
+#qa #content .report .option.button,
+#argument #content .report .option.button,
+#article #content .report .option.button {
   max-width: 20rem;
   margin: 1rem auto;
 }
-#issue #content .report .ui.horizontal.divider {
+#issue #content .report .ui.horizontal.divider,
+#proposal #content .report .ui.horizontal.divider,
+#project #content .report .ui.horizontal.divider,
+#qa #content .report .ui.horizontal.divider,
+#argument #content .report .ui.horizontal.divider,
+#article #content .report .ui.horizontal.divider {
   font-size: 1rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
 }
-#issue #content .report .ui.horizontal.divider:before, #issue #content .report .ui.horizontal.divider:after {
+#issue #content .report .ui.horizontal.divider:before, #issue #content .report .ui.horizontal.divider:after,
+#proposal #content .report .ui.horizontal.divider:before,
+#proposal #content .report .ui.horizontal.divider:after,
+#project #content .report .ui.horizontal.divider:before,
+#project #content .report .ui.horizontal.divider:after,
+#qa #content .report .ui.horizontal.divider:before,
+#qa #content .report .ui.horizontal.divider:after,
+#argument #content .report .ui.horizontal.divider:before,
+#argument #content .report .ui.horizontal.divider:after,
+#article #content .report .ui.horizontal.divider:before,
+#article #content .report .ui.horizontal.divider:after {
   width: 48%;
 }
