@@ -2,7 +2,7 @@
 
 html
   font-size: 18px
-  font-family: sans-serif
+  font-family: '微軟正黑體', sans-serif
   color: #333
 
 a
@@ -14,7 +14,11 @@ h1,h2,h3,h4
   padding: 0
   line-height: 1em
 
+input::-webkit-input-placeholder
+  font-family: '微軟正黑體', sans-serif
+
 body
+  background-color: #ffffd8
   margin: 0
   padding: 0
 
@@ -139,6 +143,7 @@ p
           margin-left: 1em
           line-height: 1em
     .summary
+      color: inherit
     .info
       font-size: 0.9em
       p
@@ -322,10 +327,19 @@ p
 // the grand global navbar
 #navbar
   .ui.secondary.pointing.menu
-    background-color: rgba(0,0,0,0.03)
-    font-weight: bold
-    .item.active
-      border-color: #00a99d
+    background-color: #000
+    border-bottom-width: 5px
+    input
+      background-color: rgba(255,255,255,.3)
+      color: rgba(255,255,255,.95)
+      &::-webkit-input-placeholder
+        color: rgba(255,255,255,.5)
+    .item
+      border-bottom-width: 5px
+      color: rgba(255,255,255,.95)
+      margin-bottom: -5px
+      &.active
+        border-color: #00a99d
 
 // the lovely homepage
 #index
@@ -336,10 +350,11 @@ p
     width: 100%
     max-width: 1024px
     a.entry    
+      +box-shadow(0 0 3px rgba(0,0,0,0.8))
       display: block
       margin: 0
       &:hover
-        +box-shadow(0 0 0.5rem rgba(0,0,0,0.2))
+        +box-shadow(0 0 5px rgba(0,0,0,0.8))
       h2
         padding: 1em
       //

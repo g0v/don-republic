@@ -7,6 +7,6 @@ all:
 	jade -O . src/propose-index.jade
 	jade -O . src/project-index.jade
 	livescript -o js -cb src/index.ls
-	sass src/index.sass css/index.css
-	sass src/infopanel.sass css/infopanel.css
-	sass src/motion-propose.sass css/motion-propose.css
+	sass sass/index.sass css/index.css
+	sass sass/infopanel.sass css/infopanel.css
+	sass sass/motion-propose.sass css/motion-propose.css
