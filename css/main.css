@@ -27,6 +27,7 @@ body {
 p {
   line-height: 1.5em;
   letter-spacing: 0.07em;
+  color: black;
 }
 
 .a.tag.item,
@@ -74,8 +75,7 @@ p {
 }
 
 .ui.label.light.gray {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .ui.label.white {
@@ -148,11 +148,12 @@ p {
   padding: 0;
 }
 #content .section.in.list .title h2 a {
+  opacity: 1;
   display: block;
   padding: 1rem;
 }
 #content .section.in.list .title h2 a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 #content .section.in.list .title h2 a .auxiliary.text {
   margin: 0 0.5rem;
@@ -442,7 +443,7 @@ p {
 #qa #header .status,
 #argument #header .status,
 #article #header .status {
-  display: inline-block;
+  display: inline;
   font-size: 1rem;
   line-height: 1em;
   margin: 0 1em 0 0;
@@ -454,7 +455,7 @@ p {
 #argument #header .status .label,
 #article #header .status .label {
   position: relative;
-  top: -0.2em;
+  top: -0.3em;
   vertical-align: bottom;
   margin: 0 0 0 1em;
   padding: 0.3em 0.5em;
@@ -560,7 +561,16 @@ p {
 #argument #header .level.two.menu,
 #article #header .level.two.menu {
   margin: 0;
-  background-color: #efefef;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+#issue #header .level.two.menu .item,
+#proposal #header .level.two.menu .item,
+#project #header .level.two.menu .item,
+#qa #header .level.two.menu .item,
+#argument #header .level.two.menu .item,
+#article #header .level.two.menu .item {
+  font-weight: bold;
+  color: black;
 }
 #issue #header .level.two.menu .ui.button,
 #proposal #header .level.two.menu .ui.button,

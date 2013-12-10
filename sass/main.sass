@@ -25,6 +25,7 @@ body
 p
   line-height: 1.5em
   letter-spacing: 0.07em
+  color: #000
 
 // global settings for this system
 .a.tag.item,
@@ -55,8 +56,7 @@ p
 
 // add customized semantic ui label colors
 .ui.label.light.gray
-  background-color: rgba(0,0,0,0.05)
-  color: rgba(0,0,0,0.7)
+  background-color: rgba(0,0,0,0.03)
 
 .ui.label.white
   background: none
@@ -124,10 +124,11 @@ p
       color: inherit
       padding: 0
       h2 a
+        opacity: 1
         display: block
         padding: 1rem
         &:hover
-          background-color: rgba(0,0,0,0.05)
+          background-color: rgba(0,0,0,0.03)
         .auxiliary.text
           margin: 0 0.5rem
         .text
@@ -377,13 +378,13 @@ p
         font-size: 2rem
         margin-right: 0.5rem
     .status
-      display: inline-block
+      display: inline
       font-size: 1rem
       line-height: 1em
       margin: 0 1em 0 0
       .label
         position: relative
-        top: -0.2em
+        top: -0.3em
         vertical-align: bottom
         margin: 0 0 0 1em
         padding: 0.3em 0.5em
@@ -423,7 +424,10 @@ p
           background-color: #d9e021
     .level.two.menu
       margin: 0
-      background-color: #efefef
+      background-color: rgba(0,0,0,0.03)
+      .item
+        font-weight: bold
+        color: rgba(0,0,0,1)
       .ui.button
         margin-top: 1px
   #content
