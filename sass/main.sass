@@ -22,8 +22,12 @@ body
   padding: 0
 
 .hidden,
+.ui.menu.hidden,
 .ui.menu .item.hidden
   display: none
+
+.inline-block
+  display: inline-block
 
 // make paragraphs easy to read
 p
@@ -123,6 +127,7 @@ p
     &>.action
       float: left
       margin: 0
+      +text-shadow(1px 1px 0 #fff)
       .icon
         opacity: 0.3
     .title
@@ -465,9 +470,10 @@ p
         color: rgba(0,0,0,1)
       .ui.button
         margin-top: 1px
+  #wrapper
+    padding: 1rem
   #content
-    margin: 1rem
-    .category
+    //.category
       margin-bottom: 1rem
       .item.active
         border-color: #8cc63f

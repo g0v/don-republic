@@ -25,8 +25,13 @@ body {
 }
 
 .hidden,
+.ui.menu.hidden,
 .ui.menu .item.hidden {
   display: none;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 p {
@@ -145,6 +150,7 @@ p {
 #content .section.in.list > .action {
   float: left;
   margin: 0;
+  text-shadow: 1px 1px 0 white;
 }
 #content .section.in.list > .action .icon {
   opacity: 0.3;
@@ -636,29 +642,13 @@ p {
 #article #header .level.two.menu .ui.button {
   margin-top: 1px;
 }
-#issue #content,
-#proposal #content,
-#project #content,
-#qa #content,
-#argument #content,
-#article #content {
-  margin: 1rem;
-}
-#issue #content .category,
-#proposal #content .category,
-#project #content .category,
-#qa #content .category,
-#argument #content .category,
-#article #content .category {
-  margin-bottom: 1rem;
-}
-#issue #content .category .item.active,
-#proposal #content .category .item.active,
-#project #content .category .item.active,
-#qa #content .category .item.active,
-#argument #content .category .item.active,
-#article #content .category .item.active {
-  border-color: #8cc63f;
+#issue #wrapper,
+#proposal #wrapper,
+#project #wrapper,
+#qa #wrapper,
+#argument #wrapper,
+#article #wrapper {
+  padding: 1rem;
 }
 #issue #content .report,
 #proposal #content .report,

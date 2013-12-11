@@ -2,7 +2,7 @@
 $('.ui.dropdown').dropdown();
 
 $('#header>.menu>.right>.dropdown>.menu>.relation').on('click tap',function(){
-  $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').show();
+  $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').css('display', 'inline-block');
   $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').hide();
   $('#content .category .board, #header>.menu>.right>.dropdown>.board').hide();
   $('#header>.menu>.right>.dropdown>.no.category').hide();
@@ -10,7 +10,7 @@ $('#header>.menu>.right>.dropdown>.menu>.relation').on('click tap',function(){
 
 $('#header>.menu>.right>.dropdown>.menu>.tag').on('click tap',function(){
   $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').hide();
-  $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').show();
+  $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').css('display', 'inline-block');
   $('#content .category .board, #header>.menu>.right>.dropdown>.board').hide();
   $('#header>.menu>.right>.dropdown>.no.category').hide();
 })
@@ -18,7 +18,7 @@ $('#header>.menu>.right>.dropdown>.menu>.tag').on('click tap',function(){
 $('#header>.menu>.right>.dropdown>.menu>.board').on('click tap',function(){
   $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').hide();
   $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').hide();
-  $('#content .category .board, #header>.menu>.right>.dropdown>.board').show();
+  $('#content .category .board, #header>.menu>.right>.dropdown>.board').css('display', 'inline-block');
   $('#header>.menu>.right>.dropdown>.no.category').hide();
 })
 
@@ -26,5 +26,5 @@ $('#header>.menu>.right>.dropdown>.menu>.no.category').on('click tap',function()
   $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').hide();
   $('#content .category .board, #header>.menu>.right>.dropdown>.board').hide();
   $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').hide();
-  $('#header>.menu>.right>.dropdown>.no.category').show();
+  $('#header>.menu>.right>.dropdown>.no.category').css('display', 'inline-block');
 })

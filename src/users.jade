@@ -41,7 +41,14 @@ block body
 
     #content
 
-      include -navigation
+      .navigation
+        .ui.pagination.menu
+          a.item.active 全部
+            .ui.label.light.gray 330
+          a.item 個人
+            .ui.label.light.gray 300
+          a.item 團體
+            .ui.label.light.gray 30
 
       include -user-in-list
       include -user-in-list
