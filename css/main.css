@@ -150,10 +150,17 @@ p {
 #content .section.in.list > .action {
   float: left;
   margin: 0;
-  text-shadow: 1px 1px 0 white;
 }
-#content .section.in.list > .action .icon {
-  opacity: 0.3;
+#content .section.in.list > .action .icon, #content .section.in.list > .action .item {
+  color: black;
+  opacity: 0.7;
+}
+#content .section.in.list > .action .item:hover {
+  background-color: #1ab8f3;
+}
+#content .section.in.list > .action .item:hover, #content .section.in.list > .action .item:hover .icon {
+  color: white;
+  opacity: 1;
 }
 #content .section.in.list .title {
   color: inherit;

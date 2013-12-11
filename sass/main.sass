@@ -127,9 +127,14 @@ p
     &>.action
       float: left
       margin: 0
-      +text-shadow(1px 1px 0 #fff)
-      .icon
-        opacity: 0.3
+      .icon, .item
+        color: rgba(0,0,0,1)
+        opacity: .7
+      .item:hover
+        background-color: rgba(26,184,243,1)
+      .item:hover, .item:hover .icon
+        color: rgba(255,255,255,1)
+        opacity: 1
     .title
       color: inherit
       padding: 0
