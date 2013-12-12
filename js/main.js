@@ -28,3 +28,8 @@ $('#header>.menu>.right>.dropdown>.menu>.no.category').on('click tap',function()
   $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').hide();
   $('#header>.menu>.right>.dropdown>.no.category').css('display', 'inline-block');
 })
+
+$('#header>.menu>.right>.filter').on('click tap',function(){
+  $('#content .category.navigation').toggle();
+  $(this).toggleClass('active')
+})

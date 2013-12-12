@@ -1,88 +1,71 @@
 extends proposal-content
 
 block menu-right
-  a.ui.dropdown.item
-    .text 顯示全部
-    i.dropdown.icon
-    .menu
-      .item.active 顯示全部
-      .item 我提出的
-  a.ui.right.icon.labeled.button.item 新願景
-    i.add.icon
+  include -proposal-sort-menu
 
 block content
-  .ui.two.column.stackable.grid.stickers
-    .column.todo
+  .stickers
+    .todo
+      .sticker
+        .ui.icon.labeled.button.new
+          i.icon.add
+          | 想像新願景
+      include -proposal-content-category-menu
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            | ，
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
+    .done
       .ui.horizontal.divider 修改過
-      .sticker
+      .sticker.edited
         .ui.vertical.icon.menu.action
-          a.item.yes
+          a.item.yes.selected
             i.icon.checkmark.checked
           a.item.unknown
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .sticker
+      .sticker.edited
         .ui.vertical.icon.menu.action
           a.item.yes
             i.icon.checkmark.checked
           a.item.unknown
             i.icon.question
-          a.item.no
+          a.item.no.selected
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 未處理
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-    .column.done
       .ui.horizontal.divider 同意
       .sticker
         .ui.vertical.icon.menu.action
@@ -92,12 +75,23 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
+            | ，
+            a(href="") 你
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -106,7 +100,8 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a ETBlue
             | 於
@@ -114,39 +109,16 @@ block content
             span.right
               a
                 i.icon.pencil
-              a
-                i.icon.trash
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes.selected
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a ETBlue
-            | 於
-            a 1 小時前發表
-            span.right
-              a
-                i.icon.pencil
-              a
-                i.icon.trash
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes.selected
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
+            | ，
+            a(href="") 你
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
       .ui.horizontal.divider 不確定
       .sticker
         .ui.vertical.icon.menu.action
@@ -156,24 +128,21 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown.selected
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
+            | ，
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
       .ui.horizontal.divider 不同意
       .sticker
         .ui.vertical.icon.menu.action
@@ -183,37 +152,21 @@ block content
             i.icon.question
           a.item.no.selected
             i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+        .ui.segment.vision 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.number.top.right.attached.light.gray 願景 1
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no.selected
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no.selected
-            i.icon.remove
-        .ui.segment.draft 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
+            | ，
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
 
   //-h3 現況與願景
   //-.ui.three.connected.items.compare

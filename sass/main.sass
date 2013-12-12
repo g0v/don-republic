@@ -145,6 +145,11 @@ p
     .meta
       height: 3.5em
       padding: 0.25em 1em
+      a
+        padding: 0 0.5em
+        color: #29abe2
+        &:hover
+          color: #0071bc
     .action
       a.item:hover
         background-color: rgba(26,184,243,1)
@@ -152,7 +157,8 @@ p
         color: rgba(255,255,255,1)
         opacity: 1
   .section.in.list,
-  .stickers
+  .stickers,
+  .subject
     .action
       float: left
       margin: 0
@@ -176,21 +182,59 @@ p
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-      font-size: 0.9em
-      a
-        padding: 0 0.5em
-        color: #29abe2
-        &:hover
-          color: #0071bc
-  .stickers
-    margin: 0
+      font-size: 0.9rem
+  .stickers,
+  .subject
     .sticker
-      .ui.segment
+      .vision, .problem, .reason, .solution, .stakeholder, .new
         font-size: 1.2rem
         display: block
+        padding: 1.2em 1em 2rem 1em
         +border-radius(0)
-        margin: 0 0 1rem 3rem
-        padding-bottom: 2rem
+      .new
+        padding: 1em
+        font-weight: normal
+        text-align: left
+        background: none
+        border: 2px #ccc dashed
+        i.icon
+          padding: 1em
+        &:hover
+          background-color: rgba(0,0,0,0.03)
+      .number
+        font-size: 0.8rem
+        padding: 0.25em 0.5em
+      .script
+        display: block
+      .meta
+        height: 2em
+        padding: 0 1em
+        line-height: 2em
+        a
+          color: #0071bc
+          padding: 0.5em
+          &:hover
+            color: #2e3192
+        .right
+          float: right
+          a
+            padding: 0.5em 0.8em
+            &:hover
+              background-color: (rgba(0,0,0,0.05))
+      .vision
+        background-color: rgba(#fcee21,0.3)
+      .problem
+        background-color: rgba(#ff0000,0.1)
+      .reason
+        background-color: rgba(#662d91,0.1)
+      .solution
+        background-color: rgba(#8cc63f,0.2)
+      .stakeholder
+        background-color: rgba(#29abe2,0.2)
+        .a.tag.item
+          margin-left: -0.5em
+          color: #0071bc
+      .new
       .action
         .item
           font-size: 0.8rem
@@ -209,20 +253,27 @@ p
           &.no
             &:hover, &.selected
               background-color: rgba(#f15a24,1)
-      .draft
-        background-color: rgba(#fcee21,0.3)
-      .meta
-        font-size: 0.9rem
-        height: 2em
-        padding: 0 1em
-        line-height: 2em
-        .right
-          float: right
-          a
-            padding: 0.8em
-            margin-left: 0.5em
+      &.edited
+        .action
+          a.item.selected
+            opacity: 0.5
             &:hover
-              background-color: (rgba(0,0,0,0.05))
+              opacity: 1
+  .stickers
+    margin: 0
+    .todo, .done, .beneficiary, .sufferer
+      padding: 0 1rem
+    .beneficiary, .sufferer
+      margin: 0
+    .sticker
+      .vision, .problem, .reason, .solution, .stakeholder, .new
+        margin: 0 0 1rem 3rem
+  .subject
+    margin: 0 1rem 1rem 1rem
+    .sticker
+      .vision, .problem, .reason, .solution, .stakeholder
+        margin: 0 0 0 3rem
+
 
   // customize semantic ui stackable grids for tag list view
   .ui.two.column.stackable.grid.tag

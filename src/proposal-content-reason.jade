@@ -1,0 +1,155 @@
+extends proposal-content
+
+block menu-right
+  include -proposal-sort-menu
+
+block content
+  .navigation
+    .ui.buttons
+      a.ui.labeled.icon.button 上一個成因
+        i.icon.left.arrow
+      a(href="proposal-content-problem.html").ui.button 回成因列表
+      a.ui.right.labeled.icon.button 下一個成因
+        i.icon.right.arrow
+  .subject
+    .sticker
+      .ui.vertical.icon.menu.action
+        a.item.yes.selected
+          i.icon.checkmark.checked
+        a.item.unknown
+          i.icon.question
+        a.item.no
+          i.icon.remove
+      .ui.segment.reason
+        .ui.label.number.top.right.attached.light.gray 成因 1
+        | 企畫階段沒有納入外界意見，不瞭解使用者需求
+        .ui.label.meta.bottom.attached.light.gray
+          a hychen
+          | 於
+          a 1 小時前發表
+  .stickers
+    .todo
+      .sticker
+        .ui.icon.labeled.button.new
+          i.icon.add
+          | 構思新對策
+      include -proposal-content-category-menu
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      .ui.horizontal.divider 來自其他成因
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+    .done
+      .ui.horizontal.divider 修改過
+      .sticker.edited
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+      .ui.horizontal.divider 同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+      .ui.horizontal.divider 不確定
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown.selected
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      .ui.horizontal.divider 不同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no.selected
+            i.icon.remove
+        .ui.segment.solution
+          a(href="proposal-content-solution.html").script 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          .ui.label.number.top.right.attached.light.gray 對策 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      
+block script
+  script.
+    $("#navbar .proposal").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .problems").addClass("active");

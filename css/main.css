@@ -176,6 +176,13 @@ p {
   height: 3.5em;
   padding: 0.25em 1em;
 }
+#content .section.in.list .meta a {
+  padding: 0 0.5em;
+  color: #29abe2;
+}
+#content .section.in.list .meta a:hover {
+  color: #0071bc;
+}
 #content .section.in.list .action a.item:hover {
   background-color: #1ab8f3;
 }
@@ -184,28 +191,34 @@ p {
   opacity: 1;
 }
 #content .section.in.list .action,
-#content .stickers .action {
+#content .stickers .action,
+#content .subject .action {
   float: left;
   margin: 0;
 }
 #content .section.in.list .action .icon, #content .section.in.list .action .item,
 #content .stickers .action .icon,
-#content .stickers .action .item {
+#content .stickers .action .item,
+#content .subject .action .icon,
+#content .subject .action .item {
   color: black;
   opacity: 0.7;
 }
 #content .section.in.list .info,
-#content .stickers .info {
+#content .stickers .info,
+#content .subject .info {
   font-size: 0.9em;
 }
 #content .section.in.list .info p,
-#content .stickers .info p {
+#content .stickers .info p,
+#content .subject .info p {
   position: relative;
   margin: 0 0 0.5em 3em;
   line-height: 1.5em;
 }
 #content .section.in.list .info p .ui.label,
-#content .stickers .info p .ui.label {
+#content .stickers .info p .ui.label,
+#content .subject .info p .ui.label {
   margin: 0;
   padding: 0.25em 0.5em 0.25em 0;
   position: absolute;
@@ -213,72 +226,161 @@ p {
   font-size: inherit;
 }
 #content .section.in.list .meta,
-#content .stickers .meta {
+#content .stickers .meta,
+#content .subject .meta {
   line-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
-#content .section.in.list .meta a,
-#content .stickers .meta a {
-  padding: 0 0.5em;
-  color: #29abe2;
-}
-#content .section.in.list .meta a:hover,
-#content .stickers .meta a:hover {
-  color: #0071bc;
-}
-#content .stickers {
-  margin: 0;
-}
-#content .stickers .sticker .ui.segment {
+#content .stickers .sticker .vision, #content .stickers .sticker .problem, #content .stickers .sticker .reason, #content .stickers .sticker .solution, #content .stickers .sticker .stakeholder, #content .stickers .sticker .new,
+#content .subject .sticker .vision,
+#content .subject .sticker .problem,
+#content .subject .sticker .reason,
+#content .subject .sticker .solution,
+#content .subject .sticker .stakeholder,
+#content .subject .sticker .new {
   font-size: 1.2rem;
   display: block;
+  padding: 1.2em 1em 2rem 1em;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
-  margin: 0 0 1rem 3rem;
-  padding-bottom: 2rem;
 }
-#content .stickers .sticker .action .item {
+#content .stickers .sticker .new,
+#content .subject .sticker .new {
+  padding: 1em;
+  font-weight: normal;
+  text-align: left;
+  background: none;
+  border: 2px #cccccc dashed;
+}
+#content .stickers .sticker .new i.icon,
+#content .subject .sticker .new i.icon {
+  padding: 1em;
+}
+#content .stickers .sticker .new:hover,
+#content .subject .sticker .new:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+#content .stickers .sticker .number,
+#content .subject .sticker .number {
   font-size: 0.8rem;
-  padding: 0.5rem 0.8rem;
+  padding: 0.25em 0.5em;
 }
-#content .stickers .sticker .action a.item:hover, #content .stickers .sticker .action a.item:hover .icon, #content .stickers .sticker .action a.item.selected, #content .stickers .sticker .action a.item.selected .icon {
-  opacity: 1;
-  color: white;
-  border: none !important;
+#content .stickers .sticker .script,
+#content .subject .sticker .script {
+  display: block;
 }
-#content .stickers .sticker .action a.item.yes:hover, #content .stickers .sticker .action a.item.yes.selected {
-  background-color: #39b54a;
-}
-#content .stickers .sticker .action a.item.unknown:hover, #content .stickers .sticker .action a.item.unknown.selected {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-#content .stickers .sticker .action a.item.no:hover, #content .stickers .sticker .action a.item.no.selected {
-  background-color: #f15a24;
-}
-#content .stickers .sticker .draft {
-  background-color: rgba(252, 238, 33, 0.3);
-}
-#content .stickers .sticker .meta {
-  font-size: 0.9rem;
+#content .stickers .sticker .meta,
+#content .subject .sticker .meta {
   height: 2em;
   padding: 0 1em;
   line-height: 2em;
 }
-#content .stickers .sticker .meta .right {
+#content .stickers .sticker .meta a,
+#content .subject .sticker .meta a {
+  color: #0071bc;
+  padding: 0.5em;
+}
+#content .stickers .sticker .meta a:hover,
+#content .subject .sticker .meta a:hover {
+  color: #2e3192;
+}
+#content .stickers .sticker .meta .right,
+#content .subject .sticker .meta .right {
   float: right;
 }
-#content .stickers .sticker .meta .right a {
-  padding: 0.8em;
-  margin-left: 0.5em;
+#content .stickers .sticker .meta .right a,
+#content .subject .sticker .meta .right a {
+  padding: 0.5em 0.8em;
 }
-#content .stickers .sticker .meta .right a:hover {
+#content .stickers .sticker .meta .right a:hover,
+#content .subject .sticker .meta .right a:hover {
   background-color: rgba(0, 0, 0, 0.05);
+}
+#content .stickers .sticker .vision,
+#content .subject .sticker .vision {
+  background-color: rgba(252, 238, 33, 0.3);
+}
+#content .stickers .sticker .problem,
+#content .subject .sticker .problem {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+#content .stickers .sticker .reason,
+#content .subject .sticker .reason {
+  background-color: rgba(102, 45, 145, 0.1);
+}
+#content .stickers .sticker .solution,
+#content .subject .sticker .solution {
+  background-color: rgba(140, 198, 63, 0.2);
+}
+#content .stickers .sticker .stakeholder,
+#content .subject .sticker .stakeholder {
+  background-color: rgba(41, 171, 226, 0.2);
+}
+#content .stickers .sticker .stakeholder .a.tag.item,
+#content .subject .sticker .stakeholder .a.tag.item {
+  margin-left: -0.5em;
+  color: #0071bc;
+}
+#content .stickers .sticker .action .item,
+#content .subject .sticker .action .item {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+}
+#content .stickers .sticker .action a.item:hover, #content .stickers .sticker .action a.item:hover .icon, #content .stickers .sticker .action a.item.selected, #content .stickers .sticker .action a.item.selected .icon,
+#content .subject .sticker .action a.item:hover,
+#content .subject .sticker .action a.item:hover .icon,
+#content .subject .sticker .action a.item.selected,
+#content .subject .sticker .action a.item.selected .icon {
+  opacity: 1;
+  color: white;
+  border: none !important;
+}
+#content .stickers .sticker .action a.item.yes:hover, #content .stickers .sticker .action a.item.yes.selected,
+#content .subject .sticker .action a.item.yes:hover,
+#content .subject .sticker .action a.item.yes.selected {
+  background-color: #39b54a;
+}
+#content .stickers .sticker .action a.item.unknown:hover, #content .stickers .sticker .action a.item.unknown.selected,
+#content .subject .sticker .action a.item.unknown:hover,
+#content .subject .sticker .action a.item.unknown.selected {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#content .stickers .sticker .action a.item.no:hover, #content .stickers .sticker .action a.item.no.selected,
+#content .subject .sticker .action a.item.no:hover,
+#content .subject .sticker .action a.item.no.selected {
+  background-color: #f15a24;
+}
+#content .stickers .sticker.edited .action a.item.selected,
+#content .subject .sticker.edited .action a.item.selected {
+  opacity: 0.5;
+}
+#content .stickers .sticker.edited .action a.item.selected:hover,
+#content .subject .sticker.edited .action a.item.selected:hover {
+  opacity: 1;
+}
+#content .stickers {
+  margin: 0;
+}
+#content .stickers .todo, #content .stickers .done, #content .stickers .beneficiary, #content .stickers .sufferer {
+  padding: 0 1rem;
+}
+#content .stickers .beneficiary, #content .stickers .sufferer {
+  margin: 0;
+}
+#content .stickers .sticker .vision, #content .stickers .sticker .problem, #content .stickers .sticker .reason, #content .stickers .sticker .solution, #content .stickers .sticker .stakeholder, #content .stickers .sticker .new {
+  margin: 0 0 1rem 3rem;
+}
+#content .subject {
+  margin: 0 1rem 1rem 1rem;
+}
+#content .subject .sticker .vision, #content .subject .sticker .problem, #content .subject .sticker .reason, #content .subject .sticker .solution, #content .subject .sticker .stakeholder {
+  margin: 0 0 0 3rem;
 }
 #content .ui.two.column.stackable.grid.tag {
   margin: 0;
