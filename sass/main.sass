@@ -124,17 +124,6 @@ p
           +border-radius(0.3rem)
           &:hover
             background-color: rgba(0,0,0,0.05)
-    &>.action
-      float: left
-      margin: 0
-      .icon, .item
-        color: rgba(0,0,0,1)
-        opacity: .7
-      .item:hover
-        background-color: rgba(26,184,243,1)
-      .item:hover, .item:hover .icon
-        color: rgba(255,255,255,1)
-        opacity: 1
     .title
       color: inherit
       padding: 0
@@ -153,6 +142,23 @@ p
           line-height: 1em
     .summary
       color: inherit
+    .meta
+      height: 3.5em
+      padding: 0.25em 1em
+    .action
+      a.item:hover
+        background-color: rgba(26,184,243,1)
+      a.item:hover, a.item:hover .icon
+        color: rgba(255,255,255,1)
+        opacity: 1
+  .section.in.list,
+  .stickers
+    .action
+      float: left
+      margin: 0
+      .icon, .item
+        color: rgba(0,0,0,1)
+        opacity: .7
     .info
       font-size: 0.9em
       p
@@ -166,8 +172,6 @@ p
           left: -3em
           font-size: inherit
     .meta
-      height: 3.5em
-      padding: 0.25em 1em
       line-height: 1.5em
       white-space: nowrap
       overflow: hidden
@@ -178,6 +182,47 @@ p
         color: #29abe2
         &:hover
           color: #0071bc
+  .stickers
+    margin: 0
+    .sticker
+      .ui.segment
+        font-size: 1.2rem
+        display: block
+        +border-radius(0)
+        margin: 0 0 1rem 3rem
+        padding-bottom: 2rem
+      .action
+        .item
+          font-size: 0.8rem
+          padding: 0.5rem 0.8rem
+        a.item
+          &:hover, &:hover .icon, &.selected, &.selected .icon
+            opacity: 1
+            color: rgba(255,255,255,1)
+            border: none!important
+          &.yes
+            &:hover, &.selected
+              background-color: rgba(#39b54a,1)
+          &.unknown
+            &:hover, &.selected
+              background-color: rgba(#000,0.5)
+          &.no
+            &:hover, &.selected
+              background-color: rgba(#f15a24,1)
+      .draft
+        background-color: rgba(#fcee21,0.3)
+      .meta
+        font-size: 0.9rem
+        height: 2em
+        padding: 0 1em
+        line-height: 2em
+        .right
+          float: right
+          a
+            padding: 0.8em
+            margin-left: 0.5em
+            &:hover
+              background-color: (rgba(0,0,0,0.05))
 
   // customize semantic ui stackable grids for tag list view
   .ui.two.column.stackable.grid.tag
@@ -229,7 +274,7 @@ p
           width: 5rem
           overflow: hidden
           text-overflow: ellipsis
-      .compare
+      //.compare
         .row
           margin: 0
           width: 100%
@@ -532,5 +577,4 @@ p
         &:before,
         &:after
           width: 48%
-
 
