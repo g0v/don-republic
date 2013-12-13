@@ -827,6 +827,8 @@ p {
   vertical-align: bottom;
   margin: 0;
   padding: 0.25em 0.5em;
+  color: black;
+  opacity: 0.7;
 }
 #issue #header .action .item i.icon,
 #proposal #header .action .item i.icon,
@@ -835,7 +837,7 @@ p {
 #argument #header .action .item i.icon,
 #article #header .action .item i.icon {
   display: inline-block;
-  opacity: 0.3;
+  opacity: 0.7;
   margin-bottom: 0 !important;
 }
 #issue #header .action .item .text,
@@ -855,6 +857,28 @@ p {
 #argument #header .action:after,
 #article #header .action:after {
   display: none;
+}
+#issue #header .action a.item:hover,
+#proposal #header .action a.item:hover,
+#project #header .action a.item:hover,
+#qa #header .action a.item:hover,
+#argument #header .action a.item:hover,
+#article #header .action a.item:hover {
+  background-color: #1ab8f3;
+}
+#issue #header .action a.item:hover, #issue #header .action a.item:hover .icon,
+#proposal #header .action a.item:hover,
+#proposal #header .action a.item:hover .icon,
+#project #header .action a.item:hover,
+#project #header .action a.item:hover .icon,
+#qa #header .action a.item:hover,
+#qa #header .action a.item:hover .icon,
+#argument #header .action a.item:hover,
+#argument #header .action a.item:hover .icon,
+#article #header .action a.item:hover,
+#article #header .action a.item:hover .icon {
+  color: white;
+  opacity: 1;
 }
 #issue #header .switch,
 #proposal #header .switch,
