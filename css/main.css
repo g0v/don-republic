@@ -345,7 +345,7 @@ p {
 #content .stickers .sticker .vision,
 #content .subject .sticker .vision, #subheader .stickers .sticker .vision,
 #subheader .subject .sticker .vision {
-  background-color: rgba(252, 238, 33, 0.3);
+  background-color: #fdf9bb;
 }
 #content .stickers .sticker .problem,
 #content .subject .sticker .problem, #subheader .stickers .sticker .problem,
@@ -365,7 +365,7 @@ p {
 #content .stickers .sticker .stakeholder,
 #content .subject .sticker .stakeholder, #subheader .stickers .sticker .stakeholder,
 #subheader .subject .sticker .stakeholder {
-  background-color: rgba(41, 171, 226, 0.2);
+  background-color: #d3edf8;
 }
 #content .stickers .sticker .stakeholder .a.tag.item,
 #content .subject .sticker .stakeholder .a.tag.item, #subheader .stickers .sticker .stakeholder .a.tag.item,
@@ -439,7 +439,7 @@ p {
   margin: 0 0 0 3rem;
 }
 #content .subject, #subheader .subject {
-  padding: 1rem 1rem 0 1rem;
+  padding: 0;
   border-bottom: 1px #999999 solid;
 }
 #content .subject .sticker .vision, #content .subject .sticker .problem, #content .subject .sticker .reason, #content .subject .sticker .solution, #content .subject .sticker .stakeholder, #subheader .subject .sticker .vision, #subheader .subject .sticker .problem, #subheader .subject .sticker .reason, #subheader .subject .sticker .solution, #subheader .subject .sticker .stakeholder {
@@ -957,7 +957,7 @@ p {
 #qa #subheader,
 #argument #subheader,
 #article #subheader {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 #issue #wrapper,
 #proposal #wrapper,
