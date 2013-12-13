@@ -443,7 +443,7 @@ p {
   border-bottom: 1px #999999 solid;
 }
 #content .subject .sticker .vision, #content .subject .sticker .problem, #content .subject .sticker .reason, #content .subject .sticker .solution, #content .subject .sticker .stakeholder, #subheader .subject .sticker .vision, #subheader .subject .sticker .problem, #subheader .subject .sticker .reason, #subheader .subject .sticker .solution, #subheader .subject .sticker .stakeholder {
-  margin: 0 0 0 3rem;
+  margin: 0;
 }
 #content .subject .sticker .source, #subheader .subject .sticker .source {
   color: rgba(0, 0, 0, 0.7);
