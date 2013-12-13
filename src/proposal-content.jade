@@ -3,29 +3,6 @@ extends proposal
 block header
   include -proposal-header
 
-block menu
-  .ui.level.two.menu.borderless
-    a(href="proposal-content-intro.html").item.intro 引言
-    a(href="proposal-content-vision.html").item.vision 願景
-    a(href="proposal-content-problems.html").item.problems 分析
-    //-a(href="proposal-content-reason.html").item.reason 成因
-    //-a(href="proposal-content-solution.html").item.solution 對策
-    //-a(href="proposal-content-stakeholder.html").item.stakeholder 關係者
-    a(href="proposal-content-plans.html").item.plans 規劃
-    a(href="proposal-content-draft.html").item.draft.hidden 草案
-    a(href="proposal-content-accepted.html").item.accepted.hidden 成案
-    a(href="proposal-content-frozen.html").item.frozen 定案
-      .ui.label.light.gray 1
-    a(href="proposal-content-vote.html").item.vote.hidden 表決
-    a(href="proposal-content-followup.html").item.followup.hidden 追蹤
-    a(href="proposal-content-archive.html").item.archive.hidden 封存
-    a(href="proposal-content-reference.html").item.reference 參考資料
-    a(href="proposal-content-report.html").item.report 匯出報告
-    .right.menu
-      //-.ui.button.icon.labeled.filter 分類
-        i.icon.filter
-      block menu-right
-
 block script
   script.
     $("#navbar .proposal").addClass("active");
