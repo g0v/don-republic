@@ -1,14 +1,18 @@
 extends proposal-content
 
 block menu-right
-  include -proposal-sort-menu
+  //-include -proposal-sort-menu
 
-block content
-  .navigation
-    .ui.buttons
+block subheader
+  .ui.menu.subheader
+    .ui.steps
+      a(href="proposal-content-problem.html").ui.step.problem.normal 問題
+      a(href="proposal-content-reason.html").ui.step.reason.active 成因
+      a(href="proposal-content-solution.html").ui.step.solution.normal 對策
+    .ui.buttons.right.menu
       a.ui.labeled.icon.button 上一個成因
         i.icon.left.arrow
-      a(href="proposal-content-problem.html").ui.button 回成因列表
+      include -proposal-navigation-scope-menu
       a.ui.right.labeled.icon.button 下一個成因
         i.icon.right.arrow
   .subject
@@ -23,16 +27,19 @@ block content
       .ui.segment.reason
         .ui.label.number.top.right.attached.light.gray 成因 1
         | 企畫階段沒有納入外界意見，不瞭解使用者需求
+        .source 針對問題
+          a(href="proposal-content-problem.html").a.topic.item 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
         .ui.label.meta.bottom.attached.light.gray
           a hychen
           | 於
           a 1 小時前發表
+block content
   .stickers
     .todo
       .sticker
         .ui.icon.labeled.button.new
           i.icon.add
-          | 構思新對策
+          | 此成因的對策
       include -proposal-content-category-menu
       .sticker
         .ui.vertical.icon.menu.action
@@ -49,7 +56,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 來自其他成因
+      //-.ui.horizontal.divider 來自其他成因
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -81,7 +88,7 @@ block content
             | 於
             a 1 小時前發表
     .done
-      .ui.horizontal.divider 修改過
+      //-.ui.horizontal.divider 修改過
       .sticker.edited
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -98,7 +105,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 同意
+      //-.ui.horizontal.divider 同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -115,7 +122,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 不確定
+      //-.ui.horizontal.divider 不確定
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -131,7 +138,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 不同意
+      //-.ui.horizontal.divider 不同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes

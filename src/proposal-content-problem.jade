@@ -1,14 +1,22 @@
 extends proposal-content
 
 block menu-right
-  include -proposal-sort-menu
+  //-include -proposal-sort-menu
 
-block content
-  .navigation
-    .ui.buttons
+block subheader
+  .ui.menu.subheader
+    .ui.steps
+      a(href="proposal-content-problem.html").ui.step.problem.active 問題
+      a(href="proposal-content-reason.html").ui.step.reason.normal 成因
+      a(href="proposal-content-solution.html").ui.step.solution.normal 對策
+    .ui.buttons.right.menu
       a.ui.labeled.icon.button 上一個問題
         i.icon.left.arrow
-      a(href="proposal-content-problems.html").ui.button 回問題列表
+      //-.ui.pagination.menu
+        a(href="proposal-content-problem.html").item.active 問題
+        a(href="proposal-content-reason.html").item 成因
+        a(href="proposal-content-solution.html").item 對策
+      include -proposal-navigation-scope-menu
       a.ui.right.labeled.icon.button 下一個問題
         i.icon.right.arrow
   .subject
@@ -37,12 +45,13 @@ block content
             | 與其他 
             a(href="") 10 人
             | 同意
+block content
   .stickers
     .todo
       .sticker
         .ui.icon.labeled.button.new
           i.icon.add
-          | 找出新成因
+          | 此問題的成因
       include -proposal-content-category-menu
       .sticker
         .ui.vertical.icon.menu.action
@@ -68,7 +77,7 @@ block content
             | 與其他 
             a(href="") 10 人
             | 同意
-      .ui.horizontal.divider 來自其他問題
+      //-.ui.horizontal.divider 來自其他問題
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -94,7 +103,7 @@ block content
             a(href="") 10 人
             | 同意
     .done
-      .ui.horizontal.divider 修改過
+      //-.ui.horizontal.divider 修改過
       .sticker.edited
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -111,7 +120,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 同意
+      //-.ui.horizontal.divider 同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -138,7 +147,7 @@ block content
             | 與其他 
             a(href="") 10 人
             | 同意
-      .ui.horizontal.divider 不確定
+      //-.ui.horizontal.divider 不確定
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -163,7 +172,7 @@ block content
             | 與其他 
             a(href="") 10 人
             | 同意
-      .ui.horizontal.divider 不同意
+      //-.ui.horizontal.divider 不同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes

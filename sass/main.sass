@@ -38,14 +38,15 @@ p
 // global settings for this system
 .a.tag.item,
 .a.board.item,
-.a.user.item
+.a.user.item,
+.a.topic.item
   display: inline-block
   margin: 0
   padding: 0.25em 0.5em
   +box-sizing(border-box)
   +border-radius(0.3rem)
   &:hover
-    +box-shadow(0 0 1px rgba(#29abe2,0.5))
+    +box-shadow(0 0 1px rgba(#000,0.5))
 
 .a.tag.item
   color: rgba(#29abe2,1)
@@ -61,6 +62,11 @@ p
   color: rgba(#ff7bac,1)
   &:hover
     background-color: rgba(#ff7bac,0.05)
+
+.a.topic.item
+  color: inherit
+  &:hover
+    background-color: rgba(#000,0.05)
 
 // add customized semantic ui label colors
 .ui.label.light.gray
@@ -92,7 +98,7 @@ p
       padding-right: 0
       font-size: 0.9rem
 
-#content
+#content, #subheader
   // the repeatable items in a list view
   .section.in.list
     margin: 0 1rem 1rem 0
@@ -189,7 +195,7 @@ p
       .vision, .problem, .reason, .solution, .stakeholder, .new
         font-size: 1.2rem
         display: block
-        padding: 1.2em 1em 2rem 1em
+        padding: 1.2em 1em 2.5rem 1em
         +border-radius(0)
       .new
         padding: 1em
@@ -222,14 +228,19 @@ p
             &:hover
               background-color: (rgba(0,0,0,0.05))
       .vision
+        //background-color: rgba(#fcee21,0.3)
         background-color: rgba(#fcee21,0.3)
       .problem
-        background-color: rgba(#ff0000,0.1)
+        //background-color: rgba(#ff0000,0.1)
+        background-color: #fee5e5
       .reason
-        background-color: rgba(#662d91,0.1)
+        //background-color: rgba(#662d91,0.1)
+        background-color: #efe9f3
       .solution
-        background-color: rgba(#8cc63f,0.2)
+        //background-color: rgba(#8cc63f,0.2)
+        background-color: #e7f3d7
       .stakeholder
+        //background-color: rgba(#29abe2,0.2)
         background-color: rgba(#29abe2,0.2)
         .a.tag.item
           margin-left: -0.5em
@@ -268,12 +279,18 @@ p
     .sticker
       .vision, .problem, .reason, .solution, .stakeholder, .new
         margin: 0 0 1rem 3rem
+      .vision, .problem, .reason, .solution, .stakeholder
+        margin: 0 0 0 3rem
   .subject
-    margin: 0 1rem 1rem 1rem
+    padding: 1rem 1rem 0 1rem
+    border-bottom: 1px #999 solid
     .sticker
       .vision, .problem, .reason, .solution, .stakeholder
         margin: 0 0 0 3rem
-
+      .source
+        color: rgba(#000,0.7)
+        font-size: 0.9rem
+        margin-top: 1em
 
   // customize semantic ui stackable grids for tag list view
   .ui.two.column.stackable.grid.tag
@@ -286,6 +303,57 @@ p
   .navigation
     text-align: center
     margin: 0 auto 1rem auto
+    &.sticker.scope
+      margin-bottom: 0
+    .menu
+      .item
+        padding-top: 0.7em
+        padding-bottom: 0.7em
+
+  .subheader
+    margin-bottom: 0
+    .button
+      background-color: rgba(#fff,0)
+
+  // customize ui steps for subheader
+  .ui.steps
+    display: inline-block
+    .step
+      font-weight: bold
+      padding-top: 0.8em
+      padding-bottom: 0.8em
+      &.normal
+        &:after
+          border: none
+          background-color: #FFFFFF
+          top: 0.42em
+          width: 1.8em
+          height: 1.8em
+          -webkit-transform: rotate(-45deg)
+          -ms-transform: rotate(-45deg)
+          transform: rotate(-45deg)
+          -webkit-box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset
+          box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset
+          right: -0.9em
+        &:hover:after
+          background-color: #F7F7F7
+      &.active
+        color: inherit!important
+        &:after
+          border-width: 1.3em
+          right: -1.2em
+        &.problem
+          background-color: #fee5e5
+          &:after
+            border-left-color: #fee5e5
+        &.reason
+          background-color: #efe9f3
+          &:after
+            border-left-color: #efe9f3
+        &.solution
+          background-color: #e7f3d7
+          &:after
+            border-left-color: #e7f3d7
 
   // links in a wiki
   .etherpad,
@@ -571,6 +639,14 @@ p
         color: rgba(0,0,0,1)
       .ui.button
         margin-top: 1px
+  //#subheader
+    background: url("../img/bg-gray.png") 
+    background-repeat: repeat
+    background-position: right top
+    background-attachment: fixed
+    background-color: rgba(#000, 0.1)
+  #subheader
+    background-color: rgba(#000, 0.1)
   #wrapper
     padding: 1rem
   #content

@@ -1,14 +1,18 @@
 extends proposal-content
 
 block menu-right
-  include -proposal-sort-menu
+  //-include -proposal-sort-menu
 
-block content
-  .navigation
-    .ui.buttons
+block subheader
+  .ui.menu.subheader
+    .ui.steps
+      a(href="proposal-content-problem.html").ui.step.problem.normal 問題
+      a(href="proposal-content-reason.html").ui.step.reason.normal 成因
+      a(href="proposal-content-solution.html").ui.step.solution.active 對策
+    .ui.buttons.right.menu
       a.ui.labeled.icon.button 上一個對策
         i.icon.left.arrow
-      a(href="proposal-content-reason.html").ui.button 回對策列表
+      include -proposal-navigation-scope-menu
       a.ui.right.labeled.icon.button 下一個對策
         i.icon.right.arrow
   .subject
@@ -23,24 +27,27 @@ block content
       .ui.segment.solution
         .ui.label.number.top.right.attached.light.gray 對策 1
         | 軟體專案發想初期就在動民主等公開平台徵求民間意見
+        .source 針對成因
+          a(href="proposal-content-reason.html").a.topic.item 企畫階段沒有納入外界意見，不瞭解使用者需求
         .ui.label.meta.bottom.attached.light.gray
           a hychen
           | 於
           a 1 小時前發表
+block content
   .ui.two.column.stackable.grid.stickers
     .column.beneficiary
       .sticker
         .ui.icon.labeled.button.new
           i.icon.add
-          | 發現新受益者
+          | 此對策的受益者
     .column.sufferer
       .sticker
         .ui.icon.labeled.button.new
           i.icon.add
-          | 發現新受害者
-  include -proposal-content-category-menu
+          | 此對策的受害者
   .ui.two.column.stackable.grid.stickers
     .column.beneficiary
+      include -proposal-content-category-menu
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -57,7 +64,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 來自其他對策
+      //-.ui.horizontal.divider 來自其他對策
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -90,7 +97,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 修改過
+      //-.ui.horizontal.divider 修改過
       .sticker.edited
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -108,7 +115,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 同意
+      //-.ui.horizontal.divider 同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -126,7 +133,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 不確定
+      //-.ui.horizontal.divider 不確定
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -143,7 +150,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 不同意
+      //-.ui.horizontal.divider 不同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -161,6 +168,7 @@ block content
             | 於
             a 1 小時前發表
     .column.sufferer
+      include -proposal-content-category-menu
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -177,7 +185,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 來自其他對策
+      //-.ui.horizontal.divider 來自其他對策
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -210,7 +218,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 修改過
+      //-.ui.horizontal.divider 修改過
       .sticker.edited
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -228,7 +236,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 同意
+      //-.ui.horizontal.divider 同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes.selected
@@ -246,7 +254,7 @@ block content
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
-      .ui.horizontal.divider 不確定
+      //-.ui.horizontal.divider 不確定
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
@@ -263,7 +271,7 @@ block content
             a hychen
             | 於
             a 1 小時前發表
-      .ui.horizontal.divider 不同意
+      //-.ui.horizontal.divider 不同意
       .sticker
         .ui.vertical.icon.menu.action
           a.item.yes
