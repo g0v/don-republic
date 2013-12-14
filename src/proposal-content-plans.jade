@@ -7,158 +7,177 @@ block menu-right
   //-include -proposal-sort-menu
 
 block content
-  .stickers
-    .todo
-      .sticker
-        .ui.icon.labeled.button.new
-          i.icon.add
-          | 挖掘新問題
-      include -proposal-content-category-menu
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-            | ，
-            a(href="") clkao
-            a(href="") ipa
-            a(href="") tkirby
-            a(href="") jedi
-            a(href="") au 
-            | 與其他 
-            a(href="") 10 人
-            | 同意
-    .done
-      //-.ui.horizontal.divider 修改過
-      .sticker.edited
-        .ui.vertical.icon.menu.action
-          a.item.yes.selected
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-            a 2 分鐘前編輯
-      .sticker.edited
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no.selected.selected
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-            a 2 分鐘前編輯
-      //-.ui.horizontal.divider 同意
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes.selected
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-            a 2 分鐘前編輯
-            | ，
-            a(href="") 你
-            a(href="") clkao
-            a(href="") ipa
-            a(href="") tkirby
-            a(href="") jedi
-            a(href="") au 
-            | 與其他 
-            a(href="") 10 人
-            | 同意
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes.selected
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a ETBlue
-            | 於
-            a 1 小時前發表
-            span.right
-              a
-                i.icon.pencil
-            | ，
-            a(href="") 你
-            a(href="") clkao
-            a(href="") ipa
-            a(href="") tkirby
-            a(href="") jedi
-            a(href="") au 
-            | 與其他 
-            a(href="") 10 人
-            | 同意
-      //-.ui.horizontal.divider 不確定
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown.selected
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-      //-.ui.horizontal.divider 不同意
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no.selected
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
+  .section.in.list
+    a.ui.icon.labeled.button.new.plan
+      i.icon.add
+      | 發起新方案
+  .section.in.list
+    include -action-button-in-list
+    .ui.segment.plan.black
+      .ui.top.right.attached.label.black.id 方案 1
+      p.abstract
+        a 也許在美國，我們擔心自己永遠找不到人生中真正想要做的是什麼，沒錯！給你的頸根與胸膛一半日的自由，同在一個神奇的宇宙裡自得。金正恩:如敵人膽敢絲毫侵犯朝鮮領海，Jeremy爆冷奪冠，陸客瘋總統府，遊民喪命地下道，父離家十多年，國銀跨國債權，台灣最新英語能力表現報告！有，混合這些，然...
+      .info
+        p.solution
+          span.ui.label.white 對策 (10)
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          span ...
+        p.beneficiary
+          span.ui.label.white 受益者 (20)
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          span ...
+        p.sufferer
+          span.ui.label.white 受害者 (4)
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          span ...
+      .ui.attached.label.bottom.light.gray.meta
+        | 提案
+        a(href="") hychen
+        a(href="") hcchien
+        a(href="") jimyhuang
+        br
+        | 連署
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
+        br
+        | 訂閱
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
+  .section.in.list
+    include -action-button-in-list
+    .ui.segment.plan
+      .ui.ribbon.label.black.status 定稿
+      .ui.top.right.attached.label.black.id 方案 2
+      p.abstract
+        a(href="") 也許在美國，我們擔心自己永遠找不到人生中真正想要做的是什麼，沒錯！給你的頸根與胸膛一半日的自由，同在一個神奇的宇宙裡自得。金正恩:如敵人膽敢絲毫侵犯朝鮮領海，Jeremy爆冷奪冠，陸客瘋總統府，遊民喪命地下道，父離家十多年，國銀跨國債權，台灣最新英語能力表現報告！有，混合這些，然...
+      .info
+        p.solution
+          span.ui.label.white 對策 (10)
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          span ...
+        p.beneficiary
+          span.ui.label.white 受益者 (20)
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          span ...
+        p.sufferer
+          span.ui.label.white 受害者 (4)
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          span ...
+      .ui.attached.label.bottom.light.gray.meta
+        | 提案
+        a(href="") hychen
+        a(href="") hcchien
+        a(href="") jimyhuang
+        br
+        | 連署
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
+        br
+        | 訂閱
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
+  .section.in.list
+    include -action-button-in-list
+    .ui.segment.plan.teal
+      .ui.ribbon.label.teal.status 定稿
+      .ui.top.right.attached.label.teal.id 方案 3 - 已達連署門檻
+      p.abstract
+        a(href="") 也許在美國，我們擔心自己永遠找不到人生中真正想要做的是什麼，沒錯！給你的頸根與胸膛一半日的自由，同在一個神奇的宇宙裡自得。金正恩:如敵人膽敢絲毫侵犯朝鮮領海，Jeremy爆冷奪冠，陸客瘋總統府，遊民喪命地下道，父離家十多年，國銀跨國債權，台灣最新英語能力表現報告！有，混合這些，然...
+      .info
+        p.solution
+          span.ui.label.white 對策 (10)
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          a(href="").a.solution.sticker 軟體專案發想初期就在動民主等公開平台徵求民間意見
+          span ...
+        p.beneficiary
+          span.ui.label.white 受益者 (20)
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          a(href="").a.stakeholder.sticker 政府計畫承辦人
+          span ...
+        p.sufferer
+          span.ui.label.white 受害者 (4)
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          a(href="").a.stakeholder.sticker 綁標廠商
+          span ...
+      .ui.attached.label.bottom.light.gray.meta
+        | 提案
+        a(href="") hychen
+        a(href="") hcchien
+        a(href="") jimyhuang
+        br
+        | 連署
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
+        br
+        | 訂閱
+        a(href="") 你
+        a(href="") clkao
+        a(href="") ipa
+        a(href="") tkirby
+        a(href="") jedi
+        a(href="") au 
+        | 與其他 
+        a(href="") 10 人
       
 block script
   script.
