@@ -228,7 +228,7 @@ p {
   background-color: rgba(0, 0, 0, 0.05);
 }
 #content .section.in.list > .plan, #subheader .section.in.list > .plan {
-  padding: 2.5rem 1rem 5rem 1rem;
+  padding: 2rem 1rem 5rem 1rem;
 }
 #content .section.in.list > .plan.new, #subheader .section.in.list > .plan.new {
   padding: 1em;
@@ -251,7 +251,14 @@ p {
   position: absolute;
 }
 #content .section.in.list > .plan .abstract, #subheader .section.in.list > .plan .abstract {
-  margin-top: 0;
+  margin: 0 0 0.5rem 0;
+}
+#content .section.in.list > .plan .abstract a, #subheader .section.in.list > .plan .abstract a {
+  display: block;
+  padding: 0.5rem 0;
+}
+#content .section.in.list > .plan .abstract a:hover, #subheader .section.in.list > .plan .abstract a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 #content .section.in.list > .plan .meta, #subheader .section.in.list > .plan .meta {
   height: 5em;

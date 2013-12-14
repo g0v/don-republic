@@ -1,0 +1,35 @@
+extends proposal-content
+
+block head
+  link(rel="stylesheet",href="css/level-two.css")
+
+block header
+
+block mini-header
+  .ui.menu.inverted
+    a(href="proposal-content-problems.html").item
+      i.icon.left.arrow
+      | 政府 IT 委外制度，引入開源碼發展模式可能性研究既建議案 (校閱中，3 天後交付立法院) - 規劃
+
+block menu-right
+  //-include -proposal-sort-menu
+
+block subheader
+  .ui.menu.subheader
+    a.item 方案一
+    a.item 5 願景
+    a.item 4 問題
+    a.item 6 成因
+    a.item 10 對策
+    a.item 20 受益者
+    a.item 10 受害者
+    .right.menu
+      a.item 平均同意 80%
+      a.item 我同意 80%
+block content
+      
+block script
+  script.
+    $("#navbar .proposal").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .plans").addClass("active");
