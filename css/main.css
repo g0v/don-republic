@@ -378,6 +378,7 @@ p {
 #subheader .subject .sticker .action .item {
   font-size: 0.8rem;
   padding: 0.5rem 0.8rem;
+  width: 3rem;
 }
 #content .stickers .sticker .action a.item:hover, #content .stickers .sticker .action a.item:hover .icon, #content .stickers .sticker .action a.item.selected, #content .stickers .sticker .action a.item.selected .icon,
 #content .subject .sticker .action a.item:hover,
@@ -462,7 +463,7 @@ p {
   margin: 0 auto 1rem auto;
 }
 #content .navigation.sticker.scope, #subheader .navigation.sticker.scope {
-  margin-bottom: 0;
+  margin: 0 0 0 3rem;
 }
 #content .navigation .menu .item, #subheader .navigation .menu .item {
   padding-top: 0.7em;
@@ -784,27 +785,35 @@ p {
   font-size: 2rem;
   margin-right: 0.5rem;
 }
-#issue #header .status,
-#proposal #header .status,
-#project #header .status,
-#qa #header .status,
-#argument #header .status,
-#article #header .status {
+#issue #header .info,
+#proposal #header .info,
+#project #header .info,
+#qa #header .info,
+#argument #header .info,
+#article #header .info {
+  margin-top: 0.5rem;
+}
+#issue #header .info .status,
+#proposal #header .info .status,
+#project #header .info .status,
+#qa #header .info .status,
+#argument #header .info .status,
+#article #header .info .status {
   display: inline;
   font-size: 1rem;
   line-height: 1em;
   margin: 0 1em 0 0;
 }
-#issue #header .status .label,
-#proposal #header .status .label,
-#project #header .status .label,
-#qa #header .status .label,
-#argument #header .status .label,
-#article #header .status .label {
+#issue #header .info .status .label,
+#proposal #header .info .status .label,
+#project #header .info .status .label,
+#qa #header .info .status .label,
+#argument #header .info .status .label,
+#article #header .info .status .label {
   position: relative;
   top: -0.3em;
   vertical-align: bottom;
-  margin: 0 0 0 1em;
+  margin: 0 1em 0 0;
   padding: 0.3em 0.5em;
 }
 #issue #header .action,

@@ -1,0 +1,167 @@
+extends proposal-content
+
+block head
+  link(rel="stylesheet",href="css/level-two.css")
+
+block menu-right
+  //-include -proposal-sort-menu
+
+block content
+  .stickers
+    .todo
+      .sticker
+        .ui.icon.labeled.button.new
+          i.icon.add
+          | 挖掘新問題
+      include -proposal-content-category-menu
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            | ，
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
+    .done
+      //-.ui.horizontal.divider 修改過
+      .sticker.edited
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+      .sticker.edited
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no.selected.selected
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+      //-.ui.horizontal.divider 同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+            | ，
+            a(href="") 你
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a ETBlue
+            | 於
+            a 1 小時前發表
+            span.right
+              a
+                i.icon.pencil
+            | ，
+            a(href="") 你
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
+      //-.ui.horizontal.divider 不確定
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown.selected
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      //-.ui.horizontal.divider 不同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no.selected
+            i.icon.remove
+        .ui.segment.problem
+          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
+          .ui.label.number.top.right.attached.light.gray 問題 1
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+      
+block script
+  script.
+    $("#navbar .proposal").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .plans").addClass("active");
