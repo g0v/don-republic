@@ -1406,7 +1406,7 @@ p {
 }
 #proposal #wrapper #toc {
   position: relative;
-  width: 10rem;
+  width: 15rem;
   float: right;
   font-size: 0.9rem;
 }
@@ -1435,7 +1435,7 @@ p {
 }
 #proposal #wrapper #chapters {
   position: relative;
-  margin-right: 11rem;
+  margin-right: 16rem;
 }
 #proposal #wrapper #chapters .id {
   z-index: 1;
