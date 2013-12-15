@@ -454,6 +454,8 @@ p {
 #content .subject .sticker .script, #subheader .stickers .sticker .script,
 #subheader .subject .sticker .script {
   display: block;
+  padding: 0.5em;
+  margin: -0.5em;
 }
 #content .stickers .sticker .meta,
 #content .subject .sticker .meta, #subheader .stickers .sticker .meta,
