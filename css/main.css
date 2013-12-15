@@ -705,13 +705,13 @@ p {
   top: 0;
   background: none;
 }
-#content .etherpad .article p,
-#content .etherpad .article .ui.items .row, #subheader .etherpad .article p,
+#content .etherpad .article p, #content .etherpad .article h3, #content .etherpad .article h4, #content .etherpad .article h5,
+#content .etherpad .article .ui.items .row, #subheader .etherpad .article p, #subheader .etherpad .article h3, #subheader .etherpad .article h4, #subheader .etherpad .article h5,
 #subheader .etherpad .article .ui.items .row {
   position: relative;
 }
-#content .etherpad .article p .contributor,
-#content .etherpad .article .ui.items .row .contributor, #subheader .etherpad .article p .contributor,
+#content .etherpad .article p .contributor, #content .etherpad .article h3 .contributor, #content .etherpad .article h4 .contributor, #content .etherpad .article h5 .contributor,
+#content .etherpad .article .ui.items .row .contributor, #subheader .etherpad .article p .contributor, #subheader .etherpad .article h3 .contributor, #subheader .etherpad .article h4 .contributor, #subheader .etherpad .article h5 .contributor,
 #subheader .etherpad .article .ui.items .row .contributor {
   text-align: right;
   display: block;
@@ -742,11 +742,12 @@ p {
   line-height: 1.5em;
 }
 #content .reference .item .contributor, #subheader .reference .item .contributor {
+  text-align: right;
   letter-spacing: 0;
   font-size: 0.8em;
   opacity: 0.7;
   position: absolute;
-  left: -8rem;
+  left: -8.5rem;
   width: 5rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1295,4 +1296,76 @@ p {
 #article #content .report .ui.horizontal.divider:before,
 #article #content .report .ui.horizontal.divider:after {
   width: 48%;
+}
+
+#proposal #content .line {
+  height: 100%;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  border-top: none;
+  border-bottom: none;
+  float: left;
+  position: absolute;
+  z-index: 0;
+}
+#proposal #content #toc {
+  position: relative;
+  width: 10rem;
+  float: right;
+  font-size: 0.9rem;
+}
+#proposal #content #toc .line {
+  width: 1rem;
+}
+#proposal #content #toc .line.two {
+  margin-left: 2rem;
+}
+#proposal #content #toc .header {
+  display: block;
+  padding: 0.5em;
+  margin: 0 -0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#proposal #content #toc .header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#proposal #content #toc .level.two {
+  padding-left: 1.5rem;
+}
+#proposal #content #toc .level.three {
+  padding-left: 2.5rem;
+}
+#proposal #content #chapters {
+  position: relative;
+  margin-right: 11rem;
+}
+#proposal #content #chapters .line {
+  width: 2rem;
+}
+#proposal #content #chapters .line.two {
+  margin-left: 4rem;
+}
+#proposal #content #chapters .chapter {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  margin: 0 0 1rem 0;
+}
+#proposal #content #chapters .chapter.level.two {
+  margin-left: 2rem;
+}
+#proposal #content #chapters .chapter.level.three {
+  margin-left: 4rem;
+}
+#proposal #content #chapters .chapter .id {
+  padding: 0.5em 1em;
+}
+#proposal #content #chapters .chapter .etherpad {
+  margin: 0;
+}
+#proposal #content #chapters .chapter .reference {
+  margin-bottom: 0;
 }

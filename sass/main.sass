@@ -437,7 +437,7 @@ p
           right: 0
           top: 0
           background: none
-      p,
+      p, h3, h4, h5,
       .ui.items .row
         position: relative
         .contributor
@@ -451,21 +451,6 @@ p
           width: 5rem
           overflow: hidden
           text-overflow: ellipsis
-      //.compare
-        .row
-          margin: 0
-          width: 100%
-          .item:nth-of-type(n+1):hover
-            border-bottom-color: black!important
-          .item:nth-of-type(n+2):hover
-            border-bottom-color: #ed1c24!important
-          .item:nth-of-type(n+3):hover
-            border-bottom-color: #39b54a!important
-          &.head .item
-            font-size: 0.9em
-            background-color: rgba(0,0,0,0.03)
-            &:hover
-              border-bottom-color: #aaa!important
   // reference for wiki
   .reference
     margin-left: 5rem
@@ -481,11 +466,12 @@ p
       .text
         line-height: 1.5em
       .contributor
+        text-align: right
         letter-spacing: 0
         font-size: 0.8em
         opacity: 0.7
         position: absolute
-        left: -8rem
+        left: -8.5rem
         width: 5rem
         overflow: hidden
         text-overflow: ellipsis
@@ -772,3 +758,56 @@ p
         &:after
           width: 48%
 
+// the grand proposal planning ui
+#proposal
+  #content
+    .line
+      height: 100%
+      border: 1px rgba(0,0,0,0.2) solid
+      border-top: none
+      border-bottom: none
+      float: left
+      position: absolute
+      z-index: 0
+    #toc
+      position: relative
+      width: 10rem
+      float: right
+      font-size: 0.9rem
+      .line
+        width: 1rem
+        &.two
+          margin-left: 2rem
+      .header
+        display: block
+        padding: 0.5em
+        margin: 0 -0.5em
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        &:hover
+          background-color: rgba(0,0,0,0.05)
+      .level.two
+        padding-left: 1.5rem
+      .level.three
+        padding-left: 2.5rem
+    #chapters
+      position: relative
+      margin-right: 11rem
+      .line
+        width: 2rem
+        &.two
+          margin-left: 4rem
+      .chapter
+        +border-radius(0)
+        margin: 0 0 1rem 0
+        &.level.two
+          margin-left: 2rem
+        &.level.three
+          margin-left: 4rem
+        .id
+          padding: 0.5em 1em
+        .etherpad
+          margin: 0
+        .reference
+          margin-bottom: 0

@@ -15,15 +15,23 @@ block menu-right
   //-include -proposal-sort-menu
 
 block subheader
-  .ui.menu.subheader
-    a.item 方案 1
-    a.item 5 願景
+  .ui.menu.subheader.borderless
+    a(href="proposal-content-plan-article.html").item.article 方案 1
+    //-a.item 5 願景
     //-a.item 4 問題
     //-a.item 6 成因
-    a.item 10 對策
-    a.item 20 受益者
-    a.item 10 受害者
-    a.item 我同意 80%
+    //-a.item 10 對策
+    //-a.item 20 受益者
+    //-a.item 10 受害者
+    a(href="proposal-content-plan-coverage.html").item.coverage 覆蓋率 70%
+    a(href="proposal-content-plan-support.html").item.support 支持度 80%
+    span.action
+      a.item.bookmark
+        i.icon.star
+      a.item.subscribe
+        i.icon.rss
+      a.item.share
+        i.icon.share.sign
     .ui.buttons.right.menu
       a.ui.labeled.icon.button 上一個
         i.icon.left.arrow
