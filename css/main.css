@@ -1403,6 +1403,7 @@ p {
   float: left;
   position: absolute;
   z-index: 0;
+  box-sizing: border-box;
 }
 #proposal #wrapper #toc {
   position: relative;
@@ -1434,8 +1435,10 @@ p {
   padding-left: 2.5rem;
 }
 #proposal #wrapper #chapters {
-  position: relative;
   margin-right: 16rem;
+}
+#proposal #wrapper #chapters .chapter.in.list {
+  position: relative;
 }
 #proposal #wrapper #chapters .id {
   z-index: 1;
@@ -1468,6 +1471,21 @@ p {
 }
 #proposal #wrapper #chapters .chapter .reference {
   margin-bottom: 0;
+}
+#proposal #wrapper #chapters .new {
+  padding: 1em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: left;
+  background: none;
+  border: 2px #cccccc dashed;
+  display: block;
+}
+#proposal #wrapper #chapters .new i.icon {
+  padding: 1em;
+}
+#proposal #wrapper #chapters .new:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 #proposal #wrapper #chapter {
   margin: -1rem 16rem -1rem -1rem;

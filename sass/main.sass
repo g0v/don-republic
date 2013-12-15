@@ -773,6 +773,7 @@ p
       float: left
       position: absolute
       z-index: 0
+      box-sizing: border-box
     #toc
       position: relative
       width: 15rem
@@ -796,8 +797,9 @@ p
       .level.three
         padding-left: 2.5rem
     #chapters
-      position: relative
       margin-right: 16rem
+      .chapter.in.list
+        position: relative
       .id
         z-index: 1
       .line
@@ -817,6 +819,18 @@ p
           margin: 0
         .reference
           margin-bottom: 0
+      .new
+        padding: 1em
+        font-size: 1.2rem
+        font-weight: normal
+        text-align: left
+        background: none
+        border: 2px #ccc dashed
+        display: block
+        i.icon
+          padding: 1em
+        &:hover
+          background-color: rgba(0,0,0,0.03)
     #chapter
       margin: -1rem 16rem -1rem -1rem
       padding: 2rem 1rem 0 1rem
