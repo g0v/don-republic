@@ -3,56 +3,16 @@ extends proposal-content
 block head
   link(rel="stylesheet",href="css/level-two.css")
 
-block header
-
-block mini-header
-  .ui.menu.inverted
-    a(href="proposal-content-visions.html").item
-      i.icon.left.arrow
-      | 政府 IT 委外制度，引入開源碼發展模式可能性研究既建議案 (校閱中，3 天後交付立法院) - 願景
-
 block menu-right
   //-include -proposal-sort-menu
 
-block subheader
-  .ui.menu.subheader
-    .ui.steps
-      a(href="proposal-content-vision.html").ui.step.vision.active 願景
-      a(href="proposal-content-problem.html").ui.step.problem.normal 問題
-      a(href="proposal-content-reason.html").ui.step.reason.normal 成因
-      a(href="proposal-content-solution.html").ui.step.solution.normal 對策
-    .ui.buttons.right.menu
-      a.ui.labeled.icon.button 上一個願景
-        i.icon.left.arrow
-      include -proposal-navigation-scope-menu
-      a.ui.right.labeled.icon.button 下一個願景
-        i.icon.right.arrow
-  .subject
-    .sticker
-      .ui.segment.vision
-        .ui.label.number.top.right.attached.light.gray 願景 1
-        | 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
-        .ui.label.meta.bottom.attached.light.gray
-          a hychen
-          | 於
-          a 1 小時前發表
-            | ，
-            a(href="") 你
-            a(href="") clkao
-            a(href="") ipa
-            a(href="") tkirby
-            a(href="") jedi
-            a(href="") au 
-            | 與其他 
-            a(href="") 10 人
-            | 同意
 block content
   .stickers
     .todo
       .sticker
         .ui.icon.labeled.button.new
           i.icon.add
-          | 此願景對應的問題
+          | 想像新願景
       include -proposal-content-category-menu
       .sticker
         .ui.vertical.icon.menu.action
@@ -62,34 +22,9 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
-          .ui.label.meta.bottom.attached.light.gray
-            a hychen
-            | 於
-            a 1 小時前發表
-            | ，
-            a(href="") clkao
-            a(href="") ipa
-            a(href="") tkirby
-            a(href="") jedi
-            a(href="") au 
-            | 與其他 
-            a(href="") 10 人
-            | 同意
-      //-.ui.horizontal.divider 來自其他問題
-      .sticker
-        .ui.vertical.icon.menu.action
-          a.item.yes
-            i.icon.checkmark.checked
-          a.item.unknown
-            i.icon.question
-          a.item.no
-            i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
@@ -113,9 +48,25 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.meta.bottom.attached.light.gray
+            a hychen
+            | 於
+            a 1 小時前發表
+            a 2 分鐘前編輯
+      .sticker.edited
+        .ui.vertical.icon.menu.action
+          a.item.yes
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no.selected
+            i.icon.remove
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
@@ -130,14 +81,42 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
             a 1 小時前發表
             a 2 分鐘前編輯
+            | ，
+            a(href="") 你
+            a(href="") clkao
+            a(href="") ipa
+            a(href="") tkirby
+            a(href="") jedi
+            a(href="") au 
+            | 與其他 
+            a(href="") 10 人
+            | 同意
+      .sticker
+        .ui.vertical.icon.menu.action
+          a.item.yes.selected
+            i.icon.checkmark.checked
+          a.item.unknown
+            i.icon.question
+          a.item.no
+            i.icon.remove
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
+          .ui.label.meta.bottom.attached.light.gray
+            a ETBlue
+            | 於
+            a 1 小時前發表
+            span.right
+              a
+                i.icon.pencil
             | ，
             a(href="") 你
             a(href="") clkao
@@ -157,9 +136,9 @@ block content
             i.icon.question
           a.item.no
             i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
@@ -182,9 +161,9 @@ block content
             i.icon.question
           a.item.no.selected
             i.icon.remove
-        .ui.segment.problem
-          a(href="proposal-content-problem.html").script 政府做了很多類似的蚊子網站、蚊子 app，難用又過時
-          .ui.label.number.top.right.attached.light.gray 問題 1
+        .ui.segment.vision
+          .ui.label.number.top.right.attached.light.gray 願景 1
+          a(href="proposal-content-vision.html") 使用者發現公共軟體有問題，可以馬上回報給開發人員，或直接動手幫忙修改
           .ui.label.meta.bottom.attached.light.gray
             a hychen
             | 於
@@ -198,9 +177,31 @@ block content
             | 與其他 
             a(href="") 10 人
             | 同意
+
+  //-h3 現況與願景
+  //-.ui.three.connected.items.compare
+    .row.head
+      .item 現況
+      .item 問題點
+      .item 願景
+    .row
+      span.contributor hychen
+      .item 政府發包軟體專案沒有開源碼
+      .item 有問題也無法馬上更新，只能等再發包
+      .item 要求開源，讓公民、使用者能協助修正
+    .row
+      span.contributor hychen
+      .item 政府發包軟體專案之前沒有徵求外界意見
+      .item 不知道使用者的需求是什麼，做出很多沒人用的蚊子程式
+      .item 從靈感發想開始就讓公民不限制背景公開參與討論
+    .row
+      span.contributor hychen
+      .item 政府發包軟體專案各自獨立，互不相通
+      .item 不斷重複做出一堆類似的網站、軟體
+      .item 要求程式碼開源以便重複利用
       
 block script
   script.
     $("#navbar .proposal").addClass("active");
     $("#header .switch .content").addClass("active");
-    $("#header .menu .visions").addClass("active");
+    $("#header .menu .vision").addClass("active");

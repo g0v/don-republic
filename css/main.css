@@ -652,6 +652,12 @@ p {
   border-width: 1.3em;
   right: -1.2em;
 }
+#content .ui.steps .step.active.vision, #subheader .ui.steps .step.active.vision {
+  background-color: #fdf9bb;
+}
+#content .ui.steps .step.active.vision:after, #subheader .ui.steps .step.active.vision:after {
+  border-left-color: #fdf9bb;
+}
 #content .ui.steps .step.active.problem, #subheader .ui.steps .step.active.problem {
   background-color: #fee5e5;
 }
