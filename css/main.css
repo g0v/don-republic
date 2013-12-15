@@ -1340,6 +1340,9 @@ p {
   position: relative;
   margin-right: 11rem;
 }
+#proposal #content #chapters .id {
+  z-index: 1;
+}
 #proposal #content #chapters .line {
   width: 2rem;
 }
@@ -1368,4 +1371,14 @@ p {
 }
 #proposal #content #chapters .chapter .reference {
   margin-bottom: 0;
+}
+#proposal #content #chapter {
+  margin-right: 16rem;
+}
+#proposal #content #resource {
+  float: right;
+  width: 15rem;
+}
+#proposal #content #resource a.divider {
+  display: block;
 }
