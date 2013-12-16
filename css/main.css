@@ -142,6 +142,19 @@ p {
   opacity: 0.6;
 }
 
+#content .in.list .meta, #subheader .in.list .meta, #wrapper .in.list .meta {
+  padding: 0.25em 1em;
+}
+#content .in.list .meta a, #subheader .in.list .meta a, #wrapper .in.list .meta a {
+  padding: 0 0.5em;
+  color: #29abe2;
+}
+#content .in.list .meta a:hover, #subheader .in.list .meta a:hover, #wrapper .in.list .meta a:hover {
+  color: #0071bc;
+}
+#content .in.list .meta .right, #subheader .in.list .meta .right, #wrapper .in.list .meta .right {
+  float: right;
+}
 #content .section.in.list, #subheader .section.in.list, #wrapper .section.in.list {
   margin: 0 1rem 1rem 0;
 }
@@ -169,16 +182,6 @@ p {
 }
 #content .section.in.list .summary, #subheader .section.in.list .summary, #wrapper .section.in.list .summary {
   color: inherit;
-}
-#content .section.in.list .meta, #subheader .section.in.list .meta, #wrapper .section.in.list .meta {
-  padding: 0.25em 1em;
-}
-#content .section.in.list .meta a, #subheader .section.in.list .meta a, #wrapper .section.in.list .meta a {
-  padding: 0 0.5em;
-  color: #29abe2;
-}
-#content .section.in.list .meta a:hover, #subheader .section.in.list .meta a:hover, #wrapper .section.in.list .meta a:hover {
-  color: #0071bc;
 }
 #content .section.in.list .action a.item:hover, #subheader .section.in.list .action a.item:hover, #wrapper .section.in.list .action a.item:hover {
   background-color: #1ab8f3;
@@ -684,10 +687,13 @@ p {
 #content .subject .sticker .vision, #content .subject .sticker .problem, #content .subject .sticker .reason, #content .subject .sticker .solution, #content .subject .sticker .stakeholder, #subheader .subject .sticker .vision, #subheader .subject .sticker .problem, #subheader .subject .sticker .reason, #subheader .subject .sticker .solution, #subheader .subject .sticker .stakeholder, #wrapper .subject .sticker .vision, #wrapper .subject .sticker .problem, #wrapper .subject .sticker .reason, #wrapper .subject .sticker .solution, #wrapper .subject .sticker .stakeholder {
   margin: 0;
 }
+#content .subject .sticker .script, #subheader .subject .sticker .script, #wrapper .subject .sticker .script {
+  margin-bottom: 0.5rem;
+}
 #content .subject .sticker .source, #subheader .subject .sticker .source, #wrapper .subject .sticker .source {
   color: rgba(0, 0, 0, 0.7);
   font-size: 0.9rem;
-  margin-top: 1em;
+  margin: 0 0 0.5em 0;
 }
 #content .ui.two.column.stackable.grid.tag, #subheader .ui.two.column.stackable.grid.tag, #wrapper .ui.two.column.stackable.grid.tag {
   margin: 0;
@@ -776,6 +782,15 @@ p {
 #wrapper .reference a:hover,
 #wrapper .response a:hover {
   background-color: rgba(0, 0, 0, 0.05);
+}
+#content .etherpad a.a.solution.sticker:hover,
+#content .reference a.a.solution.sticker:hover,
+#content .response a.a.solution.sticker:hover, #subheader .etherpad a.a.solution.sticker:hover,
+#subheader .reference a.a.solution.sticker:hover,
+#subheader .response a.a.solution.sticker:hover, #wrapper .etherpad a.a.solution.sticker:hover,
+#wrapper .reference a.a.solution.sticker:hover,
+#wrapper .response a.a.solution.sticker:hover {
+  background-color: #e7f3d7;
 }
 #content .etherpad, #subheader .etherpad, #wrapper .etherpad {
   margin-bottom: 2rem;

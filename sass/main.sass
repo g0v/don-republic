@@ -118,6 +118,16 @@ p
 
 #content, #subheader, #wrapper
   // the repeatable items in a list view
+  .in.list
+    .meta
+      padding: 0.25em 1em
+      a
+        padding: 0 0.5em
+        color: #29abe2
+        &:hover
+          color: #0071bc
+      .right
+        float: right
   .section.in.list
     margin: 0 1rem 1rem 0
     .title
@@ -138,13 +148,6 @@ p
           line-height: 1em
     .summary
       color: inherit
-    .meta
-      padding: 0.25em 1em
-      a
-        padding: 0 0.5em
-        color: #29abe2
-        &:hover
-          color: #0071bc
     .action
       a.item:hover
         background-color: rgba(26,184,243,1)
@@ -344,10 +347,12 @@ p
     .sticker
       .vision, .problem, .reason, .solution, .stakeholder
         margin: 0
+      .script
+        margin-bottom: 0.5rem
       .source
         color: rgba(#000,0.7)
         font-size: 0.9rem
-        margin-top: 1em
+        margin: 0 0 0.5em 0
 
   // customize semantic ui stackable grids for tag list view
   .ui.two.column.stackable.grid.tag
@@ -423,6 +428,9 @@ p
     a
       &:hover
         background-color: rgba(0,0,0,0.05)
+      &.a.solution.sticker:hover
+        background-color: rgba(#e7f3d7,1)
+
   // wiki
   .etherpad
     margin-bottom: 2rem

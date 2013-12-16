@@ -12,15 +12,15 @@ block content
 
   .category.navigation
     .ui.pagination.menu
-      a(href="issue-content-board-parent.html").item.parent 父議題
+      a(href="issue-content-boards-parent.html").item.parent 父議題
         .ui.label.light.gray 1
-      a(href="issue-content-board-child.html").item.child 子議題
+      a(href="issue-content-boards-child.html").item.child 子議題
         .ui.label.light.gray 9
-      a(href="issue-content-board-similiar.html").item.similiar 相近議題
+      a(href="issue-content-boards-similiar.html").item.similiar 相近議題
         .ui.label.light.gray 3
-      a(href="issue-content-board-proposal.html").item.proposal 關連的提案
+      a(href="issue-content-boards-proposal.html").item.proposal 關連的提案
         .ui.label.light.gray 2
-      a(href="issue-content-board-project.html").item.project 關連的專案
+      a(href="issue-content-boards-project.html").item.project 關連的專案
         .ui.label.light.gray 10
 
   block list
@@ -31,4 +31,4 @@ block script
   script.
     $("#navbar .issue").addClass("active");
     $("#header .switch .content").addClass("active");
-    $("#header>.menu>.board").addClass("active");
+    $("#header>.menu>.boards").addClass("active");

@@ -1,4 +1,4 @@
-extends issue-content-board
+extends issue-content-boards
 
 block list
   include -proposal-in-list
@@ -8,5 +8,5 @@ block script
   script.
     $("#navbar .issue").addClass("active");
     $("#header .switch .content").addClass("active");
-    $("#header>.menu>.board").addClass("active");
+    $("#header>.menu>.boards").addClass("active");
     $("#content>.category .proposal").addClass("active");
