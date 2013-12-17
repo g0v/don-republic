@@ -1563,6 +1563,9 @@ p {
   margin: 0 0 0.5rem 0;
 }
 #proposal #wrapper #comparison .graph {
+  display: block;
+  float: left;
+  width: 25%;
   position: relative;
   height: 4rem;
 }
