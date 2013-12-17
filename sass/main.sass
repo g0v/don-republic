@@ -861,3 +861,64 @@ p
       box-sizing: border-box
       a.divider
         display: block
+    #comparison
+      .head
+        .plan
+          padding: 0.83em
+          line-height: 1
+        .ui.label
+          padding: 0.3em 0.25em
+          margin: -0.3em 0 -0.3em 0.8em
+          position: relative
+          top: -0.1em
+          vertical-align: baseline
+      .row
+        margin: 0
+        padding: 0
+        .status
+          padding: 0.83em
+          line-height: 1
+          &.no
+            background-color: rgba(0,0,0,0)
+      .column
+        vertical-align: middle
+      .column.active
+        background-color: rgba(0,0,0,0.1)
+      .a.sticker
+        margin: 0
+      .statistic
+      .graph
+        position: relative
+        height: 4rem
+        .total
+          position: absolute
+          left: 10%
+          bottom: 0
+          font-size: 0.9rem
+          color: #fff
+          background-color: rgba(#2da7e0,1)
+          width: 80%
+          +border-radius(0.2rem)
+          &.a
+            height: 70%
+          &.b
+            height: 50%
+          &.c
+            height: 80%
+        .mine
+          position: absolute
+          left: 30%
+          bottom: 0
+          font-size: 0.9rem
+          color: #7f4e20
+          background-color: rgba(#faed00,1)
+          width: 40%
+          +border-radius(0.2rem)
+          &.a
+            height: 60%
+          &.b
+            height: 80%
+          &.c
+            height: 30%
+      .comparing
+      .compared

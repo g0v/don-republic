@@ -1531,3 +1531,84 @@ p {
 #proposal #wrapper #resource a.divider {
   display: block;
 }
+#proposal #wrapper #comparison .head .plan {
+  padding: 0.83em;
+  line-height: 1;
+}
+#proposal #wrapper #comparison .head .ui.label {
+  padding: 0.3em 0.25em;
+  margin: -0.3em 0 -0.3em 0.8em;
+  position: relative;
+  top: -0.1em;
+  vertical-align: baseline;
+}
+#proposal #wrapper #comparison .row {
+  margin: 0;
+  padding: 0;
+}
+#proposal #wrapper #comparison .row .status {
+  padding: 0.83em;
+  line-height: 1;
+}
+#proposal #wrapper #comparison .row .status.no {
+  background-color: rgba(0, 0, 0, 0);
+}
+#proposal #wrapper #comparison .column {
+  vertical-align: middle;
+}
+#proposal #wrapper #comparison .column.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#proposal #wrapper #comparison .a.sticker {
+  margin: 0;
+}
+#proposal #wrapper #comparison .graph {
+  position: relative;
+  height: 4rem;
+}
+#proposal #wrapper #comparison .graph .total {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #2da7e0;
+  width: 80%;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+}
+#proposal #wrapper #comparison .graph .total.a {
+  height: 70%;
+}
+#proposal #wrapper #comparison .graph .total.b {
+  height: 50%;
+}
+#proposal #wrapper #comparison .graph .total.c {
+  height: 80%;
+}
+#proposal #wrapper #comparison .graph .mine {
+  position: absolute;
+  left: 30%;
+  bottom: 0;
+  font-size: 0.9rem;
+  color: #7f4e20;
+  background-color: #faed00;
+  width: 40%;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+}
+#proposal #wrapper #comparison .graph .mine.a {
+  height: 60%;
+}
+#proposal #wrapper #comparison .graph .mine.b {
+  height: 80%;
+}
+#proposal #wrapper #comparison .graph .mine.c {
+  height: 30%;
+}

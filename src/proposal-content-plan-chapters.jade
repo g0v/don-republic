@@ -2,12 +2,16 @@ extends proposal-content-plan
 
 block content
   #toc
-    a(href="#1").header.level.one 國外政府 IT 基礎建設有納入 Open Source 的案例
-    a(href="#2").header.level.two 國內 IT 基礎建設外包的法規, 相關單位, 實際案例及問題
-    a(href="#3").header.level.three 標題三
-    a(href="#4").header.level.one 國外政府 IT 基礎建設有納入 Open Source 的案例
-    a(href="#5").header.level.two 國內 IT 基礎建設外包的法規, 相關單位, 實際案例及問題
-    a(href="#6").header.level.three 標題三
+    .ui.menu.secondary.pointing
+      a.item.this.active 本方案
+      a.item.others 其他方案
+    .this
+      a(href="#1").header.level.one 國外政府 IT 基礎建設有納入 Open Source 的案例
+      a(href="#2").header.level.two 國內 IT 基礎建設外包的法規, 相關單位, 實際案例及問題
+      a(href="#3").header.level.three 標題三
+      a(href="#4").header.level.one 國外政府 IT 基礎建設有納入 Open Source 的案例
+      a(href="#5").header.level.two 國內 IT 基礎建設外包的法規, 相關單位, 實際案例及問題
+      a(href="#6").header.level.three 標題三
   #chapters
     a.ui.icon.labeled.button.new.chapter 新章節
       i.icon.add
