@@ -1,0 +1,23 @@
+extends proposal-content-plan
+
+block content
+
+  .navigation
+    .ui.pagination.menu
+      a.item 覆蓋 100 個對策中的 70
+      a.item 支持度
+
+    //-a.item 5 願景
+    //-a.item 4 問題
+    //-a.item 6 成因
+    //-a.item 10 對策
+    //-a.item 20 受益者
+    //-a.item 10 受害者
+
+
+block script
+  script.
+    $("#navbar .proposal").addClass("active");
+    $("#header .switch .content").addClass("active");
+    $("#header .menu .plans").addClass("active");
+    $("#subheader .menu .meta").addClass("active");

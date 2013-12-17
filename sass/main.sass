@@ -710,7 +710,11 @@ p
     background-attachment: fixed
     background-color: rgba(#000, 0.1)
   #subheader
-    background-color: rgba(#000, 0.05)
+    .menu
+      .label
+        margin: -0.3em 0 -0.3em 0.8em
+      .icon
+        margin: 0
   #wrapper
     padding: 1rem
   #content
@@ -810,6 +814,9 @@ p
         position: relative
       .id
         z-index: 1
+      .meta
+        .right
+          margin-left: 1em
       .line
         width: 2rem
         &.two

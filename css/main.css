@@ -1224,13 +1224,21 @@ p {
 #article #header .level.two.menu .ui.button {
   margin-top: 1px;
 }
-#issue #subheader,
-#proposal #subheader,
-#project #subheader,
-#qa #subheader,
-#argument #subheader,
-#article #subheader {
-  background-color: rgba(0, 0, 0, 0.05);
+#issue #subheader .menu .label,
+#proposal #subheader .menu .label,
+#project #subheader .menu .label,
+#qa #subheader .menu .label,
+#argument #subheader .menu .label,
+#article #subheader .menu .label {
+  margin: -0.3em 0 -0.3em 0.8em;
+}
+#issue #subheader .menu .icon,
+#proposal #subheader .menu .icon,
+#project #subheader .menu .icon,
+#qa #subheader .menu .icon,
+#argument #subheader .menu .icon,
+#article #subheader .menu .icon {
+  margin: 0;
 }
 #issue #wrapper,
 #proposal #wrapper,
@@ -1457,6 +1465,9 @@ p {
 }
 #proposal #wrapper #chapters .id {
   z-index: 1;
+}
+#proposal #wrapper #chapters .meta .right {
+  margin-left: 1em;
 }
 #proposal #wrapper #chapters .line {
   width: 2rem;
