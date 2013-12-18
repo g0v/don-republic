@@ -712,14 +712,16 @@ p
   #subheader
     .icon
       margin: 0
-    .menu
-      .right
-        .dropdown
-          .menu
-            max-width: 15rem
-            .item
-              overflow: hidden
-              text-overflow: ellipsis
+    &>.ui.menu
+      &>.active
+        +box-shadow(inset 0 0.2em 0 rgba(#2da7e0,1))
+        +box-shadow(inset 0 0.2em 0 rgba(#00a99d,1))
+        //-background-color: rgba(#8ec31e,0.3)
+      .item
+        max-width: 18em
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
   #wrapper
     padding: 1rem
   #content
@@ -914,33 +916,15 @@ p
         width: 25%
         position: relative
         height: 4rem
-        .total
-          color: #fff
-          background-color: rgba(#2da7e0,1)
-          //-background-color: rgba(#036eb8,1)
-          //-background-color: rgba(#a38b77,1)
-          //-background-color: rgba(#f39700,1)
-          //-background-color: rgba(#f8b62c,1)
-          border: 1px #fff solid
-        .mine
-          //-color: #7f4e20
-          color: #000
-          //-background-color: rgba(#f8b62c,1)
-          background-color: rgba(#faed00,1)
-          background-color: rgba(#7fd6ff,1)
-          border: 1px #fff solid
-        .title
-          margin: 0.5rem 0 0 0.5rem
-          display: inline-block
-          .sample
-            padding: 0.2em 0.5em
-            margin-left: 0.3em
+        border-bottom: 1px rgba(0,0,0,0.3) solid
         .amount
           position: absolute
           bottom: 0
           font-size: 0.9rem
           font-weight: bold
-          +border-radius(0.3rem)
+          +border-radius(0.2rem 0.2rem 0 0)
+          border: 1px #fff solid
+          border-width: 1px 1px 0 1px
           &.total
             left: 10%
             width: 80%
@@ -959,5 +943,24 @@ p
               height: 80%
             &.c
               height: 30%
+        .total
+          color: #fff
+          background-color: rgba(#2da7e0,1)
+          //-background-color: rgba(#036eb8,1)
+          //-background-color: rgba(#a38b77,1)
+          //-background-color: rgba(#f39700,1)
+          //-background-color: rgba(#f8b62c,1)
+        .mine
+          //-color: #7f4e20
+          color: #000
+          //-background-color: rgba(#f8b62c,1)
+          background-color: rgba(#faed00,1)
+          background-color: rgba(#7fd6ff,1)
+        .title
+          margin: 0.5rem 0 0 0.5rem
+          display: inline-block
+          .sample
+            padding: 0.2em 0.5em
+            margin-left: 0.3em
       .comparing
       .compared

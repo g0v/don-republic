@@ -1232,21 +1232,28 @@ p {
 #article #subheader .icon {
   margin: 0;
 }
-#issue #subheader .menu .right .dropdown .menu,
-#proposal #subheader .menu .right .dropdown .menu,
-#project #subheader .menu .right .dropdown .menu,
-#qa #subheader .menu .right .dropdown .menu,
-#argument #subheader .menu .right .dropdown .menu,
-#article #subheader .menu .right .dropdown .menu {
-  max-width: 15rem;
+#issue #subheader > .ui.menu > .active,
+#proposal #subheader > .ui.menu > .active,
+#project #subheader > .ui.menu > .active,
+#qa #subheader > .ui.menu > .active,
+#argument #subheader > .ui.menu > .active,
+#article #subheader > .ui.menu > .active {
+  -webkit-box-shadow: inset 0 0.2em 0 #2da7e0;
+  -moz-box-shadow: inset 0 0.2em 0 #2da7e0;
+  box-shadow: inset 0 0.2em 0 #2da7e0;
+  -webkit-box-shadow: inset 0 0.2em 0 #00a99d;
+  -moz-box-shadow: inset 0 0.2em 0 #00a99d;
+  box-shadow: inset 0 0.2em 0 #00a99d;
 }
-#issue #subheader .menu .right .dropdown .menu .item,
-#proposal #subheader .menu .right .dropdown .menu .item,
-#project #subheader .menu .right .dropdown .menu .item,
-#qa #subheader .menu .right .dropdown .menu .item,
-#argument #subheader .menu .right .dropdown .menu .item,
-#article #subheader .menu .right .dropdown .menu .item {
+#issue #subheader > .ui.menu .item,
+#proposal #subheader > .ui.menu .item,
+#project #subheader > .ui.menu .item,
+#qa #subheader > .ui.menu .item,
+#argument #subheader > .ui.menu .item,
+#article #subheader > .ui.menu .item {
+  max-width: 18em;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 #issue #wrapper,
@@ -1605,36 +1612,20 @@ p {
   width: 25%;
   position: relative;
   height: 4rem;
-}
-#proposal #wrapper #comparison .graph .total {
-  color: white;
-  background-color: #2da7e0;
-  border: 1px white solid;
-}
-#proposal #wrapper #comparison .graph .mine {
-  color: black;
-  background-color: #faed00;
-  background-color: #7fd6ff;
-  border: 1px white solid;
-}
-#proposal #wrapper #comparison .graph .title {
-  margin: 0.5rem 0 0 0.5rem;
-  display: inline-block;
-}
-#proposal #wrapper #comparison .graph .title .sample {
-  padding: 0.2em 0.5em;
-  margin-left: 0.3em;
+  border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
 }
 #proposal #wrapper #comparison .graph .amount {
   position: absolute;
   bottom: 0;
   font-size: 0.9rem;
   font-weight: bold;
-  -webkit-border-radius: 0.3rem;
-  -moz-border-radius: 0.3rem;
-  -ms-border-radius: 0.3rem;
-  -o-border-radius: 0.3rem;
-  border-radius: 0.3rem;
+  -webkit-border-radius: 0.2rem 0.2rem 0 0;
+  -moz-border-radius: 0.2rem 0.2rem 0 0;
+  -ms-border-radius: 0.2rem 0.2rem 0 0;
+  -o-border-radius: 0.2rem 0.2rem 0 0;
+  border-radius: 0.2rem 0.2rem 0 0;
+  border: 1px white solid;
+  border-width: 1px 1px 0 1px;
 }
 #proposal #wrapper #comparison .graph .amount.total {
   left: 10%;
@@ -1661,4 +1652,21 @@ p {
 }
 #proposal #wrapper #comparison .graph .amount.mine.c {
   height: 30%;
+}
+#proposal #wrapper #comparison .graph .total {
+  color: white;
+  background-color: #2da7e0;
+}
+#proposal #wrapper #comparison .graph .mine {
+  color: black;
+  background-color: #faed00;
+  background-color: #7fd6ff;
+}
+#proposal #wrapper #comparison .graph .title {
+  margin: 0.5rem 0 0 0.5rem;
+  display: inline-block;
+}
+#proposal #wrapper #comparison .graph .title .sample {
+  padding: 0.2em 0.5em;
+  margin-left: 0.3em;
 }
