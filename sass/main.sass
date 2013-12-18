@@ -774,6 +774,9 @@ p
           width: 48%
 
 // the grand proposal planning ui
+#mini-header
+  .menu
+    +border-radius(0)
 #proposal
   #wrapper
     position: relative
@@ -863,6 +866,7 @@ p
         display: block
     #comparison
       .head
+        height: 4rem
         .plan
           padding: 0.83em
           line-height: 1
@@ -883,9 +887,10 @@ p
       .column
         vertical-align: middle
       .column.active
-        background-color: rgba(0,0,0,0.1)
+        background-color: rgba(#fff,0.5)
       .a.sticker
-        margin: 0 0 0.5rem 0
+        margin: 0.25rem 0
+        +box-shadow(0 0 1px rgba(#000,0.3))
       .statistic
       .graph
         display: block
@@ -894,34 +899,49 @@ p
         position: relative
         height: 4rem
         .total
-          position: absolute
-          left: 10%
-          bottom: 0
-          font-size: 0.9rem
           color: #fff
           background-color: rgba(#2da7e0,1)
-          width: 80%
-          +border-radius(0.2rem)
-          &.a
-            height: 70%
-          &.b
-            height: 50%
-          &.c
-            height: 80%
+          //-background-color: rgba(#036eb8,1)
+          //-background-color: rgba(#a38b77,1)
+          //-background-color: rgba(#f39700,1)
+          //-background-color: rgba(#f8b62c,1)
+          border: 1px #fff solid
         .mine
+          //-color: #7f4e20
+          color: #000
+          //-background-color: rgba(#f8b62c,1)
+          background-color: rgba(#faed00,1)
+          background-color: rgba(#7fd6ff,1)
+          border: 1px #fff solid
+        .title
+          margin: 0.5rem 0 0 0.5rem
+          display: inline-block
+          .sample
+            padding: 0.2em 0.5em
+            margin-left: 0.3em
+        .amount
           position: absolute
-          left: 30%
           bottom: 0
           font-size: 0.9rem
-          color: #7f4e20
-          background-color: rgba(#faed00,1)
-          width: 40%
-          +border-radius(0.2rem)
-          &.a
-            height: 60%
-          &.b
-            height: 80%
-          &.c
-            height: 30%
+          font-weight: bold
+          +border-radius(0.3rem)
+          &.total
+            left: 10%
+            width: 80%
+            &.a
+              height: 70%
+            &.b
+              height: 50%
+            &.c
+              height: 80%
+          &.mine
+            left: 30%
+            width: 40%
+            &.a
+              height: 60%
+            &.b
+              height: 80%
+            &.c
+              height: 30%
       .comparing
       .compared

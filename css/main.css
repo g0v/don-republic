@@ -1415,6 +1415,14 @@ p {
   width: 48%;
 }
 
+#mini-header .menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
 #proposal #wrapper {
   position: relative;
 }
@@ -1531,6 +1539,9 @@ p {
 #proposal #wrapper #resource a.divider {
   display: block;
 }
+#proposal #wrapper #comparison .head {
+  height: 4rem;
+}
 #proposal #wrapper #comparison .head .plan {
   padding: 0.83em;
   line-height: 1;
@@ -1557,10 +1568,13 @@ p {
   vertical-align: middle;
 }
 #proposal #wrapper #comparison .column.active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 #proposal #wrapper #comparison .a.sticker {
-  margin: 0 0 0.5rem 0;
+  margin: 0.25rem 0;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 #proposal #wrapper #comparison .graph {
   display: block;
@@ -1570,48 +1584,58 @@ p {
   height: 4rem;
 }
 #proposal #wrapper #comparison .graph .total {
-  position: absolute;
-  left: 10%;
-  bottom: 0;
-  font-size: 0.9rem;
   color: white;
   background-color: #2da7e0;
-  width: 80%;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  -ms-border-radius: 0.2rem;
-  -o-border-radius: 0.2rem;
-  border-radius: 0.2rem;
-}
-#proposal #wrapper #comparison .graph .total.a {
-  height: 70%;
-}
-#proposal #wrapper #comparison .graph .total.b {
-  height: 50%;
-}
-#proposal #wrapper #comparison .graph .total.c {
-  height: 80%;
+  border: 1px white solid;
 }
 #proposal #wrapper #comparison .graph .mine {
+  color: black;
+  background-color: #faed00;
+  background-color: #7fd6ff;
+  border: 1px white solid;
+}
+#proposal #wrapper #comparison .graph .title {
+  margin: 0.5rem 0 0 0.5rem;
+  display: inline-block;
+}
+#proposal #wrapper #comparison .graph .title .sample {
+  padding: 0.2em 0.5em;
+  margin-left: 0.3em;
+}
+#proposal #wrapper #comparison .graph .amount {
   position: absolute;
-  left: 30%;
   bottom: 0;
   font-size: 0.9rem;
-  color: #7f4e20;
-  background-color: #faed00;
-  width: 40%;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  -ms-border-radius: 0.2rem;
-  -o-border-radius: 0.2rem;
-  border-radius: 0.2rem;
+  font-weight: bold;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  border-radius: 0.3rem;
 }
-#proposal #wrapper #comparison .graph .mine.a {
-  height: 60%;
+#proposal #wrapper #comparison .graph .amount.total {
+  left: 10%;
+  width: 80%;
 }
-#proposal #wrapper #comparison .graph .mine.b {
+#proposal #wrapper #comparison .graph .amount.total.a {
+  height: 70%;
+}
+#proposal #wrapper #comparison .graph .amount.total.b {
+  height: 50%;
+}
+#proposal #wrapper #comparison .graph .amount.total.c {
   height: 80%;
 }
-#proposal #wrapper #comparison .graph .mine.c {
+#proposal #wrapper #comparison .graph .amount.mine {
+  left: 30%;
+  width: 40%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.a {
+  height: 60%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.b {
+  height: 80%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.c {
   height: 30%;
 }
