@@ -1673,10 +1673,6 @@ p {
   height: 4rem;
   background-color: white;
 }
-#proposal #wrapper #comparison .head .menu,
-#proposal #wrapper #comparison .statistic .menu {
-  margin: 0 -1rem;
-}
 #proposal #wrapper #comparison .head .plan,
 #proposal #wrapper #comparison .statistic .plan {
   padding: 0.83em;
@@ -1729,8 +1725,8 @@ p {
   border-width: 1px 1px 0 1px;
 }
 #proposal #wrapper #comparison .graph .amount.total {
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
 }
 #proposal #wrapper #comparison .graph .amount.total.a {
   height: 70%;
@@ -1742,8 +1738,8 @@ p {
   height: 80%;
 }
 #proposal #wrapper #comparison .graph .amount.mine {
-  left: 80%;
-  width: 10%;
+  left: 75%;
+  width: 20%;
 }
 #proposal #wrapper #comparison .graph .amount.mine.a {
   height: 60%;
@@ -1765,7 +1761,6 @@ p {
 }
 #proposal #wrapper #comparison .graph .title {
   margin: 0.5rem 0 0 0.5rem;
-  display: inline-block;
 }
 #proposal #wrapper #comparison .graph .title .sample {
   font-weight: bold;
