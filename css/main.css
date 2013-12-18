@@ -1648,6 +1648,9 @@ p {
   font-weight: bold;
   background-color: white;
 }
+#proposal #wrapper #comparison .comparison {
+  display: none;
+}
 #proposal #wrapper #comparison .comparison .status {
   padding: 0.83em;
   line-height: 1;
@@ -1667,6 +1670,9 @@ p {
   -o-border-radius: 0 0 0.3rem 0.3rem;
   border-radius: 0 0 0.3rem 0.3rem;
   border-width: 0 1px 1px 1px;
+}
+#proposal #wrapper #comparison .statistic {
+  cursor: pointer;
 }
 #proposal #wrapper #comparison .head,
 #proposal #wrapper #comparison .statistic {

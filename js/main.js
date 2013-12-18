@@ -33,3 +33,7 @@ $('#header>.menu>.right>.filter').on('click tap',function(){
   $('#content .category.navigation').toggle();
   $(this).toggleClass('active')
 })
+
+$('#comparison .statistic').on('click tap',function(){
+  $('#comparison .comparison').slideToggle();
+})
