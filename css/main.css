@@ -1587,8 +1587,8 @@ p {
 }
 #proposal #wrapper #comparison .head .ui.label,
 #proposal #wrapper #comparison .statistic .ui.label {
-  padding: 0.3em 0.25em;
-  margin: -0.3em 0 -0.3em 0.8em;
+  padding: 0.15em;
+  margin: -0.15em 0 -0.15em 0.8em;
   position: relative;
   top: -0.1em;
   vertical-align: baseline;
