@@ -1575,19 +1575,38 @@ p {
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
 }
-#proposal #wrapper #comparison .head {
+#proposal #wrapper #comparison .head,
+#proposal #wrapper #comparison .statistic {
   height: 4rem;
+  background-color: white;
 }
-#proposal #wrapper #comparison .head .plan {
+#proposal #wrapper #comparison .head .plan,
+#proposal #wrapper #comparison .statistic .plan {
   padding: 0.83em;
   line-height: 1;
 }
-#proposal #wrapper #comparison .head .ui.label {
+#proposal #wrapper #comparison .head .ui.label,
+#proposal #wrapper #comparison .statistic .ui.label {
   padding: 0.3em 0.25em;
   margin: -0.3em 0 -0.3em 0.8em;
   position: relative;
   top: -0.1em;
   vertical-align: baseline;
+}
+#proposal #wrapper #comparison .head {
+  -webkit-border-radius: 0.3rem 0.3rem 0 0;
+  -moz-border-radius: 0.3rem 0.3rem 0 0;
+  -ms-border-radius: 0.3rem 0.3rem 0 0;
+  -o-border-radius: 0.3rem 0.3rem 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+  -webkit-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+}
+#proposal #wrapper #comparison .statistic {
+  -webkit-box-shadow: 0 1px 1px black;
+  -moz-box-shadow: 0 1px 1px black;
+  box-shadow: 0 1px 1px black;
 }
 #proposal #wrapper #comparison .row {
   margin: 0;
@@ -1612,7 +1631,6 @@ p {
   width: 25%;
   position: relative;
   height: 4rem;
-  border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
 }
 #proposal #wrapper #comparison .graph .amount {
   position: absolute;

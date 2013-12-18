@@ -886,8 +886,10 @@ p
         &:hover
           +box-shadow(0 0 1px rgba(#000,0.7))
     #comparison
-      .head
+      .head,
+      .statistic
         height: 4rem
+        background-color: #fff
         .plan
           padding: 0.83em
           line-height: 1
@@ -897,6 +899,11 @@ p
           position: relative
           top: -0.1em
           vertical-align: baseline
+      .head
+        +border-radius(0.3rem 0.3rem 0 0)
+        +box-shadow(0 0 1px #000)
+      .statistic
+        +box-shadow(0 1px 1px #000)
       .row
         margin: 0
         padding: 0
@@ -909,14 +916,12 @@ p
         vertical-align: middle
       .column.active
         background-color: rgba(#fff,0.5)
-      .statistic
       .graph
         display: block
         float: left
         width: 25%
         position: relative
         height: 4rem
-        border-bottom: 1px rgba(0,0,0,0.3) solid
         .amount
           position: absolute
           bottom: 0
