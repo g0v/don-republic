@@ -53,10 +53,45 @@ p
 .a.solution.sticker,
 .a.stakeholder.sticker
   display: inline-block
-  margin: 0.2em 0.5em
-  padding: 0.25em 0.5em
   &:hover
     +box-shadow(0 0 1px rgba(#000,0.5))
+.a.sticker
+  margin: 0.2em 0.5em
+  padding: 0.25em 1.5em 0.25em 0.5em
+  position: relative
+  .ui.label
+    display: inline-block
+    z-index: 1
+    padding: 0.2em
+    margin: 0
+    background: none
+    top: 0
+    right: 0
+    text-align: center
+    color: #fff
+    i.icon
+      margin: 0
+      padding: 0
+    &.yes
+      background-color: rgba(#39b54a,1)
+      opacity: 0.5
+      &:hover
+        opacity: 1
+    &.unknown
+      background-color: rgba(#000,0.5)
+      opacity: 0.5
+      &:hover
+        opacity: 1
+    &.no
+      background-color: rgba(#f15a24,1)
+      opacity: 0.5
+      &:hover
+        opacity: 1
+    &.unvoted
+      background-color: rgba(#fff,1)
+      opacity: 0.5
+      &:hover
+        opacity: 1
 
 .a.tag.item
   color: rgba(#29abe2,1)
@@ -225,22 +260,23 @@ p
         opacity: .7
     .info
       font-size: 0.9rem
-      p.board, p.tag
-        margin: 0 0 0.5em 3rem
-        .ui.label
-          left: -3rem
-      p.solution, p.beneficiary, p.sufferer
-        margin: 0 0 0.5em 5rem
-        .ui.label
-          left: -5rem
-      p.board, p.tag, p.solution, p.beneficiary, p.sufferer
-        position: relative
-        line-height: 1.5em
-        .ui.label
-          margin: 0
-          padding: 0.25em 0.5em 0.25em 0 
-          position: absolute
-          font-size: inherit
+      .tags
+        &.board, &.tag, &.user
+          margin: 0 0 0.5em 3rem
+          .title
+            left: -3rem
+        &.solution, &.beneficiary, &.sufferer
+          margin: 0 0 0.5em 5rem
+          .title
+            left: -5rem
+        &.board, &.tag, &.user, &.solution, &.beneficiary, &.sufferer
+          position: relative
+          line-height: 1.5em
+          .title
+            margin: 0
+            padding: 0.25em 0.5em 0.25em 0 
+            position: absolute
+            font-size: inherit
     .meta
       line-height: 1.5em
       white-space: nowrap
@@ -428,8 +464,6 @@ p
     a
       &:hover
         background-color: rgba(0,0,0,0.05)
-      &.a.solution.sticker:hover
-        background-color: rgba(#e7f3d7,1)
 
   // wiki
   .etherpad
@@ -914,8 +948,6 @@ p
         background-color: #fff
         .menu
           margin: 0 -1rem
-        .column
-          text-align: center
         .plan
           padding: 0.83em
           line-height: 1
@@ -926,6 +958,8 @@ p
           top: -0.1em
           vertical-align: baseline
       .head
+        .column
+          text-align: center
         +border-radius(0.3rem 0.3rem 0 0)
         +box-shadow(0 0 1px #000)
       .statistic
@@ -954,8 +988,8 @@ p
             &.c
               height: 80%
           &.mine
-            left: 30%
-            width: 40%
+            left: 80%
+            width: 10%
             &.a
               height: 60%
             &.b

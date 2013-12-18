@@ -72,14 +72,61 @@ p {
 .a.solution.sticker,
 .a.stakeholder.sticker {
   display: inline-block;
-  margin: 0.2em 0.5em;
-  padding: 0.25em 0.5em;
 }
 .a.solution.sticker:hover,
 .a.stakeholder.sticker:hover {
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.a.sticker {
+  margin: 0.2em 0.5em;
+  padding: 0.25em 1.5em 0.25em 0.5em;
+  position: relative;
+}
+.a.sticker .ui.label {
+  display: inline-block;
+  z-index: 1;
+  padding: 0.2em;
+  margin: 0;
+  background: none;
+  top: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+.a.sticker .ui.label i.icon {
+  margin: 0;
+  padding: 0;
+}
+.a.sticker .ui.label.yes {
+  background-color: #39b54a;
+  opacity: 0.5;
+}
+.a.sticker .ui.label.yes:hover {
+  opacity: 1;
+}
+.a.sticker .ui.label.unknown {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+}
+.a.sticker .ui.label.unknown:hover {
+  opacity: 1;
+}
+.a.sticker .ui.label.no {
+  background-color: #f15a24;
+  opacity: 0.5;
+}
+.a.sticker .ui.label.no:hover {
+  opacity: 1;
+}
+.a.sticker .ui.label.unvoted {
+  background-color: white;
+  opacity: 0.5;
+}
+.a.sticker .ui.label.unvoted:hover {
+  opacity: 1;
 }
 
 .a.tag.item {
@@ -305,143 +352,167 @@ p {
 #wrapper .subject .info {
   font-size: 0.9rem;
 }
-#content .section.in.list .info p.board, #content .section.in.list .info p.tag,
-#content .stickers .info p.board,
-#content .stickers .info p.tag,
-#content .subject .info p.board,
-#content .subject .info p.tag, #subheader .section.in.list .info p.board, #subheader .section.in.list .info p.tag,
-#subheader .stickers .info p.board,
-#subheader .stickers .info p.tag,
-#subheader .subject .info p.board,
-#subheader .subject .info p.tag, #wrapper .section.in.list .info p.board, #wrapper .section.in.list .info p.tag,
-#wrapper .stickers .info p.board,
-#wrapper .stickers .info p.tag,
-#wrapper .subject .info p.board,
-#wrapper .subject .info p.tag {
+#content .section.in.list .info .tags.board, #content .section.in.list .info .tags.tag, #content .section.in.list .info .tags.user,
+#content .stickers .info .tags.board,
+#content .stickers .info .tags.tag,
+#content .stickers .info .tags.user,
+#content .subject .info .tags.board,
+#content .subject .info .tags.tag,
+#content .subject .info .tags.user, #subheader .section.in.list .info .tags.board, #subheader .section.in.list .info .tags.tag, #subheader .section.in.list .info .tags.user,
+#subheader .stickers .info .tags.board,
+#subheader .stickers .info .tags.tag,
+#subheader .stickers .info .tags.user,
+#subheader .subject .info .tags.board,
+#subheader .subject .info .tags.tag,
+#subheader .subject .info .tags.user, #wrapper .section.in.list .info .tags.board, #wrapper .section.in.list .info .tags.tag, #wrapper .section.in.list .info .tags.user,
+#wrapper .stickers .info .tags.board,
+#wrapper .stickers .info .tags.tag,
+#wrapper .stickers .info .tags.user,
+#wrapper .subject .info .tags.board,
+#wrapper .subject .info .tags.tag,
+#wrapper .subject .info .tags.user {
   margin: 0 0 0.5em 3rem;
 }
-#content .section.in.list .info p.board .ui.label, #content .section.in.list .info p.tag .ui.label,
-#content .stickers .info p.board .ui.label,
-#content .stickers .info p.tag .ui.label,
-#content .subject .info p.board .ui.label,
-#content .subject .info p.tag .ui.label, #subheader .section.in.list .info p.board .ui.label, #subheader .section.in.list .info p.tag .ui.label,
-#subheader .stickers .info p.board .ui.label,
-#subheader .stickers .info p.tag .ui.label,
-#subheader .subject .info p.board .ui.label,
-#subheader .subject .info p.tag .ui.label, #wrapper .section.in.list .info p.board .ui.label, #wrapper .section.in.list .info p.tag .ui.label,
-#wrapper .stickers .info p.board .ui.label,
-#wrapper .stickers .info p.tag .ui.label,
-#wrapper .subject .info p.board .ui.label,
-#wrapper .subject .info p.tag .ui.label {
+#content .section.in.list .info .tags.board .title, #content .section.in.list .info .tags.tag .title, #content .section.in.list .info .tags.user .title,
+#content .stickers .info .tags.board .title,
+#content .stickers .info .tags.tag .title,
+#content .stickers .info .tags.user .title,
+#content .subject .info .tags.board .title,
+#content .subject .info .tags.tag .title,
+#content .subject .info .tags.user .title, #subheader .section.in.list .info .tags.board .title, #subheader .section.in.list .info .tags.tag .title, #subheader .section.in.list .info .tags.user .title,
+#subheader .stickers .info .tags.board .title,
+#subheader .stickers .info .tags.tag .title,
+#subheader .stickers .info .tags.user .title,
+#subheader .subject .info .tags.board .title,
+#subheader .subject .info .tags.tag .title,
+#subheader .subject .info .tags.user .title, #wrapper .section.in.list .info .tags.board .title, #wrapper .section.in.list .info .tags.tag .title, #wrapper .section.in.list .info .tags.user .title,
+#wrapper .stickers .info .tags.board .title,
+#wrapper .stickers .info .tags.tag .title,
+#wrapper .stickers .info .tags.user .title,
+#wrapper .subject .info .tags.board .title,
+#wrapper .subject .info .tags.tag .title,
+#wrapper .subject .info .tags.user .title {
   left: -3rem;
 }
-#content .section.in.list .info p.solution, #content .section.in.list .info p.beneficiary, #content .section.in.list .info p.sufferer,
-#content .stickers .info p.solution,
-#content .stickers .info p.beneficiary,
-#content .stickers .info p.sufferer,
-#content .subject .info p.solution,
-#content .subject .info p.beneficiary,
-#content .subject .info p.sufferer, #subheader .section.in.list .info p.solution, #subheader .section.in.list .info p.beneficiary, #subheader .section.in.list .info p.sufferer,
-#subheader .stickers .info p.solution,
-#subheader .stickers .info p.beneficiary,
-#subheader .stickers .info p.sufferer,
-#subheader .subject .info p.solution,
-#subheader .subject .info p.beneficiary,
-#subheader .subject .info p.sufferer, #wrapper .section.in.list .info p.solution, #wrapper .section.in.list .info p.beneficiary, #wrapper .section.in.list .info p.sufferer,
-#wrapper .stickers .info p.solution,
-#wrapper .stickers .info p.beneficiary,
-#wrapper .stickers .info p.sufferer,
-#wrapper .subject .info p.solution,
-#wrapper .subject .info p.beneficiary,
-#wrapper .subject .info p.sufferer {
+#content .section.in.list .info .tags.solution, #content .section.in.list .info .tags.beneficiary, #content .section.in.list .info .tags.sufferer,
+#content .stickers .info .tags.solution,
+#content .stickers .info .tags.beneficiary,
+#content .stickers .info .tags.sufferer,
+#content .subject .info .tags.solution,
+#content .subject .info .tags.beneficiary,
+#content .subject .info .tags.sufferer, #subheader .section.in.list .info .tags.solution, #subheader .section.in.list .info .tags.beneficiary, #subheader .section.in.list .info .tags.sufferer,
+#subheader .stickers .info .tags.solution,
+#subheader .stickers .info .tags.beneficiary,
+#subheader .stickers .info .tags.sufferer,
+#subheader .subject .info .tags.solution,
+#subheader .subject .info .tags.beneficiary,
+#subheader .subject .info .tags.sufferer, #wrapper .section.in.list .info .tags.solution, #wrapper .section.in.list .info .tags.beneficiary, #wrapper .section.in.list .info .tags.sufferer,
+#wrapper .stickers .info .tags.solution,
+#wrapper .stickers .info .tags.beneficiary,
+#wrapper .stickers .info .tags.sufferer,
+#wrapper .subject .info .tags.solution,
+#wrapper .subject .info .tags.beneficiary,
+#wrapper .subject .info .tags.sufferer {
   margin: 0 0 0.5em 5rem;
 }
-#content .section.in.list .info p.solution .ui.label, #content .section.in.list .info p.beneficiary .ui.label, #content .section.in.list .info p.sufferer .ui.label,
-#content .stickers .info p.solution .ui.label,
-#content .stickers .info p.beneficiary .ui.label,
-#content .stickers .info p.sufferer .ui.label,
-#content .subject .info p.solution .ui.label,
-#content .subject .info p.beneficiary .ui.label,
-#content .subject .info p.sufferer .ui.label, #subheader .section.in.list .info p.solution .ui.label, #subheader .section.in.list .info p.beneficiary .ui.label, #subheader .section.in.list .info p.sufferer .ui.label,
-#subheader .stickers .info p.solution .ui.label,
-#subheader .stickers .info p.beneficiary .ui.label,
-#subheader .stickers .info p.sufferer .ui.label,
-#subheader .subject .info p.solution .ui.label,
-#subheader .subject .info p.beneficiary .ui.label,
-#subheader .subject .info p.sufferer .ui.label, #wrapper .section.in.list .info p.solution .ui.label, #wrapper .section.in.list .info p.beneficiary .ui.label, #wrapper .section.in.list .info p.sufferer .ui.label,
-#wrapper .stickers .info p.solution .ui.label,
-#wrapper .stickers .info p.beneficiary .ui.label,
-#wrapper .stickers .info p.sufferer .ui.label,
-#wrapper .subject .info p.solution .ui.label,
-#wrapper .subject .info p.beneficiary .ui.label,
-#wrapper .subject .info p.sufferer .ui.label {
+#content .section.in.list .info .tags.solution .title, #content .section.in.list .info .tags.beneficiary .title, #content .section.in.list .info .tags.sufferer .title,
+#content .stickers .info .tags.solution .title,
+#content .stickers .info .tags.beneficiary .title,
+#content .stickers .info .tags.sufferer .title,
+#content .subject .info .tags.solution .title,
+#content .subject .info .tags.beneficiary .title,
+#content .subject .info .tags.sufferer .title, #subheader .section.in.list .info .tags.solution .title, #subheader .section.in.list .info .tags.beneficiary .title, #subheader .section.in.list .info .tags.sufferer .title,
+#subheader .stickers .info .tags.solution .title,
+#subheader .stickers .info .tags.beneficiary .title,
+#subheader .stickers .info .tags.sufferer .title,
+#subheader .subject .info .tags.solution .title,
+#subheader .subject .info .tags.beneficiary .title,
+#subheader .subject .info .tags.sufferer .title, #wrapper .section.in.list .info .tags.solution .title, #wrapper .section.in.list .info .tags.beneficiary .title, #wrapper .section.in.list .info .tags.sufferer .title,
+#wrapper .stickers .info .tags.solution .title,
+#wrapper .stickers .info .tags.beneficiary .title,
+#wrapper .stickers .info .tags.sufferer .title,
+#wrapper .subject .info .tags.solution .title,
+#wrapper .subject .info .tags.beneficiary .title,
+#wrapper .subject .info .tags.sufferer .title {
   left: -5rem;
 }
-#content .section.in.list .info p.board, #content .section.in.list .info p.tag, #content .section.in.list .info p.solution, #content .section.in.list .info p.beneficiary, #content .section.in.list .info p.sufferer,
-#content .stickers .info p.board,
-#content .stickers .info p.tag,
-#content .stickers .info p.solution,
-#content .stickers .info p.beneficiary,
-#content .stickers .info p.sufferer,
-#content .subject .info p.board,
-#content .subject .info p.tag,
-#content .subject .info p.solution,
-#content .subject .info p.beneficiary,
-#content .subject .info p.sufferer, #subheader .section.in.list .info p.board, #subheader .section.in.list .info p.tag, #subheader .section.in.list .info p.solution, #subheader .section.in.list .info p.beneficiary, #subheader .section.in.list .info p.sufferer,
-#subheader .stickers .info p.board,
-#subheader .stickers .info p.tag,
-#subheader .stickers .info p.solution,
-#subheader .stickers .info p.beneficiary,
-#subheader .stickers .info p.sufferer,
-#subheader .subject .info p.board,
-#subheader .subject .info p.tag,
-#subheader .subject .info p.solution,
-#subheader .subject .info p.beneficiary,
-#subheader .subject .info p.sufferer, #wrapper .section.in.list .info p.board, #wrapper .section.in.list .info p.tag, #wrapper .section.in.list .info p.solution, #wrapper .section.in.list .info p.beneficiary, #wrapper .section.in.list .info p.sufferer,
-#wrapper .stickers .info p.board,
-#wrapper .stickers .info p.tag,
-#wrapper .stickers .info p.solution,
-#wrapper .stickers .info p.beneficiary,
-#wrapper .stickers .info p.sufferer,
-#wrapper .subject .info p.board,
-#wrapper .subject .info p.tag,
-#wrapper .subject .info p.solution,
-#wrapper .subject .info p.beneficiary,
-#wrapper .subject .info p.sufferer {
+#content .section.in.list .info .tags.board, #content .section.in.list .info .tags.tag, #content .section.in.list .info .tags.user, #content .section.in.list .info .tags.solution, #content .section.in.list .info .tags.beneficiary, #content .section.in.list .info .tags.sufferer,
+#content .stickers .info .tags.board,
+#content .stickers .info .tags.tag,
+#content .stickers .info .tags.user,
+#content .stickers .info .tags.solution,
+#content .stickers .info .tags.beneficiary,
+#content .stickers .info .tags.sufferer,
+#content .subject .info .tags.board,
+#content .subject .info .tags.tag,
+#content .subject .info .tags.user,
+#content .subject .info .tags.solution,
+#content .subject .info .tags.beneficiary,
+#content .subject .info .tags.sufferer, #subheader .section.in.list .info .tags.board, #subheader .section.in.list .info .tags.tag, #subheader .section.in.list .info .tags.user, #subheader .section.in.list .info .tags.solution, #subheader .section.in.list .info .tags.beneficiary, #subheader .section.in.list .info .tags.sufferer,
+#subheader .stickers .info .tags.board,
+#subheader .stickers .info .tags.tag,
+#subheader .stickers .info .tags.user,
+#subheader .stickers .info .tags.solution,
+#subheader .stickers .info .tags.beneficiary,
+#subheader .stickers .info .tags.sufferer,
+#subheader .subject .info .tags.board,
+#subheader .subject .info .tags.tag,
+#subheader .subject .info .tags.user,
+#subheader .subject .info .tags.solution,
+#subheader .subject .info .tags.beneficiary,
+#subheader .subject .info .tags.sufferer, #wrapper .section.in.list .info .tags.board, #wrapper .section.in.list .info .tags.tag, #wrapper .section.in.list .info .tags.user, #wrapper .section.in.list .info .tags.solution, #wrapper .section.in.list .info .tags.beneficiary, #wrapper .section.in.list .info .tags.sufferer,
+#wrapper .stickers .info .tags.board,
+#wrapper .stickers .info .tags.tag,
+#wrapper .stickers .info .tags.user,
+#wrapper .stickers .info .tags.solution,
+#wrapper .stickers .info .tags.beneficiary,
+#wrapper .stickers .info .tags.sufferer,
+#wrapper .subject .info .tags.board,
+#wrapper .subject .info .tags.tag,
+#wrapper .subject .info .tags.user,
+#wrapper .subject .info .tags.solution,
+#wrapper .subject .info .tags.beneficiary,
+#wrapper .subject .info .tags.sufferer {
   position: relative;
   line-height: 1.5em;
 }
-#content .section.in.list .info p.board .ui.label, #content .section.in.list .info p.tag .ui.label, #content .section.in.list .info p.solution .ui.label, #content .section.in.list .info p.beneficiary .ui.label, #content .section.in.list .info p.sufferer .ui.label,
-#content .stickers .info p.board .ui.label,
-#content .stickers .info p.tag .ui.label,
-#content .stickers .info p.solution .ui.label,
-#content .stickers .info p.beneficiary .ui.label,
-#content .stickers .info p.sufferer .ui.label,
-#content .subject .info p.board .ui.label,
-#content .subject .info p.tag .ui.label,
-#content .subject .info p.solution .ui.label,
-#content .subject .info p.beneficiary .ui.label,
-#content .subject .info p.sufferer .ui.label, #subheader .section.in.list .info p.board .ui.label, #subheader .section.in.list .info p.tag .ui.label, #subheader .section.in.list .info p.solution .ui.label, #subheader .section.in.list .info p.beneficiary .ui.label, #subheader .section.in.list .info p.sufferer .ui.label,
-#subheader .stickers .info p.board .ui.label,
-#subheader .stickers .info p.tag .ui.label,
-#subheader .stickers .info p.solution .ui.label,
-#subheader .stickers .info p.beneficiary .ui.label,
-#subheader .stickers .info p.sufferer .ui.label,
-#subheader .subject .info p.board .ui.label,
-#subheader .subject .info p.tag .ui.label,
-#subheader .subject .info p.solution .ui.label,
-#subheader .subject .info p.beneficiary .ui.label,
-#subheader .subject .info p.sufferer .ui.label, #wrapper .section.in.list .info p.board .ui.label, #wrapper .section.in.list .info p.tag .ui.label, #wrapper .section.in.list .info p.solution .ui.label, #wrapper .section.in.list .info p.beneficiary .ui.label, #wrapper .section.in.list .info p.sufferer .ui.label,
-#wrapper .stickers .info p.board .ui.label,
-#wrapper .stickers .info p.tag .ui.label,
-#wrapper .stickers .info p.solution .ui.label,
-#wrapper .stickers .info p.beneficiary .ui.label,
-#wrapper .stickers .info p.sufferer .ui.label,
-#wrapper .subject .info p.board .ui.label,
-#wrapper .subject .info p.tag .ui.label,
-#wrapper .subject .info p.solution .ui.label,
-#wrapper .subject .info p.beneficiary .ui.label,
-#wrapper .subject .info p.sufferer .ui.label {
+#content .section.in.list .info .tags.board .title, #content .section.in.list .info .tags.tag .title, #content .section.in.list .info .tags.user .title, #content .section.in.list .info .tags.solution .title, #content .section.in.list .info .tags.beneficiary .title, #content .section.in.list .info .tags.sufferer .title,
+#content .stickers .info .tags.board .title,
+#content .stickers .info .tags.tag .title,
+#content .stickers .info .tags.user .title,
+#content .stickers .info .tags.solution .title,
+#content .stickers .info .tags.beneficiary .title,
+#content .stickers .info .tags.sufferer .title,
+#content .subject .info .tags.board .title,
+#content .subject .info .tags.tag .title,
+#content .subject .info .tags.user .title,
+#content .subject .info .tags.solution .title,
+#content .subject .info .tags.beneficiary .title,
+#content .subject .info .tags.sufferer .title, #subheader .section.in.list .info .tags.board .title, #subheader .section.in.list .info .tags.tag .title, #subheader .section.in.list .info .tags.user .title, #subheader .section.in.list .info .tags.solution .title, #subheader .section.in.list .info .tags.beneficiary .title, #subheader .section.in.list .info .tags.sufferer .title,
+#subheader .stickers .info .tags.board .title,
+#subheader .stickers .info .tags.tag .title,
+#subheader .stickers .info .tags.user .title,
+#subheader .stickers .info .tags.solution .title,
+#subheader .stickers .info .tags.beneficiary .title,
+#subheader .stickers .info .tags.sufferer .title,
+#subheader .subject .info .tags.board .title,
+#subheader .subject .info .tags.tag .title,
+#subheader .subject .info .tags.user .title,
+#subheader .subject .info .tags.solution .title,
+#subheader .subject .info .tags.beneficiary .title,
+#subheader .subject .info .tags.sufferer .title, #wrapper .section.in.list .info .tags.board .title, #wrapper .section.in.list .info .tags.tag .title, #wrapper .section.in.list .info .tags.user .title, #wrapper .section.in.list .info .tags.solution .title, #wrapper .section.in.list .info .tags.beneficiary .title, #wrapper .section.in.list .info .tags.sufferer .title,
+#wrapper .stickers .info .tags.board .title,
+#wrapper .stickers .info .tags.tag .title,
+#wrapper .stickers .info .tags.user .title,
+#wrapper .stickers .info .tags.solution .title,
+#wrapper .stickers .info .tags.beneficiary .title,
+#wrapper .stickers .info .tags.sufferer .title,
+#wrapper .subject .info .tags.board .title,
+#wrapper .subject .info .tags.tag .title,
+#wrapper .subject .info .tags.user .title,
+#wrapper .subject .info .tags.solution .title,
+#wrapper .subject .info .tags.beneficiary .title,
+#wrapper .subject .info .tags.sufferer .title {
   margin: 0;
   padding: 0.25em 0.5em 0.25em 0;
   position: absolute;
@@ -782,15 +853,6 @@ p {
 #wrapper .reference a:hover,
 #wrapper .response a:hover {
   background-color: rgba(0, 0, 0, 0.05);
-}
-#content .etherpad a.a.solution.sticker:hover,
-#content .reference a.a.solution.sticker:hover,
-#content .response a.a.solution.sticker:hover, #subheader .etherpad a.a.solution.sticker:hover,
-#subheader .reference a.a.solution.sticker:hover,
-#subheader .response a.a.solution.sticker:hover, #wrapper .etherpad a.a.solution.sticker:hover,
-#wrapper .reference a.a.solution.sticker:hover,
-#wrapper .response a.a.solution.sticker:hover {
-  background-color: #e7f3d7;
 }
 #content .etherpad, #subheader .etherpad, #wrapper .etherpad {
   margin-bottom: 2rem;
@@ -1615,10 +1677,6 @@ p {
 #proposal #wrapper #comparison .statistic .menu {
   margin: 0 -1rem;
 }
-#proposal #wrapper #comparison .head .column,
-#proposal #wrapper #comparison .statistic .column {
-  text-align: center;
-}
 #proposal #wrapper #comparison .head .plan,
 #proposal #wrapper #comparison .statistic .plan {
   padding: 0.83em;
@@ -1641,6 +1699,9 @@ p {
   -webkit-box-shadow: 0 0 1px black;
   -moz-box-shadow: 0 0 1px black;
   box-shadow: 0 0 1px black;
+}
+#proposal #wrapper #comparison .head .column {
+  text-align: center;
 }
 #proposal #wrapper #comparison .statistic {
   -webkit-box-shadow: 0 1px 1px black;
@@ -1681,8 +1742,8 @@ p {
   height: 80%;
 }
 #proposal #wrapper #comparison .graph .amount.mine {
-  left: 30%;
-  width: 40%;
+  left: 80%;
+  width: 10%;
 }
 #proposal #wrapper #comparison .graph .amount.mine.a {
   height: 60%;
