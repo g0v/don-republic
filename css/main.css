@@ -1232,6 +1232,23 @@ p {
 #article #subheader .icon {
   margin: 0;
 }
+#issue #subheader .menu .right .dropdown .menu,
+#proposal #subheader .menu .right .dropdown .menu,
+#project #subheader .menu .right .dropdown .menu,
+#qa #subheader .menu .right .dropdown .menu,
+#argument #subheader .menu .right .dropdown .menu,
+#article #subheader .menu .right .dropdown .menu {
+  max-width: 15rem;
+}
+#issue #subheader .menu .right .dropdown .menu .item,
+#proposal #subheader .menu .right .dropdown .menu .item,
+#project #subheader .menu .right .dropdown .menu .item,
+#qa #subheader .menu .right .dropdown .menu .item,
+#argument #subheader .menu .right .dropdown .menu .item,
+#article #subheader .menu .right .dropdown .menu .item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 #issue #wrapper,
 #proposal #wrapper,
 #project #wrapper,
