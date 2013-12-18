@@ -710,11 +710,8 @@ p
     background-attachment: fixed
     background-color: rgba(#000, 0.1)
   #subheader
-    .menu
-      .label
-        margin: -0.3em 0 -0.3em 0.8em
-      .icon
-        margin: 0
+    .icon
+      margin: 0
   #wrapper
     padding: 1rem
   #content
@@ -777,6 +774,13 @@ p
 #mini-header
   .menu
     +border-radius(0)
+.ui.menu
+  .ui.label
+    padding: 0.3em 0.25em
+    margin: -0.3em 0 -0.3em 0.8em
+    position: relative
+    top: -0.1em
+    vertical-align: baseline
 #proposal
   #wrapper
     position: relative
@@ -856,14 +860,21 @@ p
     #resource
       overflow: auto
       position: absolute
-      right: 0
-      top: 0
-      width: 17rem
+      right: 0.5rem
+      top: 1rem
+      width: 16rem
       height: 100%
       padding: 0 0.5rem 1rem 0.5rem
       box-sizing: border-box
       a.divider
         display: block
+    #resource, #comparison
+      .a.sticker
+        margin: 0.25rem 0
+        +box-shadow(0 0 1px rgba(#000,0.3))
+        border: 1px #fff solid
+        &:hover
+          +box-shadow(0 0 1px rgba(#000,0.7))
     #comparison
       .head
         height: 4rem
@@ -888,9 +899,6 @@ p
         vertical-align: middle
       .column.active
         background-color: rgba(#fff,0.5)
-      .a.sticker
-        margin: 0.25rem 0
-        +box-shadow(0 0 1px rgba(#000,0.3))
       .statistic
       .graph
         display: block

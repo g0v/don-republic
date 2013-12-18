@@ -1224,20 +1224,12 @@ p {
 #article #header .level.two.menu .ui.button {
   margin-top: 1px;
 }
-#issue #subheader .menu .label,
-#proposal #subheader .menu .label,
-#project #subheader .menu .label,
-#qa #subheader .menu .label,
-#argument #subheader .menu .label,
-#article #subheader .menu .label {
-  margin: -0.3em 0 -0.3em 0.8em;
-}
-#issue #subheader .menu .icon,
-#proposal #subheader .menu .icon,
-#project #subheader .menu .icon,
-#qa #subheader .menu .icon,
-#argument #subheader .menu .icon,
-#article #subheader .menu .icon {
+#issue #subheader .icon,
+#proposal #subheader .icon,
+#project #subheader .icon,
+#qa #subheader .icon,
+#argument #subheader .icon,
+#article #subheader .icon {
   margin: 0;
 }
 #issue #wrapper,
@@ -1423,6 +1415,14 @@ p {
   border-radius: 0;
 }
 
+.ui.menu .ui.label {
+  padding: 0.3em 0.25em;
+  margin: -0.3em 0 -0.3em 0.8em;
+  position: relative;
+  top: -0.1em;
+  vertical-align: baseline;
+}
+
 #proposal #wrapper {
   position: relative;
 }
@@ -1529,15 +1529,27 @@ p {
 #proposal #wrapper #resource {
   overflow: auto;
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 17rem;
+  right: 0.5rem;
+  top: 1rem;
+  width: 16rem;
   height: 100%;
   padding: 0 0.5rem 1rem 0.5rem;
   box-sizing: border-box;
 }
 #proposal #wrapper #resource a.divider {
   display: block;
+}
+#proposal #wrapper #resource .a.sticker, #proposal #wrapper #comparison .a.sticker {
+  margin: 0.25rem 0;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  border: 1px white solid;
+}
+#proposal #wrapper #resource .a.sticker:hover, #proposal #wrapper #comparison .a.sticker:hover {
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
 }
 #proposal #wrapper #comparison .head {
   height: 4rem;
@@ -1569,12 +1581,6 @@ p {
 }
 #proposal #wrapper #comparison .column.active {
   background-color: rgba(255, 255, 255, 0.5);
-}
-#proposal #wrapper #comparison .a.sticker {
-  margin: 0.25rem 0;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 #proposal #wrapper #comparison .graph {
   display: block;
