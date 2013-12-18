@@ -888,9 +888,26 @@ p
     #comparison
       .column
         vertical-align: middle
+      .row
+        margin: 0
+        padding: 0
       .column.active
-        background-color: rgba(#fff,1)
         font-weight: bold
+        background-color: rgba(#fff,1)
+      .comparison
+        .status
+          padding: 0.83em
+          line-height: 1
+          &.no
+            background-color: rgba(#000,0)
+        .column.active
+          border: 1px rgba(#000,0.3) solid
+          border-width: 0 1px
+        &:last-child .column
+          padding-bottom: 0.5rem
+          +border-radius(0 0 0.3rem 0.3rem)
+          //-+box-shadow(0 0 1px rgba(#000,0.7))
+          border-width: 0 1px 1px 1px
       .head,
       .statistic
         height: 4rem
@@ -913,14 +930,6 @@ p
         +box-shadow(0 0 1px #000)
       .statistic
         +box-shadow(0 1px 1px #000)
-      .row
-        margin: 0
-        padding: 0
-        .status
-          padding: 0.83em
-          line-height: 1
-          &.no
-            background-color: rgba(0,0,0,0)
       .graph
         display: block
         float: left
