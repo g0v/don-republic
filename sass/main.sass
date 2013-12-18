@@ -886,10 +886,19 @@ p
         &:hover
           +box-shadow(0 0 1px rgba(#000,0.7))
     #comparison
+      .column
+        vertical-align: middle
+      .column.active
+        background-color: rgba(#fff,1)
+        font-weight: bold
       .head,
       .statistic
         height: 4rem
         background-color: #fff
+        .menu
+          margin: 0 -1rem
+        .column
+          text-align: center
         .plan
           padding: 0.83em
           line-height: 1
@@ -912,10 +921,6 @@ p
           line-height: 1
           &.no
             background-color: rgba(0,0,0,0)
-      .column
-        vertical-align: middle
-      .column.active
-        background-color: rgba(#fff,0.5)
       .graph
         display: block
         float: left
@@ -923,10 +928,10 @@ p
         position: relative
         height: 4rem
         .amount
+          text-align: left
           position: absolute
           bottom: 0
           font-size: 0.9rem
-          font-weight: bold
           +border-radius(0.2rem 0.2rem 0 0)
           border: 1px #fff solid
           border-width: 1px 1px 0 1px
@@ -965,6 +970,7 @@ p
           margin: 0.5rem 0 0 0.5rem
           display: inline-block
           .sample
+            font-weight: bold
             padding: 0.2em 0.5em
             margin-left: 0.3em
       .comparing

@@ -1575,10 +1575,25 @@ p {
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
 }
+#proposal #wrapper #comparison .column {
+  vertical-align: middle;
+}
+#proposal #wrapper #comparison .column.active {
+  background-color: white;
+  font-weight: bold;
+}
 #proposal #wrapper #comparison .head,
 #proposal #wrapper #comparison .statistic {
   height: 4rem;
   background-color: white;
+}
+#proposal #wrapper #comparison .head .menu,
+#proposal #wrapper #comparison .statistic .menu {
+  margin: 0 -1rem;
+}
+#proposal #wrapper #comparison .head .column,
+#proposal #wrapper #comparison .statistic .column {
+  text-align: center;
 }
 #proposal #wrapper #comparison .head .plan,
 #proposal #wrapper #comparison .statistic .plan {
@@ -1619,12 +1634,6 @@ p {
 #proposal #wrapper #comparison .row .status.no {
   background-color: rgba(0, 0, 0, 0);
 }
-#proposal #wrapper #comparison .column {
-  vertical-align: middle;
-}
-#proposal #wrapper #comparison .column.active {
-  background-color: rgba(255, 255, 255, 0.5);
-}
 #proposal #wrapper #comparison .graph {
   display: block;
   float: left;
@@ -1633,10 +1642,10 @@ p {
   height: 4rem;
 }
 #proposal #wrapper #comparison .graph .amount {
+  text-align: left;
   position: absolute;
   bottom: 0;
   font-size: 0.9rem;
-  font-weight: bold;
   -webkit-border-radius: 0.2rem 0.2rem 0 0;
   -moz-border-radius: 0.2rem 0.2rem 0 0;
   -ms-border-radius: 0.2rem 0.2rem 0 0;
@@ -1685,6 +1694,7 @@ p {
   display: inline-block;
 }
 #proposal #wrapper #comparison .graph .title .sample {
+  font-weight: bold;
   padding: 0.2em 0.5em;
   margin-left: 0.3em;
 }
