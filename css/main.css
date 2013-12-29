@@ -189,6 +189,22 @@ p {
   opacity: 0.6;
 }
 
+.ui.icon.button.new {
+  padding: 1em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: left;
+  background: none;
+  border: 2px #cccccc dashed;
+  display: block;
+}
+.ui.icon.button.new i.icon {
+  padding: 1em;
+}
+.ui.icon.button.new:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
 #content .in.list .meta, #subheader .in.list .meta, #wrapper .in.list .meta {
   padding: 0.25em 1em;
 }
@@ -237,8 +253,11 @@ p {
   color: white;
   opacity: 1;
 }
-#content .section.in.list > .entry, #content .section.in.list > .tag, #content .section.in.list > .user, #content .section.in.list > .plan, #subheader .section.in.list > .entry, #subheader .section.in.list > .tag, #subheader .section.in.list > .user, #subheader .section.in.list > .plan, #wrapper .section.in.list > .entry, #wrapper .section.in.list > .tag, #wrapper .section.in.list > .user, #wrapper .section.in.list > .plan {
+#content .section.in.list > .entry, #content .section.in.list > .tag, #content .section.in.list > .user, #content .section.in.list > .plan, #content .section.in.list > .new, #content .section.in.list > .mini.segment, #subheader .section.in.list > .entry, #subheader .section.in.list > .tag, #subheader .section.in.list > .user, #subheader .section.in.list > .plan, #subheader .section.in.list > .new, #subheader .section.in.list > .mini.segment, #wrapper .section.in.list > .entry, #wrapper .section.in.list > .tag, #wrapper .section.in.list > .user, #wrapper .section.in.list > .plan, #wrapper .section.in.list > .new, #wrapper .section.in.list > .mini.segment {
   margin: 0 1rem 0 4rem;
+}
+#content .section.in.list > .mini.segment, #subheader .section.in.list > .mini.segment, #wrapper .section.in.list > .mini.segment {
+  padding: 1rem;
 }
 #content .section.in.list > .entry, #content .section.in.list > .tag, #subheader .section.in.list > .entry, #subheader .section.in.list > .tag, #wrapper .section.in.list > .entry, #wrapper .section.in.list > .tag {
   padding: 2rem 1rem 3.5rem 1rem;
@@ -284,21 +303,6 @@ p {
 #content .section.in.list > .plan, #subheader .section.in.list > .plan, #wrapper .section.in.list > .plan {
   padding: 2rem 1rem 5rem 1rem;
 }
-#content .section.in.list > .plan.new, #subheader .section.in.list > .plan.new, #wrapper .section.in.list > .plan.new {
-  padding: 1em;
-  font-size: 1.2rem;
-  font-weight: normal;
-  text-align: left;
-  background: none;
-  border: 2px #cccccc dashed;
-  display: block;
-}
-#content .section.in.list > .plan.new i.icon, #subheader .section.in.list > .plan.new i.icon, #wrapper .section.in.list > .plan.new i.icon {
-  padding: 1em;
-}
-#content .section.in.list > .plan.new:hover, #subheader .section.in.list > .plan.new:hover, #wrapper .section.in.list > .plan.new:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
 #content .section.in.list > .plan .status, #subheader .section.in.list > .plan .status, #wrapper .section.in.list > .plan .status {
   top: 0.5rem;
   left: -1rem;
@@ -342,6 +346,33 @@ p {
 #wrapper .subject .action .item {
   color: black;
   opacity: 0.7;
+}
+#content .section.in.list .action.mini,
+#content .stickers .action.mini,
+#content .subject .action.mini, #subheader .section.in.list .action.mini,
+#subheader .stickers .action.mini,
+#subheader .subject .action.mini, #wrapper .section.in.list .action.mini,
+#wrapper .stickers .action.mini,
+#wrapper .subject .action.mini {
+  margin-left: 1rem;
+}
+#content .section.in.list .action.mini .item,
+#content .stickers .action.mini .item,
+#content .subject .action.mini .item, #subheader .section.in.list .action.mini .item,
+#subheader .stickers .action.mini .item,
+#subheader .subject .action.mini .item, #wrapper .section.in.list .action.mini .item,
+#wrapper .stickers .action.mini .item,
+#wrapper .subject .action.mini .item {
+  font-size: 0.9rem;
+}
+#content .section.in.list .action.mini i.icon,
+#content .stickers .action.mini i.icon,
+#content .subject .action.mini i.icon, #subheader .section.in.list .action.mini i.icon,
+#subheader .stickers .action.mini i.icon,
+#subheader .subject .action.mini i.icon, #wrapper .section.in.list .action.mini i.icon,
+#wrapper .stickers .action.mini i.icon,
+#wrapper .subject .action.mini i.icon {
+  font-size: 1.2rem !important;
 }
 #content .section.in.list .info,
 #content .stickers .info,

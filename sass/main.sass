@@ -151,6 +151,20 @@ p
       padding-right: 0
       font-size: 0.9rem
 
+// the cute new button everywhere
+.ui.icon.button.new
+  padding: 1em
+  font-size: 1.2rem
+  font-weight: normal
+  text-align: left
+  background: none
+  border: 2px #ccc dashed
+  display: block
+  i.icon
+    padding: 1em
+  &:hover
+    background: rgba(0,0,0,0.03)
+
 #content, #subheader, #wrapper
   // the repeatable items in a list view
   .in.list
@@ -192,8 +206,12 @@ p
     &>.entry,
     &>.tag,
     &>.user,
-    &>.plan
+    &>.plan,
+    &>.new,
+    &>.mini.segment
       margin: 0 1rem 0 4rem
+    &>.mini.segment
+      padding: 1rem
     &>.entry,
     &>.tag
       padding: 2rem 1rem 3.5rem 1rem
@@ -224,18 +242,6 @@ p
             background-color: rgba(0,0,0,0.05)
     &>.plan
       padding: 2rem 1rem 5rem 1rem
-      &.new
-        padding: 1em
-        font-size: 1.2rem
-        font-weight: normal
-        text-align: left
-        background: none
-        border: 2px #ccc dashed
-        display: block
-        i.icon
-          padding: 1em
-        &:hover
-          background-color: rgba(0,0,0,0.03)
       .status
         top: 0.5rem
         left: -1rem
@@ -258,6 +264,12 @@ p
       .icon, .item
         color: rgba(0,0,0,1)
         opacity: .7
+      &.mini
+        margin-left: 1rem
+        .item
+          font-size: 0.9rem
+        i.icon
+          font-size: 1.2rem!important
     .info
       font-size: 0.9rem
       .tags
@@ -1018,3 +1030,4 @@ p
             margin-left: 0.3em
       .comparing
       .compared
+
