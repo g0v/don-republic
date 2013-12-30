@@ -1,15 +1,31 @@
 extends _template
 
-block head
-  link(rel="stylesheet",href="css/level-one.css")
-
 block title
   | 首頁 
 
 block body
 
   #index
-    .index
+
+    #sidebar.ui.vertical.menu
+      a.item
+        .avatar
+          img(src="/img/digger.jpg").rounded.corner
+        .id ETBlue
+      a.item.active 動態
+      a.item 我的訂閱
+      a.item 我的收藏
+      a.item 我的追蹤對象
+      a.item 我的群組
+
+    #content
+      .in.timeline
+        include -proposal-in-timeline
+
+
+
+
+    //-.index
       a(href="").ui.segment.entry
         .title
           h2 核融合技術如果發展成熟，核四廠有可能改採核融合嗎？

@@ -20,6 +20,11 @@ input::-webkit-input-placeholder
 body
   margin: 0
   padding: 0
+  background: url("../img/bg4.png") 
+  background-repeat: repeat
+  background-position: left top
+  background-attachment: fixed
+  background-color: rgba(#fffad8, 1)
 
 .hidden,
 .ui.menu.hidden,
@@ -39,13 +44,12 @@ p
   color: #000
 
 // global settings for this system
-.a.tag.item,
-.a.board.item,
-.a.user.item,
-.a.topic.item
+.a.item
   display: inline-block
   margin: 0
   padding: 0.25em 0.5em
+  &:first-child
+    margin-left: -0.5em
   +box-sizing(border-box)
   +border-radius(0.3rem)
   &:hover
@@ -104,11 +108,23 @@ p
     background-color: rgba(#00a99d,0.05)
 
 .a.user.item
-  color: rgba(#ff7bac,1)
+  //-color: rgba(#ff7bac,1)
+  color: rgba(#29abe2,1)
   &:hover
-    background-color: rgba(#ff7bac,0.05)
+    //-background-color: rgba(#ff7bac,0.05)
+    background-color: rgba(#29abe2,0.05)
 
 .a.topic.item
+  color: inherit
+  &:hover
+    background-color: rgba(#000,0.05)
+
+.a.plan.item
+  color: inherit
+  &:hover
+    background-color: rgba(#000,0.05)
+
+.a.chapter.item
   color: inherit
   &:hover
     background-color: rgba(#000,0.05)
@@ -165,18 +181,87 @@ p
   &:hover
     background: rgba(0,0,0,0.03)
 
+// timeline items in home page
+.in.timeline
+  .label.status
+    padding: 0.5em!important
+  .action
+    padding: 0!important
+    font-size: 1rem
+    line-height: 1em
+    +box-shadow(none)
+    .item
+      margin: 0
+      padding: 0.5em 1em
+      opacity: 0.7
+      color: #eee
+      &:before, &:after
+        display: none
+      &:hover
+        opacity: 1
+        background: none
+    .icon
+      display: inline-block
+      margin: 0
+      font-size: 1.2rem
+      +text-shadow(rgba(#000, 1) 0 0 1px)
+    .selected .icon
+    .yes
+      &:hover, &.selected
+        color: rgba(#39b54a,1)
+        .icon
+          opacity: 1
+    .unknown
+      &:hover, &.selected
+        color: rgba(#aaa,1)
+        .icon
+          opacity: 1
+    .no
+      &:hover, &.selected
+        color: rgba(#f15a24,1)
+        .icon
+          opacity: 1
+    .bookmark
+      &:hover, &.selected
+        color: rgba(#e5d500,1)
+        .icon
+          opacity: 1
+    .subscribe
+      &:hover, &.selected
+        color: rgba(#f7931e,1)
+        .icon
+          opacity: 1
+    .share
+      &:hover, &.selected
+        color: rgba(#8cc63f,1)
+        .icon
+          opacity: 1
+  .summary
+    margin: 2rem 0
+  .log
+    font-size: 0.9rem
+  .diff-1
+    border-bottom: 2px #ffcccc solid
+
+.in.timeline, .in.list
+  .meta
+    text-transform: none
+    padding: 0.5em 1em
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    //-a
+      padding: 0 0.5em
+      color: #29abe2
+      &:hover
+        color: #0071bc
+    .right
+      float: right
+
+
+
 #content, #subheader, #wrapper
   // the repeatable items in a list view
-  .in.list
-    .meta
-      padding: 0.25em 1em
-      a
-        padding: 0 0.5em
-        color: #29abe2
-        &:hover
-          color: #0071bc
-      .right
-        float: right
   .section.in.list
     margin: 0 1rem 1rem 0
     .title
@@ -617,8 +702,24 @@ p
 
 // the lovely homepage
 #index
-  padding: 5rem 0 2rem 0
-  .index
+  padding: 1rem
+  #sidebar
+    width: 12rem
+    float: left
+    .avatar
+      display: inline
+      img
+        width: 3rem
+    .id
+      display: inline
+      vertical-align: middle
+      margin-left: 1rem
+  #content
+    margin-left: 13rem
+    .ui.segment:after
+      display: none
+
+  //.index
     text-align: center
     margin: 0 auto
     width: 100%

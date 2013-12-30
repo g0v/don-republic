@@ -12,7 +12,8 @@ html
     //-link(rel="stylesheet",type="text/css",href="css/motion-propose.css")
     link(rel="stylesheet",href="css/semantic.min.css")
     link(rel="stylesheet",href="css/main.css")
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     script(src="js/vendor/semantic.min.js")
     //-script(src="js/vendor/tablesort.js")
     block head
@@ -24,12 +25,13 @@ html
     #navbar
       .ui.secondary.pointing.menu
         a(href="index.html").item.home 動民主
-        a(href="issues.html").item.issue 議題
-        a(href="proposals.html").item.proposal 提案
-        a(href="projects.html").item.project 專案
-        a(href="entries.html").item.entry 內容
-        a(href="tags.html").item.tag 標籤
-        a(href="users.html").item.user 公民列表
+        //-a(href="issues.html").item.issue 議題
+        a(href="proposals.html").item.proposals 提案
+        //-a(href="projects.html").item.project 專案
+        //-a(href="entries.html").item.entry 內容
+        a(href="tags.html").item.tags 標籤
+        a(href="users.html").item.users 公民
+        a(href="groups.html").item.groups 群組
         .item.right 登入
         .item.right
           .ui.icon.input
