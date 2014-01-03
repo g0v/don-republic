@@ -49,6 +49,15 @@ p {
   color: black;
 }
 
+.ui.menu > .menu.item {
+  padding: 0;
+}
+.ui.menu > .menu.item > .item {
+  margin: 0;
+  padding-left: 2em;
+  font-size: 0.9rem;
+}
+
 .a.item {
   display: inline-block;
   margin: 0;

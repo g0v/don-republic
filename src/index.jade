@@ -10,13 +10,34 @@ block body
     #sidebar.ui.vertical.menu
       a.item
         .avatar
-          img(src="img/digger.jpg").rounded.corner
+          img(src="img/etblue.jpg").rounded.corner
         .id ETBlue
-      a.item.active 動態
-      a.item 我的訂閱
-      a.item 我的收藏
-      a.item 我的追蹤對象
-      a.item 我的群組
+      a.item.home.active
+        i.icon.home
+        | 最新動態
+      .menu.item.subscribed
+        a.item 議題
+        a.item 提案
+        a.item 專案
+        a.item 標籤
+      a.item.subscribed
+        i.icon.rss
+        | 訂閱
+      a.item.bookmarked
+        i.icon.star
+        | 收藏
+      a.item.shared
+        i.icon.forward.mail
+        | 分享
+      a.item.following
+        i.icon.user
+        | 追蹤
+      a.item.groups
+        i.icon.users
+        | 社團
+      a.item.groups
+        i.icon.suitcase
+        | 專案小組
 
     #content
       .in.timeline
