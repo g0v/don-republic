@@ -8,40 +8,41 @@ block body
   #index
 
     #sidebar.ui.vertical.menu
-      a.item
+      a(href="").item
         .avatar
           img(src="img/etblue.jpg").rounded.corner
         .id ETBlue
-      a.item.home.active
+      a(href="index.html").item.home
         i.icon.home
         | 最新動態
       .menu.item.subscribed
-        a.item 議題
-        a.item 提案
-        a.item 專案
-        a.item 標籤
-      a.item.subscribed
+        a(href="index-issues.html").item.issues 議題
+        a(href="index-proposals.html").item.proposals 提案
+        a(href="index-projects.html").item.projects 專案
+        a(href="index-tags.html").item.tags 標籤
+      a(href="").item.subscribed
         i.icon.rss
         | 訂閱
-      a.item.bookmarked
+      a(href="").item.bookmarked
         i.icon.star
         | 收藏
-      a.item.shared
+      a(href="").item.shared
         i.icon.forward.mail
         | 分享
-      a.item.following
+      a(href="").item.following
         i.icon.user
         | 追蹤
-      a.item.groups
+      a(href="").item.groups
         i.icon.users
         | 社團
-      a.item.groups
+      a(href="").item.teams
         i.icon.suitcase
         | 專案小組
 
     #content
       .in.timeline
-        include -proposal-in-timeline
+        block timeline
+          include -proposal-in-timeline
 
 
 
@@ -63,8 +64,10 @@ block body
           i.icon.right
           | 下一題
 
+block script
   script.
     $("#navbar .home").addClass("active");
+    $("#sidebar .home").addClass("active");
 
   style.
     body
