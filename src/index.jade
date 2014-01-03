@@ -12,40 +12,81 @@ block body
         .avatar
           img(src="img/etblue.jpg").rounded.corner
         .id ETBlue
-      a(href="index.html").item.home
+      a(href="index.html").item.timeline
         i.icon.home
         | 最新動態
-      .menu.item.subscribed
-        a(href="index-issues.html").item.issues 議題
-        a(href="index-proposals.html").item.proposals 提案
-        a(href="index-projects.html").item.projects 專案
-        a(href="index-tags.html").item.tags 標籤
-      a(href="").item.subscribed
-        i.icon.rss
-        | 訂閱
-      a(href="").item.bookmarked
-        i.icon.star
-        | 收藏
-      a(href="").item.shared
-        i.icon.forward.mail
-        | 分享
-      a(href="").item.following
-        i.icon.user
-        | 追蹤
-      a(href="").item.groups
-        i.icon.users
-        | 社團
-      a(href="").item.teams
-        i.icon.suitcase
-        | 專案小組
+      .menu.item.timeline
+        a(href="timeline-issues.html").item.issues
+          i.icon.folder.open.outline
+          | 議題
+        a(href="timeline-proposals.html").item.proposals
+          i.icon.folder.open.outline
+          | 提案
+        a(href="timeline-projects.html").item.projects
+          i.icon.folder.open.outline
+          | 專案
+        a(href="timeline-tags.html").item.tags
+          i.icon.tags
+          | 標籤
+      a(href="").item.activities
+        | 我的活動紀錄
+      .menu.item.activities
+        a(href="").item.subscribed
+          i.icon.rss
+          | 訂閱
+        a(href="").item.bookmarked
+          i.icon.star
+          | 收藏
+        a(href="").item.shared
+          i.icon.forward.mail
+          | 分享
+        a(href="").item.shared
+          i.icon.checked.checkmark
+          | 表態
+        a(href="").item.edited
+          i.icon.pencil
+          | 編輯
+      a(href="").item.achievements
+        | 我的成就
+      .menu.item.achievements
+        a(href="").item.composing
+          i.icon.certificate
+          | 彙編懶人包
+        a(href="").item.analyzing
+          i.icon.certificate
+          | 釐清議題
+        a(href="").item.planning
+          i.icon.certificate
+          | 規劃提案
+        a(href="").item.executing
+          i.icon.certificate
+          | 執行專案
+      a(href="").item.lists
+        | 我的追蹤清單
+      .menu.item.lists
+        a(href="lists-issues.html").item.issues
+          i.icon.folder.open.outline
+          | 議題
+        a(href="lists-proposals.html").item.proposals
+          i.icon.folder.open.outline
+          | 提案
+        a(href="lists-projects.html").item.projects
+          i.icon.folder.open.outline
+          | 專案
+        a(href="lists-tags.html").item.tags
+          i.icon.tags
+          | 標籤
+        a(href="").item.following
+          i.icon.user
+          | 公民
+        a(href="").item.groups
+          i.icon.users
+          | 團體
 
     #content
       .in.timeline
         block timeline
           include -proposal-in-timeline
-
-
-
 
     //-.index
       a(href="").ui.segment.entry
@@ -67,7 +108,7 @@ block body
 block script
   script.
     $("#navbar .home").addClass("active");
-    $("#sidebar .home").addClass("active");
+    $("#sidebar .timeline").addClass("active");
 
   style.
     body
