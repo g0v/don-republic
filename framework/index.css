@@ -1,0 +1,49 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 13px; }
+
+body {
+  padding: 20px;
+  margin-bottom: 20px; }
+
+#user span, #proposal span, #plan span, #group span {
+  background: #eeffee;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block; }
+
+#proposal {
+  border: 1px solid black;
+  padding: 10px; }
+
+.proposal {
+  border: 1px solid #999999;
+  padding: 10px; }
+
+#footer {
+  height: 50px; }
+
+.issue, .vision {
+  display: inline-block;
+  width: 200px;
+  background: #ffeeee;
+  margin: 3px;
+  border: 1px solid #cccccc; }
+
+chooser .item {
+  display: inline-block;
+  border: 1px solid #cccccc;
+  margin: 3px; }
+  chooser .item .type, chooser .item .name {
+    display: inline-block;
+    padding: 3px; }
+  chooser .item .type {
+    font-size: 0.5em;
+    background: #ffff99;
+    margin: 3px; }
+  chooser .item .name {
+    background: #ffff99;
+    margin: 3px; }
