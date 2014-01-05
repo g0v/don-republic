@@ -16,3 +16,6 @@ body {
 #content {
   width: 80%;
   margin: 50px auto; }
+
+h4.pull-right.switch {
+  margin-right: 20px; }
