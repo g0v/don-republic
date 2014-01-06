@@ -1,10 +1,12 @@
 div(ng-show="tab==2")
   #proposal-list(ng-controller="ctrl.proposal")
-    .proposal(ng-repeat="p in list")
+    .proposal(ng-repeat="p in list",ng-click="updatePropCur(p)")
       .ib
         .stick
           .label.label-success 已投
         .thumb
+          .desc {{p.desc}}
+          .name {{p.name}}
         .name {{p.name}}
         .desc {{p.desc}}
         .detail

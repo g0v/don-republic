@@ -9,6 +9,10 @@ body
   padding: 20px
   margin-bottom: 20px
 
+.footer
+  margin: 20px
+  padding: 20px
+
 .navbar
   .ib
     margin: 0 auto
@@ -45,21 +49,43 @@ h4.pull-right.switch
     border: 1px solid #ccc
     box-shadow: 0 1px 3px rgba(0,0,0,0.2)
     width: 200px
+    cursor: pointer
     .ib
       position: relative
       margin: 10px
       .stick
         position: absolute
+        z-index: 2
       .thumb
+        position: relative
+        z-index: 1
         width: 178px
-        height: 148px
+        height: 128px
         border: 1px solid #ccc
         margin-bottom: 10px
         background: #eee
+        overflow: hidden
+        white-space: pre
+        .name, .desc
+          position: absolute
+          top: 0
+          height: 128px
+          color: #fff
+          font-size: 64px
+          line-height: 128px
+          text-align: center
+        .desc
+          font-size: 24px
+          line-height: 24px
+          color: #f9f9f9
       .name
         font-size: 1.2em
         text-align: center
       .desc
         text-align: center
+        height: 53px
+        overflow: hidden
+        font-size: 12px
+        margin: 5px 0
       .detail
         margin: 3px 0

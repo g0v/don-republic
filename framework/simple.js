@@ -27,14 +27,15 @@ ctrl.simplebase = function($scope, DataService){
     }
   };
   $scope.color = d3.scale.category20();
-  return $scope.$watch('proposal.ref', function(){
-    var s;
-    $scope.id = $scope.proposal.ref.$getIndex()[0] || null;
-    s = $scope.proposal.s();
-    s.propCur = $scope.id
-      ? $scope.proposal.ref[$scope.id]
-      : {};
-    s.cs = s.choiceState(s.propCur);
-    return $scope.propCur = s.propCur;
-  }, true);
+  return $scope.updatePropCur = function(p){
+    var x$, s, y$;
+    x$ = s = $scope.proposal.s();
+    x$.propCur = p;
+    x$.cs = s.choiceState(s.propCur);
+    y$ = $scope;
+    y$.propCur = p;
+    y$.id = p.id;
+    y$.tab = 3;
+    return y$;
+  };
 };

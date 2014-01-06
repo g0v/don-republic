@@ -10,11 +10,11 @@
           .col-sm-6
             label 開始時間
             .form-group
-              input.form-control(type="text",placeholder="起始時間")
+              input.form-control(type="text",placeholder="起始時間",ng-model="cur.start")
           .col-sm-6
             label 期間長度
             .form-group
-              input.form-control(type="text",placeholder="投票期間長度, 例如: 3 天")
+              input.form-control(type="text",placeholder="投票期間長度, 例如: 3 天",ng-model="cur.duration")
 
     .row
       .col-sm-12
@@ -39,7 +39,7 @@
     .panel.clearfix.panel-default(ng-show="advancedConfig",style="padding: 10px")
       .row(style="clear:both")
         .col-sm-6
-          .panel.panel-default(ng-controller="ctrl.simpletab")
+          .panel.panel-default(ng-controller="ctrl.simpletab",ng-init="cur.config.method=tab")
              .panel-heading
                 | 投票選項 - 
                 span(ng-show="tab==1") 單選式投票
@@ -47,18 +47,18 @@
                 span(ng-show="tab==3") 排名式投票
              .panel-body
                ul.nav.nav-tabs(style="margin-bottom:15px")
-                 li(ng-class="active(tab,1)",ng-click="tab=1"): a(href="") 單選式投票
-                 li(ng-class="active(tab,2)",ng-click="tab=2"): a(href="") 多選式投票
-                 li(ng-class="active(tab,3)",ng-click="tab=3"): a(href="") 排名式投票
+                 li(ng-class="active(tab,1)",ng-click="cur.config.method=1;tab=1"): a(href="") 單選式投票
+                 li(ng-class="active(tab,2)",ng-click="cur.config.method=2;tab=2"): a(href="") 多選式投票
+                 li(ng-class="active(tab,3)",ng-click="cur.config.method=3;tab=3"): a(href="") 排名式投票
 
                .checkbox: label
-                 input(type="checkbox",ng-model="cur.config.vote.allowAnonymous")
+                 input(type="checkbox",ng-model="cur.config.allowAnonymous")
                  | 允許未登入使用者投票
                .checkbox: label
-                 input(type="checkbox",disabled,checked)
+                 input(type="checkbox",disabled,checked,ng-model="cur.config.allowInvalidate")
                  | 提供廢票選項
                .checkbox: label
-                 input(type="checkbox")
+                 input(type="checkbox",ng-model="cur.config.allowNewPlan")
                  | 有權投票者也可提出新方案
                hr
                h5(ng-click="advancedOption=!advancedOption",style="cursor:pointer"): a(href="") 進階選項 ...
@@ -66,54 +66,54 @@
                  .row
                    .col-sm-6
                      .checkbox: label
-                       input(type="checkbox")
+                       input(type="checkbox",ng-model="cur.config.needPetition")
                        | 需過連署門檻
-                     input.form-control(type="text",placeholder="連署門檻(百分比), 例如: 50%")
+                     input.form-control(type="text",placeholder="連署門檻(百分比), 例如: 50%",ng-model="cur.config.petitionCriteria")
                    .col-sm-6
                      .checkbox: label
-                       input(type="checkbox")
+                       input(type="checkbox",ng-model="cur.config.needEnoughSupport")
                        | 需過得票門檻
-                     input.form-control(type="text",placeholder="得票門檻(百分比), 例如: 50%")
+                     input.form-control(type="text",placeholder="得票門檻(百分比), 例如: 50%",ng-model="cur.config.supportCriteria")
                  .row
                    .col-sm-6(ng-show="tab!=1")
                      .checkbox: label
-                       input(type="checkbox")
+                       input(type="checkbox",ng-model="cur.config.limitedMultiChoiceCount")
                        | 複選的選擇數量上限
-                     input.form-control(type="text",placeholder="選擇數量上限, 如: 2")
+                     input.form-control(type="text",placeholder="選擇數量上限, 如: 2",ng-model="multiChoiceCount")
                    .col-sm-6(ng-show="tab==1")
                      .checkbox: label
-                       input(type="checkbox",ng-model="cur.config.vote.tiebreak")
+                       input(type="checkbox",ng-model="cur.config.tiebreak")
                        | 通過方案之支持度需領先一定程度
-                     input.form-control(type="text",placeholder="支持度差距(百分比), 如: 5%")
+                     input.form-control(type="text",placeholder="支持度差距(百分比), 如: 5%",ng-model="cur.config.tiebreakValue")
 
         .col-sm-6
-          .panel.panel-default(ng-controller="ctrl.simpletab")
+          .panel.panel-default(ng-controller="ctrl.simpletab",ng-init="cur.config.datetype=tab")
              .panel-heading
                | 投票期間設定 - 
                span(ng-show="tab==1") 固定期間
                span(ng-show="tab==2") 自動期間
              .panel-body
                ul.nav.nav-tabs(style="margin-bottom:15px")
-                 li(ng-class="active(tab,1)",ng-click="tab=1"): a(href="") 固定期間
-                 li(ng-class="active(tab,2)",ng-click="tab=2"): a(href="") 自動期間
+                 li(ng-class="active(tab,1)",ng-click="cur.config.datetype=1;tab=1"): a(href="") 固定期間
+                 li(ng-class="active(tab,2)",ng-click="cur.config.datetype=2;tab=2"): a(href="") 自動期間
 
                .row(ng-show="tab==2")
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox",ng-model="cur.config.vote.tiebreak")
+                     input(type="checkbox",ng-model="cur.config.autoCountDownByCriteria")
                      | 投票率超過一定比例時才開始倒數
-                   input.form-control(type="text",placeholder="投票率(百分比), 例如: 80%")
+                   input.form-control(type="text",placeholder="投票率(百分比), 例如: 80%",ng-model="cur.config.autoCountDownCriteria")
                .row(ng-show="tab==2")
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox",ng-model="cur.config.vote.tiebreak")
+                     input(type="checkbox",ng-model="cur.config.autoStart")
                      | 解答所有提問後一定時間內自動開始
-                   input.form-control(type="text",placeholder="時間長度, 例如: 6小時, 3天")
+                   input.form-control(type="text",placeholder="時間長度, 例如: 6小時, 3天",ng-model="cur.config.autoStartDelay")
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox",ng-model="cur.config.vote.tiebreak")
+                     input(type="checkbox",ng-model="cur.config.autoStartByCriteria")
                      | 有效方案達一定數量以後自動開始
-                   input.form-control(type="text",placeholder="方案數量, 例如: 3 ")
+                   input.form-control(type="text",placeholder="方案數量, 例如: 3 ",ng-model="autoStartCriteria")
 
       h4.pull-right.switch(ng-click="quality=!quality"): a(href="")
         | 提案品質控管設定...
@@ -126,25 +126,25 @@
                .row
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox")
+                     input(type="checkbox",ng-model="cur.config.needValid")
                      | 方案須有效
-                   input.form-control(type="text",placeholder="有效門檻: 按讚的人數. 例如: 20")
+                   input.form-control(type="text",placeholder="有效門檻: 按讚的人數. 例如: 20",ng-model="cur.config.needValidCriteria")
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox")
+                     input(type="checkbox",ng-model="cur.config.needValidSolution")
                      | 方案需連結有效對策
-                   input.form-control(type="text",placeholder="對策數下限. 例如: 1")
+                   input.form-control(type="text",placeholder="對策數下限. 例如: 1",ng-model="cur.config.needSolutionCriteria")
                .row
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox")
+                     input(type="checkbox",ng-model="cur.config.needValidIssue")
                      | 對策須連結有效問題
-                   input.form-control(type="text",placeholder="問題數下限, 如: 1")
+                   input.form-control(type="text",placeholder="問題數下限, 如: 1",ng-model="cur.config.needIssueCriteria")
                  .col-sm-6
                    .checkbox: label
-                     input(type="checkbox")
+                     input(type="checkbox",ng-model="cur.config.needValidVision")
                      | 問題須連結有效願景
-                   input.form-control(type="text",placeholder="願景數下限, 如: 1")
+                   input.form-control(type="text",placeholder="願景數下限, 如: 1",ng-model="cur.config.needVisionCriteria")
         .col-sm-6
           .panel.panel-default(ng-controller="ctrl.simpletab")
              .panel-heading
@@ -157,13 +157,13 @@
                .row: .col-sm-12
                  .form-group
                    label 標題
-                   input.form-control(type="text",placeholder="標題")
+                   input.form-control(type="text",placeholder="標題",disabled)
                  .form-group
                    label 描述
-                   input.form-control(type="text",placeholder="描述")
+                   input.form-control(type="text",placeholder="描述",disabled)
                .btn.btn-success 建立
     hr(style="clear:both")
     .row
       .col-sm-12
         .btn.btn-success(ng-click="create()") 建立提案
-
+    .footer
