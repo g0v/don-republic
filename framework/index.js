@@ -80,6 +80,7 @@ angular.module('main', ['firebase']).directive('contenteditable', function(){
   return function(d, p, picked){
     var stand, ref$, key$;
     d == null && (d = []);
+    p == null && (p = {});
     picked == null && (picked = true);
     stand = (ref$ = p.stand || (p.stand = {}))[key$ = (DataService.user || {}).id] || (ref$[key$] = []);
     return d.filter(function(it){
@@ -404,6 +405,7 @@ ctrl.base = function($scope, DS, ctrlName){
     cur: DS[ctrlName].factory(),
     picked: function(p, picked){
       var stand, ref$, key$;
+      p == null && (p = {});
       picked == null && (picked = true);
       stand = (ref$ = p.stand || (p.stand = {}))[key$ = (DS.user || {}).id] || (ref$[key$] = []);
       return ((ref$ = p.link || (p.link = {}))['choice'] || (ref$['choice'] = [])).filter(function(it){
@@ -434,6 +436,12 @@ ctrl.base = function($scope, DS, ctrlName){
     choiceState: function(p){
       var d, ref$, v, max, k;
       d = {};
+      if (!p) {
+        return {
+          max: 0,
+          d: {}
+        };
+      }
       ((ref$ = p.link || (p.link = {}))['choice'] || (ref$['choice'] = [])).map(function(it){
         return d[it.id] = {
           r: it,

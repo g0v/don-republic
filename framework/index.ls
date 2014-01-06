@@ -32,7 +32,7 @@ angular.module 'main', <[firebase]>
 .filter \type, -> (d, type) -> (d or [])filter(-> it.t == type)
 .filter \value, (DataService) -> (d) -> (d or [])map -> it <<<{v:DataService[it.t]ref[it.id]}
 .filter \picked, (DataService) ->
-  (d=[], p, picked=true) ->
+  (d=[], p={}, picked=true) ->
     stand = p.{}stand.[][(DataService.user or {})id]
     d.filter(-> !picked xor (it.id in stand))sort (a,b) -> stand.indexOf(a) - stand.indexOf(b)
 .factory \DataService, ($firebase) ->
@@ -168,7 +168,7 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
     if type => ret = ret.filter -> it.t == type
     ret.map ~> @get it.t, it.id
   cur: DS[ctrl-name]factory!
-  picked: (p, picked=true) ->
+  picked: (p={}, picked=true) ->
     stand = p.{}stand.[][(DS.user or {})id]
     p.{}link.[]['choice']filter(-> !picked xor (it.id in stand))sort (a,b) -> stand.indexOf(a) - stand.indexOf(b)
   pick: (p,k) ->
@@ -182,6 +182,7 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
     $scope.list.$save!
   choice-state: (p) ->
     d = {}
+    if not p => return {max: 0, d: {}}
     p.{}link.[]['choice']map -> d[it.id] = {r:it, c: 0}
     [v for ,v of p.stand]map -> it.map -> d[it]c += 1
     max = d3.max [k for k of d]map -> d[it]c
