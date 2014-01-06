@@ -150,7 +150,7 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
   vote: (p,d) ->
     #if not (id = if DS.user => that.id) => return
     id = if DS.user => that.id else 0
-    if !p.{}config.{}vote.allow-anonymous and !id => return
+    if !p.{}config.allow-anonymous and !id => return
     if id in (p.{}vote[d] or []) => p.vote[d]splice p.vote[d]indexOf(id), 1
     else if id in ((for it in [0 1 2]=>p.{}vote[it] or [])reduce (-> &0 ++ &1),[]) => return
     else p.{}vote.[][d].push id
@@ -174,10 +174,10 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
   pick: (p,k) ->
     user = DS.user or {}
     p.{}config.{}vote
-    if not (p.config.vote.allow-anonymous or user.id) => return
+    if not (p.config.allow-anonymous or user.id) => return
     obj = p.{}stand.[][user.id]
     if k in obj => obj.splice obj.indexOf(k), 1 else =>
-      if p.config.vote.choice == \1 and obj.length > 0 => obj.pop!
+      if p.config.method == \1 and obj.length > 0 => obj.pop!
       obj.push k
     $scope.list.$save!
   choice-state: (p) ->

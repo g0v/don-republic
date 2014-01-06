@@ -44,10 +44,10 @@
       <div>new proposal
         <input type="text" placeholder="name" ng-model="cur.name">
         <input type="text" placeholder="desc" ng-model="cur.desc"><br>
-        <input type="checkbox" ng-model="cur.config.vote.allowAnonymous">allow anonymous to vote /
-        <input type="radio" ng-model="cur.config.vote.choice" value="1">single choice vote /
-        <input type="radio" ng-model="cur.config.vote.choice" value="2">multiple choices vote /
-        <input type="radio" ng-model="cur.config.vote.choice" value="3">ordered vote
+        <input type="checkbox" ng-model="cur.config.allowAnonymous">allow anonymous to vote /
+        <input type="radio" ng-model="cur.config.choice" value="1">single choice vote /
+        <input type="radio" ng-model="cur.config.choice" value="2">multiple choices vote /
+        <input type="radio" ng-model="cur.config.choice" value="3">ordered vote
         <button ng-click="create()">new</button>
       </div>
       <div ng-repeat="(k,p) in list" class="proposal">

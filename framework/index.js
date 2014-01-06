@@ -352,9 +352,9 @@ ctrl.base = function($scope, DS, ctrlName){
       return DS[type].ref[id] || {};
     },
     vote: function(p, d){
-      var id, that, ref$, it;
+      var id, that, it, ref$;
       id = (that = DS.user) ? that.id : 0;
-      if (!((ref$ = p.config || (p.config = {})).vote || (ref$.vote = {})).allowAnonymous && !id) {
+      if (!(p.config || (p.config = {})).allowAnonymous && !id) {
         return;
       }
       if (in$(id, (p.vote || (p.vote = {}))[d] || [])) {
@@ -419,14 +419,14 @@ ctrl.base = function($scope, DS, ctrlName){
       var user, ref$, obj, key$;
       user = DS.user || {};
       (ref$ = p.config || (p.config = {})).vote || (ref$.vote = {});
-      if (!(p.config.vote.allowAnonymous || user.id)) {
+      if (!(p.config.allowAnonymous || user.id)) {
         return;
       }
       obj = (ref$ = p.stand || (p.stand = {}))[key$ = user.id] || (ref$[key$] = []);
       if (in$(k, obj)) {
         obj.splice(obj.indexOf(k), 1);
       } else {
-        if (p.config.vote.choice === '1' && obj.length > 0) {
+        if (p.config.method === '1' && obj.length > 0) {
           obj.pop();
         }
         obj.push(k);
