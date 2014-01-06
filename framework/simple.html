@@ -19,256 +19,324 @@
     <script type="text/javascript" src="simple.js"></script>
   </head>
   <body ng-app="main" ng-controller="ctrl.main">
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
-      <div class="ib">
-        <div class="navbar-header"><a href="#" class="navbar-brand">動民主0.5</a></div>
-        <ul ng-controller="ctrl.user" class="nav navbar-nav navbar-right">
-          <li><a href="#" ng-show="!user" ng-click="login()">登入</a></li>
-          <li><a href="#" ng-show="user">{{user.username}}</a></li>
-          <li><a href="#" ng-show="user" ng-click="logout()">登出</a></li>
-        </ul>
+    <div ng-controller="ctrl.simplebase">
+      <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+        <div class="ib">
+          <div class="navbar-header"><a href="#" class="navbar-brand">動民主0.5</a></div>
+          <ul class="nav navbar-nav">
+            <li ng-class="active(tab, 1)"><a href="#" ng-click="tab=1">發起新提案</a></li>
+            <li ng-class="active(tab, 2)"><a href="#" ng-click="tab=2">提案列表</a></li>
+            <li ng-class="active(tab, 3)" ng-show="propCur.name"><a href="#" ng-click="tab=3">{{propCur.name}}</a></li>
+          </ul>
+          <ul ng-controller="ctrl.user" class="nav navbar-nav navbar-right">
+            <li><a href="#" ng-show="!user" ng-click="login()">登入</a></li>
+            <li><a href="#" ng-show="user">{{user.username}}</a></li>
+            <li><a href="#" ng-show="user" ng-click="logout()">登出</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div id="content">
-      <div class="row">
-        <form ng-controller="ctrl.proposal">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>提案名稱</label>
-                <input type="text" placeholder="提案名稱, 例如: 丹大野生動物保護區興建嘆息灣度假村之提案" ng-model="cur.name" class="form-control">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>開始時間</label>
-                  <div class="form-group">
-                    <input type="text" placeholder="起始時間" class="form-control">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <label>期間長度</label>
-                  <div class="form-group">
-                    <input type="text" placeholder="投票期間長度, 例如: 3 天" class="form-control">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-group">
-                <label>提案描述</label>
-                <textarea placeholder="提案描述" ng-model="cur.desc" style="min-height: 308px" class="form-control"></textarea>
-              </div>
-            </div>
-            <div ng-show="false" class="col-sm-6">
-              <div class="panel panel-default">
-                <div class="panel-heading">新增方案</div>
-                <div class="panel-body">
-                  <div class="form-group">
-                    <label>方案名稱</label>
-                    <input type="text" placeholder="方案名稱, 例如: 反對" ng-model="cur.name" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label>方案描述</label>
-                    <textarea placeholder="方案描述" ng-model="cur.desc" style="min-height: 100px" class="form-control"></textarea>
-                  </div>
-                  <div class="btn btn-success">新增方案</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h4 ng-click="advancedConfig=!advancedConfig" class="pull-right switch"><a href="">進階設定...   </a></h4>
-          <div ng-show="advancedConfig" style="padding: 10px" class="panel clearfix panel-default">
-            <div style="clear:both" class="row">
+      <div id="content">
+        <div ng-show="tab==1" class="row">
+          <form ng-controller="ctrl.proposal">
+            <div class="row">
               <div class="col-sm-6">
-                <div ng-controller="ctrl.simpletab" class="panel panel-default">
-                  <div class="panel-heading">投票選項 - <span ng-show="tab==1">單選式投票</span><span ng-show="tab==2">多選式投票</span><span ng-show="tab==3">排名式投票</span></div>
+                <div class="form-group">
+                  <label>提案名稱</label>
+                  <input type="text" placeholder="提案名稱, 例如: 丹大野生動物保護區興建嘆息灣度假村之提案" ng-model="cur.name" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>開始時間</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="起始時間" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label>期間長度</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="投票期間長度, 例如: 3 天" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>提案描述</label>
+                  <textarea placeholder="提案描述" ng-model="cur.desc" style="min-height: 308px" class="form-control"></textarea>
+                </div>
+              </div>
+              <div ng-show="false" class="col-sm-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">新增方案</div>
                   <div class="panel-body">
-                    <ul style="margin-bottom:15px" class="nav nav-tabs">
-                      <li ng-class="active(tab,1)" ng-click="tab=1"><a href="#">單選式投票</a></li>
-                      <li ng-class="active(tab,2)" ng-click="tab=2"><a href="#">多選式投票</a></li>
-                      <li ng-class="active(tab,3)" ng-click="tab=3"><a href="#">排名式投票</a></li>
-                    </ul>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" ng-model="cur.config.vote.allowAnonymous">允許未登入使用者投票
-                      </label>
+                    <div class="form-group">
+                      <label>方案名稱</label>
+                      <input type="text" placeholder="方案名稱, 例如: 反對" ng-model="cur.name" class="form-control">
                     </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" disabled checked>提供廢票選項
-                      </label>
+                    <div class="form-group">
+                      <label>方案描述</label>
+                      <textarea placeholder="方案描述" ng-model="cur.desc" style="min-height: 100px" class="form-control"></textarea>
                     </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">有權投票者也可提出新方案
-                      </label>
+                    <div class="btn btn-success">新增方案</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 ng-click="advancedConfig=!advancedConfig" class="pull-right switch"><a href="">進階設定...   </a></h4>
+            <div ng-show="advancedConfig" style="padding: 10px" class="panel clearfix panel-default">
+              <div style="clear:both" class="row">
+                <div class="col-sm-6">
+                  <div ng-controller="ctrl.simpletab" class="panel panel-default">
+                    <div class="panel-heading">投票選項 - <span ng-show="tab==1">單選式投票</span><span ng-show="tab==2">多選式投票</span><span ng-show="tab==3">排名式投票</span></div>
+                    <div class="panel-body">
+                      <ul style="margin-bottom:15px" class="nav nav-tabs">
+                        <li ng-class="active(tab,1)" ng-click="tab=1"><a href="">單選式投票</a></li>
+                        <li ng-class="active(tab,2)" ng-click="tab=2"><a href="">多選式投票</a></li>
+                        <li ng-class="active(tab,3)" ng-click="tab=3"><a href="">排名式投票</a></li>
+                      </ul>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="cur.config.vote.allowAnonymous">允許未登入使用者投票
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" disabled checked>提供廢票選項
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox">有權投票者也可提出新方案
+                        </label>
+                      </div>
+                      <hr>
+                      <h5 ng-click="advancedOption=!advancedOption" style="cursor:pointer"><a href="">進階選項 ...</a></h5>
+                      <div ng-show="advancedOption">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox">需過連署門檻
+                              </label>
+                            </div>
+                            <input type="text" placeholder="連署門檻(百分比), 例如: 50%" class="form-control">
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox">需過得票門檻
+                              </label>
+                            </div>
+                            <input type="text" placeholder="得票門檻(百分比), 例如: 50%" class="form-control">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div ng-show="tab!=1" class="col-sm-6">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox">複選的選擇數量上限
+                              </label>
+                            </div>
+                            <input type="text" placeholder="選擇數量上限, 如: 2" class="form-control">
+                          </div>
+                          <div ng-show="tab==1" class="col-sm-6">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" ng-model="cur.config.vote.tiebreak">通過方案之支持度需領先一定程度
+                              </label>
+                            </div>
+                            <input type="text" placeholder="支持度差距(百分比), 如: 5%" class="form-control">
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <hr>
-                    <h5 ng-click="advancedOption=!advancedOption" style="cursor:pointer"><a href="#">進階選項 ...</a></h5>
-                    <div ng-show="advancedOption">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div ng-controller="ctrl.simpletab" class="panel panel-default">
+                    <div class="panel-heading">投票期間設定 - <span ng-show="tab==1">固定期間</span><span ng-show="tab==2">自動期間</span></div>
+                    <div class="panel-body">
+                      <ul style="margin-bottom:15px" class="nav nav-tabs">
+                        <li ng-class="active(tab,1)" ng-click="tab=1"><a href="">固定期間</a></li>
+                        <li ng-class="active(tab,2)" ng-click="tab=2"><a href="">自動期間</a></li>
+                      </ul>
+                      <div ng-show="tab==2" class="row">
+                        <div class="col-sm-6">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" ng-model="cur.config.vote.tiebreak">投票率超過一定比例時才開始倒數
+                            </label>
+                          </div>
+                          <input type="text" placeholder="投票率(百分比), 例如: 80%" class="form-control">
+                        </div>
+                      </div>
+                      <div ng-show="tab==2" class="row">
+                        <div class="col-sm-6">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" ng-model="cur.config.vote.tiebreak">解答所有提問後一定時間內自動開始
+                            </label>
+                          </div>
+                          <input type="text" placeholder="時間長度, 例如: 6小時, 3天" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" ng-model="cur.config.vote.tiebreak">有效方案達一定數量以後自動開始
+                            </label>
+                          </div>
+                          <input type="text" placeholder="方案數量, 例如: 3 " class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4 ng-click="quality=!quality" class="pull-right switch"><a href="">提案品質控管設定...</a></h4>
+              <div ng-show="quality" style="clear:both" class="row">
+                <div class="col-sm-6">
+                  <div ng-controller="ctrl.simpletab" class="panel panel-default">
+                    <div class="panel-heading">提案品質設定</div>
+                    <div class="panel-body">
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox">需過連署門檻
+                              <input type="checkbox">方案須有效
                             </label>
                           </div>
-                          <input type="text" placeholder="連署門檻(百分比), 例如: 50%" class="form-control">
+                          <input type="text" placeholder="有效門檻: 按讚的人數. 例如: 20" class="form-control">
                         </div>
                         <div class="col-sm-6">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox">需過得票門檻
+                              <input type="checkbox">方案需連結有效對策
                             </label>
                           </div>
-                          <input type="text" placeholder="得票門檻(百分比), 例如: 50%" class="form-control">
+                          <input type="text" placeholder="對策數下限. 例如: 1" class="form-control">
                         </div>
                       </div>
                       <div class="row">
-                        <div ng-show="tab!=1" class="col-sm-6">
+                        <div class="col-sm-6">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox">複選的選擇數量上限
+                              <input type="checkbox">對策須連結有效問題
                             </label>
                           </div>
-                          <input type="text" placeholder="選擇數量上限, 如: 2" class="form-control">
+                          <input type="text" placeholder="問題數下限, 如: 1" class="form-control">
                         </div>
-                        <div ng-show="tab==1" class="col-sm-6">
+                        <div class="col-sm-6">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox" ng-model="cur.config.vote.tiebreak">通過方案之支持度需領先一定程度
+                              <input type="checkbox">問題須連結有效願景
                             </label>
                           </div>
-                          <input type="text" placeholder="支持度差距(百分比), 如: 5%" class="form-control">
+                          <input type="text" placeholder="願景數下限, 如: 1" class="form-control">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-sm-6">
-                <div ng-controller="ctrl.simpletab" class="panel panel-default">
-                  <div class="panel-heading">投票期間設定 - <span ng-show="tab==1">固定期間</span><span ng-show="tab==2">自動期間</span></div>
-                  <div class="panel-body">
-                    <ul style="margin-bottom:15px" class="nav nav-tabs">
-                      <li ng-class="active(tab,1)" ng-click="tab=1"><a href="#">固定期間</a></li>
-                      <li ng-class="active(tab,2)" ng-click="tab=2"><a href="#">自動期間</a></li>
-                    </ul>
-                    <div ng-show="tab==2" class="row">
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" ng-model="cur.config.vote.tiebreak">投票率超過一定比例時才開始倒數
-                          </label>
+                <div class="col-sm-6">
+                  <div ng-controller="ctrl.simpletab" class="panel panel-default">
+                    <div class="panel-heading">建立對策、問題、願景等項目</div>
+                    <div class="panel-body">
+                      <ul style="margin-bottom:15px" class="nav nav-tabs">
+                        <li ng-class="active(tab,1)" ng-click="tab=1"><a href="">建立對策</a></li>
+                        <li ng-class="active(tab,2)" ng-click="tab=2"><a href="">建立問題</a></li>
+                        <li ng-class="active(tab,3)" ng-click="tab=3"><a href="">建立願景</a></li>
+                      </ul>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label>標題</label>
+                            <input type="text" placeholder="標題" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label>描述</label>
+                            <input type="text" placeholder="描述" class="form-control">
+                          </div>
                         </div>
-                        <input type="text" placeholder="投票率(百分比), 例如: 80%" class="form-control">
                       </div>
-                    </div>
-                    <div ng-show="tab==2" class="row">
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" ng-model="cur.config.vote.tiebreak">解答所有提問後一定時間內自動開始
-                          </label>
-                        </div>
-                        <input type="text" placeholder="時間長度, 例如: 6小時, 3天" class="form-control">
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" ng-model="cur.config.vote.tiebreak">有效方案達一定數量以後自動開始
-                          </label>
-                        </div>
-                        <input type="text" placeholder="方案數量, 例如: 3 " class="form-control">
-                      </div>
+                      <div class="btn btn-success">建立</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <h4 ng-click="quality=!quality" class="pull-right switch"><a href="">提案品質控管設定...</a></h4>
-            <div ng-show="quality" style="clear:both" class="row">
-              <div class="col-sm-6">
-                <div ng-controller="ctrl.simpletab" class="panel panel-default">
-                  <div class="panel-heading">提案品質設定</div>
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">方案須有效
-                          </label>
-                        </div>
-                        <input type="text" placeholder="有效門檻: 按讚的人數. 例如: 20" class="form-control">
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">方案需連結有效對策
-                          </label>
-                        </div>
-                        <input type="text" placeholder="對策數下限. 例如: 1" class="form-control">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">對策須連結有效問題
-                          </label>
-                        </div>
-                        <input type="text" placeholder="問題數下限, 如: 1" class="form-control">
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">問題須連結有效願景
-                          </label>
-                        </div>
-                        <input type="text" placeholder="願景數下限, 如: 1" class="form-control">
-                      </div>
-                    </div>
-                  </div>
+            <hr style="clear:both">
+            <div class="row">
+              <div class="col-sm-12">
+                <div ng-click="create()" class="btn btn-success">建立提案</div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div ng-show="tab==2">
+          <div id="proposal-list" ng-controller="ctrl.proposal">
+            <div ng-repeat="p in list" class="proposal">
+              <div class="ib">
+                <div class="stick">
+                  <div class="label label-success">已投</div>
+                </div>
+                <div class="thumb"></div>
+                <div class="name">{{p.name}}</div>
+                <div class="desc">{{p.desc}}</div>
+                <div class="detail">
+                  <div class="label label-danger">投票中</div>
+                  <div class="label label-warning">投票率50%</div>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div ng-controller="ctrl.simpletab" class="panel panel-default">
-                  <div class="panel-heading">建立對策、問題、願景等項目</div>
-                  <div class="panel-body">
-                    <ul style="margin-bottom:15px" class="nav nav-tabs">
-                      <li ng-class="active(tab,1)" ng-click="tab=1"><a href="">建立對策</a></li>
-                      <li ng-class="active(tab,2)" ng-click="tab=2"><a href="">建立問題</a></li>
-                      <li ng-class="active(tab,3)" ng-click="tab=3"><a href="">建立願景</a></li>
-                    </ul>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <label>標題</label>
-                          <input type="text" placeholder="標題" class="form-control">
-                        </div>
-                        <div class="form-group">
-                          <label>描述</label>
-                          <input type="text" placeholder="描述" class="form-control">
-                        </div>
-                      </div>
+            </div>
+          </div>
+        </div>
+        <div ng-show="tab==3">
+          <div id="current-proposal" ng-controller="ctrl.proposal">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2> <small>提案  </small>{{propCur.name}}</h2>
+              </div>
+              <div class="col-sm-3"><small style="margin-top:38px" class="pull-right">表决時間: 103-01-05 ~ 103-01-11</small></div>
+            </div>
+            <div class="well">{{propCur.desc}}</div>
+            <div class="panel panel-default">
+              <div class="panel-heading">表決</div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <h4>你的選擇</h4>
+                    <div>
+                      <div ng-repeat="p in picked(propCur, true)" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}</div>
                     </div>
-                    <div class="btn btn-success">建立</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <h4>所有選項</h4>
+                    <div>
+                      <div ng-repeat="p in propCur.link['choice']|value" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <h4>表決狀態
+                      <svg width="100%" height="300px" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid" class="choice-stat">
+                        <g></g>
+                        <g>
+                          <g ng-repeat="(k,v) in cs.d">
+                            <rect x="0" ng-attr-y="{{$index * 20}}" ng-attr-width="{{v.c * 10}}" height="15" ng-attr-fill="{{color(v.r.id)}}"></rect>
+                            <text ng-attr-x="{{v.c * 10 + 5}}" ng-attr-y="{{$index * 20 + 11}}">{{v.r.v.name}} ( {{ v.c}} )</text>
+                          </g>
+                        </g>
+                      </svg>
+                    </h4>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <hr style="clear:both">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="btn btn-success">建立提案</div>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </body>

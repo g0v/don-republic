@@ -216,7 +216,8 @@ update-file = ->
   if type == \other => return
   if type == \ls => cmd = "#{ls} -cb #{it}"
   if type == \sass => cmd = "#{sass} #{it} #{it.replace /\.sass$/, \.css}"
-  if type == \jade => cmd = "#{jade} -P #{it}"
+  if type == \jade and it.indexOf(\simple/)==0 => cmd = "#{jade} -P simple.jade"
+  else if type == \jade => cmd = "#{jade} -P #{it}"
   if cmd =>
     console.log "[BUILD] #{cmd}"
     child_process.exec cmd, log
