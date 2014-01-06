@@ -96,6 +96,8 @@ angular.module 'main', <[firebase]>
 ctrl = {}
 ctrl.main = ($scope, DataService) ->
   DataService.on \user.changed, (u) -> $scope.$apply -> $scope.user = u
+  $scope.tab = 1
+  $scope.active = (a,b) -> if a==b => \active else ""
 
 ctrl.user = ($scope,DataService) ->
   $scope <<< ctrl.base $scope, DataService, \user
@@ -178,6 +180,12 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
       if p.config.vote.choice == \1 and obj.length > 0 => obj.pop!
       obj.push k
     $scope.list.$save!
+  choice-state: (p) ->
+    d = {}
+    p.{}link.[]['choice']map -> d[it.id] = {r:it, c: 0}
+    [v for ,v of p.stand]map -> it.map -> d[it]c += 1
+    max = d3.max [k for k of d]map -> d[it]c
+    {max, d}
 
 ctrl.group = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \group

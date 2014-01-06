@@ -213,11 +213,19 @@ angular.module('main', ['firebase']).directive('contenteditable', function(){
 });
 ctrl = {};
 ctrl.main = function($scope, DataService){
-  return DataService.on('user.changed', function(u){
+  DataService.on('user.changed', function(u){
     return $scope.$apply(function(){
       return $scope.user = u;
     });
   });
+  $scope.tab = 1;
+  return $scope.active = function(a, b){
+    if (a === b) {
+      return 'active';
+    } else {
+      return "";
+    }
+  };
 };
 ctrl.user = function($scope, DataService){
   import$($scope, ctrl.base($scope, DataService, 'user'));
@@ -422,6 +430,41 @@ ctrl.base = function($scope, DS, ctrlName){
         obj.push(k);
       }
       return $scope.list.$save();
+    },
+    choiceState: function(p){
+      var d, ref$, v, max, k;
+      d = {};
+      ((ref$ = p.link || (p.link = {}))['choice'] || (ref$['choice'] = [])).map(function(it){
+        return d[it.id] = {
+          r: it,
+          c: 0
+        };
+      });
+      (function(){
+        var i$, ref$, results$ = [];
+        for (i$ in ref$ = p.stand) {
+          v = ref$[i$];
+          results$.push(v);
+        }
+        return results$;
+      }()).map(function(it){
+        return it.map(function(it){
+          return d[it].c += 1;
+        });
+      });
+      max = d3.max((function(){
+        var results$ = [];
+        for (k in d) {
+          results$.push(k);
+        }
+        return results$;
+      }()).map(function(it){
+        return d[it].c;
+      }));
+      return {
+        max: max,
+        d: d
+      };
     }
   };
 };
