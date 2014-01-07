@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="sample.css">
+    <script type="text/javascript" src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script type="text/javascript" src="//cdn.firebase.com/v0/firebase-simple-login.js"></script>
+    <script type="text/javascript" src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body ng-app="main" ng-controller="ctrl.main">
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-header"><a href="#" class="navbar-brand">動民主</a></div>
+      <ul ng-controller="ctrl.user" class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-show="!user" ng-click="login()">login</a></li>
+        <li><a href="#" ng-show="user">{{user.username}}</a></li>
+        <li><a href="#" ng-show="user" ng-click="logout()">logout</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <h3>提案列表</h3>
+      <div id="proposal" ng-controller="ctrl.proposal">
+        <form id="new-proposal" class="proposal">
+          <div style="text-align: center;cursor: pointer" ng-click="nppanel=true" ng-show="!nppanel" class="ib">
+             
+            建立新提案
+          </div>
+          <div ng-show="nppanel" class="ib">
+            <div class="form-group">
+              <label>提案標題</label>
+              <input type="text" placeholder="例如：興建丹大野生動物樂園之可能性" ng-model="cur.name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>提案摘要</label>
+              <input type="text" placeholder="簡述此提案之內容及重點提示" ng-model="cur.desc" class="form-control">
+            </div>
+            <label>設定</label>
+            <div class="form-group">
+              <div class="checkbox-inline">
+                <label>
+                  <input type="checkbox" ng-model="cur.config.allowAnonymous">允許未登入使用者投票
+                </label>
+              </div>
+              <div class="checkbox-inline">
+                <label>
+                  <input type="checkbox" ng-model="cur.config.allowProxy" disabled>允許代理投票
+                </label>
+              </div>
+            </div>
+            <label>投票類型</label>
+            <div class="form-group">
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" ng-model="cur.config.method" value="1">單選投票
+                </label>
+              </div>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" ng-model="cur.config.method" value="2">複選投票
+                </label>
+              </div>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" ng-model="cur.config.method" value="3">複選且排名投票
+                </label>
+              </div>
+            </div>
+            <div ng-click="create()" class="btn btn-success">新增</div>
+            <div ng-click="nppanel=false" class="btn btn-default">取消</div>
+          </div>
+        </form>
+        <div ng-repeat="(k,p) in list" class="proposal">
+          <div class="panel">
+            <div class="vote">
+              <div ng-click="vote(p,0)" class="btn"><i class="glyphicon glyphicon-chevron-up"></i>{{p.vote[0].length}}</div>
+              <div ng-click="vote(p,1)" class="btn"> <i class="glyphicon glyphicon-minus"></i>{{p.vote[1].length}}</div>
+              <div ng-click="vote(p,2)" class="btn"> <i class="glyphicon glyphicon-chevron-down"></i>{{p.vote[2].length}}</div>
+            </div>
+            <div class="btn"><i ng-click="delete(k)" class="glyphicon glyphicon-remove"></i></div>
+            <div class="btn"><i ng-click="save(k)" class="glyphicon glyphicon-floppy-disk"></i></div>
+          </div>
+          <h3>提案: <span contenteditable ng-model="p.name"></span> <small ng-show="p.config.method==1">單選</small><small ng-show="p.config.method==2 || !p.config.method">複選</small><small ng-show="p.config.method==3">複選 / 排名</small> <small ng-show="p.config.allowAnonymous">不需登入</small></h3>
+          <div class="ib">
+            <div class="summary">
+              <div class="title">摘要</div>
+              <div contenteditable ng-model="p.desc" class="desc"></div>
+            </div>
+            <h3>主要的問題</h3>
+            <div ng-controller="ctrl.issue" class="issues">
+              <div ng-repeat="n in p.link['child']|type:'issue'" class="issue">{{get("issue",n.id).name}}<i ng-click="delete(n.id)" class="glyphicon glyphicon-remove"></i></div>
+              <h5 ng-click="showNewIssue=true" ng-show="!showNewIssue" style="cursor: pointer">... 或新增問題</h5>
+              <div ng-show="showNewIssue" class="issue">
+                <form class="plan form-inline">
+                  <div class="form-group">
+                    <input type="text" placeholder="描述問題" ng-model="cur.name" class="form-control">
+                  </div>
+                  <button ng-click="createWith('child','proposal',k,p)" class="btn btn-success">新增</button>
+                  <button ng-click="showNewIssue=false" class="btn btn-default">取消</button>
+                </form>
+              </div>
+            </div>
+            <h3>方案</h3>
+            <div class="plans">
+              <div class="row">
+                <div style="border-right: 1px dashed #999" class="col-sm-6">
+                  <div class="title">以下方案可供選擇：</div>
+                  <div ng-controller="ctrl.plan" class="ib">
+                    <div ng-repeat="s in p.link['choice']|type:'plan'|picked:p:false" ng-click="pick(p,s.id)" class="plan">{{get("plan",s.id).name}}<i ng-click="purge(s.id)" ng-show="p.creator.id==user.id" class="glyphicon glyphicon-remove"></i></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="title">你選擇的方案</div>
+                  <div ng-controller="ctrl.plan" class="ib">
+                    <div ng-repeat="s in p.link['choice']|type:'plan'|picked:p:true" ng-click="pick(p, s.id)" class="plan">
+                       
+                      {{get("plan",s.id).name}}
+                      <div ng-show="p.config.method==3" class="rank">{{$index + 1}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ng-show="false" class="panel">
+                <div class="title">可選的方案</div>
+                <div ng-repeat="s in picked(p,false)" ng-controller="ctrl.plan" class="plan"><span ng-click="pick(p, s)">{{get("plan",s).name}}<span ng-click="purge(s)">x</span></span></div>
+              </div>
+              <div class="title">你也可以提新方案</div>
+              <form ng-controller="ctrl.plan" class="plan form-inline">
+                <div class="form-group">
+                  <input type="text" placeholder="方案簡稱" ng-model="cur.name" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="方案描述" ng-model="cur.desc" class="form-control">
+                </div>
+                <button ng-click="createWith('choice','proposal',k,p)" class="btn btn-success">新增</button>
+              </form>
+            </div>
+            <hr>
+            <div ng-controller="ctrl.comment" class="comments">
+              <h3>留言</h3>
+              <div class="comment form-inline">
+                <div style="width:50%" class="form-group">
+                  <input type="text" ng-model="cur.desc" placeholder="..." class="form-control">
+                </div>
+                <div ng-click="createWith('comment','proposal',k,p)" class="btn btn-success">送出</div>
+              </div>
+              <div ng-repeat="c in p.link['comment']" class="comment"> 
+                <div class="desc">{{get("comment",c.id).desc}}
+                  <div class="panel">
+                    <div class="vote">
+                      <div ng-click="vote(get('comment',c.id),0)" class="btn"><i class="glyphicon glyphicon-chevron-up"></i>{{get('comment',c.id).vote[0].length}}</div>
+                      <div ng-click="vote(get('comment',c.id),1)" class="btn"><i class="glyphicon glyphicon-minus"></i>{{get('comment',c.id).vote[1].length}}</div>
+                      <div ng-click="vote(get('comment',c.id),2)" class="btn"><i class="glyphicon glyphicon-chevron-down"></i>{{get('comment',c.id).vote[2].length}}</div>
+                    </div>
+                    <div class="btn"><i ng-click="delete(c.id,p)" class="glyphicon glyphicon-remove"></i></div>by <i>{{get("comment",c.id).creator.username || "anonymous"}}</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-show="false"><span>title</span><span>description</span><span>creator</span><span>administrator</span><span>options</span><span>vision</span><span>question</span><span>cause</span><span>solution</span></div>
+        </div>
+      </div>
+      <div ng-show="false">
+        <h3>Plan</h3>
+        <div id="plan" ng-controller="ctrl.plan">
+          <div>new plan
+            <input type="text" placeholder="name" ng-model="cur.name">
+            <input type="text" placeholder="desc" ng-model="cur.desc">
+            <button ng-click="create()">new</button>
+          </div>
+          <div ng-repeat="(k,p) in list" class="plan">
+            <h4>{{p.name}}<span ng-click="purge(k)">x</span></h4>
+            <div class="desc">
+               
+              {{p.desc}}
+            </div>
+            <div class="vote"><span ng-click="vote(p,0)">up {{p.vote[0].length}}</span><span ng-click="vote(p,1)">neutral {{p.vote[1].length}}</span><span ng-click="vote(p,2)">down {{p.vote[2].length}}</span></div>
+            <div class="desc">created by {{p.creator.username}}</div>
+          </div>
+        </div>
+        <h3>Names</h3>
+        <div id="names" ng-controller="ctrl.name">
+          <input type="text" placholder="find a name..." ng-model="keyword">{{keyword}}
+          <div ng-repeat="v in result" class="names">
+            <h4>{{v.name}}</h4>
+            <div class="desc"><span ng-repeat="i in v.list">{{i.type}}</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

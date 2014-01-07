@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+body {
+  padding: 20px;
+  margin-bottom: 20px; }
+
+#content {
+  margin: 50px 20px 20px; }
+
+#proposal {
+  padding: 10px; }
+
+.proposal {
+  border: 1px solid #999999;
+  overflow: hidden;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin: 0 0 10px; }
+  .proposal > .ib {
+    margin: 20px; }
+  .proposal > h3 {
+    margin-top: 0;
+    background: #f5f0ee;
+    padding: 20px;
+    color: black;
+    border-bottom: 1px solid #999999; }
+  .proposal .panel {
+    float: right;
+    padding: 0 10px;
+    background: none;
+    margin: 14px 0;
+    box-shadow: none; }
+    .proposal .panel .vote {
+      display: inline-block; }
+  .proposal .glyphicon-remove:hover {
+    color: red; }
+  .proposal .summary {
+    margin: 20px 0px 30px; }
+    .proposal .summary .title {
+      padding: 5px;
+      font-weight: 900; }
+    .proposal .summary .desc {
+      padding: 10px 10px 30px;
+      background: white;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1); }
+
+.vote .btn {
+  padding: 3px 5px;
+  vertical-align: -2px; }
+
+.plans .ib {
+  margin: 20px; }
+  .plans .ib .plan {
+    font-size: 1.5em;
+    padding: 3px;
+    margin: 3px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative; }
+    .plans .ib .plan .glyphicon-remove {
+      margin-left: 3px;
+      color: #999999; }
+    .plans .ib .plan .rank {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      font-size: 0.5em;
+      background: red;
+      color: white;
+      font-weight: 900;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      text-align: center;
+      line-height: 14px;
+      border-radius: 50%; }
+
+.comment .desc {
+  padding: 20px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #cccccc;
+  margin: 10px 0; }
+  .comment .desc .panel {
+    float: none;
+    margin: 0 0 -10px;
+    padding: 0; }
+
+#footer {
+  height: 50px; }

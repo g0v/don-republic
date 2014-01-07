@@ -1,0 +1,32 @@
+div(ng-show="tab==3")
+  #current-proposal(ng-controller="ctrl.proposal")
+    .row
+      .col-sm-9
+        h2 
+          small 提案  
+          | {{propCur.name}}
+      .col-sm-3
+        small.pull-right(style="margin-top:38px")
+          | 表决時間: 103-01-05 ~ 103-01-11
+    .well {{propCur.desc}}
+    .panel.panel-default
+      .panel-heading
+        | 表決
+      .panel-body
+        .row
+          .col-sm-4
+             h4 你的選擇
+             div
+               .choice(ng-repeat="p in picked(propCur, true)",ng-click="pick(propCur, p.id)") {{p.v.name}}
+          .col-sm-4
+             h4 所有選項
+             div
+               .choice(ng-repeat="p in propCur.link['choice']|value",ng-click="pick(propCur, p.id)") {{p.v.name}}
+          .col-sm-4
+            h4 表決狀態
+              svg.choice-stat(width="100%",height="300px",viewBox="0 0 300 300",preserveAspectRatio="xMidYMid")
+                g
+                g: g(ng-repeat="(k,v) in cs.d")
+                  rect(x="0",ng-attr-y="{{$index * 20}}",ng-attr-width="{{v.c * 10}}",height="15",ng-attr-fill="{{color(v.r.id)}}")
+                  text(ng-attr-x="{{v.c * 10 + 5}}",ng-attr-y="{{$index * 20 + 11}}") {{v.r.v.name}} ( {{ v.c}} )
+

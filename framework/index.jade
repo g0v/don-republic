@@ -1,0 +1,189 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: false, semantic: true }
+- var assets = "assets"
+- var thumbnail = "http://dummy.thumbnail"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+    script(type="text/javascript",src='//cdn.firebase.com/v0/firebase.js')
+    script(type="text/javascript",src="//cdn.firebase.com/v0/firebase-simple-login.js")
+    script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js")
+
+    script(type="text/javascript",src="index.js")
+  body(ng-app="main",ng-controller="ctrl.main")
+    h3 Login Panel
+    #login(ng-controller="ctrl.user")
+      button(ng-click="login()",ng-show="!user") login with facebook
+      button(ng-click="logout()",ng-show="user") logout
+    h3 User Profile
+    #user
+      span id: {{user.id}}
+      span username: {{user.displayName}}
+      span email
+      span config
+      span tags(for group)
+      span proposal list
+      span question list
+      span vote state
+    h3 Group
+    #group(ng-controller="ctrl.group")
+      div new group
+        input(type="text",placeholder="name",ng-model="cur.name")
+        input(type="text",placeholder="desc",ng-model="cur.desc")
+        button(ng-click="create()") new
+        button(ng-click="debug()") debg
+        | {{cur}}
+      div(ng-repeat="(k,g) in list")
+        span(ng-click="delete(k)") x
+        span id: {{g.id}}
+        span name: {{g.name}}
+        span description: {{g.desc}}
+        span 
+          | member: 
+          span(ng-repeat="(m,v) in g.users") {{m}}
+        input(type="text",placeholder="new member",ng-model="g.newMember")
+        button(ng-click="addMember(g)") add
+    h3 Proposal
+    #proposal(ng-controller="ctrl.proposal")
+      div new proposal
+        input(type="text",placeholder="name",ng-model="cur.name")
+        input(type="text",placeholder="desc",ng-model="cur.desc")
+        br
+        input(type="checkbox",ng-model="cur.config.allowAnonymous")
+        | allow anonymous to vote /
+        input(type="radio",ng-model="cur.config.choice",value="1")
+        | single choice vote /
+        input(type="radio",ng-model="cur.config.choice",value="2")
+        | multiple choices vote /
+        input(type="radio",ng-model="cur.config.choice",value="3")
+        | ordered vote
+        button(ng-click="create()") new
+      .proposal(ng-repeat="(k,p) in list")
+        h4(contenteditable,ng-model="p.name")
+        span(ng-click="delete(k)") x
+        span(ng-click="save(k)") s
+        .desc(contenteditable,ng-model="p.desc")
+        .desc config: {{p.config}}
+        .vote
+          span(ng-click="vote(p,0)") up {{p.vote[0].length}}
+          span(ng-click="vote(p,1)") neutral {{p.vote[1].length}}
+          span(ng-click="vote(p,2)") down {{p.vote[2].length}}
+
+        h5 add vision
+        .vision(ng-controller="ctrl.vision")
+          input(type="text",placeholder="name", ng-model="cur.name")
+          input(type="text",placeholder="desc", ng-model="cur.desc")
+          button(ng-click="createWith('child','proposal',k,p)") new
+        .vision(ng-repeat="n in p.link['child']|type:'vision'|value",ng-controller="ctrl.vision")
+          span {{n.v.name}}
+          span {{n.v.desc}}
+          span(ng-click="delete(n.id)") x
+          chooser(ng-model="chosen")
+          button(ng-click="link('link',n.id,chosen.t,chosen.id,chosen.v,1)") link
+          | related issue
+          .issue(ng-repeat="i in n.v.link['link']|type:'issue'|value",ng-controller="ctrl.issue")
+            span {{i.v.name}}
+
+        h5 add issue
+        .issue(ng-controller="ctrl.issue")
+          input(type="text",placeholder="name", ng-model="cur.name")
+          input(type="text",placeholder="desc", ng-model="cur.desc")
+          button(ng-click="createWith('child','proposal',k,p)") new
+        .issue(ng-repeat="n in p.link['child']|type:'issue'|value",ng-controller="ctrl.issue")
+          span {{n.v.name}}
+          span {{n.v.desc}}
+          span(ng-click="delete(n.id)") x
+
+        h5 picked
+        .plan(ng-repeat="s in picked(p,true)",ng-controller="ctrl.plan")
+          span(ng-click="pick(p, s.id)")
+            | {{get("plan",s.id).name}}
+            span(ng-click="delete(s.id)") x
+        h5 not picked
+        .plan(ng-repeat="s in picked(p,false)",ng-controller="ctrl.plan")
+          span(ng-click="pick(p, s.id)")
+            | {{get("plan",s.id).name}}
+            span(ng-click="delete(s.id)") x
+        .plan(ng-controller="ctrl.plan")
+          input(type="text",placeholder="name",ng-model="cur.name")
+          input(type="text",placeholder="desc",ng-model="cur.desc")
+          button(ng-click="createWith('choice','proposal',k,p)") new
+        .comments(ng-controller="ctrl.comment")
+          .comment
+            input(type="text",ng-model="cur.desc",placeholder="leave comment")
+            button(ng-click="createWith('comment','proposal',k,p)") 送出
+          .comment(ng-repeat="c in p.link['comment']|value") 
+            span {{get("comment",c.id).desc}}
+            span(ng-click="delete(c.id, p)") x
+            .vote
+              span(ng-click="vote(c.v,0)") up {{c.v.vote[0].length}}
+              span(ng-click="vote(c.v,1)") neutral {{c.v.vote[1].length}}
+              span(ng-click="vote(c.v,2)") down {{c.v.vote[2].length}}
+      span title
+      span description
+      span creator
+      span administrator
+      span options
+      span vision
+      span question
+      span cause
+      span solution
+
+    h3 Plan
+    #plan(ng-controller="ctrl.plan")
+      div new plan
+        input(type="text",placeholder="name",ng-model="cur.name")
+        input(type="text",placeholder="desc",ng-model="cur.desc")
+        button(ng-click="create()") new
+      .plan(ng-repeat="(k,p) in list")
+        h4
+          | {{p.name}}
+          span(ng-click="delete(k)") x
+        .desc 
+          | {{p.desc}}
+        .vote
+          span(ng-click="vote(p,0)") up {{p.vote[0].length}}
+          span(ng-click="vote(p,1)") neutral {{p.vote[1].length}}
+          span(ng-click="vote(p,2)") down {{p.vote[2].length}}
+        .desc
+          | created by {{p.creator.username}}
+
+    h3 Issue
+    #issue(ng-controller="ctrl.issue")
+      div new issue
+        input(type="text",placeholder="name",ng-model="cur.name")
+        input(type="text",placeholder="desc",ng-model="cur.desc")
+        button(ng-click="create()") new
+      .issue(ng-repeat="(k,p) in list")
+        h4
+          | {{p.name}}
+          span(ng-click="delete(k)") x
+        .desc 
+          | {{p.desc}}
+        .vote
+          span(ng-click="vote(p,0)") up {{p.vote[0].length}}
+          span(ng-click="vote(p,1)") neutral {{p.vote[1].length}}
+          span(ng-click="vote(p,2)") down {{p.vote[2].length}}
+        .desc
+          | created by {{p.creator.username}}
+
+    h3 Names
+    #names(ng-controller="ctrl.name")
+      | {{blah}}
+      chooser(ng-model="blah")
+      hr
+      input(type="text",placholder="find a name...",ng-model="keyword")
+      | {{keyword}}
+      .names(ng-repeat="v in result")
+        h4 {{v.name}}
+        .desc
+          span(ng-repeat="i in v.list") {{i.type}}
+    #footer

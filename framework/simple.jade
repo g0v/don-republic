@@ -1,0 +1,38 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: false, semantic: true }
+- var assets = "assets"
+- var thumbnail = "http://dummy.thumbnail"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="theme/bootstrap.cosmo.min.css")
+    link(rel="stylesheet",type="text/css",href="simple.css")
+    script(type="text/javascript",src='//cdn.firebase.com/v0/firebase.js')
+    script(type="text/javascript",src="//cdn.firebase.com/v0/firebase-simple-login.js")
+    script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js")
+    script(type="text/javascript",src="index.js")
+    script(type="text/javascript",src="simple.js")
+  body(ng-app="main",ng-controller="ctrl.main"): div(ng-controller="ctrl.simplebase")
+    .navbar.navbar-default.navbar-fixed-top(role="navigation")
+      .ib
+        .navbar-header
+          a.navbar-brand(href="#") 動民主0.5
+        ul.nav.navbar-nav
+          li(ng-class="active(tab, 1)"): a(href="#",ng-click="tab=1") 發起新提案
+          li(ng-class="active(tab, 2)"): a(href="#",ng-click="tab=2") 提案列表
+          li(ng-class="active(tab, 3)",ng-show="propCur.name"): a(href="#",ng-click="tab=3") {{propCur.name}}
+        ul.nav.navbar-nav.navbar-right(ng-controller="ctrl.user")
+          li: a(href="#",ng-show="!user",ng-click="login()") 登入
+          li: a(href="#",ng-show="user") {{user.username}}
+          li: a(href="#",ng-show="user",ng-click="logout()") 登出
+    #content
+      include simple/new.jade
+      include simple/list.jade
+      include simple/current.jade

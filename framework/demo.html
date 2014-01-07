@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <script type="text/javascript" src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script type="text/javascript" src="//cdn.firebase.com/v0/firebase-simple-login.js"></script>
+    <script type="text/javascript" src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body ng-app="main" ng-controller="ctrl.main">
+    <h2>動民主前端開發指南</h2>
+    <h4 ng-show="!user">請登入後使用
+      <button ng-click="login()" ng-show="!user">login with facebook</button>
+    </h4>
+    <div class="panel panel-primary">
+      <div class="panel-heading">一般資訊</div>
+      <div class="panel-body">
+        <p>請參考 body 的設定, 在頂層元素使用 main (ng-app) 及 ctrl.main (ng-controller)</p>
+        <p>各種資料型別 (提案, 對策, 方案, 留言等) 都有其對應的 angularjs controller. 使用前請設定 ng-controller</p>
+        <ul>
+          <li>提案: ctrl.proposal</li>
+          <li>願景: ctrl.vision</li>
+          <li>問題: ctrl.issue</li>
+          <li>成因: ctrl.cause</li>
+          <li>對策: ctrl.strategy</li>
+          <li>方案: ctrl.plan</li>
+          <li>留言: ctrl.comment</li>
+          <li>社群: ctrl.group</li>
+          <li>用戶: ctrl.user</li>
+        </ul>
+        <p>各種資料型別都會有一些基本屬性, 包含:</p>
+        <ul>
+          <li>name: 標題或名稱</li>
+          <li>desc: 描述</li>
+          <li>creator: 建立者 (內含 id, username, displayName)</li>
+          <li>create_time: 建立時間</li>
+          <li>edit_time: 修改時間</li>
+          <li>list: 列出所有資料</li>
+        </ul>
+        <p>使用 list 的方法很簡單, 用 ng-repeat="(k,v) in list" 即可, k 存的是資料的索引 (key, 或稱 index), v 則是資料本身. 可直接參考下面的提案列表範例. 此外, 每種資料型別也都可以被按讚, 建立投票選項 或是與其他資料型別產生關聯. 詳情請見後面的解釋.</p>
+        <h5>controller 使用範例 (提案列表為例)</h5>
+        <div ng-controller="ctrl.proposal">
+          <div ng-repeat="(k,v) in list" class="alert alert-info">{{v.name}} by {{v.creator.username}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">登入相關</div>
+      <div ng-controller="ctrl.user" class="panel-body">
+        <p>登入與登出的按鈕請參考下列:</p>
+        <div ng-click="login()" class="btn btn-success">login with facebook</div>
+        <div ng-click="logout()" class="btn btn-danger">logout</div>
+        <h5>搭配 ng-show:</h5>
+        <div ng-click="login()" ng-show="!user" class="btn btn-success">login with facebook</div>
+        <div ng-click="logout()" ng-show="user" class="btn btn-danger">logout</div>
+      </div>
+      <div class="panel-footer">main controller 有 user 變數可以使用, 需要的話使用 user.id, user.username 等即可</div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">使用者相關</div>
+      <div class="panel-body">
+        <p>目前暫時使用臉書登入, 取得的使用者資訊都存在 user 中, 可以用看裡面有什麼資料可以使用. 常見的包括 user.id, user.username, user.displayName</p>
+        <p>未來加入其他登入方式時, 會需要 normalize 不同格式. 儘量使用常見的欄位可以避免未來的麻煩.</p>
+        <div class="label label-info">id: {{user.id}}</div>
+        <div class="label label-info">username: {{user.username}}</div>
+        <div class="label label-info">display name: {{user.displayName}}</div>
+        <h5>user data</h5>
+        <div class="alert alert-info">{{user}}</div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">新增、刪除、修改資料</div>
+      <div ng-controller="ctrl.comment" class="panel-body">
+        <h4>新增資料</h4>
+        <p>每個 controller 都內含有 cur 變數, 這個變數被用來作為新增資料前放資料的地方。例如填入留言後按下面的按鈕即會產生新留言.</p>
+        <div class="form">
+          <div class="form-group">
+            <input type="text" placeholder="留言" ng-model="cur.desc" class="form-control">
+          </div>
+          <div class="form-group">
+            <div ng-click="create()" class="btn btn-info">送出留言</div>
+          </div>
+        </div>
+        <h5>留言列表</h5>
+        <div class="alert alert-info">
+          <div ng-repeat="(k,v) in list"> <span>{{v.desc}} by {{v.creator.displayName}} </span><i ng-click="delete(k)" style="cursor:pointer;color:#f00" class="glyphicon glyphicon-remove"></i></div>
+        </div>
+        <p>你可以在 cur 中存入任何需要的變數, 但請避開前所提到的基本屬性, 還有 vote, link, stand 等關鍵字.</p>
+        <hr>
+        <h4>刪除資料</h4>
+        <p>對你想刪除的資料的 key 呼叫 delete 即可. 上例中的留言列表即有範例.</p>
+        <hr>
+        <h4>修改資料</h4>
+        <p>直接將你想改的資料更新, 然後用資料的 key 執行 save 即可. 你可以結合 contenteditable 屬性讓事情變得更容易. 下例讓你修改留言的內容, 試著點留言的文字, 你可以直接做修改. 改完後, 按右方的存檔鈕, 即完成存檔.</p>
+        <div class="alert alert-info">
+          <div ng-repeat="(k,v) in list" ng-show="$index==0"><span ng-model="v.desc" contenteditable></span><span> - by {{v.creator.username}}</span><i ng-click="save(k)" style="cursor:pointer;color: #090" class="glyphicon glyphicon-floppy-disk pull-right"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">連結資料</div>
+      <div ng-controller="ctrl.proposal" class="panel-body">
+        <p>資料間可以互相連結, 完全看你怎麼設計. 為了方便建立連結, 這裡提供了一個快速選擇資料的 directive: "chooser". 下面為 chooser 的範例, 試著輸入一些字 (例如 '計畫'), chooser 會將找到的資料以 "type / name" 的形式顯示出來. 當你點選了其中一個資料後, chooser 所連結的 model 會得到該資料的細節, 包含 id, 類型, 跟資料本身</p>
+        <button ng-click="chosen={}" class="btn btn-warning">取消選取</button>
+        <chooser ng-model="chosen" class="chooser"></chooser><br style="clear:both">
+        <div class="alert alert-info">你選擇的資料 id 為 {{chosen.id}}, 類型為 {{chosen.t}}, 標題為 {{chosen.v.name}}, 由 {{chosen.v.creator.username}} 建立.</div>
+        <div style="max-height:100px;overflow:scroll;text-overflow:ellipsis" class="alert alert-info">其內容為 {{chosen.v}}</div>
+        <p>選取資料以後, 建立連結則使用 "link" 來實作. 下面為一個提案, 帶有一個連結資料按鈕.</p>
+        <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-success">提案 "{{v.name}}"
+          <div ng-click="link('link',k,chosen.t,chosen.id,chosen.v,1)" ng-show="chosen.id" class="btn btn-success">與屬於 {{chosen.t}} 的 {{chosen.v.name}} 建立連結</div>
+          <h5>與此提案有關的資料</h5>
+          <div ng-repeat="n in v.link['link']|value" class="label label-success">{{n.v.name}}</div>
+        </div>
+        <p>link 函式的第一個參數為連結的分類, 'link' 代表普通連結. 'choice' 代表是選項, 'child' 代表是子項目. 最後一個參數的數字代表連結的方向性, 1 為順向, -1 為反向, 0 為雙向.</p>
+        <p>你也可以在建立資料時立刻連結資料. 請參考下一個範例的 createWith 函式.</p>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">票選與按贊</div>
+      <div ng-controller="ctrl.proposal" class="panel-body">
+        <p>按讚為任何資料的基本功能, 使用下面的樣板即可. </p>
+        <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-info">提案 "{{v.name}}"
+          <div class="vote">
+            <div ng-click="vote(v,0)" class="btn"><span>讚</span>{{v.vote[0].length}}</div>
+            <div ng-click="vote(v,1)" class="btn"> <span>閱</span>{{v.vote[1].length}}</div>
+            <div ng-click="vote(v,2)" class="btn"> <span>噓</span>{{v.vote[2].length}}</div>
+          </div>
+        </div>
+        <p>就算是留言也可以:</p>
+        <div ng-controller="ctrl.comment">
+          <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-info">"{{v.desc}}" by {{v.creator.username}}
+            <div class="vote">
+              <div ng-click="vote(v,0)" class="btn"><span>讚</span>{{v.vote[0].length}}</div>
+              <div ng-click="vote(v,1)" class="btn"> <span>閱</span>{{v.vote[1].length}}</div>
+              <div ng-click="vote(v,2)" class="btn"> <span>噓</span>{{v.vote[2].length}}</div>
+            </div>
+          </div>
+        </div>
+        <p>投票的話稍微複雜些. 先建立好數個類型為 'choice' 的連結後, 利用 picked 函式選出已選及未選的項目, 並用 pick 來選取/取消選取項目. 這裡利用 createWith 來建立連結到提案的方案作為選項.</p>
+        <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-success">
+          <h3>提案 "{{v.name}}"</h3>
+          <h5>建立選項</h5>
+          <form ng-controller="ctrl.plan">
+            <div class="form-group">
+              <input type="text" placeholder="選項名稱" ng-model="cur.name" class="form-control">
+            </div>
+            <div class="form-group">
+              <div ng-click="createWith('choice','proposal',k,v)" class="btn btn-success">透過 createWith 建立方案</div>
+            </div>
+          </form>
+          <h5>所有的選項</h5>
+          <div ng-repeat="c in v.link['choice']|value" ng-click="pick(v, c.id)" style="cursor:pointer" class="label label-success">{{c.v.name}}</div>
+          <h5>你選擇的項目</h5>
+          <div ng-repeat="c in picked(v,true)" ng-click="pick(v, c.id)" style="cursor:pointer" class="label label-success">{{c.v.name}}</div>
+          <h5>沒被選的項目</h5>
+          <div ng-repeat="c in picked(v,false)" ng-click="pick(v, c.id)" style="cursor:pointer" class="label label-success">{{c.v.name}}</div>
+        </div>
+      </div>
+    </div>
+    <h3>個別類型的細節</h3>
+    <div class="panel panel-primary">
+      <div class="panel-heading">群組相關</div>
+      <div ng-controller="ctrl.group" class="panel-body">待補完</div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
