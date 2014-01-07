@@ -7,18 +7,21 @@
     <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
     <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/semantic-ui/0.9.5/css/semantic.min.css">
-    <script type="text/javascript" src="assets/semantic-ui/0.9.5/js/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <!-- custom files-->
     <link rel="stylesheet" type="text/css" href="theme/bootstrap.cosmo.min.css">
+    <link rel="stylesheet" type="text/css" href="datetimepicker.css">
     <link rel="stylesheet" type="text/css" href="simple.css">
     <script type="text/javascript" src="//cdn.firebase.com/v0/firebase.js"></script>
     <script type="text/javascript" src="//cdn.firebase.com/v0/firebase-simple-login.js"></script>
     <script type="text/javascript" src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <script type="text/javascript" src="moment.min.js"></script>
+    <script type="text/javascript" src="datetimepicker.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="simple.js"></script>
   </head>
-  <body ng-app="main" ng-controller="ctrl.main">
+  <body ng-app="simple" ng-controller="ctrl.main">
     <div ng-controller="ctrl.simplebase">
       <div role="navigation" class="navbar navbar-default navbar-fixed-top">
         <div class="ib">
@@ -50,13 +53,32 @@
                   <div class="col-sm-6">
                     <label>開始時間</label>
                     <div class="form-group">
-                      <input type="text" placeholder="起始時間" ng-model="cur.start" class="form-control">
+                      <div class="dropdown"><a data-toggle="dropdown" href="#">
+                          <div class="input-group">
+                            <input type="text" ng-model="cur.start" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                          </div></a>
+                        <ul role="menu" aria-labelledby="dLabel" class="dropdown-menu">
+                          <li>
+                            <datetimepicker ng-model="cur.start"></datetimepicker>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <label>期間長度</label>
                     <div class="form-group">
-                      <input type="text" placeholder="投票期間長度, 例如: 3 天" ng-model="cur.duration" class="form-control">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <input type="text" placeholder="天" ng-model="cur.duration.day" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                          <input type="text" placeholder="時" ng-model="cur.duration.hour" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                          <input type="text" placeholder="分" ng-model="cur.duration.min" class="form-control">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -301,10 +323,10 @@
         <div ng-show="tab==3">
           <div id="current-proposal" ng-controller="ctrl.proposal">
             <div class="row">
-              <div class="col-sm-9">
+              <div class="col-sm-8">
                 <h2> <small>提案  </small>{{propCur.name}}</h2>
               </div>
-              <div class="col-sm-3"><small style="margin-top:38px" class="pull-right">表决時間: 103-01-05 ~ 103-01-11</small></div>
+              <div class="col-sm-4"><small style="margin-top:38px" class="pull-right">表决時間: <span ng-show="propCur.start">{{propCur.start|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.start">未定</span><span ng-show="propCur.start"> ~ <span ng-show="propCur.end">{{propCur.end|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.end">未定</span></span></small></div>
             </div>
             <div class="well">{{propCur.desc}}</div>
             <div class="panel panel-default">

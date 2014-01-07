@@ -10,11 +10,24 @@
           .col-sm-6
             label 開始時間
             .form-group
-              input.form-control(type="text",placeholder="起始時間",ng-model="cur.start")
+              .dropdown
+                a(data-toggle="dropdown",href="#")
+                  .input-group
+                    input.form-control(type="text",ng-model="cur.start")
+                    span.input-group-addon: i.glyphicon.glyphicon-calendar
+                ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+                  li
+                    datetimepicker(ng-model="cur.start")
           .col-sm-6
             label 期間長度
             .form-group
-              input.form-control(type="text",placeholder="投票期間長度, 例如: 3 天",ng-model="cur.duration")
+              .row
+                .col-sm-4
+                  input.form-control(type="text",placeholder="天",ng-model="cur.duration.day")
+                .col-sm-4
+                  input.form-control(type="text",placeholder="時",ng-model="cur.duration.hour")
+                .col-sm-4
+                  input.form-control(type="text",placeholder="分",ng-model="cur.duration.min")
 
     .row
       .col-sm-12

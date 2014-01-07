@@ -1,3 +1,5 @@
+angular.module \simple, <[ui.bootstrap.datetimepicker main]>
+
 ctrl.simpletab = ($scope) ->
   $scope.tab = 2
   $scope.active = (a,b) -> if a==b => \active else ""
@@ -17,3 +19,8 @@ ctrl.simplebase = ($scope, DataService) ->
       ..prop-cur = p
       ..id = p.id
       ..tab = 3
+  $scope.$watch 'proposal.ref', ->
+    console.log \ok
+    s = $scope.proposal.s!
+      ..cs = s.choice-state s.prop-cur
+  , true
