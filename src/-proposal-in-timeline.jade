@@ -1,7 +1,14 @@
 .ui.segment.entry.plan.blue
   .ui.attached.top.right.label.white.menu.action
-    .item.yes.selected
+    .ui.dropdown.item.vote.selected.yes
       i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark.selected
       i.icon.star
     .item.subscribe.selected
@@ -48,8 +55,15 @@
     a(href="") 5 文章
 .ui.segment.entry.plan.orange
   .ui.attached.top.right.label.white.menu.action
-    .item.unknown
-      i.icon.ellipsis.vertical
+    .ui.dropdown.item.vote.unknown
+      i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark
       i.icon.star
     .item.subscribe
@@ -72,8 +86,15 @@
   include -timeline-plan-meta
 .ui.segment.entry.plan.teal
   .ui.attached.top.right.label.white.menu.action
-    .item.unknown
-      i.icon.ellipsis.vertical
+    .ui.dropdown.item.vote.unknown
+      i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark
       i.icon.star
     .item.subscribe
@@ -96,8 +117,15 @@
   include -timeline-plan-meta
 .ui.segment.entry.plan.green
   .ui.attached.top.right.label.white.menu.action
-    .item.unknown
-      i.icon.ellipsis.vertical
+    .ui.dropdown.item.vote.unknown
+      i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark
       i.icon.star
     .item.subscribe
@@ -118,10 +146,17 @@
     .diff
       include -dayum-3
   include -timeline-plan-meta
-.ui.segment.entry.plan
+//-.ui.segment.entry.plan
   .ui.attached.top.right.label.white.menu.action
-    .item.unknown
-      i.icon.ellipsis.vertical
+    .ui.dropdown.item.vote.unknown
+      i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark
       i.icon.star
     .item.subscribe
@@ -144,15 +179,22 @@
   include -timeline-plan-meta
 .ui.segment.entry.plan
   .ui.attached.top.right.label.white.menu.action
-    .item.unknown
-      i.icon.ellipsis.vertical
+    .ui.dropdown.item.vote.unknown
+      i.icon.checkmark.checked
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
     .item.bookmark
       i.icon.star
     .item.subscribe
       i.icon.rss
     .item.share
       i.icon.forward.mail
-  //-.ui.attached.top.left.label.status 未定稿，無排程
+  .ui.attached.top.left.label.status 新方案
   .summary
     .topic
       .a.plan.item

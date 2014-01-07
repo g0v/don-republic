@@ -47,9 +47,18 @@ p
 .ui.menu>.menu.item
   padding: 0
   &>.item
+    position: relative
     margin: 0
-    padding-left: 2em
+    padding-left: 1rem
+    padding-right: 2.7em
     font-size: 0.9rem
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    .label
+      position: absolute
+      right: 0.95em
+      top: 1em
 
 // global settings for this system
 .a.item

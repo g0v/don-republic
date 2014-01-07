@@ -14,23 +14,67 @@ block body
         .id ETBlue
       a(href="index.html").item.timeline
         i.icon.home
-        | 最新動態
-      .menu.item.timeline
-        a(href="timeline-issues.html").item.issues
-          i.icon.folder.open.outline
-          | 議題
-        a(href="timeline-proposals.html").item.proposals
+        | 所有動態
+      a(href="timeline-issues.html").item.issues
+        i.icon.folder.open.outline
+        | 議題
+      .menu.item.issues
+        a(href="timeline-issues.html").item
+          | 兩岸服務貿易協議
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 核能發電
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 土地徵收
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 都市更新
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 關廠工人
+          .ui.label 10
+      a(href="timeline-proposals.html").item.proposals
           i.icon.folder.open.outline
           | 提案
-        a(href="timeline-projects.html").item.projects
-          i.icon.folder.open.outline
-          | 專案
-        a(href="timeline-tags.html").item.tags
-          i.icon.tags
-          | 標籤
+      .menu.item.proposals
+        a(href="timeline-proposals.html").item
+          | 政府IT委外採用open source模式建議案
+          .ui.label 10
+        a(href="timeline-proposals.html").item
+          | 都市更新條例修正案
+          .ui.label 10
+        a(href="timeline-proposals.html").item
+          | 土地徵收條例修正案
+          .ui.label 10
+        a(href="timeline-proposals.html").item
+          | 綠色能源政策規劃案
+          .ui.label 10
+      a(href="timeline-projects.html").item.projects
+        i.icon.folder.open.outline
+        | 專案
+      .menu.item.projects
+        a(href="timeline-issues.html").item
+          | 反黑箱服貿行動串連
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 動民主系統開發
+          .ui.label 10
+        a(href="timeline-issues.html").item
+          | 反核四五六行動串連
+          .ui.label 10
+      a(href="timeline-tags.html").item.tags
+        i.icon.tags
+        | 標籤
+      a(href="").item.users
+        i.icon.user
+        | 公民
+      a(href="").item.groups
+        i.icon.users
+        | 團體
       a(href="").item.activities
         | 我的活動紀錄
-      .menu.item.activities
+      .menu.item.activities.hidden
         a(href="").item.subscribed
           i.icon.rss
           | 訂閱
@@ -48,7 +92,7 @@ block body
           | 編輯
       a(href="").item.achievements
         | 我的成就
-      .menu.item.achievements
+      .menu.item.achievements.hidden
         a(href="").item.composing
           i.icon.certificate
           | 彙編懶人包
@@ -63,7 +107,7 @@ block body
           | 執行專案
       a(href="").item.lists
         | 我的追蹤清單
-      .menu.item.lists
+      .menu.item.lists.hidden
         a(href="lists-issues.html").item.issues
           i.icon.folder.open.outline
           | 議題

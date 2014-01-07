@@ -1,6 +1,10 @@
 //$('.ui.dropdown').dropdown({'on':'hover'});
 $('.ui.dropdown').dropdown();
 
+$('.action .item.bookmark,.action .item.subscribe').on('click tap',function(){
+  $(this).toggleClass('selected');
+})
+
 $('#header>.menu>.right>.dropdown>.menu>.relation').on('click tap',function(){
   $('#content .category .relation, #header>.menu>.right>.dropdown>.relation').css('display', 'inline-block');
   $('#content .category .tag, #header>.menu>.right>.dropdown>.tag').hide();
