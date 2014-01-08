@@ -193,7 +193,8 @@ angular.module('main', ['firebase']).directive('contenteditable', function(){
           displayName: 'anonymous'
         }).id, ref1$.username = ref$.username, ref1$.displayName = ref$.displayName, ref1$), it.create_time = new Date().getTime(), it.edit_time = new Date().getTime(), it));
         it.id = n.name();
-        ret.name.add(it.name, name, n.name(), 'name');
+        this.ref.$child(it.id).$set(it);
+        ret.name.add(it.name, name, it.id, 'name');
         return it;
       },
       factory: function(){
@@ -431,7 +432,7 @@ ctrl.base = function($scope, DS, ctrlName){
         }
         obj.push(k);
       }
-      return $scope.list.$save();
+      return DS[ctrlName].ref.$save(p.id);
     },
     choiceState: function(p){
       var d, ref$, v, max, k;
@@ -488,8 +489,8 @@ ctrl.proposal = function($scope, DataService){
   import$($scope, ctrl.base($scope, DataService, 'proposal'));
   $scope._create = $scope.create;
   return $scope.create = function(){
-    var v;
-    if ($scope.cur.start && ($scope.cur.duration.day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
+    var ref$, v;
+    if ($scope.cur.start && (((ref$ = $scope.cur).duration || (ref$.duration = {})).day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
       v = ~~($scope.cur.duration.day || 0) * 86400 + ~~($scope.cur.duration.hour || 0) * 3600 + ~~($scope.cur.duration.min || 0) * 60;
       $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime());
     }

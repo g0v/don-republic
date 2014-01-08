@@ -19,8 +19,10 @@ ctrl.simplebase = ($scope, DataService) ->
       ..prop-cur = p
       ..id = p.id
       ..tab = 3
+  s = $scope.proposal.s!
   $scope.$watch 'proposal.ref', ->
-    console.log \ok
+    $scope.proposal.ref = DataService.proposal.ref
     s = $scope.proposal.s!
+      ..prop-cur = $scope.proposal.ref[s.prop-cur.id] if s.prop-cur
       ..cs = s.choice-state s.prop-cur
   , true

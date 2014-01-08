@@ -76,7 +76,8 @@ angular.module 'main', <[firebase]>
     create: ->
       n = @ref.$add(it <<< {creator: {}<<<(ret.user or {id:0,username:\anonymous,displayName:\anonymous}){id,username,displayName}, create_time: new Date!getTime!, edit_time: new Date!getTime!})
       it.id = n.name!
-      ret.name.add it.name, name, n.name!, \name
+      @ref.$child it.id .$set it
+      ret.name.add it.name, name, it.id, \name
       it
 
     factory: -> {}
@@ -179,7 +180,7 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
     if k in obj => obj.splice obj.indexOf(k), 1 else =>
       if p.config.method == \1 and obj.length > 0 => obj.pop!
       obj.push k
-    $scope.list.$save!
+    DS[ctrl-name]ref.$save p.id
   choice-state: (p) ->
     d = {}
     if not p => return {max: 0, d: {}}
@@ -199,7 +200,7 @@ ctrl.proposal = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \proposal
   $scope._create = $scope.create
   $scope.create = ->
-    if $scope.cur.start and ($scope.cur.duration.day or $scope.cur.duration.hour or $scope.cur.duration.min) =>
+    if $scope.cur.start and ($scope.cur.{}duration.day or $scope.cur.duration.hour or $scope.cur.duration.min) =>
       v = ~~($scope.cur.duration.day or 0) * 86400 +
           ~~($scope.cur.duration.hour or 0) * 3600 +
           ~~($scope.cur.duration.min or 0) * 60
