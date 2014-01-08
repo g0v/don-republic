@@ -2,6 +2,14 @@
 html
   head
     meta(charset="utf-8")
+    // libraries
+    //include library.jade
+    // custom files
+    script(type="text/javascript",src='//cdn.firebase.com/v0/firebase.js')
+    script(type="text/javascript",src="//cdn.firebase.com/v0/firebase-simple-login.js")
+    script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js")
+
+    script(type="text/javascript",src="index.js")
     //-meta(http-equiv="X-UA-Compatible",content="IE=edge")
     //-meta(name="description",content="")
     //-meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -21,8 +29,8 @@ html
       block title
       | | 動民主
 
-  body
-    #navbar
+  body(ng-app="main",ng-controller="ctrl.main")
+    #navbar(role="navigation")
       .ui.secondary.pointing.menu
         a(href="index.html").item.home 動民主
         a(href="issues.html").item.issue 議題
@@ -33,7 +41,10 @@ html
         //-a(href="users.html").item.users 公民
         //-a(href="groups.html").item.groups 社團
         //-a(href="groups.html").item.teams 小組
-        .item.right 登入
+        .item.right(ng-controller="ctrl.user")
+          li: a(href="#",ng-show="!user",ng-click="login()") 登入
+          li: a(href="#",ng-show="user") {{user.username}}
+          li: a(href="#",ng-show="user",ng-click="logout()") 登出
         .item.right
           .ui.icon.input
             input(type="text",placeholder="搜尋...")
