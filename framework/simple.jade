@@ -2,7 +2,7 @@ doctype html
 //- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
 - var usecdn = false
 - var useog = false
-- var lib = { jquery: true, d3js: true, angular: true, bootstrap: false, semantic: true }
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
 html(lang="en")
@@ -13,13 +13,16 @@ html(lang="en")
     include library.jade
     // custom files
     link(rel="stylesheet",type="text/css",href="theme/bootstrap.cosmo.min.css")
+    link(rel="stylesheet",type="text/css",href="datetimepicker.css")
     link(rel="stylesheet",type="text/css",href="simple.css")
     script(type="text/javascript",src='//cdn.firebase.com/v0/firebase.js')
     script(type="text/javascript",src="//cdn.firebase.com/v0/firebase-simple-login.js")
     script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js")
+    script(type="text/javascript",src="moment.min.js")
+    script(type="text/javascript",src="datetimepicker.js")
     script(type="text/javascript",src="index.js")
     script(type="text/javascript",src="simple.js")
-  body(ng-app="main",ng-controller="ctrl.main"): div(ng-controller="ctrl.simplebase")
+  body(ng-app="simple",ng-controller="ctrl.main"): div(ng-controller="ctrl.simplebase")
     .navbar.navbar-default.navbar-fixed-top(role="navigation")
       .ib
         .navbar-header

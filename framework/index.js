@@ -485,7 +485,16 @@ ctrl.group = function($scope, DataService){
   };
 };
 ctrl.proposal = function($scope, DataService){
-  return import$($scope, ctrl.base($scope, DataService, 'proposal'));
+  import$($scope, ctrl.base($scope, DataService, 'proposal'));
+  $scope._create = $scope.create;
+  return $scope.create = function(){
+    var v;
+    if ($scope.cur.start && ($scope.cur.duration.day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
+      v = ~~($scope.cur.duration.day || 0) * 86400 + ~~($scope.cur.duration.hour || 0) * 3600 + ~~($scope.cur.duration.min || 0) * 60;
+      $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime());
+    }
+    return $scope._create();
+  };
 };
 ctrl.plan = function($scope, DataService){
   return import$($scope, ctrl.base($scope, DataService, 'plan'));

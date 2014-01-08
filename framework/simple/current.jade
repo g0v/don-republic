@@ -1,13 +1,20 @@
 div(ng-show="tab==3")
   #current-proposal(ng-controller="ctrl.proposal")
     .row
-      .col-sm-9
+      .col-sm-8
         h2 
           small 提案  
           | {{propCur.name}}
-      .col-sm-3
+      .col-sm-4
         small.pull-right(style="margin-top:38px")
-          | 表决時間: 103-01-05 ~ 103-01-11
+          | 表决時間: 
+          span(ng-show="propCur.start") {{propCur.start|date:'yyyy/MM/dd HH:mm'}}
+          span(ng-show="!propCur.start") 未定
+          span(ng-show="propCur.start")
+            |  ~ 
+            span(ng-show="propCur.end") {{propCur.end|date:'yyyy/MM/dd HH:mm'}}
+            span(ng-show="!propCur.end") 未定
+            
     .well {{propCur.desc}}
     .panel.panel-default
       .panel-heading
