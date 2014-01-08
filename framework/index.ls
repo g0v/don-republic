@@ -200,11 +200,12 @@ ctrl.proposal = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \proposal
   $scope._create = $scope.create
   $scope.create = ->
+    if $scope.cur.start => $scope.cur.start = new Date($scope.cur.start)getTime!
     if $scope.cur.start and ($scope.cur.{}duration.day or $scope.cur.duration.hour or $scope.cur.duration.min) =>
       v = ~~($scope.cur.duration.day or 0) * 86400 +
           ~~($scope.cur.duration.hour or 0) * 3600 +
           ~~($scope.cur.duration.min or 0) * 60
-      $scope.cur.end = new Date(new Date($scope.cur.start)getTime! + new Date(v*1000)getTime!)
+      $scope.cur.end = new Date(new Date($scope.cur.start)getTime! + new Date(v*1000)getTime!)getTime!
     $scope._create!
 
 ctrl.plan = ($scope, DataService) ->

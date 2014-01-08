@@ -490,9 +490,12 @@ ctrl.proposal = function($scope, DataService){
   $scope._create = $scope.create;
   return $scope.create = function(){
     var ref$, v;
+    if ($scope.cur.start) {
+      $scope.cur.start = new Date($scope.cur.start).getTime();
+    }
     if ($scope.cur.start && (((ref$ = $scope.cur).duration || (ref$.duration = {})).day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
       v = ~~($scope.cur.duration.day || 0) * 86400 + ~~($scope.cur.duration.hour || 0) * 3600 + ~~($scope.cur.duration.min || 0) * 60;
-      $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime());
+      $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime()).getTime();
     }
     return $scope._create();
   };
