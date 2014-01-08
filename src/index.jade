@@ -12,7 +12,7 @@ block body
         .avatar
           img(src="img/etblue.jpg").rounded.corner
         .id ETBlue
-      a(href="index.html").item.timeline
+      a(href="index.html").item.all
         i.icon.home
         | 所有動態
       a(href="timeline-issues.html").item.issues
@@ -66,12 +66,63 @@ block body
       a(href="timeline-tags.html").item.tags
         i.icon.tags
         | 標籤
+      .menu.item.tags
+        a(href="timeline-tags.html").item
+          | open data
+          .ui.label 10
+        a(href="timeline-tags.html").item
+          | 醫療
+          .ui.label 10
+        a(href="timeline-tags.html").item
+          | 兒童
+          .ui.label 10
+        a(href="timeline-tags.html").item
+          | 原住民
+          .ui.label 10
+        a(href="timeline-tags.html").item
+          | 台中市
+          .ui.label 10
+        a(href="timeline-tags.html").item
+          | 民主
+          .ui.label 10
       a(href="").item.users
         i.icon.user
         | 公民
+      .menu.item.users
+        a(href="timeline-users.html").item
+          | 宅圈
+          .ui.label 10
+        a(href="timeline-users.html").item
+          | 社運圈
+          .ui.label 10
+        a(href="timeline-users.html").item
+          | 醫療圈
+          .ui.label 10
+        a(href="timeline-users.html").item
+          | 同學
+          .ui.label 10
+        a(href="timeline-users.html").item
+          | 家人
+          .ui.label 10
       a(href="").item.groups
         i.icon.users
         | 團體
+      .menu.item.groups
+        a(href="timeline-groups.html").item
+          | 宅圈
+          .ui.label 10
+        a(href="timeline-groups.html").item
+          | 社運圈
+          .ui.label 10
+        a(href="timeline-groups.html").item
+          | 醫療圈
+          .ui.label 10
+        a(href="timeline-groups.html").item
+          | 同學
+          .ui.label 10
+        a(href="timeline-groups.html").item
+          | 家人
+          .ui.label 10
       a(href="").item.activities
         | 我的活動紀錄
       .menu.item.activities.hidden
@@ -105,54 +156,22 @@ block body
         a(href="").item.executing
           i.icon.certificate
           | 執行專案
-      a(href="").item.lists
-        | 我的追蹤清單
-      .menu.item.lists.hidden
-        a(href="lists-issues.html").item.issues
-          i.icon.folder.open.outline
-          | 議題
-        a(href="lists-proposals.html").item.proposals
-          i.icon.folder.open.outline
-          | 提案
-        a(href="lists-projects.html").item.projects
-          i.icon.folder.open.outline
-          | 專案
-        a(href="lists-tags.html").item.tags
-          i.icon.tags
-          | 標籤
-        a(href="").item.following
-          i.icon.user
-          | 公民
-        a(href="").item.groups
-          i.icon.users
-          | 團體
 
     #content
+      .ui.secondary.pointing.menu
+        a.item.news.active 所有動態
+        a.item.settings 設定
+          i.icon.setting
+        .right.menu
+          include -sort-menu
       .in.timeline
         block timeline
           include -proposal-in-timeline
 
-    //-.index
-      a(href="").ui.segment.entry
-        .title
-          h2 核融合技術如果發展成熟，核四廠有可能改採核融合嗎？
-        //-.ui.attached.label.top.right.white
-          | 關於
-          a(href="").a.tag.item 第四核能發電廠
-          a(href="").a.tag.item 國家能源自主
-      .ui.buttons.answer
-        a.ui.labeled.icon.button.left
-          i.icon.left
-          | 上一題
-        a.ui.button.green 回答此問題
-        a.ui.labeled.icon.button.right 
-          i.icon.right
-          | 下一題
-
 block script
   script.
     $("#navbar .home").addClass("active");
-    $("#sidebar .timeline").addClass("active");
+    $("#sidebar .all").addClass("active");
 
   style.
     body

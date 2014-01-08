@@ -49,7 +49,7 @@ p
   &>.item
     position: relative
     margin: 0
-    padding-left: 1rem
+    padding-left: 2em
     padding-right: 2.7em
     font-size: 0.9rem
     white-space: nowrap
@@ -259,6 +259,8 @@ p
     font-size: 0.9rem
   .diff-1
     border-bottom: 2px #ffcccc solid
+  .entry
+    margin: 0 0 0.5rem 0
 
 .in.timeline, .in.list
   .meta
@@ -719,10 +721,13 @@ p
 
 // the lovely homepage
 #index
-  padding: 1rem
+  padding: 0
+  position: relative
   #sidebar
-    width: 12rem
-    float: left
+    width: 16rem
+    position: absolute
+    left: 0
+    top: 0
     .avatar
       display: inline
       img
@@ -732,9 +737,8 @@ p
       vertical-align: middle
       margin-left: 1rem
   #content
-    margin-left: 13rem
-    .ui.segment:after
-      display: none
+    margin-left: 16rem
+    padding: 0.5rem
 
   //.index
     text-align: center

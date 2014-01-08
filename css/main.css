@@ -55,7 +55,7 @@ p {
 .ui.menu > .menu.item > .item {
   position: relative;
   margin: 0;
-  padding-left: 1rem;
+  padding-left: 2em;
   padding-right: 2.7em;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -314,6 +314,9 @@ p {
 }
 .in.timeline .diff-1 {
   border-bottom: 2px #ffcccc solid;
+}
+.in.timeline .entry {
+  margin: 0 0 0.5rem 0;
 }
 
 .in.timeline .meta, .in.list .meta {
@@ -1175,11 +1178,14 @@ p {
 }
 
 #index {
-  padding: 1rem;
+  padding: 0;
+  position: relative;
 }
 #index #sidebar {
-  width: 12rem;
-  float: left;
+  width: 16rem;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 #index #sidebar .avatar {
   display: inline;
@@ -1193,10 +1199,8 @@ p {
   margin-left: 1rem;
 }
 #index #content {
-  margin-left: 13rem;
-}
-#index #content .ui.segment:after {
-  display: none;
+  margin-left: 16rem;
+  padding: 0.5rem;
 }
 
 #issues #menu,
