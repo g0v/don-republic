@@ -1,3 +1,35 @@
+.ui.segment.entry.plan(ng-repeat="plan in plans | filter:keyword | orderBy:'edited.at'",ng-class="plan.color")
+  .ui.attached.top.right.label.white.menu.action
+    .ui.dropdown.item.vote(ng-class="plan.user.vote.status")
+      i.icon(ng-class="plan.user.vote.icon")
+      .menu
+        .item.yes
+          i.icon.checkmark.checked
+        .item.unknown
+          i.icon.question
+        .item.no
+          i.icon.remove
+    .item.bookmark(ng-class="plan.user.bookmark")
+      i.icon.star
+    .item.subscribe(ng-class="plan.user.subscribe")
+      i.icon.rss
+    .item.share(ng-class="plan.user.share")
+      i.icon.forward.mail
+  .ui.attached.top.left.label.status(ng-class="plan.color") {{ plan.status }}
+  .summary
+    .topic
+      .a.plan.item
+        a(href="proposal-content-plan.html") {{ plan.id }}
+      | 於
+      .a.board.item
+        a(href="proposal-content-intro.html") {{ plan.name }}
+    .log
+      a(href="").a.user.item.diff-1 {{ plan.edited.by }}
+      | 編輯於 {{ plan.edited.at }}
+    .diff
+      include -dayum-1
+  include -timeline-plan-meta
+
 .ui.segment.entry.plan.blue
   .ui.attached.top.right.label.white.menu.action
     .ui.dropdown.item.vote.selected.yes

@@ -1,4 +1,4 @@
-!!!5
+doctype html
 //- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
 - var usecdn = false
 - var useog = false
@@ -9,13 +9,14 @@ html
   head
     meta(charset="utf-8")
     // libraries
-    //include library.jade
+    include library.jade
     // custom files
     script(type="text/javascript",src='//cdn.firebase.com/v0/firebase.js')
     script(type="text/javascript",src="//cdn.firebase.com/v0/firebase-simple-login.js")
     script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js")
 
     script(type="text/javascript",src="index.js")
+    script(type="text/javascript",src="app/controllers/controller.js")
     //-meta(http-equiv="X-UA-Compatible",content="IE=edge")
     //-meta(name="description",content="")
     //-meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -24,19 +25,21 @@ html
     //-link(rel="stylesheet",type="text/css",href="css/index.css")
     //-link(rel="stylesheet",type="text/css",href="css/infopanel.css")
     //-link(rel="stylesheet",type="text/css",href="css/motion-propose.css")
-    link(rel="stylesheet",href="css/semantic.min.css")
+    //-link(rel="stylesheet",href="css/semantic.min.css")
     link(rel="stylesheet",href="css/main.css")
-    script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js")
-    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
-    script(src="js/vendor/semantic.min.js")
+    //-script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js")
+    //-script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    //-script(src="js/vendor/semantic.min.js")
     //-script(src="js/vendor/tablesort.js")
     block head
     title
       block title
       | | 動民主
 
-  body(ng-app="main",ng-controller="ctrl.main")
-    #navbar(role="navigation")
+  //-body(ng-app="main",ng-controller="ctrl.main")
+  body(ng-app="donApp")
+    #navbar
+      //-.ui.secondary.pointing.menu(role="navigation")
       .ui.secondary.pointing.menu
         a(href="index.html").item.home 動民主
         a(href="issues.html").item.issue 議題
@@ -47,13 +50,13 @@ html
         //-a(href="users.html").item.users 公民
         //-a(href="groups.html").item.groups 社團
         //-a(href="groups.html").item.teams 小組
-        .item.right(ng-controller="ctrl.user")
-          li: a(href="#",ng-show="!user",ng-click="login()") 登入
-          li: a(href="#",ng-show="user") {{user.username}}
-          li: a(href="#",ng-show="user",ng-click="logout()") 登出
+        //-.menu.right(ng-controller="ctrl.user")
+          a(href="#",ng-show="!user",ng-click="login()").item 登入
+          a(href="#",ng-show="user").item {{user.username}}
+          a(href="#",ng-show="user",ng-click="logout()").item 登出
         .item.right
           .ui.icon.input
-            input(type="text",placeholder="搜尋...")
+            input(type="text",placeholder="搜尋...",ng-model="keyword")
             i.search.link.icon         
 
     block body

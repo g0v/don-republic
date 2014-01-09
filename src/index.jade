@@ -7,157 +7,92 @@ block body
 
   #index
 
-    #sidebar.ui.vertical.menu
-      a(href="").item
+    #sidebar.ui.vertical.menu(ng-init="issues=['兩岸服務貿易協議','核能發電','土地徵收','都市更新','關廠工人'];proposals=['政府IT委外採用open source模式建議案','都市更新條例修正案','土地徵收條例修正案','綠色能源政策規劃案'];projects=['反黑箱服貿行動串連','動民主系統開發','反核四五六行動串連'];tags=['open data','醫療','兒童','原住民','台中市','民主'];circles=['宅圈','社運圈','醫療圈','同學','家人'];groups=['零時政府','綠黨','醫勞盟','民主陣線']")
+      //-a.item(href="",ng-controller="ctrl.user")
+      a.item(href="")
         .avatar
           img(src="img/etblue.jpg").rounded.corner
-        .id ETBlue
-      a(href="index.html").item.all
+        .id {{user.username}}
+      a.item.all(href="index.html")
         i.icon.home
         | 所有動態
-      a(href="timeline-issues.html").item.issues
+      a.item.issues(href="timeline-issues.html")
         i.icon.folder.open.outline
         | 議題
       .menu.item.issues
-        a(href="timeline-issues.html").item
-          | 兩岸服務貿易協議
+        a.item(href="timeline-issues.html",ng-repeat="issue in issues")
+          | {{ issue }}
           .ui.label 10
-        a(href="timeline-issues.html").item
-          | 核能發電
-          .ui.label 10
-        a(href="timeline-issues.html").item
-          | 土地徵收
-          .ui.label 10
-        a(href="timeline-issues.html").item
-          | 都市更新
-          .ui.label 10
-        a(href="timeline-issues.html").item
-          | 關廠工人
-          .ui.label 10
-      a(href="timeline-proposals.html").item.proposals
+      a.item.proposals(href="timeline-proposals.html")
           i.icon.folder.open.outline
           | 提案
       .menu.item.proposals
-        a(href="timeline-proposals.html").item
-          | 政府IT委外採用open source模式建議案
+        a.item(href="timeline-proposals.html",ng-repeat="proposal in proposals")
+          | {{ proposal }}
           .ui.label 10
-        a(href="timeline-proposals.html").item
-          | 都市更新條例修正案
-          .ui.label 10
-        a(href="timeline-proposals.html").item
-          | 土地徵收條例修正案
-          .ui.label 10
-        a(href="timeline-proposals.html").item
-          | 綠色能源政策規劃案
-          .ui.label 10
-      a(href="timeline-projects.html").item.projects
+      a.item.projects(href="timeline-projects.html")
         i.icon.folder.open.outline
         | 專案
       .menu.item.projects
-        a(href="timeline-issues.html").item
-          | 反黑箱服貿行動串連
+        a.item(href="timeline-issues.html",ng-repeat="project in projects")
+          | {{ project }}
           .ui.label 10
-        a(href="timeline-issues.html").item
-          | 動民主系統開發
-          .ui.label 10
-        a(href="timeline-issues.html").item
-          | 反核四五六行動串連
-          .ui.label 10
-      a(href="timeline-tags.html").item.tags
+      a.item.tags(href="timeline-tags.html")
         i.icon.tags
         | 標籤
       .menu.item.tags
-        a(href="timeline-tags.html").item
-          | open data
+        a.item(href="timeline-tags.html",ng-repeat="tag in tags")
+          | {{ tag }}
           .ui.label 10
-        a(href="timeline-tags.html").item
-          | 醫療
-          .ui.label 10
-        a(href="timeline-tags.html").item
-          | 兒童
-          .ui.label 10
-        a(href="timeline-tags.html").item
-          | 原住民
-          .ui.label 10
-        a(href="timeline-tags.html").item
-          | 台中市
-          .ui.label 10
-        a(href="timeline-tags.html").item
-          | 民主
-          .ui.label 10
-      a(href="").item.users
+      a.item.circles(href="")
         i.icon.user
-        | 公民
-      .menu.item.users
-        a(href="timeline-users.html").item
-          | 宅圈
+        | 追蹤清單
+      .menu.item.circles
+        a.item(href="timeline-circles.html",ng-repeat="circle in circles")
+          | {{ circle }}
           .ui.label 10
-        a(href="timeline-users.html").item
-          | 社運圈
-          .ui.label 10
-        a(href="timeline-users.html").item
-          | 醫療圈
-          .ui.label 10
-        a(href="timeline-users.html").item
-          | 同學
-          .ui.label 10
-        a(href="timeline-users.html").item
-          | 家人
-          .ui.label 10
-      a(href="").item.groups
+      a.item.groups(href="")
         i.icon.users
         | 團體
       .menu.item.groups
-        a(href="timeline-groups.html").item
-          | 宅圈
+        a.item(href="timeline-groups.html",ng-repeat="group in groups")
+          | {{ group }}
           .ui.label 10
-        a(href="timeline-groups.html").item
-          | 社運圈
-          .ui.label 10
-        a(href="timeline-groups.html").item
-          | 醫療圈
-          .ui.label 10
-        a(href="timeline-groups.html").item
-          | 同學
-          .ui.label 10
-        a(href="timeline-groups.html").item
-          | 家人
-          .ui.label 10
-      a(href="").item.activities
+      a.item.activities(href="")
         | 我的活動紀錄
       .menu.item.activities.hidden
-        a(href="").item.subscribed
+        a.item.subscribed(href="")
           i.icon.rss
           | 訂閱
-        a(href="").item.bookmarked
+        a.item.bookmarked(href="")
           i.icon.star
           | 收藏
-        a(href="").item.shared
+        a.item.shared(href="")
           i.icon.forward.mail
           | 分享
-        a(href="").item.shared
+        a.item.shared(href="")
           i.icon.checked.checkmark
           | 表態
-        a(href="").item.edited
+        a.item.edited(href="")
           i.icon.pencil
           | 編輯
-      a(href="").item.achievements
+      a.item.achievements(href="")
         | 我的成就
       .menu.item.achievements.hidden
-        a(href="").item.composing
+        a.item.composing(href="")
           i.icon.certificate
           | 彙編懶人包
-        a(href="").item.analyzing
+        a.item.analyzing(href="")
           i.icon.certificate
           | 釐清議題
-        a(href="").item.planning
+        a.item.planning(href="")
           i.icon.certificate
           | 規劃提案
-        a(href="").item.executing
+        a.item.executing(href="")
           i.icon.certificate
           | 執行專案
 
-    #content
+    #content(ng-controller="timeline")
       .ui.secondary.pointing.menu
         a.item.news.active 所有動態
         a.item.settings 設定
@@ -165,6 +100,13 @@ block body
         .right.menu
           include -sort-menu
       .in.timeline
+        | id: 
+        input(type="text",ng-model="newPlan.id")
+        br
+        | name: 
+        input(type="text",ng-model="newPlan.name")
+        br
+        button(ng-click="addPlan()") 新增方案
         block timeline
           include -proposal-in-timeline
 
