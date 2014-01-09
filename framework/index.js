@@ -434,6 +434,13 @@ ctrl.base = function($scope, DS, ctrlName){
       }
       return DS[ctrlName].ref.$save(p.id);
     },
+    isPicked: function(p, k){
+      return $scope.picked(p, true).map(function(it){
+        return it.id;
+      }).filter(function(it){
+        return it === k;
+      }).length > 0;
+    },
     choiceState: function(p){
       var d, ref$, v, max, k;
       d = {};
@@ -458,7 +465,9 @@ ctrl.base = function($scope, DS, ctrlName){
         return results$;
       }()).map(function(it){
         return it.map(function(it){
-          return d[it].c += 1;
+          if (d[it]) {
+            return d[it].c += 1;
+          }
         });
       });
       max = d3.max((function(){

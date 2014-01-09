@@ -181,11 +181,12 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
       if p.config.method == \1 and obj.length > 0 => obj.pop!
       obj.push k
     DS[ctrl-name]ref.$save p.id
+  is-picked: (p, k) -> $scope.picked(p,true)map(->it.id)filter(->it==k)length>0
   choice-state: (p) ->
     d = {}
     if not p => return {max: 0, d: {}}
     p.{}link.[]['choice']map -> d[it.id] = {r:it, c: 0}
-    [v for ,v of p.stand]map -> it.map -> d[it]c += 1
+    [v for ,v of p.stand]map -> it.map -> if d[it] => d[it]c += 1
     max = d3.max [k for k of d]map -> d[it]c
     {max, d}
 
