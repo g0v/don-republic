@@ -4,7 +4,7 @@ ctrl.simpletab = ($scope) ->
   $scope.tab = 2
   $scope.active = (a,b) -> if a==b => \active else ""
 
-ctrl.simplebase = ($scope, DataService) ->
+ctrl.simplebase = ($scope, $location, DataService) ->
   angular.element \body .scope!tab = 2
   angular.element \#current-proposal .scope!cur = ([[k,v] for k,v of DataService.proposal.ref]0 or [])1 or {}
   $scope.proposal = do
@@ -19,9 +19,11 @@ ctrl.simplebase = ($scope, DataService) ->
       ..prop-cur = p
       ..id = p.id
       ..tab = 3
+    $location.search proposal: p.id
   s = $scope.proposal.s!
   $scope.$watch 'proposal.ref', ->
     $scope.proposal.ref = DataService.proposal.ref
+    if $scope.proposal.ref[$location.search![\proposal]] => $scope.update-prop-cur that
     s = $scope.proposal.s!
       ..prop-cur = $scope.proposal.ref[s.prop-cur.id] if s.prop-cur
       ..cs = s.choice-state s.prop-cur

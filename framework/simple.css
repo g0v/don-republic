@@ -34,6 +34,9 @@ h4.pull-right.switch {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none; }
+  .choice .glyphicon-remove {
+    color: #ff0022;
+    margin: 0 5px; }
 
 .choice-stat {
   display: block;
@@ -90,3 +93,20 @@ h4.pull-right.switch {
       margin: 5px 0; }
     #proposal-list .proposal .ib .detail {
       margin: 3px 0; }
+
+.panel-title .glyphicon {
+  margin-right: 5px; }
+
+.notify {
+  margin-left: 10px;
+  display: inline-block; }
+
+.choice-panel .glyphicon-ok {
+  color: #009922;
+  margin-left: 5px; }
+.choice-panel .col-sm-4 {
+  text-align: center;
+  border-right: 1px dashed #cccccc;
+  min-height: 220px; }
+.choice-panel .col-sm-4:last-of-type {
+  border-right: none; }

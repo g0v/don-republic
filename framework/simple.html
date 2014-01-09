@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
     <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <!-- custom files-->
-    <link rel="stylesheet" type="text/css" href="theme/bootstrap.cosmo.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/theme/bootstrap.cosmo.min.css">
     <link rel="stylesheet" type="text/css" href="datetimepicker.css">
     <link rel="stylesheet" type="text/css" href="simple.css">
     <script type="text/javascript" src="//cdn.firebase.com/v0/firebase.js"></script>
@@ -329,34 +329,74 @@
               <div class="col-sm-4"><small style="margin-top:38px" class="pull-right">表决時間: <span ng-show="propCur.start">{{propCur.start|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.start">未定</span><span ng-show="propCur.start"> ~ <span ng-show="propCur.end">{{propCur.end|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.end">未定</span></span></small></div>
             </div>
             <div class="well">{{propCur.desc}}</div>
-            <div class="panel panel-default">
-              <div class="panel-heading">表決</div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <h4>你的選擇</h4>
-                    <div>
-                      <div ng-repeat="p in picked(propCur, true)" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}</div>
+            <div id="prop-cur-plans" class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-state"><i class="glyphicon glyphicon-hand-right"></i>方案與決策</a></h4>
+                </div>
+                <div id="prop-cur-plans-state" class="panel-collapse collapse in">
+                  <div class="panel-body choice-panel">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h4>所有方案</h4>
+                        <div>
+                          <div ng-repeat="p in propCur.link['choice']|value" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}<i ng-show="isPicked(propCur,p.id)" class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                      </div>
+                      <div style="text-align:center" class="col-sm-4">
+                        <h4>你的選擇</h4>{{picks}}
+                        <div ng-show="user.id">
+                          <div ng-repeat="p in picked(propCur,true)" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}</div>
+                        </div>
+                        <div ng-show="!user.id">
+                          <div ng-controller="ctrl.user" ng-click="login()" class="btn btn-primary">想要參與決策嗎？立刻登入</div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <h4>表決狀態
+                          <svg width="100%" height="160px" viewBox="0 0 200 160" preserveAspectRatio="xMidYMid" class="choice-stat">
+                            <g></g>
+                            <g>
+                              <g ng-repeat="(k,v) in cs.d">
+                                <rect x="0" ng-attr-y="{{$index * 20}}" ng-attr-width="{{v.c * 10}}" height="15" ng-attr-fill="{{color(v.r.id)}}"></rect>
+                                <text ng-attr-x="{{v.c * 10 + 5}}" ng-attr-y="{{$index * 20 + 11}}">{{v.r.v.name}} ( {{ v.c}} )</text>
+                              </g>
+                            </g>
+                          </svg>
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <h4>所有選項</h4>
-                    <div>
-                      <div ng-repeat="p in propCur.link['choice']|value" ng-click="pick(propCur, p.id)" class="choice">{{p.v.name}}</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new"><i class="glyphicon glyphicon-bullhorn"></i>我要提出新方案</a><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new" class="pull-right active">進階選項...</a></h4>
+                </div>
+                <div id="prop-cur-plans-new" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div ng-controller="ctrl.plan" class="row">
+                      <div class="col-sm-8">
+                        <form>
+                          <div class="form-group">
+                            <label>方案名稱</label>
+                            <input type="text" placeholder="方案名稱，例如：建議興建丹大野生動物保護區渡假村" ng-model="cur.name" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label>方案描述</label>
+                            <textarea placeholder="方案內容簡述，例如：丹大野生動物區為台灣珍貴之野生動物產地..." style="min-height: 100px" ng-model="cur.desc" class="form-control"></textarea>
+                          </div>
+                          <div ng-click="added=createWith('choice','proposal',propCur.id,propCur)" class="btn btn-success">新增方案</div>
+                          <div ng-show="added" ng-animate="'animate'" class="notify"><i class="glyphicon glyphicon-ok"></i> {{added.name}} 新增成功</div>
+                        </form>
+                      </div>
+                      <div style="height:260px;overflow:scroll" class="col-sm-4">
+                        <h4>你建立的方案</h4>
+                        <div ng-controller="ctrl.plan">
+                          <div ng-repeat="p in propCur.link['choice']|value" ng-click="pick(propCur, p.id)" ng-show="p.v.creator.id==user.id" class="choice">{{p.v.name}}<i ng-click="delete(p.id)" class="glyphicon glyphicon-remove"></i></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <h4>表決狀態
-                      <svg width="100%" height="300px" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid" class="choice-stat">
-                        <g></g>
-                        <g>
-                          <g ng-repeat="(k,v) in cs.d">
-                            <rect x="0" ng-attr-y="{{$index * 20}}" ng-attr-width="{{v.c * 10}}" height="15" ng-attr-fill="{{color(v.r.id)}}"></rect>
-                            <text ng-attr-x="{{v.c * 10 + 5}}" ng-attr-y="{{$index * 20 + 11}}">{{v.r.v.name}} ( {{ v.c}} )</text>
-                          </g>
-                        </g>
-                      </svg>
-                    </h4>
                   </div>
                 </div>
               </div>

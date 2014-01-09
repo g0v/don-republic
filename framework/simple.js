@@ -10,7 +10,7 @@ ctrl.simpletab = function($scope){
     }
   };
 };
-ctrl.simplebase = function($scope, DataService){
+ctrl.simplebase = function($scope, $location, DataService){
   var k, v, s;
   angular.element('body').scope().tab = 2;
   angular.element('#current-proposal').scope().cur = ((function(){
@@ -37,12 +37,17 @@ ctrl.simplebase = function($scope, DataService){
     y$.propCur = p;
     y$.id = p.id;
     y$.tab = 3;
-    return y$;
+    return $location.search({
+      proposal: p.id
+    });
   };
   s = $scope.proposal.s();
   return $scope.$watch('proposal.ref', function(){
-    var x$, s;
+    var that, x$, s;
     $scope.proposal.ref = DataService.proposal.ref;
+    if (that = $scope.proposal.ref[$location.search()['proposal']]) {
+      $scope.updatePropCur(that);
+    }
     x$ = s = $scope.proposal.s();
     if (s.propCur) {
       x$.propCur = $scope.proposal.ref[s.propCur.id];
