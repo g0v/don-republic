@@ -208,6 +208,14 @@ ctrl.proposal = ($scope, DataService) ->
           ~~($scope.cur.duration.min or 0) * 60
       $scope.cur.end = new Date(new Date($scope.cur.start)getTime! + new Date(v*1000)getTime!)getTime!
     $scope._create!
+  $scope.get-progress = (p) ->
+    if not p => return 0
+    now = new Date!getTime!
+    if not p.start or now < p.start - (3600000 * 2) => 0
+    else if now < p.start  => 1
+    else if now < p.end - (3600000 * 2) => 2
+    else if now < p.end => 3
+    else => 4
 
 ctrl.plan = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \plan

@@ -497,7 +497,7 @@ ctrl.group = function($scope, DataService){
 ctrl.proposal = function($scope, DataService){
   import$($scope, ctrl.base($scope, DataService, 'proposal'));
   $scope._create = $scope.create;
-  return $scope.create = function(){
+  $scope.create = function(){
     var ref$, v;
     if ($scope.cur.start) {
       $scope.cur.start = new Date($scope.cur.start).getTime();
@@ -507,6 +507,24 @@ ctrl.proposal = function($scope, DataService){
       $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime()).getTime();
     }
     return $scope._create();
+  };
+  return $scope.getProgress = function(p){
+    var now;
+    if (!p) {
+      return 0;
+    }
+    now = new Date().getTime();
+    if (!p.start || now < p.start - 3600000 * 2) {
+      return 0;
+    } else if (now < p.start) {
+      return 1;
+    } else if (now < p.end - 3600000 * 2) {
+      return 2;
+    } else if (now < p.end) {
+      return 3;
+    } else {
+      return 4;
+    }
   };
 };
 ctrl.plan = function($scope, DataService){

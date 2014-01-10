@@ -14,7 +14,7 @@ div(ng-show="tab==3")
             |  ~ 
             span(ng-show="propCur.end") {{propCur.end|date:'yyyy/MM/dd HH:mm'}}
             span(ng-show="!propCur.end") 未定
-            
+
     .well {{propCur.desc}}
     .panel-group#prop-cur-plans
       .panel.panel-default
@@ -25,17 +25,35 @@ div(ng-show="tab==3")
               | 方案與決策
         #prop-cur-plans-state.panel-collapse.collapse.in: .panel-body.choice-panel
           .row
+            .col-sm-12.vote-timer
+              h4 {{['表決尚未開始','表決即將開始','表決進行中','表決即將結束','表決已經結束'][propCur.progress || 0]}}
+              .desc(ng-show="propCur.start") 還有 {{propCur.remains}} 
+              .dur
+                span(ng-show="propCur.start") {{propCur.start|date:'yyyy/MM/dd HH:mm'}} 起
+                span(ng-show="!propCur.start") 表決時間未定
+                span(ng-show="propCur.start")
+                  span(ng-show="propCur.end") 
+                    | 至
+                    | {{propCur.end|date:'yyyy/MM/dd HH:mm'}} 止
+                  span(ng-show="!propCur.end") 截止時間未定
+          .row
             .col-sm-4
               h4 所有方案
               div
                 .choice(ng-repeat="p in propCur.link['choice']|value",ng-click="pick(propCur, p.id)")
                   | {{p.v.name}}
                   i.glyphicon.glyphicon-ok(ng-show="isPicked(propCur,p.id)")
-            .col-sm-4(style="text-align:center")
+            .col-sm-4
                h4 你的選擇
+               h5(ng-show="propCur.config.method==3")
+                 | 你選擇的順序將決定各個方案的名次
                | {{picks}}
                div(ng-show="user.id")
-                 .choice(ng-repeat="p in picked(propCur,true)",ng-click="pick(propCur, p.id)") {{p.v.name}}
+                 .choice(ng-repeat="p in picked(propCur,true)",ng-click="pick(propCur, p.id)")
+                   | {{p.v.name}}
+                   .rank(ng-show="propCur.config.method==3") {{$index + 1}}
+               hr
+               .btn.btn-success(style="margin-top:10px") 深入了解各個方案的內涵
                div(ng-show="!user.id")
                  .btn.btn-primary(ng-controller="ctrl.user",ng-click="login()") 想要參與決策嗎？立刻登入
             .col-sm-4
@@ -67,7 +85,7 @@ div(ng-show="tab==3")
                 .notify(ng-show="added",ng-animate="'animate'")
                   i.glyphicon.glyphicon-ok
                   |  {{added.name}} 新增成功
-            .col-sm-4(style="height:260px;overflow:scroll")
+            .col-sm-4(style="height:260px;overflow-y:scroll")
               h4 你建立的方案
               div(ng-controller="ctrl.plan")
                 .choice(ng-repeat="p in propCur.link['choice']|value",ng-click="pick(propCur, p.id)",ng-show="p.v.creator.id==user.id")

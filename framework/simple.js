@@ -10,8 +10,8 @@ ctrl.simpletab = function($scope){
     }
   };
 };
-ctrl.simplebase = function($scope, $location, DataService){
-  var k, v, s;
+ctrl.simplebase = function($scope, $location, $interval, DataService){
+  var k, v, s, updateProgress;
   angular.element('body').scope().tab = 2;
   angular.element('#current-proposal').scope().cur = ((function(){
     var ref$, results$ = [];
@@ -42,7 +42,7 @@ ctrl.simplebase = function($scope, $location, DataService){
     });
   };
   s = $scope.proposal.s();
-  return $scope.$watch('proposal.ref', function(){
+  $scope.$watch('proposal.ref', function(){
     var that, x$, s;
     $scope.proposal.ref = DataService.proposal.ref;
     if (that = $scope.proposal.ref[$location.search()['proposal']]) {
@@ -55,4 +55,14 @@ ctrl.simplebase = function($scope, $location, DataService){
     x$.cs = s.choiceState(s.propCur);
     return x$;
   }, true);
+  updateProgress = function(){
+    var remains;
+    if ($scope.propCur) {
+      $scope.propCur.progress = $scope.proposal.s().getProgress($scope.propCur);
+      remains = parseInt(($scope.propCur.end - new Date().getTime()) / 1000);
+      return $scope.propCur.remains = (remains > 86400 ? parseInt(remains / 86400) + " 天 " : "") + (remains > 3600 ? parseInt((remains % 86400) / 3600) + " 時 " : "") + (remains > 60 ? parseInt((remains % 3600) / 60) + " 分 " : "") + (parseInt(remains % 60) + " 秒");
+    }
+  };
+  $scope.$watch('propCur', updateProgress);
+  return $interval(updateProgress, 1000);
 };
