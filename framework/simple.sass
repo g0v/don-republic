@@ -26,6 +26,10 @@ body
 h4.pull-right.switch
   margin-right: 20px
 
+.choice, .choices-detail
+  .glyphicon-remove
+    color: #f02
+    margin: 0 5px
 .choice
   position: relative
   display: inline-block
@@ -37,9 +41,6 @@ h4.pull-right.switch
   cursor: pointer
   user-select: none
   -webkit-user-select: none
-  .glyphicon-remove
-    color: #f02
-    margin: 0 5px
   .rank
     position: absolute
     top: -5px
@@ -55,6 +56,12 @@ h4.pull-right.switch
     line-height: 14px
     border-radius: 50%
 
+.choices-detail
+  .creator
+    margin-top: 20px
+    border-top: 1px dashed #999
+    padding-top: 10px
+    color: #999
 
 .choice-stat
   display: block
@@ -146,3 +153,7 @@ h4.pull-right.switch
     margin: 10px 0
   .dur
     font-size: 12px
+
+#foot
+  margin: 30px
+  padding: 30px

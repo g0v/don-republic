@@ -385,7 +385,7 @@
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new"><i class="glyphicon glyphicon-bullhorn"></i>我要提出新方案</a><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new" class="pull-right active">進階選項...</a></h4>
+                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new"><i class="glyphicon glyphicon-plus-sign"></i>我要提出新方案</a><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new" class="pull-right active">進階選項...</a></h4>
                 </div>
                 <div id="prop-cur-plans-new" class="panel-collapse collapse">
                   <div class="panel-body">
@@ -414,10 +414,48 @@
                   </div>
                 </div>
               </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-detail"><i class="glyphicon glyphicon-info-sign"></i>各個方案的細節</a></h4>
+                </div>
+                <div id="prop-cur-plans-detail" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div ng-controller="ctrl.plan" class="choices-detail">
+                          <div ng-repeat="p in propCur.link['choice']|value" ng-click="pick(propCur, p.id)" class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4>{{p.v.name}}<i ng-show="p.v.creator.id==user.id" ng-click="delete(p.id)" class="glyphicon glyphicon-remove pull-right"></i></h4>
+                            </div>
+                            <div class="panel-body">
+                              <div ng-show="p.v.desc" style="white-space: pre">{{p.v.desc}}</div>
+                              <div ng-show="!p.v.desc">此方案沒有準備細節。</div>
+                              <div class="creator">由 {{p.v.creator.username}} 在 {{p.v.create_time|date:'yyyy/MM/dd'}} 建立。</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-comment"><i class="glyphicon glyphicon-bullhorn"></i>各方的問題與評論</a></h4>
+                </div>
+                <div id="prop-cur-plans-comment" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12">to be done</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div id="foot"></div>
     </div>
   </body>
 </html>
