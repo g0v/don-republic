@@ -52,8 +52,8 @@ div(ng-show="tab==3")
                  .choice(ng-repeat="p in picked(propCur,true)",ng-click="pick(propCur, p.id)")
                    | {{p.v.name}}
                    .rank(ng-show="propCur.config.method==3") {{$index + 1}}
-               hr
-               .btn.btn-success(style="margin-top:10px") 深入了解各個方案的內涵
+               //-hr
+               //-.btn.btn-success(style="margin-top:10px") 深入了解各個方案的內涵
                div(ng-show="!user.id")
                  .btn.btn-primary(ng-controller="ctrl.user",ng-click="login()") 想要參與決策嗎？立刻登入
             .col-sm-4
