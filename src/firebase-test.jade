@@ -5,9 +5,16 @@ block title
 
 block body
 
+  //-#test
+    | id: 
+    input#inputId(type="text")
+    br
+    | name: 
+    input#inputName(type="text")
+
   #index
 
-    #sidebar.ui.vertical.menu(ng-controller="sidebar",ng-init="issues=['兩岸服務貿易協議','核能發電','土地徵收','都市更新','關廠工人'];proposals=['政府IT委外採用open source模式建議案','都市更新條例修正案','土地徵收條例修正案','綠色能源政策規劃案'];projects=['反黑箱服貿行動串連','動民主系統開發','反核四五六行動串連'];tags=['open data','醫療','兒童','原住民','台中市','民主'];circles=['宅圈','社運圈','醫療圈','同學','家人'];groups=['零時政府','綠黨','醫勞盟','民主陣線']")
+    #sidebar.ui.vertical.menu(ng-init="issues=['兩岸服務貿易協議','核能發電','土地徵收','都市更新','關廠工人'];proposals=['政府IT委外採用open source模式建議案','都市更新條例修正案','土地徵收條例修正案','綠色能源政策規劃案'];projects=['反黑箱服貿行動串連','動民主系統開發','反核四五六行動串連'];tags=['open data','醫療','兒童','原住民','台中市','民主'];circles=['宅圈','社運圈','醫療圈','同學','家人'];groups=['零時政府','綠黨','醫勞盟','民主陣線']")
       //-a.item(href="",ng-controller="ctrl.user")
       a.item(href="")
         .avatar
@@ -20,8 +27,11 @@ block body
         i.icon.folder.open.outline
         | 議題
       .menu.item.issues
-        a.item(href="",ng-repeat="pin in pins.issues |  orderBy:'name'")
-          | {{ pin.name }}
+        //-a.item(href="",ng-repeat="pin in data")
+          | {{ pin }}
+          .ui.label 10
+        a.item(href="",ng-repeat="issue in issues")
+          | {{ issue }}
           .ui.label 10
       a.item.proposals(href="timeline-proposals.html")
           i.icon.folder.open.outline
@@ -114,9 +124,6 @@ block script
   script.
     $("#navbar .home").addClass("active");
     $("#sidebar .all").addClass("active");
-
-  script.
-    // firebase only
 
   style.
     body

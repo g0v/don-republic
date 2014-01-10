@@ -1,7 +1,42 @@
-var donApp=angular.module('donApp',[]);
+
+//var edemocracy=angular.module('edemocracy',[]);
+var edemocracy=angular.module('edemocracy',['firebase']);
+
+var data = new Firebase("https://edemocracy.firebaseio.com");
+data.users = new Firebase("https://edemocracy.firebaseio.com/users");
+data.users.etblue = new Firebase("https://edemocracy.firebaseio.com/users/etblue");
+data.users.etblue.pins = new Firebase("https://edemocracy.firebaseio.com/users/etblue/pins");
+data.users.etblue.pins.issues = new Firebase("https://edemocracy.firebaseio.com/users/etblue/pins/issues");
+data.users.etblue.stream = new Firebase("https://edemocracy.firebaseio.com/users/etblue/stream");
+$(function(){
+  $('#inputName').on('keypress', function (e) {
+    if (e.keyCode == 13) {
+      var id = $('#inputId').val();
+      var name = $('#inputName').val();
+      $('#inputId').val('');
+      $('#inputName').val('');
+      data.users.etblue.pins.issues.push({name:name});
+    }
+  });
+});
+data.users.etblue.pins.on('child_added',function(snapshot){
+  var pin=snapshot.val();
+  showNewPin(pin.id,pin.name);
+});
+showNewPin=function(id,name){
+};
+
 var controllers={};
 
-donApp.factory('data',function(){
+controllers.sidebar=function($scope,$firebase){
+  var data = new Firebase('https://edemocracy.firebaseio.com');
+  data.users = new Firebase("https://edemocracy.firebaseio.com/users");
+  data.users.etblue = new Firebase("https://edemocracy.firebaseio.com/users/etblue");
+  data.users.etblue.pins = new Firebase("https://edemocracy.firebaseio.com/users/etblue/pins");
+  $scope.pins = $firebase(data.users.etblue.pins);
+}
+
+edemocracy.factory('dataPlan',function(){
   var plans=[
     {
       user:{
@@ -48,14 +83,17 @@ donApp.factory('data',function(){
   }
   return factory;
 });
-controllers.timeline=function($scope,data){
-  $scope.plans=data.getPlans();
+
+controllers.timeline=function($scope,dataPlan){
+  $scope.plans=dataPlan.getPlans();
   $scope.addPlan=function(){
     $scope.plans.push(
       {
         id: $scope.newPlan.id,
         name: $scope.newPlan.name
-      })
-  }
-}
-donApp.controller('timeline',controllers.timeline);
+      });
+  };
+};
+edemocracy.controller('timeline',controllers.timeline);
+edemocracy.controller('sidebar',controllers.sidebar);
+
