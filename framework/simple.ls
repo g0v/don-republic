@@ -30,11 +30,12 @@ ctrl.simplebase = ($scope, $location, $interval, DataService) ->
   , true
   update-progress = -> if $scope.prop-cur =>
     $scope.prop-cur.progress = $scope.proposal.s!get-progress $scope.prop-cur
-    remains = parseInt(($scope.prop-cur.end - new Date!getTime!)/1000)
+    remains = parseInt((($scope.prop-cur.end or 0)- new Date!getTime!)/1000)
     $scope.prop-cur.remains =
       (if remains>86400 => "#{parseInt(remains/86400)} 天 " else "") +
       (if remains>3600 => "#{parseInt((remains % 86400)/3600)} 時 " else "") +
       (if remains>60 => "#{parseInt((remains % 3600)/60)} 分 " else "") +
       "#{parseInt(remains % 60)} 秒"
+    if remains <= 0 => $scope.prop-cur.remains = null
   $scope.$watch 'propCur', update-progress
   $interval update-progress, 1000

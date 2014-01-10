@@ -27,7 +27,7 @@ div(ng-show="tab==3")
           .row
             .col-sm-12.vote-timer
               h4 {{['表決尚未開始','表決即將開始','表決進行中','表決即將結束','表決已經結束'][propCur.progress || 0]}}
-              .desc(ng-show="propCur.start") 還有 {{propCur.remains}} 
+              .desc(ng-show="propCur.start && propCur.remains") 還有 {{propCur.remains}} 
               .dur
                 span(ng-show="propCur.start") {{propCur.start|date:'yyyy/MM/dd HH:mm'}} 起
                 span(ng-show="!propCur.start") 表決時間未定
@@ -35,7 +35,7 @@ div(ng-show="tab==3")
                   span(ng-show="propCur.end") 
                     | 至
                     | {{propCur.end|date:'yyyy/MM/dd HH:mm'}} 止
-                  span(ng-show="!propCur.end") 截止時間未定
+                  span(ng-show="!propCur.end") , 截止時間未定
           .row
             .col-sm-4
               h4 所有方案

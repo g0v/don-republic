@@ -339,10 +339,10 @@
                     <div class="row">
                       <div class="col-sm-12 vote-timer">
                         <h4>{{['表決尚未開始','表決即將開始','表決進行中','表決即將結束','表決已經結束'][propCur.progress || 0]}}</h4>
-                        <div ng-show="propCur.start" class="desc">還有 {{propCur.remains}} </div>
+                        <div ng-show="propCur.start &amp;&amp; propCur.remains" class="desc">還有 {{propCur.remains}} </div>
                         <div class="dur"><span ng-show="propCur.start">{{propCur.start|date:'yyyy/MM/dd HH:mm'}} 起</span><span ng-show="!propCur.start">表決時間未定</span><span ng-show="propCur.start"><span ng-show="propCur.end">
                               至
-                              {{propCur.end|date:'yyyy/MM/dd HH:mm'}} 止</span><span ng-show="!propCur.end">截止時間未定</span></span></div>
+                              {{propCur.end|date:'yyyy/MM/dd HH:mm'}} 止</span><span ng-show="!propCur.end">, 截止時間未定</span></span></div>
                       </div>
                     </div>
                     <div class="row">

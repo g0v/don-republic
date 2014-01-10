@@ -59,8 +59,11 @@ ctrl.simplebase = function($scope, $location, $interval, DataService){
     var remains;
     if ($scope.propCur) {
       $scope.propCur.progress = $scope.proposal.s().getProgress($scope.propCur);
-      remains = parseInt(($scope.propCur.end - new Date().getTime()) / 1000);
-      return $scope.propCur.remains = (remains > 86400 ? parseInt(remains / 86400) + " 天 " : "") + (remains > 3600 ? parseInt((remains % 86400) / 3600) + " 時 " : "") + (remains > 60 ? parseInt((remains % 3600) / 60) + " 分 " : "") + (parseInt(remains % 60) + " 秒");
+      remains = parseInt((($scope.propCur.end || 0) - new Date().getTime()) / 1000);
+      $scope.propCur.remains = (remains > 86400 ? parseInt(remains / 86400) + " 天 " : "") + (remains > 3600 ? parseInt((remains % 86400) / 3600) + " 時 " : "") + (remains > 60 ? parseInt((remains % 3600) / 60) + " 分 " : "") + (parseInt(remains % 60) + " 秒");
+      if (remains <= 0) {
+        return $scope.propCur.remains = null;
+      }
     }
   };
   $scope.$watch('propCur', updateProgress);
