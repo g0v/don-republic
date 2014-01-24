@@ -1,12 +1,9 @@
 all:
-	jade -O . src/index.jade
-	jade -O . src/motion-index.jade
-	jade -O . src/motion-analyze.jade
-	jade -O . src/motion-propose.jade
-	jade -O . src/motion-project.jade
-	jade -O . src/propose-index.jade
-	jade -O . src/project-index.jade
-	livescript -o js -cb src/index.ls
-	sass sass/index.sass css/index.css
-	sass sass/infopanel.sass css/infopanel.css
-	sass sass/motion-propose.sass css/motion-propose.css
+	-find views -type f -name '*.jade' | xargs -P 8 -n 1 -- jade --obj "{require: require}"  --out views
+	livescript -o framework -cb framework/*.ls
+	-mkdir css
+	sass sass/level-one.sass css/level-one.css
+	sass sass/level-two-gray.sass css/level-two-gray.css
+	sass sass/level-two.sass css/level-two.css
+	sass sass/main.sass css/main.css
+	sass sass/page.sass css/page.css
