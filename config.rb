@@ -1,11 +1,14 @@
+require './tilt_jade.rb'
+
+puts Tilt.mappings.inspect
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "css"
+css_dir = "public/css"
 sass_dir = "sass"
-images_dir = "img"
-javascripts_dir = "js"
+images_dir = "public/img"
+javascripts_dir = "public/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
@@ -21,7 +24,8 @@ javascripts_dir = "js"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
-preferred_syntax = :scss
+preferred_syntax = :sass
 
 line_comments = false # by Fire.app 
 sass_options = {:debug_info=>false} # by Fire.app 
+output_style = :expanded # by Compass.app 
