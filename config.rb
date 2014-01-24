@@ -1,11 +1,11 @@
 require './tilt_jade.rb'
 
-puts Tilt.mappings.inspect
+#puts Tilt.mappings.inspect
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "public/css"
+css_dir = "css"
 sass_dir = "sass"
 images_dir = "public/img"
 javascripts_dir = "public/js"
