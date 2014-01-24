@@ -29,9 +29,9 @@ Mac
 	* cd don-republic
 	* make all
 	* sudo npm i -g static-here
-	* static-her
+	* static-here
 * Open your browser
-    * connect to http://localhost:8888/
+    * connect to http://localhost:8888/public/
 Windows
 ------------
 * now using Fire.app build views/ to public/
