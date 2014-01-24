@@ -23,6 +23,7 @@ Mac
 	* static-her
 * Open your browser
     * connect to http://localhost:8888/
+
 mockup
 ============
 * 0.5 MVP version http://g0v.github.io/don-republic/framework/simple.html
