@@ -2718,3 +2718,142 @@
 2014-01-07 23:37:06 overwrite css/main.css 
 2014-01-07 23:37:54 overwrite css/main.css 
 2014-01-07 23:38:43 overwrite css/main.css 
+2014-01-11 04:05:20    create js/test.json.js
+2014-01-11 04:18:47     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 16
+2014-01-11 04:18:47 overwrite js/test.json.js
+2014-01-11 04:19:30     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 23
+2014-01-11 04:19:30 overwrite js/test.json.js
+2014-01-11 04:20:32     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 23
+2014-01-11 04:20:32 overwrite js/test.json.js
+2014-01-11 04:22:44     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 23
+2014-01-11 04:22:44 overwrite js/test.json.js
+2014-01-11 04:22:57     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 30
+2014-01-11 04:22:57 overwrite js/test.json.js
+2014-01-11 04:26:01     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 30
+2014-01-11 04:26:01 overwrite js/test.json.js
+2014-01-11 04:28:02     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 000 on line 30
+2014-01-11 04:28:02 overwrite js/test.json.js
+2014-01-11 14:29:02     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 28
+2014-01-11 14:29:02 overwrite js/test.json.js
+2014-01-11 14:29:13     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:29:13 overwrite js/test.json.js
+2014-01-11 14:29:40     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:29:40 overwrite js/test.json.js
+2014-01-11 14:29:52     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:29:52 overwrite js/test.json.js
+2014-01-11 14:30:39     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:30:39 overwrite js/test.json.js
+2014-01-11 14:31:05     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:31:05 overwrite js/test.json.js
+2014-01-11 14:31:19     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:31:19 overwrite js/test.json.js
+2014-01-11 14:31:22     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:31:22 overwrite js/test.json.js
+2014-01-11 14:32:24     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:32:24 overwrite js/test.json.js
+2014-01-11 14:32:31     error livescripts/test.json.ls: Error: Parse error on line 6: Unexpected 'NEWLINE'
+2014-01-11 14:32:31 overwrite js/test.json.js
+2014-01-11 14:33:04 overwrite js/test.json.js
+2014-01-11 14:54:18 overwrite js/test.json.js
+2014-01-11 15:00:41     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 74
+2014-01-11 15:00:41 overwrite js/test.json.js
+2014-01-11 15:01:07     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 77
+2014-01-11 15:01:07 overwrite js/test.json.js
+2014-01-11 15:01:34     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 77
+2014-01-11 15:01:34 overwrite js/test.json.js
+2014-01-11 15:02:41     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 87
+2014-01-11 15:02:41 overwrite js/test.json.js
+2014-01-11 15:02:56     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 93
+2014-01-11 15:02:56 overwrite js/test.json.js
+2014-01-11 15:03:04     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 94
+2014-01-11 15:03:04 overwrite js/test.json.js
+2014-01-11 15:03:48     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 94
+2014-01-11 15:03:48 overwrite js/test.json.js
+2014-01-11 15:04:42     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 130
+2014-01-11 15:04:42 overwrite js/test.json.js
+2014-01-11 15:07:09     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 126
+2014-01-11 15:07:09 overwrite js/test.json.js
+2014-01-11 15:09:32     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:09:32 overwrite js/test.json.js
+2014-01-11 15:10:16     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:10:16 overwrite js/test.json.js
+2014-01-11 15:12:08     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:12:08 overwrite js/test.json.js
+2014-01-11 15:14:20     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:14:20 overwrite js/test.json.js
+2014-01-11 15:14:25     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:14:25 overwrite js/test.json.js
+2014-01-11 15:14:37     error livescripts/test.json.ls: SyntaxError: unmatched `DEDENT` on line 102
+2014-01-11 15:14:37 overwrite js/test.json.js
+2014-01-11 15:15:13 overwrite js/test.json.js
+2014-01-11 15:15:35 overwrite js/test.json.js
+2014-01-11 15:15:37 overwrite js/test.json.js
+2014-01-11 15:16:49 overwrite js/test.json.js
+2014-01-11 19:45:57 overwrite js/test.json.js
+2014-01-11 20:01:51 overwrite js/test.json.js
+2014-01-11 20:02:47 overwrite js/test.json.js
+2014-01-11 20:03:51 overwrite js/test.json.js
+2014-01-11 20:04:17 overwrite js/test.json.js
+2014-01-11 20:04:36 overwrite js/test.json.js
+2014-01-11 20:07:01 overwrite js/test.json.js
+2014-01-11 20:07:46 overwrite js/test.json.js
+2014-01-11 20:08:12 overwrite js/test.json.js
+2014-01-11 20:08:17 overwrite js/test.json.js
+2014-01-11 20:11:54 overwrite js/test.json.js
+2014-01-11 20:25:47 overwrite js/test.json.js
+2014-01-11 20:27:31     error livescripts/test.json.ls: SyntaxError: unmatched dedent (2 for 4) on line 161
+2014-01-11 20:27:31 overwrite js/test.json.js
+2014-01-11 20:27:53     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 142
+2014-01-11 20:27:53 overwrite js/test.json.js
+2014-01-11 20:28:01     error livescripts/test.json.ls: SyntaxError: unmatched dedent (2 for 4) on line 161
+2014-01-11 20:28:01 overwrite js/test.json.js
+2014-01-11 20:28:10     error livescripts/test.json.ls: SyntaxError: unmatched dedent (2 for 4) on line 161
+2014-01-11 20:28:10 overwrite js/test.json.js
+2014-01-11 20:28:31 overwrite js/test.json.js
+2014-01-11 20:28:43     error livescripts/test.json.ls: SyntaxError: deprecated octal literal 001 on line 142
+2014-01-11 20:28:43 overwrite js/test.json.js
+2014-01-11 20:28:49 overwrite js/test.json.js
+2014-01-11 20:30:57 overwrite js/test.json.js
+2014-01-11 20:38:40 overwrite js/test.json.js
+2014-01-11 20:39:54 overwrite js/test.json.js
+2014-01-11 20:40:39 overwrite js/test.json.js
+2014-01-11 20:41:53     error livescripts/test.json.ls: Error: Parse error on line 163: Unexpected '}'
+2014-01-11 20:41:53 overwrite js/test.json.js
+2014-01-11 20:42:03     error livescripts/test.json.ls: Error: Parse error on line 163: Unexpected '}'
+2014-01-11 20:42:03 overwrite js/test.json.js
+2014-01-11 20:42:30     error livescripts/test.json.ls: Error: Parse error on line 163: Unexpected '}'
+2014-01-11 20:42:30 overwrite js/test.json.js
+2014-01-11 20:42:38 overwrite js/test.json.js
+2014-01-11 20:42:41 overwrite js/test.json.js
+2014-01-11 20:42:46 overwrite js/test.json.js
+2014-01-11 20:45:06 overwrite js/test.json.js
+2014-01-11 20:48:23 overwrite js/test.json.js
+2014-01-11 20:52:40 overwrite js/test.json.js
+2014-01-11 20:52:42 overwrite js/test.json.js
+2014-01-11 21:08:57     error livescripts/test.json.ls: Error: Parse error on line 243: Unexpected '}'
+2014-01-11 21:08:57 overwrite js/test.json.js
+2014-01-11 21:09:07 overwrite js/test.json.js
+2014-01-11 21:10:23 overwrite js/test.json.js
+2014-01-11 21:25:42 overwrite js/test.json.js
+2014-01-11 21:26:27 overwrite js/test.json.js
+2014-01-11 21:29:45 overwrite js/test.json.js
+2014-01-11 21:37:10 overwrite js/test.json.js
+2014-01-11 21:37:37 overwrite js/test.json.js
+2014-01-11 22:50:16 overwrite js/test.json.js
+2014-01-11 22:50:49 overwrite js/test.json.js
+2014-01-11 22:51:04 overwrite js/test.json.js
+2014-01-11 23:02:45 overwrite js/test.json.js
+2014-01-11 23:19:08     error livescripts/test.json.ls: Error: Parse error on line 216: Unexpected '}'
+2014-01-11 23:19:08 overwrite js/test.json.js
+2014-01-11 23:19:14     error livescripts/test.json.ls: Error: Parse error on line 216: Unexpected '}'
+2014-01-11 23:19:14 overwrite js/test.json.js
+2014-01-11 23:59:46     error livescripts/test.json.ls: Error: Parse error on line 239: Unexpected '}'
+2014-01-11 23:59:46 overwrite js/test.json.js
+2014-01-12 00:02:48 overwrite js/test.json.js
+2014-01-12 01:02:29 overwrite js/test.json.js
+2014-01-12 01:03:24 overwrite js/test.json.js
+2014-01-12 01:18:01 overwrite js/test.json.js
+2014-01-12 01:19:00 overwrite js/test.json.js
+2014-01-12 01:21:36 overwrite js/test.json.js
+2014-01-12 09:14:09 overwrite js/test.json.js
+2014-01-12 09:15:24 overwrite js/test.json.js
