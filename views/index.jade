@@ -1,7 +1,7 @@
 extends _template
 
 block title
-  | 首頁 
+  | 首頁
 
 block body
 
@@ -100,10 +100,10 @@ block body
         .right.menu
           include -sort-menu
       .in.timeline
-        | id: 
+        | id:
         input(type="text",ng-model="newPlan.id",id="inputId")
         br
-        | name: 
+        | name:
         input(type="text",ng-model="newPlan.name",id="inputName")
         br
         button(ng-click="addPlan()") 新增方案
