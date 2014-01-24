@@ -1,0 +1,251 @@
+@import compass/css3
+
+// customize ui steps for subheader
+.ui.steps
+  display: inline-block
+  .step
+    font-weight: bold
+    padding-top: 0.8em
+    padding-bottom: 0.8em
+    &.normal
+      &:after
+        border: none
+        background-color: #FFFFFF
+        top: 0.42em
+        width: 1.8em
+        height: 1.8em
+        -webkit-transform: rotate(-45deg)
+        -ms-transform: rotate(-45deg)
+        transform: rotate(-45deg)
+        -webkit-box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset
+        box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset
+        right: -0.9em
+      &:hover:after
+        background-color: #F7F7F7
+    &.active
+      color: inherit!important
+      &:after
+        border-width: 1.3em
+        right: -1.2em
+      &.vision
+        background-color: #fdf9bb
+        &:after
+          border-left-color: #fdf9bb
+      &.problem
+        background-color: #fee5e5
+        &:after
+          border-left-color: #fee5e5
+      &.reason
+        background-color: #efe9f3
+        &:after
+          border-left-color: #efe9f3
+      &.solution
+        background-color: #e7f3d7
+        &:after
+          border-left-color: #e7f3d7
+
+// the grand proposal planning ui
+#mini-header
+  .menu
+    +border-radius(0)
+.ui.menu
+  .ui.label
+    padding: 0.3em 0.25em
+    margin: -0.3em 0 -0.3em 0.8em
+    position: relative
+    top: -0.1em
+    vertical-align: baseline
+#proposal
+  #wrapper
+    position: relative
+    .line
+      height: 100%
+      border: 1px rgba(0,0,0,0.2) solid
+      border-top: none
+      border-bottom: none
+      float: left
+      position: absolute
+      z-index: 0
+      box-sizing: border-box
+    #toc
+      position: relative
+      width: 15rem
+      float: right
+      font-size: 0.9rem
+      .line
+        width: 1rem
+        &.two
+          margin-left: 2rem
+      .header
+        display: block
+        padding: 0.5em
+        margin: 0 -0.5em
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        &:hover
+          background-color: rgba(0,0,0,0.05)
+      .level.two
+        padding-left: 1.5rem
+      .level.three
+        padding-left: 2.5rem
+    #chapters
+      margin-right: 16rem
+      .chapter.in.list
+        position: relative
+      .id
+        z-index: 1
+      .meta
+        .right
+          margin-left: 1em
+      .line
+        width: 2rem
+        &.two
+          margin-left: 4rem
+      .chapter
+        +border-radius(0)
+        margin: 0 0 1rem 0
+        &.level.two
+          margin-left: 2rem
+        &.level.three
+          margin-left: 4rem
+        .id
+          padding: 0.5em 1em
+        .etherpad
+          margin: 0
+        .reference
+          margin-bottom: 0
+      .new
+        padding: 1em
+        font-size: 1.2rem
+        font-weight: normal
+        text-align: left
+        background: none
+        border: 2px #ccc dashed
+        display: block
+        i.icon
+          padding: 1em
+        &:hover
+          background-color: rgba(0,0,0,0.03)
+    #chapter
+      margin: -1rem 16rem -1rem -1rem
+      padding: 2rem 1rem 0 1rem
+      background-color: #fff
+    #resource
+      overflow: auto
+      position: absolute
+      right: 0.5rem
+      top: 1rem
+      width: 16rem
+      height: 100%
+      padding: 0 0.5rem 1rem 0.5rem
+      box-sizing: border-box
+      a.divider
+        display: block
+    #resource, #comparison
+      .a.sticker
+        margin: 0.25rem 0
+        +box-shadow(0 0 1px rgba(#000,0.3))
+        border: 1px #fff solid
+        &:hover
+          +box-shadow(0 0 1px rgba(#000,0.7))
+    #comparison
+      .column
+        vertical-align: middle
+      .row
+        margin: 0
+        padding: 0
+      .column.active
+        font-weight: bold
+        background-color: rgba(#fff,1)
+      .comparison
+        display: none
+        .status
+          padding: 0.83em
+          line-height: 1
+          &.no
+            background-color: rgba(#000,0)
+        .column.active
+          border: 1px rgba(#000,0.3) solid
+          border-width: 0 1px
+        &:last-child .column
+          padding-bottom: 0.5rem
+          +border-radius(0 0 0.3rem 0.3rem)
+          //-+box-shadow(0 0 1px rgba(#000,0.7))
+          border-width: 0 1px 1px 1px
+      .statistic
+        cursor: pointer
+      .head,
+      .statistic
+        height: 4rem
+        background-color: #fff
+        .plan
+          padding: 0.83em
+          line-height: 1
+        .ui.label
+          padding: 0.15em
+          margin: -0.15em 0 -0.15em 0.8em
+          position: relative
+          top: -0.1em
+          vertical-align: baseline
+      .head
+        .column
+          text-align: center
+        +border-radius(0.3rem 0.3rem 0 0)
+        +box-shadow(0 0 1px #000)
+      .statistic
+        +box-shadow(0 1px 1px #000)
+      .graph
+        display: block
+        float: left
+        width: 25%
+        position: relative
+        height: 4rem
+        .amount
+          text-align: left
+          position: absolute
+          bottom: 0
+          font-size: 0.9rem
+          +border-radius(0.2rem 0.2rem 0 0)
+          border: 1px #fff solid
+          border-width: 1px 1px 0 1px
+          &.total
+            left: 5%
+            width: 90%
+            &.a
+              height: 70%
+            &.b
+              height: 50%
+            &.c
+              height: 80%
+          &.mine
+            left: 75%
+            width: 20%
+            &.a
+              height: 60%
+            &.b
+              height: 80%
+            &.c
+              height: 30%
+        .total
+          color: #fff
+          background-color: rgba(#2da7e0,1)
+          //-background-color: rgba(#036eb8,1)
+          //-background-color: rgba(#a38b77,1)
+          //-background-color: rgba(#f39700,1)
+          //-background-color: rgba(#f8b62c,1)
+        .mine
+          //-color: #7f4e20
+          color: #000
+          //-background-color: rgba(#f8b62c,1)
+          background-color: rgba(#faed00,1)
+          background-color: rgba(#7fd6ff,1)
+        .title
+          margin: 0.5rem 0 0 0.5rem
+          .sample
+            font-weight: bold
+            padding: 0.2em 0.5em
+            margin-left: 0.3em
+      .comparing
+      .compared
+
