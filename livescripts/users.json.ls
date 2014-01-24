@@ -49,107 +49,42 @@ module.exports =
         * id: \3
           position: 3
     subscribtions:
-      issues:
-        * \1
-        * \2
-        * \3
-      proposals:
-        * \1
-        * \2
-        * \3
-      projects:
-        * \1
-        * \2
-        * \3
-      tags:
-        * \1
-        * \2
-        * \3
-      circles:
-        * \1
-        * \2
-        * \3
-      groups:
-        * \1
-        * \2
-        * \3
+      issues: <[  ]>
+      proposals: <[  ]>
+      projects: <[  ]>
+      tags: <[  ]>
+      circles: <[  ]>
+      groups: <[  ]>
     bookmarks:
-      issues:
-        * \1
-        * \2
-        * \3
-      proposals:
-        * \1
-        * \2
-        * \3
-      projects:
-        * \1
-        * \2
-        * \3
-      tags:
-        * \1
-        * \2
-        * \3
-      circles:
-        * \1
-        * \2
-        * \3
-      groups:
-        * \1
-        * \2
-        * \3
+      issues: <[  ]>
+      proposals: <[  ]>
+      projects: <[  ]>
+      tags: <[  ]>
+      circles: <[  ]>
+      groups: <[  ]>
     sharings:
-      issues:
-        * \1
-        * \2
-        * \3
-      proposals:
-        * \1
-        * \2
-        * \3
-      projects:
-        * \1
-        * \2
-        * \3
-      tags:
-        * \1
-        * \2
-        * \3
-      circles:
-        * \1
-        * \2
-        * \3
-      groups:
-        * \1
-        * \2
-        * \3
+      issues: <[  ]>
+      proposals: <[  ]>
+      projects: <[  ]>
+      tags: <[  ]>
+      circles: <[  ]>
+      groups: <[  ]>
     circles:
-      c1:
+      1:
         name: "宅圈"
-        users:
-          * \clkao
-          * \ipa
-          * \tkirby
-          * \yhsiang
-          * \jedi
-      c2:
+        users: <[ clkao ipa tkirby yhsiang jedi ]>
+      2:
         name: "魔法圈"
-        users:
-          * \au
-          * \soidid
-      c3:
+        users: <[ au soidid ]>
+      3:
         name: "社運圈"
-        users:
-          * \ttcat
-      c4:
+        users: <[ ttcat ]>
+      4:
         name: "醫療圈"
-        users:
-          * \pofeng
-      c5:
+        users: <[ pofeng ]>
+      5:
         name: "同學"
-        users:
-          * \lina
-      c6:
+        users: <[ lina ]>
+      6:
         name: "家人"
-        users:
-          * \tkalu
+        users: <[ tkalu ]>

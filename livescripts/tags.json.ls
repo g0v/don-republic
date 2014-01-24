@@ -1,41 +1,31 @@
 module.exports =
-  t1:
+  1:
     name: "open data"
-    parent:
-      *
-    children:
-      *
-  t2:
+    type: "issue"
+    parents: <[  ]>
+    children: <[  ]>
+  2:
     name: "醫療"
-    parent:
-      *
-    children:
-      *
-  t3:
+    type: "industry"
+    parents: <[  ]>
+    children: <[  ]>
+  3:
     name: "兒童"
-    parent:
-      *
-    children:
-      *
-  t4:
+    type: "population"
+    parents: <[  ]>
+    children: <[  ]>
+  4:
     name: "原住民"
-    parent:
-      *
-    children:
-      *
-  t5:
+    type: "population"
+    parents: <[  ]>
+    children: <[  ]>
+  5:
     name: "台中市"
     type: "location"
-    parent:
-      * "大台中"
-    children:
-      * "中區"
-      * "西區"
-      * "南區"
-      * "北區"
-  t6:
+    parents: <[ 大台中 ]>
+    children: <[ 中區 西區 南區 北區 ]>
+  6:
     name: "民主"
-    parent:
-      *
-    children:
-      *
+    type: "issue"
+    parents: <[  ]>
+    children: <[  ]>

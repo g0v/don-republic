@@ -1,21 +1,21 @@
 module.exports =
-  i1:
+  1:
     name: "兩岸服務貿易協議"
-    parent: \?
-    children: \?
-  i2:
+    parents: <[  ]>
+    children: <[  ]>
+  2:
     name: "核能發電"
-    parent: \?
-    children: \?
-  i3:
+    parents: <[  ]>
+    children: <[  ]>
+  3:
     name: "土地徵收"
-    parent: \?
-    children: \?
-  i4:
+    parents: <[  ]>
+    children: <[  ]>
+  4:
     name: "都市更新"
-    parent: \?
-    children: \?
-  i5:
+    parents: <[  ]>
+    children: <[  ]>
+  5:
     name: "關廠工人"
-    parent: \?
-    children: \?
+    parents: <[  ]>
+    children: <[  ]>

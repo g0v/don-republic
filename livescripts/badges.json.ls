@@ -1,11 +1,11 @@
 module.exports =
-  b1:
+  1:
     name: "problem digger"
     description: ""
     gold: "#"
     silver: "#"
     brown: "#"
-  b2:
+  2:
     name: "question answerer"
-  b3:
+  3:
     name: "lazypack maker"
