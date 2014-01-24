@@ -193,7 +193,8 @@ angular.module('main', ['firebase']).directive('contenteditable', function(){
           displayName: 'anonymous'
         }).id, ref1$.username = ref$.username, ref1$.displayName = ref$.displayName, ref1$), it.create_time = new Date().getTime(), it.edit_time = new Date().getTime(), it));
         it.id = n.name();
-        ret.name.add(it.name, name, n.name(), 'name');
+        this.ref.$child(it.id).$set(it);
+        ret.name.add(it.name, name, it.id, 'name');
         return it;
       },
       factory: function(){
@@ -431,7 +432,14 @@ ctrl.base = function($scope, DS, ctrlName){
         }
         obj.push(k);
       }
-      return $scope.list.$save();
+      return DS[ctrlName].ref.$save(p.id);
+    },
+    isPicked: function(p, k){
+      return $scope.picked(p, true).map(function(it){
+        return it.id;
+      }).filter(function(it){
+        return it === k;
+      }).length > 0;
     },
     choiceState: function(p){
       var d, ref$, v, max, k;
@@ -457,7 +465,9 @@ ctrl.base = function($scope, DS, ctrlName){
         return results$;
       }()).map(function(it){
         return it.map(function(it){
-          return d[it].c += 1;
+          if (d[it]) {
+            return d[it].c += 1;
+          }
         });
       });
       max = d3.max((function(){
@@ -487,13 +497,34 @@ ctrl.group = function($scope, DataService){
 ctrl.proposal = function($scope, DataService){
   import$($scope, ctrl.base($scope, DataService, 'proposal'));
   $scope._create = $scope.create;
-  return $scope.create = function(){
-    var v;
-    if ($scope.cur.start && ($scope.cur.duration.day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
+  $scope.create = function(){
+    var ref$, v;
+    if ($scope.cur.start) {
+      $scope.cur.start = new Date($scope.cur.start).getTime();
+    }
+    if ($scope.cur.start && (((ref$ = $scope.cur).duration || (ref$.duration = {})).day || $scope.cur.duration.hour || $scope.cur.duration.min)) {
       v = ~~($scope.cur.duration.day || 0) * 86400 + ~~($scope.cur.duration.hour || 0) * 3600 + ~~($scope.cur.duration.min || 0) * 60;
-      $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime());
+      $scope.cur.end = new Date(new Date($scope.cur.start).getTime() + new Date(v * 1000).getTime()).getTime();
     }
     return $scope._create();
+  };
+  return $scope.getProgress = function(p){
+    var now;
+    if (!p) {
+      return 0;
+    }
+    now = new Date().getTime();
+    if (!p.start || now < p.start - 3600000 * 2) {
+      return 0;
+    } else if (now < p.start) {
+      return 1;
+    } else if (now < p.end - 3600000 * 2) {
+      return 2;
+    } else if (now < p.end) {
+      return 3;
+    } else {
+      return 4;
+    }
   };
 };
 ctrl.plan = function($scope, DataService){

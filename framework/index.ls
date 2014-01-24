@@ -76,7 +76,8 @@ angular.module 'main', <[firebase]>
     create: ->
       n = @ref.$add(it <<< {creator: {}<<<(ret.user or {id:0,username:\anonymous,displayName:\anonymous}){id,username,displayName}, create_time: new Date!getTime!, edit_time: new Date!getTime!})
       it.id = n.name!
-      ret.name.add it.name, name, n.name!, \name
+      @ref.$child it.id .$set it
+      ret.name.add it.name, name, it.id, \name
       it
 
     factory: -> {}
@@ -179,12 +180,13 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
     if k in obj => obj.splice obj.indexOf(k), 1 else =>
       if p.config.method == \1 and obj.length > 0 => obj.pop!
       obj.push k
-    $scope.list.$save!
+    DS[ctrl-name]ref.$save p.id
+  is-picked: (p, k) -> $scope.picked(p,true)map(->it.id)filter(->it==k)length>0
   choice-state: (p) ->
     d = {}
     if not p => return {max: 0, d: {}}
     p.{}link.[]['choice']map -> d[it.id] = {r:it, c: 0}
-    [v for ,v of p.stand]map -> it.map -> d[it]c += 1
+    [v for ,v of p.stand]map -> it.map -> if d[it] => d[it]c += 1
     max = d3.max [k for k of d]map -> d[it]c
     {max, d}
 
@@ -199,12 +201,21 @@ ctrl.proposal = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \proposal
   $scope._create = $scope.create
   $scope.create = ->
-    if $scope.cur.start and ($scope.cur.duration.day or $scope.cur.duration.hour or $scope.cur.duration.min) =>
+    if $scope.cur.start => $scope.cur.start = new Date($scope.cur.start)getTime!
+    if $scope.cur.start and ($scope.cur.{}duration.day or $scope.cur.duration.hour or $scope.cur.duration.min) =>
       v = ~~($scope.cur.duration.day or 0) * 86400 +
           ~~($scope.cur.duration.hour or 0) * 3600 +
           ~~($scope.cur.duration.min or 0) * 60
-      $scope.cur.end = new Date(new Date($scope.cur.start)getTime! + new Date(v*1000)getTime!)
+      $scope.cur.end = new Date(new Date($scope.cur.start)getTime! + new Date(v*1000)getTime!)getTime!
     $scope._create!
+  $scope.get-progress = (p) ->
+    if not p => return 0
+    now = new Date!getTime!
+    if not p.start or now < p.start - (3600000 * 2) => 0
+    else if now < p.start  => 1
+    else if now < p.end - (3600000 * 2) => 2
+    else if now < p.end => 3
+    else => 4
 
 ctrl.plan = ($scope, DataService) ->
   $scope <<< ctrl.base $scope, DataService, \plan

@@ -10,8 +10,8 @@ ctrl.simpletab = function($scope){
     }
   };
 };
-ctrl.simplebase = function($scope, DataService){
-  var k, v;
+ctrl.simplebase = function($scope, $location, $interval, DataService){
+  var k, v, s, updateProgress;
   angular.element('body').scope().tab = 2;
   angular.element('#current-proposal').scope().cur = ((function(){
     var ref$, results$ = [];
@@ -37,13 +37,35 @@ ctrl.simplebase = function($scope, DataService){
     y$.propCur = p;
     y$.id = p.id;
     y$.tab = 3;
-    return y$;
+    return $location.search({
+      proposal: p.id
+    });
   };
-  return $scope.$watch('proposal.ref', function(){
-    var x$, s;
-    console.log('ok');
+  s = $scope.proposal.s();
+  $scope.$watch('proposal.ref', function(){
+    var that, x$, s;
+    $scope.proposal.ref = DataService.proposal.ref;
+    if (that = $scope.proposal.ref[$location.search()['proposal']]) {
+      $scope.updatePropCur(that);
+    }
     x$ = s = $scope.proposal.s();
+    if (s.propCur) {
+      x$.propCur = $scope.proposal.ref[s.propCur.id];
+    }
     x$.cs = s.choiceState(s.propCur);
     return x$;
   }, true);
+  updateProgress = function(){
+    var remains;
+    if ($scope.propCur) {
+      $scope.propCur.progress = $scope.proposal.s().getProgress($scope.propCur);
+      remains = parseInt((($scope.propCur.end || 0) - new Date().getTime()) / 1000);
+      $scope.propCur.remains = (remains > 86400 ? parseInt(remains / 86400) + " 天 " : "") + (remains > 3600 ? parseInt((remains % 86400) / 3600) + " 時 " : "") + (remains > 60 ? parseInt((remains % 3600) / 60) + " 分 " : "") + (parseInt(remains % 60) + " 秒");
+      if (remains <= 0) {
+        return $scope.propCur.remains = null;
+      }
+    }
+  };
+  $scope.$watch('propCur', updateProgress);
+  return $interval(updateProgress, 1000);
 };
