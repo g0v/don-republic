@@ -12,10 +12,10 @@ Mac
     * brew install nodejs
 * Install jade
     * npm install -g jade
-* Install Compass
-   * sudo gem install compass
 * clone the repository 
    * git clone https://github.com/g0v/don-republic.git
+* Install the dependences
+   * make depends
 * make and run it   
 	* cd don-republic
 	* make all
