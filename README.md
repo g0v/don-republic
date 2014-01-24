@@ -27,8 +27,9 @@ Mac
    * make depends
 * make and run it
 	* cd don-republic
-	* make all
 	* sudo npm i -g static-here
+	* make all
+	* cd public/
 	* static-here
 * Open your browser
     * connect to http://localhost:8888/public/
