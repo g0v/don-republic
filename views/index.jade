@@ -5,16 +5,17 @@ block title
 
 block body
 
-  #index(ng-init="userid='etblue';content={timeline:true,account:false}")
+  #index(ng-init="userid='etblue';content='timeline'")
 
     #sidebar.ui.vertical.menu(ng-controller="sidebar")
       //-a.item(href="",ng-controller="ctrl.user")
-      a.item(ng-click="content.account=!content.account")
+      a.item(ng-click="content='account'")
+        {{content}}
         .avatar
           img(src="img/etblue.jpg").rounded.corner
         .id {{ data.users[userid].name }}
         //.id {{user.username}}
-      a.item.all(ng-click="content.timeline=!content.timeline")
+      a.item.all(ng-click="content='timeline'")
         i.icon.home
         | 所有動態
       a.item.issues(href="timeline-issues.html")
@@ -66,7 +67,7 @@ block body
           | {{ groups[group.id].name }}
           .ui.label 10
     #content
-      .account(ng-show="content.account")
+      .account(ng-show="content=='account'")
         a.item.activities(href="")
           | 我的活動紀錄
         .menu.item.activities.hidden
@@ -101,7 +102,7 @@ block body
             i.icon.certificate
             | 執行專案
 
-      .timeline(ng-show="content.timeline",ng-controller="timeline")
+      .timeline(ng-show="content=='timeline'",ng-controller="timeline")
         .ui.secondary.pointing.menu
           a.item.news.active 所有動態
           a.item.settings 設定
