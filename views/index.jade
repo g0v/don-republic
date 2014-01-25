@@ -5,112 +5,119 @@ block title
 
 block body
 
-  #index
+  #index(ng-init="userid='etblue';content={timeline:true,account:false}")
 
     #sidebar.ui.vertical.menu(ng-controller="sidebar")
       //-a.item(href="",ng-controller="ctrl.user")
-      a.item(href="")
+      a.item(ng-click="content.account=!content.account")
         .avatar
           img(src="img/etblue.jpg").rounded.corner
-        .id ETBlue
+        .id {{ data.users[userid].name }}
         //.id {{user.username}}
-      a.item.all(href="index.html")
+      a.item.all(ng-click="content.timeline=!content.timeline")
         i.icon.home
         | 所有動態
       a.item.issues(href="timeline-issues.html")
         i.icon.folder.open.outline
+        .ui.label.light.gray {{ data.users[userid].pins.issues.length }} / {{ data.users[userid].subscribtions.issues.length }}
         | 議題
       .menu.item.issues
-        a.item(href="",ng-repeat="issue in pins.issues |  orderBy:'name'")
+        a.item(href="",ng-repeat="issue in data.users[userid].pins.issues |  orderBy:'name'")
           | {{ issues[issue.id].name }}
           .ui.label 10
       a.item.proposals(href="timeline-proposals.html")
         i.icon.folder.open.outline
+        .ui.label.light.gray {{ data.users[userid].pins.issues.length }} / {{ data.users[userid].subscribtions.issues.length }}
         | 提案
       .menu.item.proposals
-        a.item(href="timeline-proposals.html",ng-repeat="proposal in pins.proposals")
+        a.item(href="timeline-proposals.html",ng-repeat="proposal in data.users[userid].pins.proposals")
           | {{ proposals[proposal.id].name }}
           .ui.label 10
       a.item.projects(href="timeline-projects.html")
         i.icon.folder.open.outline
+        .ui.label.light.gray {{ data.users[userid].pins.projects.length }} / {{ data.users[userid].subscribtions.projects.length }}
         | 專案
       .menu.item.projects
-        a.item(href="timeline-issues.html",ng-repeat="project in pins.projects")
+        a.item(href="timeline-issues.html",ng-repeat="project in data.users[userid].pins.projects")
           | {{ projects[project.id].name }}
           .ui.label 10
       a.item.tags(href="timeline-tags.html")
         i.icon.tags
+        .ui.label.light.gray {{ data.users[userid].pins.tags.length }} / {{ data.users[userid].subscribtions.tags.length }}
         | 標籤
       .menu.item.tags
-        a.item(href="timeline-tags.html",ng-repeat="tag in pins.tags")
+        a.item(href="timeline-tags.html",ng-repeat="tag in data.users[userid].pins.tags")
           | {{ tags[tag.id].name }}
           .ui.label 10
       a.item.circles(href="")
         i.icon.user
-        .ui.label.leght.gray {{ pins.circles.length }} / {{ data.users.etblue.circles.length }}
+        .ui.label.light.gray {{ data.users[userid].pins.circles.length }} / {{ data.users[userid].circles.length }}
         | 社交圈
       .menu.item.circles
-        a.item(href="timeline-circles.html",ng-repeat="circle in pins.circles")
-          | {{ data.users.etblue.circles[circle.id].name }}
+        a.item(href="timeline-circles.html",ng-repeat="circle in data.users[userid].pins.circles")
+          | {{ data.users[userid].circles[circle.id].name }}
           .ui.label 10
       a.item.groups(href="")
         i.icon.users
+        .ui.label.light.gray {{ data.users[userid].pins.groups.length }} / {{ data.users[userid].subscribtions.groups.length }}
         | 團體
       .menu.item.groups
-        a.item(href="timeline-groups.html",ng-repeat="group in pins.groups")
+        a.item(href="timeline-groups.html",ng-repeat="group in data.users[userid].pins.groups")
           | {{ groups[group.id].name }}
           .ui.label 10
-      a.item.activities(href="")
-        | 我的活動紀錄
-      .menu.item.activities.hidden
-        a.item.subscribed(href="")
-          i.icon.rss
-          | 訂閱
-        a.item.bookmarked(href="")
-          i.icon.star
-          | 收藏
-        a.item.shared(href="")
-          i.icon.forward.mail
-          | 分享
-        a.item.shared(href="")
-          i.icon.checked.checkmark
-          | 表態
-        a.item.edited(href="")
-          i.icon.pencil
-          | 編輯
-      a.item.achievements(href="")
-        | 我的成就
-      .menu.item.achievements.hidden
-        a.item.composing(href="")
-          i.icon.certificate
-          | 彙編懶人包
-        a.item.analyzing(href="")
-          i.icon.certificate
-          | 釐清議題
-        a.item.planning(href="")
-          i.icon.certificate
-          | 規劃提案
-        a.item.executing(href="")
-          i.icon.certificate
-          | 執行專案
+    #content
+      .account(ng-show="content.account")
+        a.item.activities(href="")
+          | 我的活動紀錄
+        .menu.item.activities.hidden
+          a.item.subscribed(href="")
+            i.icon.rss
+            | 訂閱
+          a.item.bookmarked(href="")
+            i.icon.star
+            | 收藏
+          a.item.shared(href="")
+            i.icon.forward.mail
+            | 分享
+          a.item.shared(href="")
+            i.icon.checked.checkmark
+            | 表態
+          a.item.edited(href="")
+            i.icon.pencil
+            | 編輯
+        a.item.achievements(href="")
+          | 我的成就
+        .menu.item.achievements.hidden
+          a.item.composing(href="")
+            i.icon.certificate
+            | 彙編懶人包
+          a.item.analyzing(href="")
+            i.icon.certificate
+            | 釐清議題
+          a.item.planning(href="")
+            i.icon.certificate
+            | 規劃提案
+          a.item.executing(href="")
+            i.icon.certificate
+            | 執行專案
 
-    #content(ng-controller="timeline")
-      .ui.secondary.pointing.menu
-        a.item.news.active 所有動態
-        a.item.settings 設定
-          i.icon.setting
-        .right.menu
-          include -sort-menu
-      .in.timeline
-        //-| id:
-        //-input(type="text",ng-model="newPlan.id",id="inputId")
-        //-br
-        //-| name:
-        //-input(type="text",ng-model="newPlan.name",id="inputName")
-        //-br
-        //-button(ng-click="addPlan()") 新增方案
-        block timeline
-          include -proposal-in-timeline
+      .timeline(ng-show="content.timeline",ng-controller="timeline")
+        .ui.secondary.pointing.menu
+          a.item.news.active 所有動態
+          a.item.settings 設定
+            i.icon.setting
+          .right.menu
+            include -sort-menu
+        .in.timeline
+          //-| id:
+          //-input(type="text",ng-model="newPlan.id",id="inputId")
+          //-br
+          //-| name:
+          //-input(type="text",ng-model="newPlan.name",id="inputName")
+          //-br
+          //-button(ng-click="addPlan()") 新增方案
+          block timeline
+            include -proposal-in-timeline
 
 block script
   script.

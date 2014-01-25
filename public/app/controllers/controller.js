@@ -65,8 +65,8 @@ controllers.sidebar=function($scope,$firebase){
       var data_type=data_types[i];
       $scope[data_type] = $scope.data[data_type];
     }
-    $scope.pins = $scope.data.users.etblue.pins;
-    // SOS: why are there 8 errors in chrome console? QAQ
+    //$scope.pins = $scope.data.users.etblue.pins;
+    //$scope.subscribtions = $scope.data.users.etblue.subscribtions;
   });
 }
 
