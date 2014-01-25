@@ -9,13 +9,12 @@ block body
 
     #sidebar.ui.vertical.menu(ng-controller="sidebar")
       //-a.item(href="",ng-controller="ctrl.user")
-      a.item(ng-click="content='account'")
-        {{content}}
+      a.item(ng-click="$parent.content='account'")
         .avatar
           img(src="img/etblue.jpg").rounded.corner
         .id {{ data.users[userid].name }}
         //.id {{user.username}}
-      a.item.all(ng-click="content='timeline'")
+      a.item.all(ng-click="$parent.content='timeline'")
         i.icon.home
         | 所有動態
       a.item.issues(href="timeline-issues.html")
