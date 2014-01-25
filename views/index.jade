@@ -47,7 +47,8 @@ block body
           .ui.label 10
       a.item.circles(href="")
         i.icon.user
-        | 追蹤清單
+        .ui.label.leght.gray {{ pins.circles.length }} / {{ data.users.etblue.circles.length }}
+        | 社交圈
       .menu.item.circles
         a.item(href="timeline-circles.html",ng-repeat="circle in pins.circles")
           | {{ data.users.etblue.circles[circle.id].name }}
