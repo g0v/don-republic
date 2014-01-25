@@ -28,7 +28,7 @@ var edemocracy=angular.module('edemocracy',['firebase']);
 
 var controllers={};
 
-controllers.sidebar=function($scope,$firebase){
+controllers.index=function($scope,$firebase){
 //  var data = new Firebase('https://edemocracy.firebaseio.com');
 //  var data_types = ['users','issues','proposals','projects','groups','circles','tags','pads']
 //  for(var i=0; i< data_types.length; i++){
@@ -129,5 +129,5 @@ controllers.timeline=function($scope,dataPlan){
   };
 };
 edemocracy.controller('timeline',controllers.timeline);
-edemocracy.controller('sidebar',controllers.sidebar);
+edemocracy.controller('index',controllers.index);
 
