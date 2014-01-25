@@ -1,0 +1,603 @@
+{
+  "users": {
+    "etblue": {
+      "name": "ETBlue",
+      "pins": {
+        "issues": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          }
+        ],
+        "proposals": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          }
+        ],
+        "projects": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          }
+        ],
+        "tags": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          },
+          {
+            "id": "4",
+            "position": 4
+          },
+          {
+            "id": "5",
+            "position": 5
+          }
+        ],
+        "circles": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          }
+        ],
+        "groups": [
+          {
+            "id": "1",
+            "position": 1
+          },
+          {
+            "id": "2",
+            "position": 2
+          },
+          {
+            "id": "3",
+            "position": 3
+          }
+        ]
+      },
+      "subscribtions": {
+        "issues": [
+          "1",
+          "2"
+        ],
+        "proposals": [
+          "1"
+        ],
+        "projects": [
+          "1"
+        ],
+        "tags": [
+          "3"
+        ],
+        "circles": [
+          "1"
+        ],
+        "groups": [
+          "2"
+        ]
+      },
+      "bookmarks": {
+        "issues": [
+          "1"
+        ],
+        "proposals": [
+          "2"
+        ],
+        "projects": [
+          "3"
+        ],
+        "tags": [
+          "2"
+        ],
+        "circles": [
+          "1"
+        ],
+        "groups": [
+          "2"
+        ]
+      },
+      "sharings": {
+        "issues": [
+          "1"
+        ],
+        "proposals": [
+          "2"
+        ],
+        "projects": [
+          "3"
+        ],
+        "tags": [
+          "2"
+        ],
+        "circles": [
+          "1"
+        ],
+        "groups": [
+          "2"
+        ]
+      },
+      "circles": {
+        "1": {
+          "name": "宅圈",
+          "users": [
+            "clkao",
+            "ipa",
+            "tkirby",
+            "yhsiang",
+            "jedi"
+          ]
+        },
+        "2": {
+          "name": "魔法圈",
+          "users": [
+            "au",
+            "soidid"
+          ]
+        },
+        "3": {
+          "name": "社運圈",
+          "users": [
+            "ttcat"
+          ]
+        },
+        "4": {
+          "name": "醫療圈",
+          "users": [
+            "pofeng"
+          ]
+        },
+        "5": {
+          "name": "同學",
+          "users": [
+            "lina"
+          ]
+        },
+        "6": {
+          "name": "家人",
+          "users": [
+            "tkalu"
+          ]
+        }
+      }
+    }
+  },
+  "pads": {
+    "1": "firepad url",
+    "2": "firepad url",
+    "3": "firepad url"
+  },
+  "badges": {
+    "1": {
+      "name": "problem digger",
+      "description": "",
+      "gold": "#",
+      "silver": "#",
+      "brown": "#"
+    },
+    "2": {
+      "name": "question answerer"
+    },
+    "3": {
+      "name": "lazypack maker"
+    }
+  },
+  "issues": {
+    "1": {
+      "name": "兩岸服務貿易協議",
+      "parents": [],
+      "children": []
+    },
+    "2": {
+      "name": "核能發電",
+      "parents": [
+        "能源政策",
+        "綠色能源"
+      ],
+      "children": []
+    },
+    "3": {
+      "name": "土地徵收",
+      "parents": [
+        "都市計畫"
+      ],
+      "children": []
+    },
+    "4": {
+      "name": "都市更新",
+      "parents": [
+        "都市計畫"
+      ],
+      "children": []
+    },
+    "5": {
+      "name": "關廠工人",
+      "parents": [
+        "勞工權益"
+      ],
+      "children": []
+    }
+  },
+  "proposals": {
+    "1": {
+      "name": "政府IT委外採用open source模式建議案",
+      "meta": {
+        "parents": [],
+        "children": [],
+        "tags": [],
+        "users": {
+          "subscribed": [
+            "etblue",
+            "tkirby"
+          ],
+          "bookmarked": [
+            "hychen"
+          ],
+          "shared": [
+            "clkao"
+          ]
+        },
+        "owners": {
+          "users": [
+            "clkao"
+          ],
+          "groups": [
+            "g0v"
+          ]
+        },
+        "managers": {
+          "users": [
+            "hychen"
+          ],
+          "groups": [
+            "g0v"
+          ]
+        },
+        "members": {
+          "users": [
+            "tkirby"
+          ],
+          "groups": [
+            "level1"
+          ]
+        }
+      },
+      "content": {
+        "intro": "1",
+        "plans": {
+          "1": {
+            "content": [
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              "4",
+              "5"
+            ]
+          }
+        },
+        "analysis": {
+          "visions": {
+            "1": {
+              "problems": [
+                "1",
+                "2"
+              ],
+              "content": "假文假文",
+              "reference": "#",
+              "author": "clkao",
+              "history": {
+                "created": "2013-01-02",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            },
+            "2": {
+              "problems": [
+                "2",
+                "3"
+              ],
+              "content": "假文假文",
+              "reference": "#",
+              "author": "clkao",
+              "history": {
+                "created": "2013-01-02",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            }
+          },
+          "problems": {
+            "1": {
+              "vision": "1",
+              "reasons": [
+                "1",
+                "2"
+              ],
+              "content": "假文假文",
+              "reference": "#",
+              "author": "clkao",
+              "history": {
+                "created": "2013-01-02",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            }
+          },
+          "reasons": {
+            "1": {
+              "problem": "1",
+              "solutions": [
+                "1",
+                "2"
+              ],
+              "content": "假文假文",
+              "reference": "#",
+              "author": "clkao",
+              "history": {
+                "created": "2013-01-02",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            }
+          },
+          "solutions": {
+            "1": {
+              "reason": "1",
+              "stakeholders": {
+                "positive": [
+                  "1"
+                ],
+                "negative": [
+                  "2"
+                ]
+              },
+              "content": "假文假文",
+              "reference": "#",
+              "author": "clkao",
+              "history": {
+                "created": "2013-01-02",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            }
+          },
+          "stakeholders": {
+            "1": {
+              "solution": "1",
+              "subject": "1",
+              "relation": "positive",
+              "description": "",
+              "reference": "#",
+              "author": "hychen",
+              "history": {
+                "created": "2013-01-01",
+                "edited": [
+                  "2013-01-02"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "name": "都市更新條例修正案"
+    },
+    "3": {
+      "name": "土地徵收條例修正案"
+    },
+    "4": {
+      "name": "綠色能源政策規劃案"
+    }
+  },
+  "projects": {
+    "1": {
+      "name": "反黑箱服貿行動串連",
+      "parents": [],
+      "children": []
+    },
+    "2": {
+      "name": "動民主系統開發",
+      "parents": [],
+      "children": []
+    },
+    "3": {
+      "name": "反核四五六行動串連",
+      "parents": [],
+      "children": []
+    }
+  },
+  "types": {
+    "location": {
+      "name": "地域",
+      "tags": [
+        "5",
+        "7"
+      ]
+    },
+    "knowledge": {
+      "name": "學術",
+      "tags": [
+        "5",
+        "7"
+      ]
+    },
+    "industry": {
+      "name": "產業",
+      "tags": [
+        "5",
+        "7"
+      ]
+    },
+    "corporation": {
+      "name": "公司",
+      "tags": [
+        "5",
+        "7"
+      ]
+    },
+    "person": {
+      "name": "人物",
+      "tags": [
+        "5",
+        "7"
+      ]
+    },
+    "population": {
+      "name": "族群",
+      "tags": [
+        "5",
+        "7"
+      ]
+    }
+  },
+  "tags": {
+    "1": {
+      "name": "open data",
+      "type": "issue",
+      "parents": [],
+      "children": []
+    },
+    "2": {
+      "name": "醫療",
+      "type": "industry",
+      "parents": [],
+      "children": []
+    },
+    "3": {
+      "name": "兒童",
+      "type": "population",
+      "parents": [],
+      "children": []
+    },
+    "4": {
+      "name": "原住民",
+      "type": "population",
+      "parents": [],
+      "children": []
+    },
+    "5": {
+      "name": "台中市",
+      "type": "location",
+      "parents": [
+        "大台中"
+      ],
+      "children": [
+        "中區",
+        "西區",
+        "南區",
+        "北區"
+      ]
+    },
+    "6": {
+      "name": "民主",
+      "type": "issue",
+      "parents": [],
+      "children": []
+    }
+  },
+  "groups": {
+    "1": {
+      "name": "零時政府",
+      "parents": [],
+      "children": [
+        "文化部",
+        "技術部",
+        "研究院"
+      ],
+      "owners": [
+        "clkao",
+        "au"
+      ],
+      "members": [
+        "ipa",
+        "opop",
+        "tkirby",
+        "ca",
+        "hlb",
+        "hychen",
+        "jedi",
+        "etblue"
+      ]
+    },
+    "2": {
+      "name": "綠黨",
+      "parents": [],
+      "children": [
+        "網路支黨部",
+        "北區支黨部",
+        "中區支黨部",
+        "南區支黨部"
+      ],
+      "owners": [],
+      "members": [
+        "charles"
+      ]
+    },
+    "3": {
+      "name": "醫勞盟",
+      "parents": [],
+      "children": [],
+      "owners": [],
+      "members": [
+        "jedi"
+      ]
+    },
+    "4": {
+      "name": "民主陣線",
+      "parents": [],
+      "children": [],
+      "owners": [],
+      "members": [
+        "cclai"
+      ]
+    }
+  }
+}

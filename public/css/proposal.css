@@ -1,0 +1,336 @@
+.ui.steps {
+  display: inline-block;
+}
+.ui.steps .step {
+  font-weight: bold;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+.ui.steps .step.normal:after {
+  border: none;
+  background-color: white;
+  top: 0.42em;
+  width: 1.8em;
+  height: 1.8em;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  right: -0.9em;
+}
+.ui.steps .step.normal:hover:after {
+  background-color: #f7f7f7;
+}
+.ui.steps .step.active {
+  color: inherit !important;
+}
+.ui.steps .step.active:after {
+  border-width: 1.3em;
+  right: -1.2em;
+}
+.ui.steps .step.active.vision {
+  background-color: #fdf9bb;
+}
+.ui.steps .step.active.vision:after {
+  border-left-color: #fdf9bb;
+}
+.ui.steps .step.active.problem {
+  background-color: #fee5e5;
+}
+.ui.steps .step.active.problem:after {
+  border-left-color: #fee5e5;
+}
+.ui.steps .step.active.reason {
+  background-color: #efe9f3;
+}
+.ui.steps .step.active.reason:after {
+  border-left-color: #efe9f3;
+}
+.ui.steps .step.active.solution {
+  background-color: #e7f3d7;
+}
+.ui.steps .step.active.solution:after {
+  border-left-color: #e7f3d7;
+}
+
+#mini-header .menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+.ui.menu .ui.label {
+  padding: 0.3em 0.25em;
+  margin: -0.3em 0 -0.3em 0.8em;
+  position: relative;
+  top: -0.1em;
+  vertical-align: baseline;
+}
+
+#proposal #wrapper {
+  position: relative;
+}
+#proposal #wrapper .line {
+  height: 100%;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  border-top: none;
+  border-bottom: none;
+  float: left;
+  position: absolute;
+  z-index: 0;
+  box-sizing: border-box;
+}
+#proposal #wrapper #toc {
+  position: relative;
+  width: 15rem;
+  float: right;
+  font-size: 0.9rem;
+}
+#proposal #wrapper #toc .line {
+  width: 1rem;
+}
+#proposal #wrapper #toc .line.two {
+  margin-left: 2rem;
+}
+#proposal #wrapper #toc .header {
+  display: block;
+  padding: 0.5em;
+  margin: 0 -0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#proposal #wrapper #toc .header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#proposal #wrapper #toc .level.two {
+  padding-left: 1.5rem;
+}
+#proposal #wrapper #toc .level.three {
+  padding-left: 2.5rem;
+}
+#proposal #wrapper #chapters {
+  margin-right: 16rem;
+}
+#proposal #wrapper #chapters .chapter.in.list {
+  position: relative;
+}
+#proposal #wrapper #chapters .id {
+  z-index: 1;
+}
+#proposal #wrapper #chapters .meta .right {
+  margin-left: 1em;
+}
+#proposal #wrapper #chapters .line {
+  width: 2rem;
+}
+#proposal #wrapper #chapters .line.two {
+  margin-left: 4rem;
+}
+#proposal #wrapper #chapters .chapter {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  margin: 0 0 1rem 0;
+}
+#proposal #wrapper #chapters .chapter.level.two {
+  margin-left: 2rem;
+}
+#proposal #wrapper #chapters .chapter.level.three {
+  margin-left: 4rem;
+}
+#proposal #wrapper #chapters .chapter .id {
+  padding: 0.5em 1em;
+}
+#proposal #wrapper #chapters .chapter .etherpad {
+  margin: 0;
+}
+#proposal #wrapper #chapters .chapter .reference {
+  margin-bottom: 0;
+}
+#proposal #wrapper #chapters .new {
+  padding: 1em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: left;
+  background: none;
+  border: 2px #cccccc dashed;
+  display: block;
+}
+#proposal #wrapper #chapters .new i.icon {
+  padding: 1em;
+}
+#proposal #wrapper #chapters .new:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+#proposal #wrapper #chapter {
+  margin: -1rem 16rem -1rem -1rem;
+  padding: 2rem 1rem 0 1rem;
+  background-color: white;
+}
+#proposal #wrapper #resource {
+  overflow: auto;
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;
+  width: 16rem;
+  height: 100%;
+  padding: 0 0.5rem 1rem 0.5rem;
+  box-sizing: border-box;
+}
+#proposal #wrapper #resource a.divider {
+  display: block;
+}
+#proposal #wrapper #resource .a.sticker, #proposal #wrapper #comparison .a.sticker {
+  margin: 0.25rem 0;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  border: 1px white solid;
+}
+#proposal #wrapper #resource .a.sticker:hover, #proposal #wrapper #comparison .a.sticker:hover {
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}
+#proposal #wrapper #comparison .column {
+  vertical-align: middle;
+}
+#proposal #wrapper #comparison .row {
+  margin: 0;
+  padding: 0;
+}
+#proposal #wrapper #comparison .column.active {
+  font-weight: bold;
+  background-color: white;
+}
+#proposal #wrapper #comparison .comparison {
+  display: none;
+}
+#proposal #wrapper #comparison .comparison .status {
+  padding: 0.83em;
+  line-height: 1;
+}
+#proposal #wrapper #comparison .comparison .status.no {
+  background-color: rgba(0, 0, 0, 0);
+}
+#proposal #wrapper #comparison .comparison .column.active {
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  border-width: 0 1px;
+}
+#proposal #wrapper #comparison .comparison:last-child .column {
+  padding-bottom: 0.5rem;
+  -webkit-border-radius: 0 0 0.3rem 0.3rem;
+  -moz-border-radius: 0 0 0.3rem 0.3rem;
+  -ms-border-radius: 0 0 0.3rem 0.3rem;
+  -o-border-radius: 0 0 0.3rem 0.3rem;
+  border-radius: 0 0 0.3rem 0.3rem;
+  border-width: 0 1px 1px 1px;
+}
+#proposal #wrapper #comparison .statistic {
+  cursor: pointer;
+}
+#proposal #wrapper #comparison .head,
+#proposal #wrapper #comparison .statistic {
+  height: 4rem;
+  background-color: white;
+}
+#proposal #wrapper #comparison .head .plan,
+#proposal #wrapper #comparison .statistic .plan {
+  padding: 0.83em;
+  line-height: 1;
+}
+#proposal #wrapper #comparison .head .ui.label,
+#proposal #wrapper #comparison .statistic .ui.label {
+  padding: 0.15em;
+  margin: -0.15em 0 -0.15em 0.8em;
+  position: relative;
+  top: -0.1em;
+  vertical-align: baseline;
+}
+#proposal #wrapper #comparison .head {
+  -webkit-border-radius: 0.3rem 0.3rem 0 0;
+  -moz-border-radius: 0.3rem 0.3rem 0 0;
+  -ms-border-radius: 0.3rem 0.3rem 0 0;
+  -o-border-radius: 0.3rem 0.3rem 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+  -webkit-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+}
+#proposal #wrapper #comparison .head .column {
+  text-align: center;
+}
+#proposal #wrapper #comparison .statistic {
+  -webkit-box-shadow: 0 1px 1px black;
+  -moz-box-shadow: 0 1px 1px black;
+  box-shadow: 0 1px 1px black;
+}
+#proposal #wrapper #comparison .graph {
+  display: block;
+  float: left;
+  width: 25%;
+  position: relative;
+  height: 4rem;
+}
+#proposal #wrapper #comparison .graph .amount {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  font-size: 0.9rem;
+  -webkit-border-radius: 0.2rem 0.2rem 0 0;
+  -moz-border-radius: 0.2rem 0.2rem 0 0;
+  -ms-border-radius: 0.2rem 0.2rem 0 0;
+  -o-border-radius: 0.2rem 0.2rem 0 0;
+  border-radius: 0.2rem 0.2rem 0 0;
+  border: 1px white solid;
+  border-width: 1px 1px 0 1px;
+}
+#proposal #wrapper #comparison .graph .amount.total {
+  left: 5%;
+  width: 90%;
+}
+#proposal #wrapper #comparison .graph .amount.total.a {
+  height: 70%;
+}
+#proposal #wrapper #comparison .graph .amount.total.b {
+  height: 50%;
+}
+#proposal #wrapper #comparison .graph .amount.total.c {
+  height: 80%;
+}
+#proposal #wrapper #comparison .graph .amount.mine {
+  left: 75%;
+  width: 20%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.a {
+  height: 60%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.b {
+  height: 80%;
+}
+#proposal #wrapper #comparison .graph .amount.mine.c {
+  height: 30%;
+}
+#proposal #wrapper #comparison .graph .total {
+  color: white;
+  background-color: #2da7e0;
+}
+#proposal #wrapper #comparison .graph .mine {
+  color: black;
+  background-color: #faed00;
+  background-color: #7fd6ff;
+}
+#proposal #wrapper #comparison .graph .title {
+  margin: 0.5rem 0 0 0.5rem;
+}
+#proposal #wrapper #comparison .graph .title .sample {
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  margin-left: 0.3em;
+}

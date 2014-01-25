@@ -19,7 +19,7 @@ module.exports =
         users: <[ tkirby ]>
         groups: <[ level1 ]>
     content:
-      intro: "#" # firepad
+      intro: "1" # firepad
       plans:
         1:
           content: # firepads
@@ -71,7 +71,7 @@ module.exports =
             reason: \1
             stakeholders: # 利害關係人便利貼們
               positive: <[ 1 ]>
-              negative: <[2 ]>
+              negative: <[ 2 ]>
             content: "假文假文"
             reference: "#"
             author: "clkao"

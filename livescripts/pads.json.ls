@@ -1,4 +1,4 @@
 module.exports =
-  foo: <[ bar baz ]>
-  fo: <[ bar baz ]>
-  f: "bar"
+  1: "firepad url"
+  2: "firepad url"
+  3: "firepad url"

@@ -49,26 +49,26 @@ module.exports =
         * id: \3
           position: 3
     subscribtions:
-      issues: <[  ]>
-      proposals: <[  ]>
-      projects: <[  ]>
-      tags: <[  ]>
-      circles: <[  ]>
-      groups: <[  ]>
+      issues: <[ 1 2 ]>
+      proposals: <[ 1 ]>
+      projects: <[ 1 ]>
+      tags: <[ 3 ]>
+      circles: <[ 1 ]>
+      groups: <[ 2 ]>
     bookmarks:
-      issues: <[  ]>
-      proposals: <[  ]>
-      projects: <[  ]>
-      tags: <[  ]>
-      circles: <[  ]>
-      groups: <[  ]>
+      issues: <[ 1 ]>
+      proposals: <[ 2 ]>
+      projects: <[ 3 ]>
+      tags: <[ 2 ]>
+      circles: <[ 1 ]>
+      groups: <[ 2 ]>
     sharings:
-      issues: <[  ]>
-      proposals: <[  ]>
-      projects: <[  ]>
-      tags: <[  ]>
-      circles: <[  ]>
-      groups: <[  ]>
+      issues: <[ 1 ]>
+      proposals: <[ 2 ]>
+      projects: <[ 3 ]>
+      tags: <[ 2 ]>
+      circles: <[ 1 ]>
+      groups: <[ 2 ]>
     circles:
       1:
         name: "宅圈"

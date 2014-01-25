@@ -12,7 +12,8 @@ block body
       a.item(href="")
         .avatar
           img(src="img/etblue.jpg").rounded.corner
-        .id {{user.username}}
+        .id ETBlue
+        //.id {{user.username}}
       a.item.all(href="index.html")
         i.icon.home
         | 所有動態
@@ -20,43 +21,43 @@ block body
         i.icon.folder.open.outline
         | 議題
       .menu.item.issues
-        a.item(href="",ng-repeat="pin in pins.issues |  orderBy:'name'")
-          | {{ pin.name }}
+        a.item(href="",ng-repeat="issue in pins.issues |  orderBy:'name'")
+          | {{ issues[issue.id].name }}
           .ui.label 10
       a.item.proposals(href="timeline-proposals.html")
         i.icon.folder.open.outline
         | 提案
       .menu.item.proposals
-        a.item(href="timeline-proposals.html",ng-repeat="proposal in proposals")
-          | {{ proposal }}
+        a.item(href="timeline-proposals.html",ng-repeat="proposal in pins.proposals")
+          | {{ proposals[proposal.id].name }}
           .ui.label 10
       a.item.projects(href="timeline-projects.html")
         i.icon.folder.open.outline
         | 專案
       .menu.item.projects
-        a.item(href="timeline-issues.html",ng-repeat="project in projects")
-          | {{ project }}
+        a.item(href="timeline-issues.html",ng-repeat="project in pins.projects")
+          | {{ projects[project.id].name }}
           .ui.label 10
       a.item.tags(href="timeline-tags.html")
         i.icon.tags
         | 標籤
       .menu.item.tags
-        a.item(href="timeline-tags.html",ng-repeat="tag in tags")
-          | {{ tag }}
+        a.item(href="timeline-tags.html",ng-repeat="tag in pins.tags")
+          | {{ tags[tag.id].name }}
           .ui.label 10
       a.item.circles(href="")
         i.icon.user
         | 追蹤清單
       .menu.item.circles
-        a.item(href="timeline-circles.html",ng-repeat="circle in circles")
-          | {{ circle }}
+        a.item(href="timeline-circles.html",ng-repeat="circle in pins.circles")
+          | {{ data.users.etblue.circles[circle.id].name }}
           .ui.label 10
       a.item.groups(href="")
         i.icon.users
         | 團體
       .menu.item.groups
-        a.item(href="timeline-groups.html",ng-repeat="group in groups")
-          | {{ group }}
+        a.item(href="timeline-groups.html",ng-repeat="group in pins.groups")
+          | {{ groups[group.id].name }}
           .ui.label 10
       a.item.activities(href="")
         | 我的活動紀錄
@@ -100,13 +101,13 @@ block body
         .right.menu
           include -sort-menu
       .in.timeline
-        | id:
-        input(type="text",ng-model="newPlan.id",id="inputId")
-        br
-        | name:
-        input(type="text",ng-model="newPlan.name",id="inputName")
-        br
-        button(ng-click="addPlan()") 新增方案
+        //-| id:
+        //-input(type="text",ng-model="newPlan.id",id="inputId")
+        //-br
+        //-| name:
+        //-input(type="text",ng-model="newPlan.name",id="inputName")
+        //-br
+        //-button(ng-click="addPlan()") 新增方案
         block timeline
           include -proposal-in-timeline
 
