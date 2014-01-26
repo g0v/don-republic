@@ -40,21 +40,22 @@
         font-weight: bold
 
 // replace semantic ui vertical menu for index page
-.ui.menu>.menu.item
-  padding: 0
-  &>.item
-    position: relative
-    margin: 0
-    padding-left: 2em
-    padding-right: 2.7em
-    font-size: 0.9rem
-    white-space: nowrap
-    text-overflow: ellipsis
-    overflow: hidden
-    .label
-      position: absolute
-      right: 0.95em
-      top: 1em
+.ui.vertical.menu
+  &>.repeat>.menu
+    padding: 0
+    .item
+      position: relative
+      margin: 0
+      padding-left: 2em
+      padding-right: 2.7em
+      font-size: 0.9rem
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      .label
+        position: absolute
+        right: 0.95em
+        top: 1em
 
 // timeline items in home page
 .in.timeline
@@ -120,3 +121,6 @@
   .entry
     margin: 0 0 0.5rem 0
 
+#firepad
+  width: 100%
+  height: 600px

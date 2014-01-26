@@ -33,9 +33,11 @@ Mac
 	* static-here
 * Open your browser
     * connect to http://localhost:8888/public/
+
 Windows
 ------------
 * now using Fire.app build views/ to public/
+* compile json.ls fake data: lsc -cj test.json
 
 Mockup / Prototype
 ============

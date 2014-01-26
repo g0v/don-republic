@@ -7,3 +7,4 @@ projects: require \./projects.json.ls
 types: require \./types.json.ls
 tags: require \./tags.json.ls
 groups: require \./groups.json.ls
+settings: require \./settings.json.ls

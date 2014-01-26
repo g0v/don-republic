@@ -1,5 +1,11 @@
 extends _template
 
+block head
+  script(src='codemirror/lib/codemirror.js')
+  link(rel='stylesheet', href='codemirror/lib/codemirror.css')
+  script(src='firepad.js')
+  link(rel='stylesheet', href='firepad.css')
+
 block title
   | 首頁
 
@@ -14,63 +20,30 @@ block body
           img(src="img/etblue.jpg").rounded.corner
         .id {{ data.users[userid].name }}
         //.id {{user.username}}
-      a.item.all(ng-click="view='timeline';timelineFilter=''")
+
+      a.item(ng-click="view='timeline';timelineFilter=''")
         i.icon.home
         | 所有動態
-      a.item.issues(ng-click="view='timeline';timelineFilter='issue'")
-        i.icon.folder.open.outline
-        .ui.label.light.gray {{ data.users[userid].pins.issues.length }} / {{ data.users[userid].subscribtions.issues.length }}
-        | 議題
-      .menu.item.issues
-        a.item(ng-repeat="issue in data.users[userid].pins.issues |  orderBy:'name'")
-          | {{ issues[issue.id].name }}
-          .ui.label 10
-      a.item.proposals(ng-click="view='timeline';timelineFilter='proposal'")
-        i.icon.folder.open.outline
-        .ui.label.light.gray {{ data.users[userid].pins.issues.length }} / {{ data.users[userid].subscribtions.issues.length }}
-        | 提案
-      .menu.item.proposals
-        a.item(ng-repeat="proposal in data.users[userid].pins.proposals")
-          | {{ proposals[proposal.id].name }}
-          .ui.label 10
-      a.item.projects(ng-click="view='timeline';timelineFilter='project'")
-        i.icon.folder.open.outline
-        .ui.label.light.gray {{ data.users[userid].pins.projects.length }} / {{ data.users[userid].subscribtions.projects.length }}
-        | 專案
-      .menu.item.projects
-        a.item(ng-repeat="project in data.users[userid].pins.projects")
-          | {{ projects[project.id].name }}
-          .ui.label 10
-      a.item.tags(ng-click="view='timeline';timelineFilter='tag'")
-        i.icon.tags
-        .ui.label.light.gray {{ data.users[userid].pins.tags.length }} / {{ data.users[userid].subscribtions.tags.length }}
-        | 標籤
-      .menu.item.tags
-        a.item(ng-repeat="tag in data.users[userid].pins.tags")
-          | {{ tags[tag.id].name }}
-          .ui.label 10
-      a.item.circles(ng-click="view='timeline';timelineFilter='circle'")
-        i.icon.user
-        .ui.label.light.gray {{ data.users[userid].pins.circles.length }} / {{ data.users[userid].circles.length }}
-        | 社交圈
-      .menu.item.circles
-        a.item(ng-repeat="circle in data.users[userid].pins.circles")
-          | {{ data.users[userid].circles[circle.id].name }}
-          .ui.label 10
-      a.item.groups(ng-click="view='timeline';timelineFilter='group'")
-        i.icon.users
-        .ui.label.light.gray {{ data.users[userid].pins.groups.length }} / {{ data.users[userid].subscribtions.groups.length }}
-        | 團體
-      .menu.item.groups
-        a.item(ng-repeat="group in data.users[userid].pins.groups")
-          | {{ groups[group.id].name }}
-          .ui.label 10
+
+      .repeat(ng-repeat="(type,list) in data.users[userid].pins")
+        a.item(ng-click="view='timeline';timelineFilter=type")
+          i.icon(ng-class="data.settings[type].icon")
+          .ui.label.light.gray {{ list.length }} / {{ data.users[userid].subscribtions[type].length }}
+          | {{ data.settings[type].name }}
+        .menu
+          a.item(ng-repeat="item in list | orderBy:'position'")
+            | {{ data[type][item.id].name }}
+            .ui.label 10
+
     #content
+
+      //-#firepad
+
       .account(ng-show="view=='account'")
         .ui.menu
           a.item.activities(href="")
             | 我的活動紀錄
-          .menu.item.activities
+          .menu.activities
             a.item.subscribed(href="")
               i.icon.rss
               | 訂閱
@@ -88,7 +61,7 @@ block body
               | 編輯
           a.item.achievements(href="")
             | 我的成就
-          .menu.item.achievements
+          .menu.achievements
             a.item.composing(href="")
               i.icon.certificate
               | 彙編懶人包
@@ -118,8 +91,7 @@ block body
           //-br
           //-button(ng-click="addPlan()") 新增方案
           //-.ui.segment.entry(ng-repeat="type in data.users[userid].subscribtions | filter:timelineFilter | orderBy:'edited.at'")
-          .ui.segment.entry(ng-repeat="type in data.users[userid].subscribtions")
-            {{data.users[userid].subscribtions}}
+          .ui.segment.entry(ng-repeat="(type , list) in data.users[userid].subscribtions")
             .ui.attached.top.right.label.white.menu.action
               .ui.dropdown.item.vote(ng-class="")
                 i.icon(ng-class="")
@@ -136,7 +108,7 @@ block body
                 i.icon.rss
               .item.share(ng-class="")
                 i.icon.forward.mail
-            .ui.attached.top.left.label.status(ng-class="") {{ type }}
+            .ui.attached.top.left.label.status(ng-class="") {{ type }} {{ list }}
             .summary
               .topic
                 .a.plan.item
@@ -160,7 +132,42 @@ block script
 
   script.
     // firebase only
-
+    var firepadDiv = document.getElementById('firepad');
+    var firepadRef = new Firebase('https://edemocracy.firebaseio.com');
+    var codeMirror = CodeMirror(firepadDiv, { lineWrapping: true });
+    var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+        { richTextShortcuts: true, richTextToolbar: true });
+    firepad.on('ready', function() {
+      if (firepad.isHistoryEmpty()) {
+        firepad.setHtml(
+            '<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/>\n' +
+            '<br/>' +
+            '<div style="font-size: 18px">' +
+            'Supports:<br/>' +
+            '<ul>' +
+              '<li>Different ' +
+                '<span style="font-family: impact">fonts,</span>' +
+                '<span style="font-size: 24px;"> sizes, </span>' +
+                '<span style="color: blue">and colors.</span>' +
+              '</li>' +
+              '<li>' +
+                '<b>Bold, </b>' +
+                '<i>italic, </i>' +
+                '<u>and underline.</u>' +
+              '</li>' +
+              '<li>Lists' +
+                '<ol>' +
+                  '<li>One</li>' +
+                  '<li>Two</li>' +
+                '</ol>' +
+              '</li>' +
+              '<li>Undo / redo</li>' +
+              '<li>Cursor / selection synchronization.</li>' +
+              '<li>And it\'s all fully collaborative!</li>' +
+            '</ul>' +
+            '</div>');
+      }
+    });
   style.
     body
     background-color: rgba(0,0,0,0.03)

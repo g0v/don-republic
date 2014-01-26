@@ -2864,3 +2864,40 @@
 2014-01-24 16:40:16 identical public/css/page.css 
 2014-01-24 16:50:13 overwrite public/js/test.json.js
 2014-01-25 17:20:53 overwrite public/js/test.json.js
+2014-01-25 22:22:16 overwrite public/css/home.css 
+2014-01-25 22:23:40 overwrite public/js/badges.json.js
+2014-01-25 22:23:40 overwrite public/js/groups.json.js
+2014-01-25 22:23:40 overwrite public/js/issues.json.js
+2014-01-25 22:23:40 overwrite public/js/pads.json.js
+2014-01-25 22:23:41 overwrite public/js/projects.json.js
+2014-01-25 22:23:41 overwrite public/js/proposals.json.js
+2014-01-25 22:23:41 overwrite public/js/tags.json.js
+2014-01-25 22:24:19    create public/js/circles.json.js
+2014-01-25 22:24:29 overwrite public/js/circles.json.js
+2014-01-25 22:24:46 overwrite public/js/test.json.js
+2014-01-25 22:29:13    create public/js/settings.json.js
+2014-01-25 22:29:25 overwrite public/js/settings.json.js
+2014-01-25 22:29:39 overwrite public/js/issues.json.js
+2014-01-25 22:29:51 overwrite public/js/pads.json.js
+2014-01-25 22:30:04 overwrite public/js/settings.json.js
+2014-01-25 22:30:10 overwrite public/js/projects.json.js
+2014-01-25 22:30:21 overwrite public/js/settings.json.js
+2014-01-25 22:30:29 overwrite public/js/proposals.json.js
+2014-01-25 22:30:43 overwrite public/js/settings.json.js
+2014-01-25 22:30:51 overwrite public/js/tags.json.js
+2014-01-25 22:31:00 overwrite public/js/settings.json.js
+2014-01-25 22:31:08 overwrite public/js/badges.json.js
+2014-01-25 22:31:19     error livescripts/settings.json.ls: Error: Parse error on line 17: Unexpected 'NEWLINE'
+2014-01-25 22:31:19 overwrite public/js/settings.json.js
+2014-01-25 22:31:27     error livescripts/circles.json.ls: Error: Parse error on line 1: Unexpected 'NEWLINE'
+2014-01-25 22:31:27 overwrite public/js/circles.json.js
+2014-01-25 22:31:45 overwrite public/js/test.json.js
+2014-01-25 22:32:01     error livescripts/settings.json.ls: Error: Parse error on line 17: Unexpected 'NEWLINE'
+2014-01-25 22:32:01 overwrite public/js/settings.json.js
+2014-01-25 22:32:10 overwrite public/js/groups.json.js
+2014-01-25 22:32:18     error livescripts/settings.json.ls: Error: Parse error on line 17: Unexpected 'NEWLINE'
+2014-01-25 22:32:18 overwrite public/js/settings.json.js
+2014-01-25 22:32:45 overwrite public/js/settings.json.js
+2014-01-25 22:35:45 overwrite public/js/settings.json.js
+2014-01-25 23:47:29 overwrite public/css/home.css 
+2014-01-25 23:47:30 identical public/css/home.css 
