@@ -1,10 +1,10 @@
 extends _template
 
 block head
-  script(src='codemirror/lib/codemirror.js')
-  link(rel='stylesheet', href='codemirror/lib/codemirror.css')
-  script(src='firepad.js')
-  link(rel='stylesheet', href='firepad.css')
+  script(src='assets/codemirror/codemirror.js')
+  link(rel='stylesheet', href='assets/codemirror/codemirror.css')
+  script(src='assets/firepad/firepad.js')
+  link(rel='stylesheet', href='assets/firepad/firepad.css')
 
 block title
   | 首頁
@@ -36,9 +36,6 @@ block body
             .ui.label 10
 
     #content
-
-      //-#firepad
-
       .account(ng-show="view=='account'")
         .ui.menu
           a.item.activities(href="")
@@ -120,7 +117,6 @@ block body
                 a(href="").a.user.item.diff-1 clkao
                 | 編輯於 time
               .diff
-                include -dayum-1
             include -timeline-plan-meta
           //-block timeline
             include -proposal-in-timeline
@@ -129,46 +125,3 @@ block script
   script.
     $("#navbar .home").addClass("active");
     $("#sidebar .all").addClass("active");
-
-  script.
-    // firebase only
-    var firepadDiv = document.getElementById('firepad');
-    var firepadRef = new Firebase('https://edemocracy.firebaseio.com');
-    var codeMirror = CodeMirror(firepadDiv, { lineWrapping: true });
-    var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-        { richTextShortcuts: true, richTextToolbar: true });
-    firepad.on('ready', function() {
-      if (firepad.isHistoryEmpty()) {
-        firepad.setHtml(
-            '<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/>\n' +
-            '<br/>' +
-            '<div style="font-size: 18px">' +
-            'Supports:<br/>' +
-            '<ul>' +
-              '<li>Different ' +
-                '<span style="font-family: impact">fonts,</span>' +
-                '<span style="font-size: 24px;"> sizes, </span>' +
-                '<span style="color: blue">and colors.</span>' +
-              '</li>' +
-              '<li>' +
-                '<b>Bold, </b>' +
-                '<i>italic, </i>' +
-                '<u>and underline.</u>' +
-              '</li>' +
-              '<li>Lists' +
-                '<ol>' +
-                  '<li>One</li>' +
-                  '<li>Two</li>' +
-                '</ol>' +
-              '</li>' +
-              '<li>Undo / redo</li>' +
-              '<li>Cursor / selection synchronization.</li>' +
-              '<li>And it\'s all fully collaborative!</li>' +
-            '</ul>' +
-            '</div>');
-      }
-    });
-  style.
-    body
-    background-color: rgba(0,0,0,0.03)
-

@@ -1,7 +1,1 @@
-(function(){
-  module.exports = {
-    1: "firepad url",
-    2: "firepad url",
-    3: "firepad url"
-  };
-}).call(this);
+document.write("C:/Users/ETBlue/Documents/GitHub/don-republic/livescripts/pads.json.ls: Error: Parse error on line 1: Unexpected 'NEWLINE'")

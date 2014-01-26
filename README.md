@@ -37,6 +37,7 @@ Mac
 Windows
 ------------
 * now using Fire.app build views/ to public/
+* if build doesn't work: jade -w views -o public
 * compile json.ls fake data: lsc -cj test.json
 
 Mockup / Prototype
