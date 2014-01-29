@@ -2,3 +2,5 @@
 .livescript-cache/
 fire_app_log.txt
 .editorconfig
+framework/server.js
+public/library.html
