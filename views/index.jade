@@ -79,7 +79,7 @@ block body
             i.icon.down
             | newsfeed type: 發表新文章（標題、全文、訂閱與統計、推文）
           .news
-            .author.ui.image.rounded.corner
+            .author.ui.image
               img(src="img/etblue.jpg")
             .description
               .a.user.item clkao
@@ -89,11 +89,12 @@ block body
             .content.ui.segment
               h2: a(href="") 從開放源碼到開放政府
               p 2012 年底開始的「g0v.tw 零時政府」運動，共有數百人次參與多場黑客松，眾多專案讓政府運作更加透明、資訊更容易被取用。本議程將介紹「零時政府」與開放源碼精神的淵源，社群的運作，以及成果。
-              a(href="") 展開全文
+              a(href="").expand 展開全文
                 i.icon.double.angle.down
             .info
               .meta.ui.menu.borderless
-                a.item 書籤
+                a.item.active 書籤
+                  i.icon.checkmark
                 a.item.active 訂閱
                   i.icon.checkmark
                 a.item.active 通知
@@ -108,7 +109,7 @@ block body
                   span 12
                   i.icon.mail.forward
                   span 12
-                a.item 1 小時前
+                a.a.timestamp.item 1 小時前
               .responses
                 .response
                   .a.user.item etblue
@@ -116,7 +117,7 @@ block body
                 .response
                   .a.user.item etblue
                   | oh my dayum
-                .response.new
+                a(href="").response.new
                   i.icon.add
                   | 新推文
 
@@ -124,7 +125,7 @@ block body
             i.icon.down
             | newsfeed type: 提出新問答題
           .news
-            .author.ui.image.rounded.corner
+            .author.ui.image
               img(src="img/etblue.jpg")
             .description
               .a.user.item etblue
@@ -133,8 +134,7 @@ block body
               | 議題提出了一則問答
             .content.ui.segment
               h2: a(href="") 素人參政時，所需要的基本的政策智庫，規模要多大？要多少人、包含哪些組成成員？
-              p 2012 年底開始的「g0v.tw 零時政府」運動，共有數百人次參與多場黑客松，眾多專案讓政府運作更加透明、資訊更容易被取用。本議程將介紹「零時政府」與開放源碼精神的淵源，社群的運作，以及成果。
-              a(href="") 展開全文
+              a(href="").expand 展開詳細描述
                 i.icon.double.angle.down
             .info
               .meta.ui.menu.borderless
@@ -153,17 +153,33 @@ block body
                   span 12
                   i.icon.mail.forward
                   span 12
-                a.item 1 小時前
-              .responses
-                .response
-                  .a.user.item etblue
-                  | 潮爽der
-                .response
-                  .a.user.item etblue
-                  | oh my dayum
-                .response.new
+                a.a.timestamp.item 1 小時前
+              .answers
+                .answer
+                  .action
+                    a(href="").button.active
+                      i.icon.arrow.up
+                    .count 10
+                  .author.ui.image
+                    img(src="img/etblue.jpg")
+                  .a.user.item evan
+                  a.a.timestamp.item 30 分鐘前‧修改過
+                  p 少則幾十人，多則幾百人，如果沒有能力養那麼大的智庫，可以跟外面研究單位買報告……blahblah
+                  a(href="").expand 展開全文
+                    i.icon.double.angle.down
+                .answer
+                  .action
+                    a(href="").button
+                      i.icon.arrow.up
+                    .count 10
+                  .author.ui.image
+                    img(src="img/etblue.jpg")
+                  .a.user.item evan
+                  a.a.timestamp.item 30 分鐘前‧修改過
+                  p 少則幾十人，多則幾百人，如果沒有能力養那麼大的智庫，可以跟外面研究單位買報告……blahblah
+                a(href="").answer.new
                   i.icon.add
-                  | 新推文
+                  | 新回答
 
           //- firebase 測試用
             | id:

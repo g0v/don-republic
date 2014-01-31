@@ -76,6 +76,12 @@
     .content
       padding: 0.5rem
       margin: 0
+      +border-radius(0)
+      h2+.expand
+        display: inline-block
+        margin-top: 0.5rem
+    p:last-child
+      margin-bottom: 0
     .info
       //margin: 0 0.3rem
       .meta
@@ -94,6 +100,9 @@
           .icon
             //color: rgba(#29abe2,1)
             //+text-shadow(rgba(#000, 1) 0 0 1px)
+      .a.timestamp.item
+        font-size: 0.9rem
+        float: right
       .responses
         border: 1px #ddd solid
         border-width: 0 1px 1px 1px
@@ -105,6 +114,50 @@
           padding: 0 0.5em
           &.new
             padding: 0.5em
+            display: block
+      .answers
+        border: 1px #ddd solid
+        border-width: 0 1px 1px 1px
+        background-color: rgba(#fff,1)
+        .answer
+          border-top: 1px #ddd solid
+          padding: 0 0.5em 0.5em
+          position: relative
+          .action
+            position: absolute
+            font-size: 0.9rem
+            left: -2rem
+            width: 2rem
+            text-align: center
+            font-weight: bold
+            .button
+              width: 100%
+              padding: 0.5em 0
+              display: block
+              +border-radius(0.3em)
+              &:hover
+                background-color: rgba(#000,0.1)
+              &.active
+                color: #fff
+                background-color: green
+              i.icon
+                font-size: 1rem!important
+                display: block
+                margin: 0
+            .count
+              width: 100%
+          .author
+            position: static
+            width: 2rem
+            height: 2rem
+          .a.user.item
+          .a.timestamp.item
+            margin-right: -0.5em
+          &.new
+            padding: 0.5em
+            font-size: 0.9rem
+            display: block
+            color: rgba(#000,0.6)
 
 // timeline items in home page... old version
 // .in.timeline
