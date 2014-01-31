@@ -61,18 +61,21 @@
 
 .in.timeline
   .news
-    margin: 0 0 1rem 2.5rem
+    margin: 0 0 1rem 3.5rem
     position: relative
     .author
       position: absolute
-      left: -2.5rem
+      left: -3.5rem
       top: 0
-      width: 2rem
-      height: 2rem
+      width: 3rem
+      height: 3rem
       +box-shadow(0 0 1px rgba(#000,1))
       //border: 0.25rem #fff solid
       //+box-sizing(border-box)
     .description
+    .expand
+      font-size: 0.9rem
+      color: rgba(#29abe2,1)
     .content
       padding: 0.5rem
       margin: 0
@@ -103,6 +106,7 @@
       .a.timestamp.item
         font-size: 0.9rem
         float: right
+        color: #29abe2
       .responses
         border: 1px #ddd solid
         border-width: 0 1px 1px 1px
@@ -115,10 +119,16 @@
           &.new
             padding: 0.5em
             display: block
+            background-color: rgba(#000,0.05)
       .answers
         border: 1px #ddd solid
         border-width: 0 1px 1px 1px
         background-color: rgba(#fff,1)
+        .title
+          padding: 0.5rem
+          border-top: 1px #ddd solid
+          .expand
+            margin-left: 1rem
         .answer
           border-top: 1px #ddd solid
           padding: 0 0.5em 0.5em
@@ -158,6 +168,7 @@
             font-size: 0.9rem
             display: block
             color: rgba(#000,0.6)
+            background-color: rgba(#000,0.05)
 
 // timeline items in home page... old version
 // .in.timeline
