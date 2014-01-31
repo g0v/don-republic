@@ -1,11 +1,5 @@
 extends _template
 
-block head
-  script(src='assets/codemirror/codemirror.js')
-  link(rel='stylesheet', href='assets/codemirror/codemirror.css')
-  script(src='assets/firepad/firepad.js')
-  link(rel='stylesheet', href='assets/firepad/firepad.css')
-
 block title
   | 首頁
 
@@ -17,7 +11,7 @@ block body
       //-a.item(href="",ng-controller="ctrl.user")
       a.item(ng-click="view='account'")
         .avatar
-          img(src="img/etblue.jpg").rounded.corner
+          img(src="img/etblue.jpg").ui.rounded.corner.image
         .id {{ data.users[userid].name }}
         //.id {{user.username}}
 
@@ -77,18 +71,110 @@ block body
           a.item.news.active 所有動態
           a.item.settings 設定
             i.icon.setting
+            // 設定時間軸要顯示什麼層級的內容，我訂閱的 / 我追蹤的人分享的 / 我追蹤的人訂閱的 / 我書籤的 / 我追蹤的人書籤的...
           .right.menu
             include -sort-menu
         .in.timeline
-          //-| id:
-          //-input(type="text",ng-model="newPlan.id",id="inputId")
-          //-br
-          //-| name:
-          //-input(type="text",ng-model="newPlan.name",id="inputName")
-          //-br
-          //-button(ng-click="addPlan()") 新增方案
+          //p
+            i.icon.down
+            | newsfeed type: 發表新文章（標題、全文、訂閱與統計、推文）
+          .news
+            .author.ui.image.rounded.corner
+              img(src="img/etblue.jpg")
+            .description
+              .a.user.item clkao
+              | 在
+              .a.board.item 政府資訊公開
+              | 議題發表了一篇文章
+            .content.ui.segment
+              h2: a(href="") 從開放源碼到開放政府
+              p 2012 年底開始的「g0v.tw 零時政府」運動，共有數百人次參與多場黑客松，眾多專案讓政府運作更加透明、資訊更容易被取用。本議程將介紹「零時政府」與開放源碼精神的淵源，社群的運作，以及成果。
+              a(href="") 展開全文
+                i.icon.double.angle.down
+            .info
+              .meta.ui.menu.borderless
+                a.item 書籤
+                a.item.active 訂閱
+                  i.icon.checkmark
+                a.item.active 通知
+                  i.icon.checkmark
+                a.item 分享
+                a.item
+                  i.icon.star
+                  span 12
+                  i.icon.rss
+                  span 12
+                  i.icon.bullhorn
+                  span 12
+                  i.icon.mail.forward
+                  span 12
+                a.item 1 小時前
+              .responses
+                .response
+                  .a.user.item etblue
+                  | 潮爽der
+                .response
+                  .a.user.item etblue
+                  | oh my dayum
+                .response.new
+                  i.icon.add
+                  | 新推文
+
+          //p
+            i.icon.down
+            | newsfeed type: 提出新問答題
+          .news
+            .author.ui.image.rounded.corner
+              img(src="img/etblue.jpg")
+            .description
+              .a.user.item etblue
+              | 在
+              .a.board.item 新民主時代
+              | 議題提出了一則問答
+            .content.ui.segment
+              h2: a(href="") 素人參政時，所需要的基本的政策智庫，規模要多大？要多少人、包含哪些組成成員？
+              p 2012 年底開始的「g0v.tw 零時政府」運動，共有數百人次參與多場黑客松，眾多專案讓政府運作更加透明、資訊更容易被取用。本議程將介紹「零時政府」與開放源碼精神的淵源，社群的運作，以及成果。
+              a(href="") 展開全文
+                i.icon.double.angle.down
+            .info
+              .meta.ui.menu.borderless
+                a.item 書籤
+                a.item.active 訂閱
+                  i.icon.checkmark
+                a.item.active 通知
+                  i.icon.checkmark
+                a.item 分享
+                a.item
+                  i.icon.star
+                  span 12
+                  i.icon.rss
+                  span 12
+                  i.icon.bullhorn
+                  span 12
+                  i.icon.mail.forward
+                  span 12
+                a.item 1 小時前
+              .responses
+                .response
+                  .a.user.item etblue
+                  | 潮爽der
+                .response
+                  .a.user.item etblue
+                  | oh my dayum
+                .response.new
+                  i.icon.add
+                  | 新推文
+
+          //- firebase 測試用
+            | id:
+            input(type="text",ng-model="newPlan.id",id="inputId")
+            br
+            | name:
+            input(type="text",ng-model="newPlan.name",id="inputName")
+            br
+            button(ng-click="addPlan()") 新增方案
           //-.ui.segment.entry(ng-repeat="type in data.users[userid].subscribtions | filter:timelineFilter | orderBy:'edited.at'")
-          .ui.segment.entry(ng-repeat="(type , list) in data.users[userid].subscribtions")
+          //-.ui.segment.entry(ng-repeat="(type , list) in data.users[userid].subscribtions")
             .ui.attached.top.right.label.white.menu.action
               .ui.dropdown.item.vote(ng-class="")
                 i.icon(ng-class="")

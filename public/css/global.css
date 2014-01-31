@@ -221,17 +221,6 @@ p {
   opacity: 0.6;
 }
 
-.in.timeline .meta, .in.list .meta {
-  text-transform: none;
-  padding: 0.5em 1em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.in.timeline .meta .right, .in.list .meta .right {
-  float: right;
-}
-
 .etherpad a:hover,
 .reference a:hover,
 .response a:hover {
@@ -303,97 +292,6 @@ p {
   width: 5rem;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.response {
-  padding-bottom: 2rem;
-}
-.response .ui.tabular.menu .description.item {
-  padding-left: 0.1em;
-}
-.response .ui.comments {
-  margin-left: 3rem;
-}
-.response .ui.comments .comment {
-  min-height: 3rem;
-  margin: 0;
-  padding: 0.5rem 0 0 0;
-  clear: both;
-}
-.response .ui.comments .comment .avatar img {
-  -webkit-border-radius: 0.3rem;
-  -moz-border-radius: 0.3rem;
-  -ms-border-radius: 0.3rem;
-  -o-border-radius: 0.3rem;
-  border-radius: 0.3rem;
-}
-.response .ui.comments .comment .comments {
-  margin-top: 0;
-  padding-top: 0;
-}
-.response .ui.comments .comment .status {
-  position: absolute;
-  left: -3rem;
-}
-.response .ui.comments .comment .status .ui.menu .item {
-  font-size: 0.8rem;
-  padding: 0.5em 0.8em;
-}
-.response .ui.comments .comment .status .ui.menu .item i.icon {
-  opacity: 0.3;
-}
-.response .ui.comments .comment .content {
-  padding-top: 0;
-}
-.response .ui.comments .comment .content .text {
-  opacity: 1;
-}
-.response .ui.comments .comment .content .metadata {
-  display: inline-block;
-  float: right;
-  font-size: 0.9rem;
-}
-.response .ui.comments .comment .content .metadata a {
-  color: rgba(0, 0, 0, 0.4);
-  padding: 0.3em 0.7em;
-  -webkit-border-radius: 0.3rem;
-  -moz-border-radius: 0.3rem;
-  -ms-border-radius: 0.3rem;
-  -o-border-radius: 0.3rem;
-  border-radius: 0.3rem;
-}
-.response .ui.comments .comment .content .metadata a i.icon {
-  opacity: 0.3;
-}
-.response .ui.comments .comment .content .metadata a:hover {
-  color: rgba(0, 0, 0, 0.8);
-}
-.response .ui.comments .comment .content .metadata .avatar {
-  margin-left: 0.5em;
-  opacity: 0.5;
-  width: 1em;
-  height: 1em;
-  float: none;
-  display: inline-block;
-  position: relative;
-  top: 0.1em;
-}
-.response .ui.comments .comment .content .metadata .avatar img {
-  max-width: 1em;
-  max-height: 1em;
-}
-.response .ui.comments .comment .content .ui.form {
-  margin: 0;
-  max-width: 100%;
-}
-.response .ui.comments .comment .content .ui.form .field {
-  clear: none;
-}
-.response .ui.comments .comment .content .ui.form .account {
-  margin-left: 1em;
-}
-.response .ui.comments .post.comment {
-  margin-left: -3rem;
 }
 
 #navbar .ui.secondary.pointing.menu {

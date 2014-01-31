@@ -57,8 +57,57 @@
         right: 0.95em
         top: 1em
 
-// timeline items in home page
+// news in timeline
+
 .in.timeline
+  .news
+    margin: 0 0 1rem 2.5rem
+    position: relative
+    .author
+      position: absolute
+      left: -2.5rem
+      top: 0
+      width: 2rem
+      height: 2rem
+      +box-shadow(0 0 1px rgba(#000,1))
+      //border: 0.25rem #fff solid
+      //+box-sizing(border-box)
+    .description
+    .content
+      padding: 0.5rem
+      margin: 0
+    .info
+      //margin: 0 0.3rem
+      .meta
+        background-color: rgba(#fff,1)
+        border: 1px #ddd solid
+        border-width: 0 1px
+        &.ui.menu
+          +border-radius(none)
+          +box-shadow(none)
+          margin: 0
+        .item
+          font-size: 0.9rem
+          color: #29abe2
+          padding: 0.5em
+          //display: inline-block
+          .icon
+            //color: rgba(#29abe2,1)
+            //+text-shadow(rgba(#000, 1) 0 0 1px)
+      .responses
+        border: 1px #ddd solid
+        border-width: 0 1px 1px 1px
+        background-color: rgba(#fff,1)
+        .response
+          font-size: 0.9rem
+          color: rgba(#000,0.6)
+          border-top: 1px #ddd solid
+          padding: 0 0.5em
+          &.new
+            padding: 0.5em
+
+// timeline items in home page... old version
+// .in.timeline
   .label.status
     padding: 0.5em!important
   .action
