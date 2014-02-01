@@ -83,6 +83,15 @@
       h2+.expand
         display: inline-block
         margin-top: 0.5rem
+      .logo
+        width: 6rem
+        height: 6rem
+        float: left
+        border: 1px #ccc solid
+        margin-right: 0.5rem
+        img
+          width: 100%
+
     p:last-child
       margin-bottom: 0
     .info
@@ -114,7 +123,7 @@
         .response
           font-size: 0.9rem
           color: rgba(#000,0.6)
-          border-top: 1px #ddd solid
+          border-top: 1px #ddd dashed
           padding: 0 0.5em
           &.new
             padding: 0.5em
@@ -144,12 +153,12 @@
               width: 100%
               padding: 0.5em 0
               display: block
-              +border-radius(0.3em)
+              +border-left-radius(0.3em)
               &:hover
                 background-color: rgba(#000,0.1)
               &.active
                 color: #fff
-                background-color: green
+                background-color: rgba(green,0.6)
               i.icon
                 font-size: 1rem!important
                 display: block
@@ -163,12 +172,14 @@
           .a.user.item
           .a.timestamp.item
             margin-right: -0.5em
+          .responses
+            border: none
           &.new
             padding: 0.5em
             font-size: 0.9rem
             display: block
-            color: rgba(#000,0.6)
-            background-color: rgba(#000,0.05)
+            color: rgba(green,0.6)
+            background-color: rgba(green,0.1)
 
 // timeline items in home page... old version
 // .in.timeline

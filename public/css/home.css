@@ -74,6 +74,16 @@
   display: inline-block;
   margin-top: 0.5rem;
 }
+.in.timeline .news .content .logo {
+  width: 6rem;
+  height: 6rem;
+  float: left;
+  border: 1px #cccccc solid;
+  margin-right: 0.5rem;
+}
+.in.timeline .news .content .logo img {
+  width: 100%;
+}
 .in.timeline .news p:last-child {
   margin-bottom: 0;
 }
@@ -111,7 +121,7 @@
 .in.timeline .news .info .responses .response {
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.6);
-  border-top: 1px #dddddd solid;
+  border-top: 1px #dddddd dashed;
   padding: 0 0.5em;
 }
 .in.timeline .news .info .responses .response.new {
@@ -148,18 +158,19 @@
   width: 100%;
   padding: 0.5em 0;
   display: block;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
+  -moz-border-radius-topleft: 0.3em;
+  -webkit-border-top-left-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  -moz-border-radius-bottomleft: 0.3em;
+  -webkit-border-bottom-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
 }
 .in.timeline .news .info .answers .answer .action .button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .in.timeline .news .info .answers .answer .action .button.active {
   color: white;
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.6);
 }
 .in.timeline .news .info .answers .answer .action .button i.icon {
   font-size: 1rem !important;
@@ -177,10 +188,13 @@
 .in.timeline .news .info .answers .answer .a.timestamp.item {
   margin-right: -0.5em;
 }
+.in.timeline .news .info .answers .answer .responses {
+  border: none;
+}
 .in.timeline .news .info .answers .answer.new {
   padding: 0.5em;
   font-size: 0.9rem;
   display: block;
-  color: rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 128, 0, 0.6);
+  background-color: rgba(0, 128, 0, 0.1);
 }
