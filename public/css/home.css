@@ -70,6 +70,12 @@
   -o-border-radius: 0;
   border-radius: 0;
 }
+.in.timeline .news .content.vision {
+  background-color: #fdf9bb;
+}
+.in.timeline .news .content.sticker .id {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .in.timeline .news .content h2 + .expand {
   display: inline-block;
   margin-top: 0.5rem;
@@ -104,10 +110,13 @@
 .in.timeline .news p:last-child {
   margin-bottom: 0;
 }
-.in.timeline .news .info .meta {
-  background-color: white;
+.in.timeline .news .info {
   border: 1px #dddddd solid;
-  border-width: 0 1px;
+  border-width: 0 1px 1px 1px;
+  background-color: white;
+}
+.in.timeline .news .info .meta.vision {
+  background-color: #fdf9bb;
 }
 .in.timeline .news .info .meta.ui.menu {
   -webkit-border-radius: none;
@@ -130,11 +139,6 @@
   float: right;
   color: #29abe2;
 }
-.in.timeline .news .info .responses {
-  border: 1px #dddddd solid;
-  border-width: 0 1px 1px 1px;
-  background-color: white;
-}
 .in.timeline .news .info .responses .response {
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.6);
@@ -146,11 +150,6 @@
   display: block;
   color: rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.05);
-}
-.in.timeline .news .info .answers {
-  border: 1px #dddddd solid;
-  border-width: 0 1px 1px 1px;
-  background-color: white;
 }
 .in.timeline .news .info .answers .title {
   padding: 0.5rem;
@@ -204,9 +203,6 @@
 }
 .in.timeline .news .info .answers .answer .a.timestamp.item {
   margin-right: -0.5em;
-}
-.in.timeline .news .info .answers .answer .responses {
-  border: none;
 }
 .in.timeline .news .info .answers .answer.new {
   padding: 0.5em;

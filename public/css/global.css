@@ -116,10 +116,10 @@ p {
 }
 
 .a.plan.item {
-  color: inherit;
+  color: #00a99d;
 }
 .a.plan.item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 169, 157, 0.05);
 }
 
 .a.chapter.item {
