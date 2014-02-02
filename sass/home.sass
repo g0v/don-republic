@@ -91,7 +91,20 @@
         margin-right: 0.5rem
         img
           width: 100%
-
+      .progress
+        float: right
+        position: relative
+        .bar
+          position: absolute
+          left: 0
+          bottom: -3px
+          height: 3px
+          width: 100%
+          background-color: rgba(#000,0.1)
+          .done
+            height: 100%
+            width: 80%
+            background-color: #8cc63f
     p:last-child
       margin-bottom: 0
     .info
@@ -128,6 +141,7 @@
           &.new
             padding: 0.5em
             display: block
+            color: rgba(#000,0.5)
             background-color: rgba(#000,0.05)
       .answers
         border: 1px #ddd solid
@@ -153,12 +167,16 @@
               width: 100%
               padding: 0.5em 0
               display: block
-              +border-left-radius(0.3em)
+              +box-sizing(border-box)
+              //+border-left-radius(0.3em)
               &:hover
                 background-color: rgba(#000,0.1)
               &.active
                 color: #fff
-                background-color: rgba(green,0.6)
+                background-color: rgba(#39b54a,1)
+                border: 1px rgba(#fff,0.5) solid
+                border-width: 1px 0 1px 1px
+                //+box-shadow(-1px 0 0.5em rgba(#000,0.3))
               i.icon
                 font-size: 1rem!important
                 display: block
@@ -178,8 +196,8 @@
             padding: 0.5em
             font-size: 0.9rem
             display: block
-            color: rgba(green,0.6)
-            background-color: rgba(green,0.1)
+            color: rgba(#39b54a,1)
+            background-color: rgba(#8cc63f,0.1)
 
 // timeline items in home page... old version
 // .in.timeline

@@ -84,6 +84,23 @@
 .in.timeline .news .content .logo img {
   width: 100%;
 }
+.in.timeline .news .content .progress {
+  float: right;
+  position: relative;
+}
+.in.timeline .news .content .progress .bar {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 3px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.in.timeline .news .content .progress .bar .done {
+  height: 100%;
+  width: 80%;
+  background-color: #8cc63f;
+}
 .in.timeline .news p:last-child {
   margin-bottom: 0;
 }
@@ -127,6 +144,7 @@
 .in.timeline .news .info .responses .response.new {
   padding: 0.5em;
   display: block;
+  color: rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.05);
 }
 .in.timeline .news .info .answers {
@@ -158,19 +176,18 @@
   width: 100%;
   padding: 0.5em 0;
   display: block;
-  -moz-border-radius-topleft: 0.3em;
-  -webkit-border-top-left-radius: 0.3em;
-  border-top-left-radius: 0.3em;
-  -moz-border-radius-bottomleft: 0.3em;
-  -webkit-border-bottom-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .in.timeline .news .info .answers .answer .action .button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .in.timeline .news .info .answers .answer .action .button.active {
   color: white;
-  background-color: rgba(0, 128, 0, 0.6);
+  background-color: #39b54a;
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  border-width: 1px 0 1px 1px;
 }
 .in.timeline .news .info .answers .answer .action .button i.icon {
   font-size: 1rem !important;
@@ -195,6 +212,6 @@
   padding: 0.5em;
   font-size: 0.9rem;
   display: block;
-  color: rgba(0, 128, 0, 0.6);
-  background-color: rgba(0, 128, 0, 0.1);
+  color: #39b54a;
+  background-color: rgba(140, 198, 63, 0.1);
 }
