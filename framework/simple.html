@@ -329,7 +329,7 @@
               <div class="col-sm-4"><small style="margin-top:38px" class="pull-right">表决時間: <span ng-show="propCur.start">{{propCur.start|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.start">未定</span><span ng-show="propCur.start"> ~ <span ng-show="propCur.end">{{propCur.end|date:'yyyy/MM/dd HH:mm'}}</span><span ng-show="!propCur.end">未定</span></span></small></div>
             </div>
             <div class="well">{{propCur.desc}}</div>
-            <div id="prop-cur-plans" class="panel-group">
+            <div id="prop-cur-plans2" class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title"><a><i class="glyphicon glyphicon-hand-right"></i>方案與決策</a>
@@ -428,6 +428,8 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div id="prop-cur-plans" class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new"><i class="glyphicon glyphicon-plus-sign"></i>我要提出新方案</a><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-new" class="pull-right active">進階選項...</a></h4>
