@@ -160,6 +160,108 @@
             chapter: "1"
           },
           timestamp: "20140101"
+        },
+        4: {
+          action: "edit",
+          type: "pad",
+          target: {
+            project: "1"
+          },
+          timestamp: "20140101"
+        },
+        5: {
+          action: "subscribe",
+          type: "issue",
+          target: {
+            proposal: "1"
+          },
+          timestamp: "20140101"
+        },
+        6: {
+          action: "new",
+          type: "proposal",
+          target: {
+            proposal: "2"
+          },
+          timestamp: "20140101"
+        },
+        7: {
+          action: "new",
+          type: "project",
+          target: {
+            proposal: "2"
+          },
+          timestamp: "20140101"
+        },
+        8: {
+          action: "new",
+          type: "article",
+          target: {
+            group: "1",
+            article: "1"
+          },
+          timestamp: "20140101"
+        },
+        9: {
+          action: "follow",
+          type: "user",
+          target: {
+            user: "gugod"
+          },
+          timestamp: "20140101"
+        },
+        10: {
+          action: "join",
+          type: "group",
+          target: {
+            group: "3"
+          },
+          timestamp: "20140101"
+        },
+        11: {
+          action: "new",
+          type: "question",
+          target: {
+            question: "1"
+          },
+          timestamp: "20140101"
+        },
+        12: {
+          action: "new",
+          type: "argument",
+          target: {
+            argument: "1"
+          },
+          timestamp: "20140101"
+        },
+        13: {
+          action: "answer",
+          type: "question",
+          target: {
+            question: "1",
+            answer: "2"
+          },
+          timestamp: "20140101"
+        },
+        14: {
+          action: "response",
+          type: "article",
+          target: {
+            issue: ['3', '4'],
+            article: "2",
+            response: "1"
+          },
+          timestamp: "20140101"
+        },
+        15: {
+          action: "response",
+          type: "pad",
+          target: {
+            proposal: ['1'],
+            pad: "2",
+            response: "1"
+          },
+          timestamp: "20140101"
         }
       }
     }

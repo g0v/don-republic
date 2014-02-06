@@ -199,13 +199,148 @@
             "tkalu"
           ]
         }
+      },
+      "activities": {
+        "1": {
+          "action": "new",
+          "type": "vision",
+          "target": {
+            "proposal": "1",
+            "vision": "3"
+          },
+          "timestamp": "20140101"
+        },
+        "2": {
+          "action": "new",
+          "type": "plan",
+          "target": {
+            "proposal": "2",
+            "plan": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "3": {
+          "action": "new",
+          "type": "chapter",
+          "target": {
+            "proposal": "2",
+            "plan": "1",
+            "chapter": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "4": {
+          "action": "edit",
+          "type": "pad",
+          "target": {
+            "project": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "5": {
+          "action": "subscribe",
+          "type": "issue",
+          "target": {
+            "proposal": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "6": {
+          "action": "new",
+          "type": "proposal",
+          "target": {
+            "proposal": "2"
+          },
+          "timestamp": "20140101"
+        },
+        "7": {
+          "action": "new",
+          "type": "project",
+          "target": {
+            "proposal": "2"
+          },
+          "timestamp": "20140101"
+        },
+        "8": {
+          "action": "new",
+          "type": "article",
+          "target": {
+            "group": "1",
+            "article": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "9": {
+          "action": "follow",
+          "type": "user",
+          "target": {
+            "user": "gugod"
+          },
+          "timestamp": "20140101"
+        },
+        "10": {
+          "action": "join",
+          "type": "group",
+          "target": {
+            "group": "3"
+          },
+          "timestamp": "20140101"
+        },
+        "11": {
+          "action": "new",
+          "type": "question",
+          "target": {
+            "question": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "12": {
+          "action": "new",
+          "type": "argument",
+          "target": {
+            "argument": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "13": {
+          "action": "answer",
+          "type": "question",
+          "target": {
+            "question": "1",
+            "answer": "2"
+          },
+          "timestamp": "20140101"
+        },
+        "14": {
+          "action": "response",
+          "type": "article",
+          "target": {
+            "issue": [
+              "3",
+              "4"
+            ],
+            "article": "2",
+            "response": "1"
+          },
+          "timestamp": "20140101"
+        },
+        "15": {
+          "action": "response",
+          "type": "pad",
+          "target": {
+            "proposal": [
+              "1"
+            ],
+            "pad": "2",
+            "response": "1"
+          },
+          "timestamp": "20140101"
+        }
       }
     }
   },
   "pads": {
-    "1": "firepad url",
-    "2": "firepad url",
-    "3": "firepad url"
+    "1": ""
   },
   "badges": {
     "1": {
@@ -262,9 +397,22 @@
     "1": {
       "name": "政府IT委外採用open source模式建議案",
       "meta": {
-        "parents": [],
-        "children": [],
-        "tags": [],
+        "parents": [
+          "2"
+        ],
+        "children": [
+          "3",
+          "4"
+        ],
+        "tags": [
+          "1"
+        ],
+        "issues": [
+          "1"
+        ],
+        "projects": [
+          "1"
+        ],
         "users": {
           "subscribed": [
             "etblue",
@@ -302,10 +450,21 @@
           ]
         }
       },
+      "log": {
+        "1": {
+          "user": "clkao",
+          "activity": "1"
+        },
+        "2": {
+          "user": "etblue",
+          "activity": "1"
+        }
+      },
       "content": {
         "intro": "1",
         "plans": {
           "1": {
+            "intro": "2",
             "content": [
               [
                 "1",
@@ -603,7 +762,7 @@
   "settings": {
     "issues": {
       "name": "議題",
-      "icon": "folder open outline"
+      "icon": "folder open"
     },
     "pads": {
       "name": "文件",
@@ -611,11 +770,11 @@
     },
     "projects": {
       "name": "專案",
-      "icon": "folder open outline"
+      "icon": "folder open"
     },
     "proposals": {
       "name": "提案",
-      "icon": "folder open outline"
+      "icon": "folder open"
     },
     "tags": {
       "name": "標籤",
@@ -632,6 +791,38 @@
     "groups": {
       "name": "團體",
       "icon": "users"
+    },
+    "news": {
+      "article": {
+        "new": "發表文章"
+      },
+      "question": {
+        "new": "發問",
+        "answer": "回答問題"
+      },
+      "argument": {
+        "new": "徵詢正反意見",
+        "answer": "貢獻正反意見"
+      },
+      "vision": {
+        "new": "想像未來願景"
+      },
+      "problem": {
+        "new": "挖掘現在問題"
+      },
+      "reason": {
+        "new": "分析問題成因"
+      },
+      "solution": {
+        "new": "構思對策"
+      },
+      "stakegolder": {
+        "new": "找出利害關係人"
+      },
+      "board": {
+        "new": "發起新",
+        "subscribe": "訂閱了"
+      }
     }
   }
 }

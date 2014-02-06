@@ -1,1 +1,5 @@
-document.write("C:/Users/ETBlue/Documents/GitHub/don-republic/livescripts/pads.json.ls: Error: Parse error on line 1: Unexpected 'NEWLINE'")
+(function(){
+  module.exports = {
+    1: ""
+  };
+}).call(this);

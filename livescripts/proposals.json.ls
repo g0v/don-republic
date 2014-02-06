@@ -2,32 +2,42 @@ module.exports =
   1:
     name: "政府IT委外採用open source模式建議案"
     meta:
-      parents: <[  ]>
-      children: <[  ]>
-      tags: <[  ]>
+      parents: <[ 2 ]> # global id of parent proposals
+      children: <[ 3 4 ]> # global id of sub proposals
+      tags: <[ 1 ]> # global id of tags
+      issues: <[ 1 ]> # global id of related issues
+      projects: <[ 1 ]> # global id of related projects
       users:
         subscribed: <[ etblue tkirby ]>
         bookmarked: <[ hychen ]>
         shared: <[ clkao ]>
-      owners:
+      owners: # can edit owners, managers and members
         users: <[ clkao ]>
         groups: <[ g0v ]>
-      managers:
+      managers: # can edit managers and members
         users: <[ hychen ]>
         groups: <[ g0v ]>
-      members:
+      members: # can post, edit, reply... etc.
         users: <[ tkirby ]>
-        groups: <[ level1 ]>
+        groups: <[ level1 ]> # default members for all public proposals
+    log:
+      1:
+        user: "clkao"
+        activity: "1" # activity id of the user
+      2:
+        user: "etblue"
+        activity: "1"
     content:
-      intro: "1" # firepad
+      intro: "1" # pad id
       plans:
         1:
-          content: # firepads
-            * \1
-              * \2
-              * \3
-            * \4
-            * \5
+          intro: "2" # pad id
+          content:
+            * "1" # pad id
+              * "2" # nested pads 僅限三層
+              * "3"
+            * "4"
+            * "5"
       analysis:
         visions:
           1:

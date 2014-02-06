@@ -3,9 +3,11 @@
     1: {
       name: "政府IT委外採用open source模式建議案",
       meta: {
-        parents: [],
-        children: [],
-        tags: [],
+        parents: ['2'],
+        children: ['3', '4'],
+        tags: ['1'],
+        issues: ['1'],
+        projects: ['1'],
         users: {
           subscribed: ['etblue', 'tkirby'],
           bookmarked: ['hychen'],
@@ -24,11 +26,22 @@
           groups: ['level1']
         }
       },
+      log: {
+        1: {
+          user: "clkao",
+          activity: "1"
+        },
+        2: {
+          user: "etblue",
+          activity: "1"
+        }
+      },
       content: {
         intro: "1",
         plans: {
           1: {
-            content: [['1', '2', '3'], '4', '5']
+            intro: "2",
+            content: [["1", "2", "3"], "4", "5"]
           }
         },
         analysis: {

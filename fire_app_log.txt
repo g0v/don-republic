@@ -3221,3 +3221,46 @@
 2014-02-04 04:15:41     error livescripts/users.json.ls: SyntaxError: duplicate property "2" on line 106
 2014-02-04 04:15:41 overwrite public/js/users.json.js
 2014-02-04 04:16:49 overwrite public/js/users.json.js
+2014-02-06 13:36:58     error livescripts/users.json.ls: SyntaxError: duplicate property "4" on line 128
+2014-02-06 13:36:58 overwrite public/js/users.json.js
+2014-02-06 13:37:11 overwrite public/js/users.json.js
+2014-02-06 13:37:45 overwrite public/js/users.json.js
+2014-02-06 13:38:09 overwrite public/js/users.json.js
+2014-02-06 13:38:30 overwrite public/js/users.json.js
+2014-02-06 13:38:43 overwrite public/js/users.json.js
+2014-02-06 13:40:05 overwrite public/js/users.json.js
+2014-02-06 13:41:54 overwrite public/js/users.json.js
+2014-02-06 13:42:00 overwrite public/js/users.json.js
+2014-02-06 13:43:10 overwrite public/js/users.json.js
+2014-02-06 13:44:34 overwrite public/js/users.json.js
+2014-02-06 13:47:33 overwrite public/js/users.json.js
+2014-02-06 13:53:34 overwrite public/js/settings.json.js
+2014-02-06 14:24:51 overwrite public/js/proposals.json.js
+2014-02-06 14:25:15 overwrite public/js/proposals.json.js
+2014-02-06 14:26:55 overwrite public/js/proposals.json.js
+2014-02-06 14:27:28 overwrite public/js/proposals.json.js
+2014-02-06 14:28:42 overwrite public/js/proposals.json.js
+2014-02-06 14:41:38 overwrite public/js/proposals.json.js
+2014-02-06 14:53:01 overwrite public/js/proposals.json.js
+2014-02-06 14:53:57 overwrite public/js/proposals.json.js
+2014-02-06 14:57:41     error livescripts/users.json.ls: SyntaxError: duplicate property "12" on line 169
+2014-02-06 14:57:41 overwrite public/js/users.json.js
+2014-02-06 14:57:47 overwrite public/js/users.json.js
+2014-02-06 14:59:43 overwrite public/js/users.json.js
+2014-02-06 15:00:19 overwrite public/js/users.json.js
+2014-02-06 15:01:20 overwrite public/js/proposals.json.js
+2014-02-06 15:13:41 overwrite public/js/users.json.js
+2014-02-06 15:13:51 overwrite public/js/users.json.js
+2014-02-06 15:14:06 overwrite public/js/users.json.js
+2014-02-06 15:14:33 overwrite public/js/users.json.js
+2014-02-06 15:16:18     error livescripts/users.json.ls: SyntaxError: duplicate property "14" on line 184
+2014-02-06 15:16:18 overwrite public/js/users.json.js
+2014-02-06 15:17:01     error livescripts/users.json.ls: SyntaxError: duplicate property "14" on line 184
+2014-02-06 15:17:01 overwrite public/js/users.json.js
+2014-02-06 15:17:07 overwrite public/js/users.json.js
+2014-02-06 15:31:44 overwrite public/js/proposals.json.js
+2014-02-06 15:32:39 overwrite public/js/proposals.json.js
+2014-02-06 15:33:34 overwrite public/js/proposals.json.js
+2014-02-06 15:33:46 overwrite public/js/proposals.json.js
+2014-02-06 15:46:54 overwrite public/js/proposals.json.js
+2014-02-06 16:25:15 overwrite public/js/pads.json.js
