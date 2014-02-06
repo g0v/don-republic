@@ -151,7 +151,8 @@ ctrl.base = ($scope, DS, ctrl-name) -> do
   vote: (p,d) ->
     #if not (id = if DS.user => that.id) => return
     id = if DS.user => that.id else 0
-    if !p.{}config.allow-anonymous and !id => return
+    # TODO: allow-anonymous should depends on some parent element... 
+    #if !p.{}config.allow-anonymous and !id => return
     if id in (p.{}vote[d] or []) => p.vote[d]splice p.vote[d]indexOf(id), 1
     else if id in ((for it in [0 1 2]=>p.{}vote[it] or [])reduce (-> &0 ++ &1),[]) => return
     else p.{}vote.[][d].push id

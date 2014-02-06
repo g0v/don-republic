@@ -355,9 +355,6 @@ ctrl.base = function($scope, DS, ctrlName){
     vote: function(p, d){
       var id, that, it, ref$;
       id = (that = DS.user) ? that.id : 0;
-      if (!(p.config || (p.config = {})).allowAnonymous && !id) {
-        return;
-      }
       if (in$(id, (p.vote || (p.vote = {}))[d] || [])) {
         p.vote[d].splice(p.vote[d].indexOf(id), 1);
       } else if (in$(id, (function(){

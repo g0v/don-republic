@@ -393,13 +393,35 @@
                       <div ng-controller="ctrl.comment" class="col-sm-12">
                         <div ng-repeat="c in propCur.link['comment']|value" class="comment">
                           <div>{{c.v.name}}</div>
-                          <div class="creator">{{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}</div>
+                          <div class="creator">
+                            <div class="vote"><span ng-click="vote(c.v,0)"><i class="glyphicon glyphicon-chevron-up"></i>
+                                <div class="num">{{c.v.vote[0].length}}</div></span><span ng-click="vote(c.v,1)"><i class="glyphicon glyphicon-minus"></i>
+                                <div class="num">{{c.v.vote[1].length}}</div></span><span ng-click="vote(c.v,2)"><i class="glyphicon glyphicon-chevron-down"></i>
+                                <div class="num">{{c.v.vote[2].length}}</div></span></div>
+                            <div style="float:right">{{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}<span ng-show="c.v.position==1" style="color:#094"> ( 正方意見 )</span><span ng-show="c.v.position==-1" style="color:#940"> ( 反方意見 )</span></div>
+                          </div>
                         </div>
                         <div class="comment">
-                          <div class="form-group">
-                            <textarea ng-model="cur.name" placeholder="留言..." class="form-control"></textarea>
+                          <div class="row">
+                            <div class="col-sm-9">
+                              <div class="form-group">
+                                <textarea ng-model="cur.name" placeholder="留言..." class="form-control"></textarea>
+                              </div>
+                              <div ng-click="createWith('comment','proposal',propCur.id,propCur)" class="btn btn-primary">送出</div>
+                            </div>
+                            <div class="col-sm-3"></div>對於這個提案你的立場是<br>
+                            <div data-toggle="buttons" class="btn-group">
+                              <label ng-click="cur.position=1" class="btn btn-default">
+                                <input type="radio">認同
+                              </label>
+                              <label ng-click="cur.position=0" class="btn btn-default active">
+                                <input type="radio" selected>中立
+                              </label>
+                              <label ng-click="cur.position=-1" class="btn btn-default">
+                                <input type="radio">否定
+                              </label>
+                            </div>
                           </div>
-                          <div ng-click="createWith('comment','proposal',propCur.id,propCur)" class="btn btn-primary">送出</div>
                         </div>
                       </div>
                     </div>

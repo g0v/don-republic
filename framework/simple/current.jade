@@ -77,11 +77,42 @@ div(ng-show="tab==3")
             .col-sm-12(ng-controller="ctrl.comment")
               .comment(ng-repeat="c in propCur.link['comment']|value")
                 div {{c.v.name}}
-                .creator {{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}
+                .creator 
+                  .vote
+                     span(ng-click="vote(c.v,0)") 
+                       i.glyphicon.glyphicon-chevron-up
+                       .num {{c.v.vote[0].length}}
+                     span(ng-click="vote(c.v,1)") 
+                       i.glyphicon.glyphicon-minus
+                       .num {{c.v.vote[1].length}}
+                     span(ng-click="vote(c.v,2)") 
+                       i.glyphicon.glyphicon-chevron-down
+                       .num {{c.v.vote[2].length}}
+                  div(style="float:right")
+                    | {{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}
+                    span(ng-show="c.v.position==1",style="color:#094")  ( 正方意見 )
+                    span(ng-show="c.v.position==-1",style="color:#940")  ( 反方意見 )
+
               .comment
-                .form-group
-                  textarea.form-control(ng-model="cur.name",placeholder="留言...")
-                .btn.btn-primary(ng-click="createWith('comment','proposal',propCur.id,propCur)") 送出
+                .row
+                  .col-sm-9
+                    .form-group
+                      textarea.form-control(ng-model="cur.name",placeholder="留言...")
+                    .btn.btn-primary(ng-click="createWith('comment','proposal',propCur.id,propCur)") 送出
+                  .col-sm-3
+                  | 對於這個提案你的立場是
+                  br
+                  .btn-group(data-toggle="buttons")
+                    label.btn.btn-default(ng-click="cur.position=1")
+                      input(type="radio")
+                      | 認同
+                    label.btn.btn-default.active(ng-click="cur.position=0")
+                      input(type="radio",selected)
+                      | 中立
+                    label.btn.btn-default(ng-click="cur.position=-1")
+                      input(type="radio")
+                      | 否定
+
 
       .panel.panel-default
         .panel-heading
