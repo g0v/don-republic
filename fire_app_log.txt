@@ -3193,3 +3193,31 @@
 2014-02-03 03:54:56 overwrite public/css/home.css 
 2014-02-03 03:55:07 overwrite public/css/home.css 
 2014-02-03 03:56:47 overwrite public/css/home.css 
+2014-02-03 13:41:46     error livescripts/settings.json.ls: Error: Parse error on line 29: Unexpected 'NEWLINE'
+2014-02-03 13:41:46 overwrite public/js/settings.json.js
+2014-02-03 13:43:00     error livescripts/settings.json.ls: Error: Parse error on line 27: Unexpected 'NEWLINE'
+2014-02-03 13:43:00 overwrite public/js/settings.json.js
+2014-02-03 13:44:27     error livescripts/settings.json.ls: Error: Parse error on line 34: Unexpected 'NEWLINE'
+2014-02-03 13:44:27 overwrite public/js/settings.json.js
+2014-02-03 13:44:41     error livescripts/settings.json.ls: Error: Parse error on line 36: Unexpected 'NEWLINE'
+2014-02-03 13:44:41 overwrite public/js/settings.json.js
+2014-02-03 13:44:49     error livescripts/settings.json.ls: Error: Parse error on line 36: Unexpected 'NEWLINE'
+2014-02-03 13:44:50 overwrite public/js/settings.json.js
+2014-02-03 13:44:54     error livescripts/settings.json.ls: Error: Parse error on line 36: Unexpected 'NEWLINE'
+2014-02-03 13:44:54 overwrite public/js/settings.json.js
+2014-02-03 13:45:29 overwrite public/js/settings.json.js
+2014-02-03 13:45:46 overwrite public/js/settings.json.js
+2014-02-03 13:47:31 overwrite public/js/settings.json.js
+2014-02-03 13:50:04 overwrite public/js/settings.json.js
+2014-02-03 13:50:15 overwrite public/js/settings.json.js
+2014-02-03 13:50:40 overwrite public/js/settings.json.js
+2014-02-04 01:53:26 overwrite public/js/users.json.js
+2014-02-04 02:51:45     error livescripts/users.json.ls: Error: Parse error on line 95: Unexpected 'NEWLINE'
+2014-02-04 02:51:45 overwrite public/js/users.json.js
+2014-02-04 02:51:51 overwrite public/js/users.json.js
+2014-02-04 02:52:37 overwrite public/js/users.json.js
+2014-02-04 02:56:10 overwrite public/js/users.json.js
+2014-02-04 03:02:35 overwrite public/js/users.json.js
+2014-02-04 04:15:41     error livescripts/users.json.ls: SyntaxError: duplicate property "2" on line 106
+2014-02-04 04:15:41 overwrite public/js/users.json.js
+2014-02-04 04:16:49 overwrite public/js/users.json.js

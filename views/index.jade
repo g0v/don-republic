@@ -30,29 +30,44 @@ block body
             .ui.label 10
 
     #content
-      .account(ng-show="view=='account'")
-        .ui.menu
-          a.item.activities(href="")
-            | 我的活動紀錄
-          .menu.activities
-            a.item.subscribed(href="")
+      .account(ng-show="view=='account'",ng-init="accountView='activities'")
+        .ui.secondary.pointing.tiered.menu
+          .menu
+            a.item(href="",ng-click="accountView='activities'")
+              | 我的活動紀錄
+            a.item(href="",ng-click="accountView='achievements'")
+              | 我的成就
+              i.icon.certificate
+            a.item(href="",ng-click="accountView='notifications'")
+              | 通知
+              i.icon.bullhorn
+          .ui.sub.menu.activities(ng-show="accountView=='activities'")
+            a.item(href="")
+              | 全部
+            a.item(href="")
+              i.icon.star
+              | 書籤
+            a.item(href="")
               i.icon.rss
               | 訂閱
-            a.item.bookmarked(href="")
-              i.icon.star
-              | 收藏
-            a.item.shared(href="")
+            a.item(href="")
               i.icon.forward.mail
               | 分享
-            a.item.shared(href="")
-              i.icon.checked.checkmark
-              | 表態
-            a.item.edited(href="")
+            a.item(href="")
+              i.icon.add
+              | 新增
+            a.item(href="")
               i.icon.pencil
               | 編輯
-          a.item.achievements(href="")
-            | 我的成就
-          .menu.achievements
+            a.item(href="")
+              i.icon.reply.mail
+              | 回應
+            a.item(href="")
+              i.icon.thumbs.up
+              | 表態
+          .ui.sub.menu.achievements(ng-show="accountView=='achievements'")
+            a.item(href="")
+              | 全部
             a.item.composing(href="")
               i.icon.certificate
               | 彙編懶人包
@@ -65,6 +80,19 @@ block body
             a.item.executing(href="")
               i.icon.certificate
               | 執行專案
+          .ui.sub.menu.notifications(ng-show="accountView=='notifications'")
+            a.item(href="")
+              | 全部
+            a.item(href="")
+              | 文章
+            a.item(href="")
+              | 問答題
+            a.item(href="")
+              | 正反題
+            a.item(href="")
+              | 共筆
+            a.item(href="")
+              | 便利貼
 
       .timeline(ng-show="view=='timeline'")
         .ui.secondary.pointing.menu

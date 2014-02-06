@@ -131,6 +131,36 @@
           name: "家人",
           users: ['tkalu']
         }
+      },
+      activities: {
+        1: {
+          action: "new",
+          type: "vision",
+          target: {
+            proposal: "1",
+            vision: "3"
+          },
+          timestamp: "20140101"
+        },
+        2: {
+          action: "new",
+          type: "plan",
+          target: {
+            proposal: "2",
+            plan: "1"
+          },
+          timestamp: "20140101"
+        },
+        3: {
+          action: "new",
+          type: "chapter",
+          target: {
+            proposal: "2",
+            plan: "1",
+            chapter: "1"
+          },
+          timestamp: "20140101"
+        }
       }
     }
   };
