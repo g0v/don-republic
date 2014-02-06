@@ -92,7 +92,7 @@
         </div>
         <h5>留言列表</h5>
         <div class="alert alert-info">
-          <div ng-repeat="(k,v) in list"> <span>{{v.desc}} by {{v.creator.displayName}} </span><i ng-click="delete(k)" style="cursor:pointer;color:#f00" class="glyphicon glyphicon-remove"></i></div>
+          <div ng-repeat="(k,v) in list"><span>{{v.desc}} by {{v.creator.displayName}} </span><i ng-click="delete(k)" style="cursor:pointer;color:#f00" class="glyphicon glyphicon-remove"></i></div>
         </div>
         <p>你可以在 cur 中存入任何需要的變數, 但請避開前所提到的基本屬性, 還有 vote, link, stand 等關鍵字.</p>
         <hr>
@@ -131,8 +131,8 @@
         <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-info">提案 "{{v.name}}"
           <div class="vote">
             <div ng-click="vote(v,0)" class="btn"><span>讚</span>{{v.vote[0].length}}</div>
-            <div ng-click="vote(v,1)" class="btn"> <span>閱</span>{{v.vote[1].length}}</div>
-            <div ng-click="vote(v,2)" class="btn"> <span>噓</span>{{v.vote[2].length}}</div>
+            <div ng-click="vote(v,1)" class="btn"><span>閱</span>{{v.vote[1].length}}</div>
+            <div ng-click="vote(v,2)" class="btn"><span>噓</span>{{v.vote[2].length}}</div>
           </div>
         </div>
         <p>就算是留言也可以:</p>
@@ -140,8 +140,8 @@
           <div ng-repeat="(k,v) in list" ng-show="$index==0" class="alert alert-info">"{{v.desc}}" by {{v.creator.username}}
             <div class="vote">
               <div ng-click="vote(v,0)" class="btn"><span>讚</span>{{v.vote[0].length}}</div>
-              <div ng-click="vote(v,1)" class="btn"> <span>閱</span>{{v.vote[1].length}}</div>
-              <div ng-click="vote(v,2)" class="btn"> <span>噓</span>{{v.vote[2].length}}</div>
+              <div ng-click="vote(v,1)" class="btn"><span>閱</span>{{v.vote[1].length}}</div>
+              <div ng-click="vote(v,2)" class="btn"><span>噓</span>{{v.vote[2].length}}</div>
             </div>
           </div>
         </div>

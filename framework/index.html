@@ -32,9 +32,7 @@
         <button ng-click="create()">new</button>
         <button ng-click="debug()">debg</button>{{cur}}
       </div>
-      <div ng-repeat="(k,g) in list"><span ng-click="delete(k)">x</span><span>id: {{g.id}}</span><span>name: {{g.name}}</span><span>description: {{g.desc}}</span><span>
-           
-          member: <span ng-repeat="(m,v) in g.users">{{m}}</span></span>
+      <div ng-repeat="(k,g) in list"><span ng-click="delete(k)">x</span><span>id: {{g.id}}</span><span>name: {{g.name}}</span><span>description: {{g.desc}}</span><span>member: <span ng-repeat="(m,v) in g.users">{{m}}</span></span>
         <input type="text" placeholder="new member" ng-model="g.newMember">
         <button ng-click="addMember(g)">add</button>
       </div>
@@ -87,7 +85,7 @@
             <input type="text" ng-model="cur.desc" placeholder="leave comment">
             <button ng-click="createWith('comment','proposal',k,p)">送出</button>
           </div>
-          <div ng-repeat="c in p.link['comment']|value" class="comment"> <span>{{get("comment",c.id).desc}}</span><span ng-click="delete(c.id, p)">x</span>
+          <div ng-repeat="c in p.link['comment']|value" class="comment"><span>{{get("comment",c.id).desc}}</span><span ng-click="delete(c.id, p)">x</span>
             <div class="vote"><span ng-click="vote(c.v,0)">up {{c.v.vote[0].length}}</span><span ng-click="vote(c.v,1)">neutral {{c.v.vote[1].length}}</span><span ng-click="vote(c.v,2)">down {{c.v.vote[2].length}}</span></div>
           </div>
         </div>
@@ -102,10 +100,7 @@
       </div>
       <div ng-repeat="(k,p) in list" class="plan">
         <h4>{{p.name}}<span ng-click="delete(k)">x</span></h4>
-        <div class="desc">
-           
-          {{p.desc}}
-        </div>
+        <div class="desc">{{p.desc}}</div>
         <div class="vote"><span ng-click="vote(p,0)">up {{p.vote[0].length}}</span><span ng-click="vote(p,1)">neutral {{p.vote[1].length}}</span><span ng-click="vote(p,2)">down {{p.vote[2].length}}</span></div>
         <div class="desc">created by {{p.creator.username}}</div>
       </div>
@@ -119,10 +114,7 @@
       </div>
       <div ng-repeat="(k,p) in list" class="issue">
         <h4>{{p.name}}<span ng-click="delete(k)">x</span></h4>
-        <div class="desc">
-           
-          {{p.desc}}
-        </div>
+        <div class="desc">{{p.desc}}</div>
         <div class="vote"><span ng-click="vote(p,0)">up {{p.vote[0].length}}</span><span ng-click="vote(p,1)">neutral {{p.vote[1].length}}</span><span ng-click="vote(p,2)">down {{p.vote[2].length}}</span></div>
         <div class="desc">created by {{p.creator.username}}</div>
       </div>

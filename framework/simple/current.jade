@@ -20,7 +20,8 @@ div(ng-show="tab==3")
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a(data-toggle="collapse",data-parent="#prop-cur-plans",href="#prop-cur-plans-state")
+            //-a(data-toggle="collapse",data-parent="#prop-cur-plans",href="#prop-cur-plans-state")
+            a
               i.glyphicon.glyphicon-hand-right
               | 方案與決策
         #prop-cur-plans-state.panel-collapse.collapse.in: .panel-body.choice-panel
@@ -63,6 +64,25 @@ div(ng-show="tab==3")
                   g: g(ng-repeat="(k,v) in cs.d")
                     rect(x="0",ng-attr-y="{{$index * 20}}",ng-attr-width="{{v.c * 10}}",height="15",ng-attr-fill="{{color(v.r.id)}}")
                     text(ng-attr-x="{{v.c * 10 + 5}}",ng-attr-y="{{$index * 20 + 11}}") {{v.r.v.name}} ( {{ v.c}} )
+
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            //-a(data-toggle="collapse",data-parent="#prop-cur-plans",href="#prop-cur-plans-comment")
+            a
+              i.glyphicon.glyphicon-bullhorn
+              | 各方的問題與評論
+        #prop-cur-plans-comment.panel-collapse.collapse.in: .panel-body
+          .row
+            .col-sm-12(ng-controller="ctrl.comment")
+              .comment(ng-repeat="c in propCur.link['comment']|value")
+                div {{c.v.name}}
+                .creator {{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}
+              .comment
+                .form-group
+                  textarea.form-control(ng-model="cur.name",placeholder="留言...")
+                .btn.btn-primary(ng-click="createWith('comment','proposal',propCur.id,propCur)") 送出
+
       .panel.panel-default
         .panel-heading
           h4.panel-title
@@ -103,19 +123,9 @@ div(ng-show="tab==3")
               .choices-detail(ng-controller="ctrl.plan")
                 .panel.panel-default(ng-repeat="p in propCur.link['choice']|value",ng-click="pick(propCur, p.id)")
                   .panel-heading: h4
-                    {{p.v.name}}
+                    | {{p.v.name}}
                     i.glyphicon.glyphicon-remove.pull-right(ng-show="p.v.creator.id==user.id",ng-click="delete(p.id)")
                   .panel-body
                      div(ng-show="p.v.desc",style="white-space: pre") {{p.v.desc}}
                      div(ng-show="!p.v.desc") 此方案沒有準備細節。
                      .creator 由 {{p.v.creator.username}} 在 {{p.v.create_time|date:'yyyy/MM/dd'}} 建立。
-      .panel.panel-default
-        .panel-heading
-          h4.panel-title
-            a(data-toggle="collapse",data-parent="#prop-cur-plans",href="#prop-cur-plans-comment")
-              i.glyphicon.glyphicon-bullhorn
-              | 各方的問題與評論
-        #prop-cur-plans-comment.panel-collapse.collapse: .panel-body
-          .row
-            .col-sm-12
-              | to be done

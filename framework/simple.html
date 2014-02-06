@@ -332,7 +332,8 @@
             <div id="prop-cur-plans" class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-state"><i class="glyphicon glyphicon-hand-right"></i>方案與決策</a></h4>
+                  <h4 class="panel-title"><a><i class="glyphicon glyphicon-hand-right"></i>方案與決策</a>
+                  </h4>
                 </div>
                 <div id="prop-cur-plans-state" class="panel-collapse collapse in">
                   <div class="panel-body choice-panel">
@@ -376,6 +377,30 @@
                             </g>
                           </svg>
                         </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a><i class="glyphicon glyphicon-bullhorn"></i>各方的問題與評論</a>
+                  </h4>
+                </div>
+                <div id="prop-cur-plans-comment" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div ng-controller="ctrl.comment" class="col-sm-12">
+                        <div ng-repeat="c in propCur.link['comment']|value" class="comment">
+                          <div>{{c.v.name}}</div>
+                          <div class="creator">{{c.v.creator.username}} @ {{c.v.create_time|date:'yyyy/MM/dd'}}</div>
+                        </div>
+                        <div class="comment">
+                          <div class="form-group">
+                            <textarea ng-model="cur.name" placeholder="留言..." class="form-control"></textarea>
+                          </div>
+                          <div ng-click="createWith('comment','proposal',propCur.id,propCur)" class="btn btn-primary">送出</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -433,18 +458,6 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#prop-cur-plans" href="#prop-cur-plans-comment"><i class="glyphicon glyphicon-bullhorn"></i>各方的問題與評論</a></h4>
-                </div>
-                <div id="prop-cur-plans-comment" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="col-sm-12">to be done</div>
                     </div>
                   </div>
                 </div>

@@ -29,10 +29,7 @@
       <h3>提案列表</h3>
       <div id="proposal" ng-controller="ctrl.proposal">
         <form id="new-proposal" class="proposal">
-          <div style="text-align: center;cursor: pointer" ng-click="nppanel=true" ng-show="!nppanel" class="ib">
-             
-            建立新提案
-          </div>
+          <div style="text-align: center;cursor: pointer" ng-click="nppanel=true" ng-show="!nppanel" class="ib">建立新提案</div>
           <div ng-show="nppanel" class="ib">
             <div class="form-group">
               <label>提案標題</label>
@@ -81,8 +78,8 @@
           <div class="panel">
             <div class="vote">
               <div ng-click="vote(p,0)" class="btn"><i class="glyphicon glyphicon-chevron-up"></i>{{p.vote[0].length}}</div>
-              <div ng-click="vote(p,1)" class="btn"> <i class="glyphicon glyphicon-minus"></i>{{p.vote[1].length}}</div>
-              <div ng-click="vote(p,2)" class="btn"> <i class="glyphicon glyphicon-chevron-down"></i>{{p.vote[2].length}}</div>
+              <div ng-click="vote(p,1)" class="btn"><i class="glyphicon glyphicon-minus"></i>{{p.vote[1].length}}</div>
+              <div ng-click="vote(p,2)" class="btn"><i class="glyphicon glyphicon-chevron-down"></i>{{p.vote[2].length}}</div>
             </div>
             <div class="btn"><i ng-click="delete(k)" class="glyphicon glyphicon-remove"></i></div>
             <div class="btn"><i ng-click="save(k)" class="glyphicon glyphicon-floppy-disk"></i></div>
@@ -119,9 +116,7 @@
                 <div class="col-sm-6">
                   <div class="title">你選擇的方案</div>
                   <div ng-controller="ctrl.plan" class="ib">
-                    <div ng-repeat="s in p.link['choice']|type:'plan'|picked:p:true" ng-click="pick(p, s.id)" class="plan">
-                       
-                      {{get("plan",s.id).name}}
+                    <div ng-repeat="s in p.link['choice']|type:'plan'|picked:p:true" ng-click="pick(p, s.id)" class="plan">{{get("plan",s.id).name}}
                       <div ng-show="p.config.method==3" class="rank">{{$index + 1}}</div>
                     </div>
                   </div>
@@ -151,7 +146,7 @@
                 </div>
                 <div ng-click="createWith('comment','proposal',k,p)" class="btn btn-success">送出</div>
               </div>
-              <div ng-repeat="c in p.link['comment']" class="comment"> 
+              <div ng-repeat="c in p.link['comment']" class="comment">
                 <div class="desc">{{get("comment",c.id).desc}}
                   <div class="panel">
                     <div class="vote">
@@ -178,10 +173,7 @@
           </div>
           <div ng-repeat="(k,p) in list" class="plan">
             <h4>{{p.name}}<span ng-click="purge(k)">x</span></h4>
-            <div class="desc">
-               
-              {{p.desc}}
-            </div>
+            <div class="desc">{{p.desc}}</div>
             <div class="vote"><span ng-click="vote(p,0)">up {{p.vote[0].length}}</span><span ng-click="vote(p,1)">neutral {{p.vote[1].length}}</span><span ng-click="vote(p,2)">down {{p.vote[2].length}}</span></div>
             <div class="desc">created by {{p.creator.username}}</div>
           </div>
