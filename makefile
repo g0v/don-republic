@@ -5,3 +5,13 @@ all:
 
 depends:
 	sudo gem install compass sass tilt --source http://rubygems.org
+
+clean:
+	git checkout framework/simple.js
+	git checkout framework/index.js
+	git checkout public/index.html
+	git checkout public/issue-content-intro.html
+	git checkout public/proposal-content-intro.html
+	git checkout public/proposal-content-plan-chapter.html
+	git checkout public/proposal-content-plan-chapters.html
+	git checkout public/timeline-proposals.html
