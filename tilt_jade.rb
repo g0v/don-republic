@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'tilt'
 require 'open3'
 if defined? Serve
@@ -22,7 +24,7 @@ module Tilt
       end
 
       pwd = Dir.pwd
-      Dir.chdir('views')
+      Dir.chdir(__dir__+'/views')
       body = Open3.popen3(jade_cmd) do |stdin, stdout, stderr|
         stdin.write data
         stdin.close 
