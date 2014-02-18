@@ -2,6 +2,8 @@ don-republic: Social eDemocracy
 ============
 動民主
 
+[![Stories in Ready](https://badge.waffle.io/g0v/don-republic.png?label=ready)](http://waffle.io/g0v/don-republic)
+
 Using:
 * Sass
 * Compass
