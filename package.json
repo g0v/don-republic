@@ -4,8 +4,8 @@
   "description": "eDemocracy 2.0",
   "main": "index.js",
   "scripts": {
-    "start": "gulp --require LiveScript",
-    "dev": "gulp --require LiveScript dev",
+    "start": "gulp --require LiveScript dev",
+    "build": "gulp --require LiveScript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
