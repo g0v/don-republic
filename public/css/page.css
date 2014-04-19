@@ -1,9 +1,0 @@
-body, #wrapper {
-  background: url("../img/bg4.png");
-  background-repeat: repeat;
-  background-color: rgba(255, 250, 216, 0.5);
-}
-
-#wrapper {
-  border-top: 1px rgba(0, 0, 0, 0.1) solid;
-}
