@@ -51,5 +51,5 @@ gulp.task \watch, ->
   gulp.watch \src/**/*.sass, <[styl]>
 
 gulp.task \build <[ jade ls framework sass]>
-gulp.task \default <[ build express ]>
+gulp.task \default <[ build ]>
 gulp.task \dev <[ build express watch ]>
