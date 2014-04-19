@@ -15,6 +15,8 @@ Using:
 
 Install
 ============
+
+* Notice: if your compass version is 0.12.6, make sure it is not [conflict](https://rubygems.org/gems/compass) to sass.
 Mac
 ------------
 * Install Brew
