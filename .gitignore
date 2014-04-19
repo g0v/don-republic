@@ -2,6 +2,7 @@
 .livescript-cache/
 fire_app_log.txt
 .editorconfig
+_public/*
 public/*
 node_modules
 npm-debug.log

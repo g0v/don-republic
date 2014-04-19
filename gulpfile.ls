@@ -1,7 +1,7 @@
 require! <[ gulp gulp-util gulp-livescript tiny-lr path gulp-livereload gulp-jade gulp-ruby-sass]>
 
 server = tiny-lr!
-build-path = 'public'
+build-path = '_public'
 
 
 gulp.task \jade ->
