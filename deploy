@@ -3,7 +3,7 @@ set -e -x
 git --version
 upstream=$1
 : ${upstream:=origin}
-: ${REPO:=git@github.com:g0v/g0v.tw}
+: ${REPO:=git@github.com:g0v/don-republic}
 : ${output:=_public}
 git fetch $upstream
 if [ `git rev-list HEAD...$upstream/master --count` -ne 0 ]; then
@@ -17,10 +17,10 @@ rm -rf $output
 git clone $REPO --depth 1 -b gh-pages $output
 
 REV=`git describe --always`
-BUILD=git-$REV ./node_modules/.bin/gulp --require LiveScript --env production
+BUILD=git-$REV npm run build
 cd $output
-git fetch --depth 1 origin master:master
+git fetch --depth 1 $upstream master:master
 git add -A .
 echo "regen for $REV" | git commit-tree `git write-tree` -p `git rev-parse HEAD` -p $REV | xargs git reset --hard
-git push origin gh-pages
+git push $upstream gh-pages
 cd ..
