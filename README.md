@@ -49,6 +49,20 @@ Mockup / Prototype
 * 0.5 MVP version http://g0v.github.io/don-republic/framework/simple.html
 * 2.0 struggling version http://g0v.github.io/don-republic/public/index.html
 
+# Development
+
+## Install dependency
+
+    $ npm install
+    $ bower install
+
+    Everytime you changed the bower.json, please wire dependency to update index.html
+    $ gulp wiredep
+
+## Start development
+
+    $ gulp watch
+
 License
 ============
 License: http://g0v.mit-license.org/ , although it is empty so far.
