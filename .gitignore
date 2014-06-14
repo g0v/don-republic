@@ -7,6 +7,6 @@ public/*
 node_modules
 npm-debug.log
 
-framework/server.js
-framework/index.js
-framework/simple.js
+mockup/framework/server.js
+mockup/framework/index.js
+mockup/framework/simple.js
