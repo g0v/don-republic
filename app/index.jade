@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Don-Republic
+    | <meta charset="utf-8">
+    | <meta name="description" content="">
+    | <meta name="viewport" content="width=device-width, initial-scale=1">
+    | <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    include includes/vendor_css
+    include includes/main_css
+    include includes/modernizr_js
+
+    body
+      | <!--[if lt IE 10]>
+      |     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      | <![endif]-->
+
+      .container
+        .header
+          ul.nav.nav-pills.pull-right
+            li.active
+              a(href="#") HOME
+            li
+              a(href="#") About
+            li
+              a(href="#") Contact
+          h3.text-muted downloading
+        .jumbotron
+          h1 Hello
+        .footer
+          p
+            |♥ from the Yeoman team</p>
+
+      include includes/vendor_js
+
+      |  <!-- build:js scripts/main.js -->
+      |  <script src="scripts/main.js"></script>
+      |  <!-- endbuild -->
