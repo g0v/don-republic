@@ -103,10 +103,6 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('serve', ['connect', 'jade', 'styles'], function () {
-    require('opn')('http://localhost:' + PORT);
-});
-
 // inject bower components
 gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
@@ -125,7 +121,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['connect', 'serve'], function () {
+gulp.task('watch', ['connect'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/**/*.jade', ['jade']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
