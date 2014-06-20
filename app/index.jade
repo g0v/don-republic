@@ -15,8 +15,19 @@ html
       | <!--[if lt IE 10]>
       |     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       | <![endif]-->
-
       .container
+        #navbar
+          .ui.secondary.pointing.menu
+            a.item.home.active(href="/") 動民主
+            a.item.issue(href="") 議題
+            a.item.proposals(href="") 提案
+            a.item.project(href="") 專案
+            a.item.tags(href="") 標籤
+            .item.right
+              .ui.icon.input
+                input.ng-pristine.ng-valid(type="text" placeholder="搜尋..." ng-model="keyword")
+                i.search.link.icon
+
         .header
           ul.nav.nav-pills.pull-right
             li.active
