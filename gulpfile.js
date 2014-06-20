@@ -56,13 +56,13 @@ gulp.task('html', ['jade', 'styles', 'scripts'], function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
+    return gulp.src('app/img/**/*')
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest(OUTPUT + '/images'))
+        .pipe(gulp.dest(OUTPUT + '/img'))
         .pipe($.size());
 });
 
