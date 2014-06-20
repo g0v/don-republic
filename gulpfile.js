@@ -8,7 +8,7 @@ var $ = require('gulp-load-plugins')();
 
 var PORT = 5000,
     OUTPUT = 'dist',
-    TMP = '.tmp';
+    TMP = 'tmp';
 
 gulp.task('jade', function () {
     // render jade files excepts templates
