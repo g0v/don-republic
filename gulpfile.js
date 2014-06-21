@@ -12,7 +12,7 @@ var PORT = 5000,
 
 gulp.task('jade', function () {
     // render jade files excepts templates
-    return gulp.src(['app/**/*.jade', '!app/**/_*.jade', '!app/includes/**/*.jade'])
+    return gulp.src(['app/**/*.jade', '!app/**/_*.jade', '!app/includes/**/*.jade', '!app/partial/**/*.jade'])
         .pipe($.jade())
         .pipe(gulp.dest(TMP + '/'));
 });

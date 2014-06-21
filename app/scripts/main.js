@@ -34,4 +34,20 @@
             checkUser(user);
         });
     }]);
+
+    app.controller('SidebarCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+        var checkUser;
+
+        $rootScope.$on('$firebaseSimpleLogin:login', function (e, user) {
+            $scope.loggedIn = true;
+            $scope.displayName = user.displayName;
+            $scope.avatarUrl = 'http://graph.facebook.com/'+ user.id + '/picture?type=square'
+        });
+
+        $rootScope.$on('$firebaseSimpleLogin:logout', function (e, user) {
+            $scope.loggedIn = false;
+            $scope.displayName = '';
+            $scope.avatarUrl = '';
+        });
+    }]);
 })(window.angular);
