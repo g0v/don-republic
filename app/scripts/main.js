@@ -1,10 +1,10 @@
-(function (angular) {
+(function (angular, config) {
     var app;
 
     app = angular.module('DonRepublic', ['firebase']);
 
     app.constant('Config', {
-        'firebaseApp': 'https://don-alpha.firebaseio.com'
+        'firebaseApp': config.firebaseDataUrl
     });
 
     app.controller('LoginCtrl', ['$scope', '$rootScope', 'Config', '$firebaseSimpleLogin', function ($scope, $rootScope, Config, $firebaseSimpleLogin) {
@@ -50,4 +50,4 @@
             $scope.avatarUrl = '';
         });
     }]);
-})(window.angular);
+})(window.angular, window.runtimeConfig);
