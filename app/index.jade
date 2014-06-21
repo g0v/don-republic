@@ -24,9 +24,12 @@ html
             a.item.project(href="") 專案
             a.item.tags(href="") 標籤
             span(ng-controller="LoginCtrl")
-              .ui.button.facebook(ng-hide="loggedIn")
+              .ui.button.facebook(ng-hide="loggedIn", ng-click="login()")
                 i.icon.facebook
                 | Login
+              .ui.button.basic(ng-show="loggedIn", ng-click="logout()")
+                i.icon.user
+                | Logout
             .item.right
               .ui.icon.input
                 input.ng-pristine.ng-valid(type="text" placeholder="搜尋..." ng-model="keyword")
@@ -49,6 +52,9 @@ html
 
       include includes/vendor_js
 
+      | <script type='text/javascript' src="//cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+      | <script type='text/javascript' src="//cdn.firebase.com/js/simple-login/1.6.0/firebase-simple-login.js"></script>
+      | <script type='text/javascript' src="//cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
       |  <!-- build:js scripts/main.js -->
       |  <script src="scripts/main.js"></script>
       |  <!-- endbuild -->
