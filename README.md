@@ -63,6 +63,12 @@ Mockup / Prototype
 
     $ gulp watch
 
+# Troubule Shooting
+
+if you met problem 'Too many open files in system...' on Mac OS X, you could try
+
+    $ ulimit -S -n 2048
+
 License
 ============
 License: http://g0v.mit-license.org/ , although it is empty so far.
