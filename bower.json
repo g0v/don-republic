@@ -1,0 +1,11 @@
+{
+  "name": "don-republic",
+  "private": true,
+  "dependencies": {
+    "semantic-ui": "~0.18.0",
+    "modernizr": "~2.6.2",
+    "angular": "1.2.17",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {}
+}
