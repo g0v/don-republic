@@ -12,6 +12,7 @@ Using:
 * Angular JS
 * Firebase
 * AngularFire
+* bootstrap
 
 Install
 ============
