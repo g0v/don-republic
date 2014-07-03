@@ -22,6 +22,7 @@
     "gulp-filter": "^0.4.1",
     "gulp-flatten": "^0.0.2",
     "gulp-imagemin": "^0.5.0",
+    "gulp-expect-file": "~0.0.7",
     "gulp-jade": "~0.5.0",
     "gulp-jshint": "^1.5.3",
     "gulp-load-plugins": "^0.5.0",

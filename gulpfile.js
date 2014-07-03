@@ -35,6 +35,13 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
+gulp.task('config', [], function () {
+    // throw error if the config.js does not exists.
+    return gulp.src(['config.js'])
+        .pipe($.expectFile({ errorOnFailure: true}, ['config.js']))
+        .pipe(gulp.dest('app/scripts/'));
+});
+
 gulp.task('html', ['jade', 'styles', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
@@ -83,7 +90,7 @@ gulp.task('clean', function () {
     return gulp.src([TMP, OUTPUT], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras']);
+gulp.task('build', ['config', 'html', 'images', 'fonts', 'extras']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
@@ -121,7 +128,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['connect'], function () {
+gulp.task('watch', ['config', 'connect'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/**/*.jade', ['jade']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);

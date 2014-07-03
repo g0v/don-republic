@@ -14,3 +14,5 @@ _public/*
 public/*
 npm-debug.log
 
+/config.js
+/app/scripts/config.js

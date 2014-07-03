@@ -26,6 +26,7 @@
 
 # Start development
 
+    $ cp config.js.sample config.js # and update the configuration for yourself
     $ gulp watch
 
 # Troubule Shooting
