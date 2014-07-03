@@ -1,4 +1,7 @@
-(function (angular, config) {
+/* jshint unused:false */
+
+'use strict';
+(function (angular, Firebase, config) {
     var app;
 
     app = angular.module('DonRepublic', ['firebase']);
@@ -41,7 +44,7 @@
         $rootScope.$on('$firebaseSimpleLogin:login', function (e, user) {
             $scope.loggedIn = true;
             $scope.displayName = user.displayName;
-            $scope.avatarUrl = 'http://graph.facebook.com/'+ user.id + '/picture?type=square'
+            $scope.avatarUrl = 'http://graph.facebook.com/'+ user.id + '/picture?type=square';
         });
 
         $rootScope.$on('$firebaseSimpleLogin:logout', function (e, user) {
@@ -50,4 +53,4 @@
             $scope.avatarUrl = '';
         });
     }]);
-})(window.angular, window.runtimeConfig);
+})(window.angular, window.Firebase, window.runtimeConfig);
