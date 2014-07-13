@@ -6,6 +6,10 @@
 
     mod = angular.module('donCtrls', ['firebase']);
 
+    mod.controller('IndexCtrl', ['$scope', function ($scope) {
+        $scope.sideBarVisible = true;
+    }]);
+
     mod.controller('LoginCtrl', ['$scope', '$rootScope', 'Config', '$firebaseSimpleLogin', function ($scope, $rootScope, Config, $firebaseSimpleLogin) {
         var ref = new Firebase(Config.firebaseApp),
             auth = $firebaseSimpleLogin(ref),

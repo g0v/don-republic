@@ -1,4 +1,4 @@
-div(ng-controller="SidebarCtrl")
+div(ng-cloak, ng-if="sideBarVisible", ng-controller="SidebarCtrl")
   a.item(ng-click="view='account'", ng-cloak, ng-if="loggedIn")
     .avatar
       img(ng-src="{{avatarUrl}}").ui.rounded.corner.image

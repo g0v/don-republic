@@ -9,4 +9,12 @@
     app.constant('Config', {
         'firebaseApp': config.firebaseDataUrl
     });
+
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/");
+        $stateProvider.state('index', {
+            url: "/",
+            templateUrl: "partials/state1.html"
+        });
+    }]);
 })(window.angular, window.Firebase, window.runtimeConfig);
