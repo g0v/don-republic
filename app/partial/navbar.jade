@@ -1,10 +1,10 @@
 #navbar
   .ui.secondary.pointing.menu
-    a.item.home.active(href="/") 動民主
-    a.item.issue(href="") 議題
-    a.item.proposals(href="") 提案
-    a.item.project(href="") 專案
-    a.item.tags(href="") 標籤
+    a.item.home.active(ui-sref="index") 動民主
+    a.item.issue(ui-sref="issues") 議題
+    a.item.proposals(ui-sref="proposals") 提案
+    a.item.project(ui-sref="projects") 專案
+    a.item.tags(ui-sref="tags") 標籤
     .item.right(ng-controller="LoginCtrl")
       .ui.button.facebook(ng-hide="loggedIn", ng-click="login()")
         i.icon.facebook
