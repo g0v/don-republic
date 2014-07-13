@@ -1,16 +1,12 @@
 /* jshint unused:false */
 
 'use strict';
-(function (angular, Firebase, config) {
-    var app;
+(function (angular, Firebase) {
+    var mod;
 
-    app = angular.module('DonRepublic', ['firebase', 'ui.router']);
+    mod = angular.module('donCtrls', ['firebase']);
 
-    app.constant('Config', {
-        'firebaseApp': config.firebaseDataUrl
-    });
-
-    app.controller('LoginCtrl', ['$scope', '$rootScope', 'Config', '$firebaseSimpleLogin', function ($scope, $rootScope, Config, $firebaseSimpleLogin) {
+    mod.controller('LoginCtrl', ['$scope', '$rootScope', 'Config', '$firebaseSimpleLogin', function ($scope, $rootScope, Config, $firebaseSimpleLogin) {
         var ref = new Firebase(Config.firebaseApp),
             auth = $firebaseSimpleLogin(ref),
             checkUser;
@@ -38,7 +34,7 @@
         });
     }]);
 
-    app.controller('SidebarCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    mod.controller('SidebarCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         var checkUser;
 
         $rootScope.$on('$firebaseSimpleLogin:login', function (e, user) {
@@ -53,4 +49,4 @@
             $scope.avatarUrl = '';
         });
     }]);
-})(window.angular, window.Firebase, window.runtimeConfig);
+})(window.angular, window.Firebase);
