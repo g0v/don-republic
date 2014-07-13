@@ -52,7 +52,7 @@ gulp.task('config', [], function () {
         .pipe(gulp.dest('app/scripts/'));
 });
 
-gulp.task('html', ['jade', 'styles', 'scripts'], function () {
+gulp.task('html', ['templates', 'jade', 'styles', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
@@ -106,7 +106,7 @@ gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
 
-gulp.task('connect', function () {
+gulp.task('connect', ['html'], function () {
     var connect = require('connect');
     var app = connect()
         .use(connect.static('app'))
