@@ -4,7 +4,7 @@
 (function (angular, Firebase, config) {
     var app;
 
-    app = angular.module('DonRepublic', ['firebase']);
+    app = angular.module('DonRepublic', ['firebase', 'ui.router']);
 
     app.constant('Config', {
         'firebaseApp': config.firebaseDataUrl
