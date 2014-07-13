@@ -14,7 +14,9 @@
         $urlRouterProvider.otherwise("/");
         $stateProvider.state('index', {
             url: '/',
-            templateUrl: "default/main.html"
+            views: {
+                'mainView': {templateUrl: "default/main.html"}
+            }
         });
     }]);
 })(window.angular, window.Firebase, window.runtimeConfig);
