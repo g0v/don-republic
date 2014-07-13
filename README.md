@@ -24,6 +24,10 @@
     Everytime you changed the bower.json, please wire dependency to update index.html
     $ gulp wiredep
 
+    or update vendor_js.jade manually and forece index.jade rebuild by command
+
+    $ touch app/index.jade
+
 # Start development
 
     $ cp config.js.sample config.js # and update the configuration for yourself
