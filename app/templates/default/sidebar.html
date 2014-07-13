@@ -1,0 +1,11 @@
+<div ng-cloak ng-controller="SidebarCtrl">
+    <a class="item" ng-click="view='account'" ng-cloak ng-if="loggedIn">
+        <div class="avatar">
+            <img ng-src="{{avatarUrl}}" class ="ui rounded corner image" />
+        </div>
+        <div class="id">{{displayName}}</div >
+    </a>
+    <a class="item" ng-click="view='timeline';timelineFilter=''">
+        <i class="icon home"></i>所有動態
+    </a>
+</div>

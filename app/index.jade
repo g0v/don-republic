@@ -20,11 +20,9 @@ html
         #navbar
           include partial/navbar
 
-        #index
-          #sidebar.ui.vertical.menu
-            include partial/sidebar
-          #content
-            div(ng-include="'default/body.html'")
+        #main
+          div(ui-view)
+
         .footer
           p
             |♥ from the Yeoman team</p>

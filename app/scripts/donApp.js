@@ -13,8 +13,8 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider.state('index', {
-            url: "/",
-            templateUrl: "partials/state1.html"
+            url: '/',
+            templateUrl: "default/main.html"
         });
     }]);
 })(window.angular, window.Firebase, window.runtimeConfig);
