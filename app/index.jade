@@ -22,7 +22,7 @@ html
           #sidebar.ui.vertical.menu
             include partial/sidebar
           #content
-            h1 Hello
+            div(ng-include="'default/body.html'")
         .footer
           p
             |♥ from the Yeoman team</p>
@@ -32,6 +32,9 @@ html
       | <script type='text/javascript' src="//cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
       | <script type='text/javascript' src="//cdn.firebase.com/js/simple-login/1.6.0/firebase-simple-login.js"></script>
       | <script type='text/javascript' src="//cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+      |  <!-- build:js scripts/templates.js -->
+      |  <script src="scripts/templates.js"></script>
+      |  <!-- endbuild -->
       |  <!-- build:js scripts/main.js -->
       |  <script src="scripts/config.js"></script>
       |  <script src="scripts/donCtrls.js"></script>

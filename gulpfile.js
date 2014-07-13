@@ -11,10 +11,20 @@ var PORT = 5000,
     TMP = 'tmp';
 
 gulp.task('jade', function () {
-    // render jade files excepts templates
+    // render jade files excepts includee
     return gulp.src(['app/**/*.jade', '!app/**/_*.jade', '!app/includes/**/*.jade', '!app/partial/**/*.jade'])
         .pipe($.jade())
         .pipe(gulp.dest(TMP + '/'));
+});
+
+gulp.task('templates', function () {
+    return gulp.src('app/templates/**/*.html')
+        .pipe($.angularTemplatecache({
+            module: "donTemplates",
+            standalone: true,
+        }))
+        .pipe($.size())
+        .pipe(gulp.dest('app/scripts/'));
 });
 
 gulp.task('styles', function () {
@@ -29,7 +39,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src(['app/scripts/**/*.js', '!app/scripts/templates.js'])
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
@@ -131,6 +141,7 @@ gulp.task('wiredep', function () {
 gulp.task('watch', ['config', 'connect'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/**/*.jade', ['jade']);
+    gulp.watch('app/templates/**/*.html', ['templates']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);

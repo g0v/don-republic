@@ -16,3 +16,5 @@ npm-debug.log
 
 /config.js
 /app/scripts/config.js
+/app/scripts/templates.js
+
